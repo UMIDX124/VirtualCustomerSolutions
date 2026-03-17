@@ -25,7 +25,7 @@ export function Services() {
                 eyebrow={`Pillar 0${index + 1}`}
                 title={service.title}
                 description={service.description}
-                className="relative overflow-hidden transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-brand-primary/18 hover:shadow-[0_24px_56px_rgba(62,30,104,0.12)]"
+                className="relative overflow-hidden transition-[box-shadow,border-color] duration-150 hover:border-brand-primary/18 hover:shadow-[0_20px_42px_rgba(62,30,104,0.1)]"
               >
                 <div className="mb-6 h-px w-full bg-[linear-gradient(90deg,rgba(62,30,104,0.18),rgba(228,90,146,0.18),transparent)]" />
                 <ul className="space-y-4">

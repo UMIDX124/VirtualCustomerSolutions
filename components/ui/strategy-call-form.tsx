@@ -30,6 +30,10 @@ export function StrategyCallForm() {
   });
   const [currentUrl, setCurrentUrl] = useState(siteConfig.siteUrl);
   const hasTrackedStart = useRef(false);
+  const hasIframeInitialized = useRef(false);
+  const isAwaitingIframeResponse = useRef(false);
+  const submitTimeout = useRef<number | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const [attribution, setAttribution] = useState({
     utmSource: "",
     utmMedium: "",
@@ -53,6 +57,14 @@ export function StrategyCallForm() {
     });
   }, []);
 
+  useEffect(() => {
+    return () => {
+      if (submitTimeout.current) {
+        window.clearTimeout(submitTimeout.current);
+      }
+    };
+  }, []);
+
   const handleFormStart = () => {
     if (hasTrackedStart.current) {
       return;
@@ -65,10 +77,14 @@ export function StrategyCallForm() {
     });
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     const form = event.currentTarget;
+
+    if (!form.reportValidity()) {
+      event.preventDefault();
+      return;
+    }
+
     const formData = new FormData(form);
     const email = String(formData.get("email") ?? "").trim();
     const company = String(formData.get("company") ?? "").trim();
@@ -93,54 +109,65 @@ export function StrategyCallForm() {
     );
 
     setSubmitState("submitting");
+    isAwaitingIframeResponse.current = true;
+    if (submitTimeout.current) {
+      window.clearTimeout(submitTimeout.current);
+    }
+    submitTimeout.current = window.setTimeout(() => {
+      if (!isAwaitingIframeResponse.current) {
+        return;
+      }
+
+      isAwaitingIframeResponse.current = false;
+      setSubmitState("error");
+      setStatusContent({
+        title: "We could not confirm your request.",
+        body: "Please try again in a moment, or use the direct email option below.",
+        support: "If the form service is slow, a second attempt usually works.",
+      });
+    }, 15000);
     setStatusContent({
       title: "Sending your request...",
       body: "We are securely sending your details now.",
       support: "This usually takes just a moment.",
     });
+  };
 
-    try {
-      const response = await fetch(siteConfig.formApiPath, {
-        method: "POST",
-        body: formData,
-      });
-
-      const result = (await response.json()) as { success?: string | boolean; message?: string };
-
-      if (!response.ok || result.success === false || result.success === "false") {
-        throw new Error(result.message || "Form submission failed");
-      }
-
-      form.reset();
-      setSubmitState("success");
-      setStatusContent({
-        title: "Thanks — your request was received.",
-        body: "We will review your details and follow up with practical next steps shortly.",
-        support: "This is a no-pressure review. If there is a fit, we will show you where to focus first.",
-      });
-      trackEvent("lead_form_submit_success", {
-        section: "final_cta",
-        form_type: "free_growth_audit",
-        primary_focus_area: String(formData.get("service") ?? ""),
-      });
-    } catch (error) {
-      const message =
-        error instanceof Error && error.message
-          ? error.message
-          : "We could not send your request right now. Please try again, or use the direct email option below.";
-
-      setSubmitState("error");
-      setStatusContent({
-        title: "We could not send your request.",
-        body: message,
-        support: "Your details are not lost unless the request is successfully submitted.",
-      });
+  const handleIframeLoad = () => {
+    if (!hasIframeInitialized.current) {
+      hasIframeInitialized.current = true;
+      return;
     }
+
+    if (!isAwaitingIframeResponse.current) {
+      return;
+    }
+
+    isAwaitingIframeResponse.current = false;
+    if (submitTimeout.current) {
+      window.clearTimeout(submitTimeout.current);
+      submitTimeout.current = null;
+    }
+    formRef.current?.reset();
+    setSubmitState("success");
+    setStatusContent({
+      title: "Thanks — your request was received.",
+      body: "We will review your details and follow up with practical next steps shortly.",
+      support: "This is a no-pressure review. If there is a fit, we will show you where to focus first.",
+    });
+    trackEvent("lead_form_submit_success", {
+      section: "final_cta",
+      form_type: "free_growth_audit",
+    });
   };
 
   return (
     <form
+      ref={formRef}
       id="strategy-call-form"
+      action={siteConfig.formSubmitBrowserAction}
+      method="POST"
+      target="growth-audit-submit-frame"
       onSubmit={handleSubmit}
       tabIndex={-1}
       onFocusCapture={handleFormStart}
@@ -169,6 +196,9 @@ export function StrategyCallForm() {
       <input type="hidden" name="_honey" value="" />
       <input type="hidden" name="_url" value={currentUrl} />
       <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_subject" value="Free Growth Audit Request" />
+      <input type="hidden" name="_autoresponse" value="Thank you. We received your free growth audit request and will review it shortly." />
       <input type="hidden" name="utm_source" value={attribution.utmSource} />
       <input type="hidden" name="utm_medium" value={attribution.utmMedium} />
       <input type="hidden" name="utm_campaign" value={attribution.utmCampaign} />
@@ -314,6 +344,13 @@ export function StrategyCallForm() {
         <p className="mt-1 text-inherit/90">{statusContent.body}</p>
         {statusContent.support ? <p className="mt-2 text-[13px] text-inherit/75">{statusContent.support}</p> : null}
       </div>
+
+      <iframe
+        title="Growth audit submission"
+        name="growth-audit-submit-frame"
+        className="hidden"
+        onLoad={handleIframeLoad}
+      />
     </form>
   );
 }

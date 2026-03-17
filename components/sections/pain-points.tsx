@@ -26,7 +26,7 @@ export function PainPoints() {
               <FeatureCard
                 title={point.title}
                 description={point.description}
-                className="transition-[transform,border-color,box-shadow] duration-200 hover:-translate-y-1 hover:border-brand-primary/20 hover:shadow-[0_22px_52px_rgba(62,30,104,0.12)]"
+                className="transition-[box-shadow,border-color] duration-150 hover:border-brand-primary/20 hover:shadow-[0_18px_38px_rgba(62,30,104,0.08)]"
                 headerSlot={
                   <>
                     <span className="inline-flex size-10 items-center justify-center rounded-2xl border border-brand-primary/12 bg-brand-primary/6 text-[13px] font-semibold text-brand-primary">

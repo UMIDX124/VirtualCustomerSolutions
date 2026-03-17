@@ -24,7 +24,7 @@ export function Testimonials() {
         <CardGrid columns="three" className="mx-auto max-w-[1120px]">
           {testimonials.map((testimonial, index) => (
             <Reveal key={testimonial.company} delay={index * 0.08}>
-              <Card className="group h-full rounded-[24px] p-7 md:p-8 transition-[transform,border-color,box-shadow] duration-200 hover:-translate-y-1 hover:border-brand-primary/18 hover:shadow-[0_20px_46px_rgba(62,30,104,0.1)]">
+              <Card className="group h-full rounded-[24px] p-7 md:p-8 transition-[box-shadow,border-color] duration-150 hover:border-brand-primary/18 hover:shadow-[0_18px_38px_rgba(62,30,104,0.08)]">
                 <div className="flex h-full flex-col">
                   <div className="flex items-start justify-between gap-6">
                     <div>

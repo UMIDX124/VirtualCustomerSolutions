@@ -8,6 +8,7 @@ export const siteConfig = {
   bookingEmailHref: "mailto:digitalpointllc1122@gmail.com?subject=Strategy%20Call%20Request",
   email: "digitalpointllc1122@gmail.com",
   formApiPath: "/api/free-growth-audit",
+  formSubmitBrowserAction: "https://formsubmit.co/digitalpointllc1122@gmail.com",
   formSubmitAction: "https://formsubmit.co/ajax/digitalpointllc1122@gmail.com",
 };
 

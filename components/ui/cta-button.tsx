@@ -40,7 +40,7 @@ const variants = {
 } as const;
 
 const baseClassName =
-  "relative inline-flex min-h-[58px] touch-manipulation items-center justify-center overflow-hidden rounded-full px-6 py-4 text-[15px] font-semibold leading-none tracking-[-0.018em] transition-[transform,box-shadow,border-color,background-color] duration-150 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.985] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  "relative inline-flex min-h-[58px] touch-manipulation items-center justify-center overflow-hidden rounded-full px-6 py-4 text-[15px] font-semibold leading-none tracking-[-0.018em] transition-[box-shadow,border-color,background-color,color] duration-100 active:scale-[0.985] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 export function CTAButton(props: CTAButtonProps) {
   const innerGlow = <span className="pointer-events-none absolute inset-[1px] rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.14),transparent_42%)] opacity-70" />;

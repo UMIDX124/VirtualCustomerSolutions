@@ -39,10 +39,10 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50">
       <Container>
-        <div className={cn("transition-[padding] duration-300", isScrolled ? "pt-3" : "pt-6 lg:pt-7")}>
+        <div className={cn("transition-[padding] duration-300", isScrolled ? "pt-3" : "pt-5 lg:pt-6")}>
           <div
             className={cn(
-              "rounded-full border px-4 py-4 transition duration-300 sm:px-6 sm:py-[1.125rem] lg:px-9 lg:py-5",
+              "rounded-full border px-4 py-3.5 transition duration-300 sm:px-6 sm:py-4 lg:px-8 lg:py-[1.05rem]",
               isScrolled
                 ? "border-white/80 bg-white/84 shadow-[0_24px_72px_rgba(62,30,104,0.16)] backdrop-blur-xl"
                 : "border-white/60 bg-white/70 shadow-[0_22px_62px_rgba(62,30,104,0.12)] backdrop-blur-xl",
@@ -53,12 +53,12 @@ export function Navbar() {
                 <BrandLogo
                   priority
                   variant="wordmark"
-                  className="w-[198px] sm:w-[236px] lg:w-[270px]"
+                  className="w-[188px] sm:w-[222px] lg:w-[252px]"
                   imageClassName="drop-shadow-[0_18px_34px_rgba(62,30,104,0.14)]"
                 />
               </a>
 
-              <nav aria-label="Primary" className="hidden items-center gap-10 lg:flex lg:gap-12 xl:gap-14">
+              <nav aria-label="Primary" className="hidden items-center gap-9 lg:flex lg:gap-10 xl:gap-12">
                 {navigation.map((item) => (
                   <a
                     key={item.href}

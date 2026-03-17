@@ -166,16 +166,16 @@ export function HeroVisual() {
     <div ref={ref} onPointerMove={handlePointerMove} onPointerLeave={resetPointer} className="relative">
       <MobileVisual />
 
-      <div aria-hidden="true" className="relative hidden h-[520px] xl:block xl:h-[560px]" style={{ perspective: 1500 }}>
-        <div className="hero-backplate absolute left-[13%] top-[10%] h-[76%] w-[74%] rounded-[40px]" />
+      <div aria-hidden="true" className="relative hidden h-[500px] xl:block xl:h-[540px]" style={{ perspective: 1500 }}>
+        <div className="hero-backplate absolute left-[14%] top-[12%] h-[72%] w-[72%] rounded-[38px]" />
 
         <m.div
-          className="absolute left-1/2 top-[4%] w-[72%] -translate-x-1/2"
+          className="absolute left-1/2 top-[7%] w-[70%] -translate-x-1/2"
           style={lowMotion ? undefined : { x: panelOneX, y: panelOneOffsetY, willChange: "transform" }}
           animate={lowMotion ? undefined : { y: [0, -3, 0] }}
           transition={{ duration: 9.2, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}
         >
-          <div className="overflow-hidden rounded-[34px] border border-white/14 bg-[linear-gradient(180deg,rgba(22,16,37,0.95),rgba(29,19,49,0.9))] p-6 shadow-[0_24px_62px_rgba(10,6,22,0.16)] backdrop-blur-lg">
+          <div className="overflow-hidden rounded-[32px] border border-white/14 bg-[linear-gradient(180deg,rgba(22,16,37,0.95),rgba(29,19,49,0.9))] p-5 shadow-[0_22px_56px_rgba(10,6,22,0.14)] backdrop-blur-lg">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_34%),linear-gradient(150deg,rgba(76,42,132,0.16),transparent_52%)]" />
             <div className="absolute inset-0 grid-accent opacity-12" />
             <div className="absolute inset-x-[18%] top-6 h-10 rounded-full bg-[radial-gradient(circle,rgba(84,185,255,0.14),transparent_70%)] blur-2xl" />
@@ -183,7 +183,7 @@ export function HeroVisual() {
             <div className="relative">
               <div className="flex items-start justify-between gap-5">
                 <div>
-                  <h3 className="text-[28px] font-semibold leading-[1.1] tracking-[-0.045em] text-white">
+                  <h3 className="text-[26px] font-semibold leading-[1.08] tracking-[-0.045em] text-white">
                     Revenue Dashboard
                   </h3>
                   <p className="mt-2 max-w-[22rem] text-[14px] leading-[1.7] text-white/64">
@@ -195,7 +195,7 @@ export function HeroVisual() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-[28px] border border-white/12 bg-black/18 p-5">
+              <div className="mt-5 rounded-[26px] border border-white/12 bg-black/18 p-4">
                 <div className="flex items-end gap-2">
                   {dashboardBars.map((bar, index) => (
                     <m.span
@@ -215,9 +215,9 @@ export function HeroVisual() {
                 </div>
               </div>
 
-              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
                 {revenueRows.map(([label, value]) => (
-                  <div key={label} className="rounded-[22px] border border-white/10 bg-white/8 px-4 py-4">
+                  <div key={label} className="rounded-[20px] border border-white/10 bg-white/8 px-4 py-3.5">
                     <p className="text-[11px] uppercase tracking-[0.18em] text-white/46">{label}</p>
                     <p className="mt-2 text-[15px] font-semibold text-white">{value}</p>
                   </div>
@@ -228,7 +228,7 @@ export function HeroVisual() {
         </m.div>
 
         <m.div
-          className="absolute bottom-[6%] left-[4%] w-[44%]"
+          className="absolute bottom-[8%] left-[5%] w-[43%]"
           style={lowMotion ? undefined : { x: panelTwoX, y: panelTwoOffsetY, willChange: "transform" }}
           animate={lowMotion ? undefined : { y: [0, 4, 0] }}
           transition={{ duration: 8.8, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}
@@ -237,12 +237,12 @@ export function HeroVisual() {
             title="Marketing Automation"
             subtitle="Campaign workflows, lead routing, CRM sync"
             rows={automationRows}
-            className="min-h-[276px]"
+            className="min-h-[258px]"
           />
         </m.div>
 
         <m.div
-          className="absolute bottom-[6%] right-[4%] w-[44%]"
+          className="absolute bottom-[8%] right-[5%] w-[43%]"
           style={lowMotion ? undefined : { x: panelThreeX, y: panelThreeOffsetY, willChange: "transform" }}
           animate={lowMotion ? undefined : { y: [0, 4, 0] }}
           transition={{ duration: 9, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}
@@ -251,7 +251,7 @@ export function HeroVisual() {
             title="Execution Layer"
             subtitle="Remote team execution and operational support"
             rows={executionRows}
-            className="min-h-[276px]"
+            className="min-h-[258px]"
           />
         </m.div>
       </div>

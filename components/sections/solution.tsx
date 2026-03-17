@@ -14,8 +14,8 @@ export function Solution() {
       <AmbientOrbs variant="section" className="opacity-70" />
       <ParallaxOrnament className="right-0 top-10 h-64 w-64 bg-brand-support/12" travel={34} />
       <SectionContainer className="relative">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start">
-          <div className="space-y-8">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+          <div className="space-y-9">
             <SectionHeader
               id="solution-heading"
               eyebrow="The solution"
@@ -37,7 +37,10 @@ export function Solution() {
                     "Remote capacity that expands execution without chaos",
                     "Systems that continue compounding as the business grows",
                   ].map((item) => (
-                    <div key={item} className="rounded-2xl border border-brand-primary/10 bg-white/65 px-4 py-4 text-base leading-[1.7] text-muted">
+                    <div
+                      key={item}
+                      className="rounded-[22px] border border-brand-primary/10 bg-white/82 px-5 py-5 text-[15px] leading-[1.8] text-muted"
+                    >
                       {item}
                     </div>
                   ))}
@@ -56,7 +59,7 @@ export function Solution() {
                   className="transition duration-300 hover:-translate-y-1.5 hover:border-brand-primary/18"
                 >
                   <div className="mt-auto pt-2">
-                    <span className="inline-flex rounded-full border border-brand-primary/10 bg-brand-primary/5 px-4 py-2 text-[14px] font-medium text-brand-primary">
+                    <span className="inline-flex rounded-full border border-brand-primary/10 bg-brand-primary/6 px-4 py-2 text-[13px] font-semibold text-brand-primary">
                       Built for durable scale
                     </span>
                   </div>

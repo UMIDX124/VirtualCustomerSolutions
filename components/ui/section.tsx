@@ -14,7 +14,7 @@ export function Section({ children, id, className, labelledBy }: SectionProps) {
     <section
       id={id}
       aria-labelledby={labelledBy}
-      className={cn("relative scroll-mt-28 py-[72px] md:scroll-mt-32 md:py-24 lg:py-[120px]", className)}
+      className={cn("relative scroll-mt-28 py-[72px] md:scroll-mt-36 md:py-24 lg:scroll-mt-40 lg:py-[120px]", className)}
     >
       {children}
     </section>

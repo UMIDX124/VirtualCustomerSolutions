@@ -24,7 +24,7 @@ export function Navbar() {
       return;
     }
 
-    const desktopQuery = window.matchMedia("(min-width: 768px)");
+    const desktopQuery = window.matchMedia("(min-width: 1024px)");
     const handleChange = () => {
       if (desktopQuery.matches) {
         setIsMenuOpen(false);
@@ -39,39 +39,39 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50">
       <Container>
-        <div className={cn("transition-[padding] duration-300", isScrolled ? "pt-3" : "pt-6")}>
+        <div className={cn("transition-[padding] duration-300", isScrolled ? "pt-3" : "pt-6 lg:pt-7")}>
           <div
             className={cn(
-              "rounded-full border px-5 py-4 transition duration-300 sm:px-7 lg:px-8",
+              "rounded-full border px-5 py-[1.125rem] transition duration-300 sm:px-7 lg:px-9 lg:py-5",
               isScrolled
-                ? "border-white/78 bg-white/82 shadow-[0_24px_72px_rgba(62,30,104,0.16)] backdrop-blur-xl"
-                : "border-white/58 bg-white/66 shadow-[0_18px_56px_rgba(62,30,104,0.12)] backdrop-blur-xl",
+                ? "border-white/80 bg-white/84 shadow-[0_24px_72px_rgba(62,30,104,0.16)] backdrop-blur-xl"
+                : "border-white/60 bg-white/70 shadow-[0_22px_62px_rgba(62,30,104,0.12)] backdrop-blur-xl",
             )}
           >
-            <div className="flex items-center justify-between gap-8">
+            <div className="flex items-center justify-between gap-8 lg:gap-10">
               <a href="#top" className="flex min-w-0 items-center">
                 <BrandLogo
                   priority
                   variant="wordmark"
-                  className="w-[176px] sm:w-[212px] lg:w-[248px]"
-                  imageClassName="drop-shadow-[0_16px_32px_rgba(62,30,104,0.12)]"
+                  className="w-[184px] sm:w-[226px] lg:w-[270px]"
+                  imageClassName="drop-shadow-[0_18px_34px_rgba(62,30,104,0.14)]"
                 />
               </a>
 
-              <nav aria-label="Primary" className="hidden items-center gap-10 md:flex lg:gap-12">
+              <nav aria-label="Primary" className="hidden items-center gap-10 lg:flex lg:gap-12 xl:gap-14">
                 {navigation.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
-                    className="text-[15px] font-medium leading-none text-ink/76 transition duration-200 hover:text-brand-primary"
+                    className="text-[15px] font-medium leading-none tracking-[-0.01em] text-ink/74 transition duration-200 hover:text-brand-primary"
                   >
                     {item.label}
                   </a>
                 ))}
               </nav>
 
-              <div className="hidden md:block">
-                <Button href={siteConfig.primaryCtaHref} className="px-6">
+              <div className="hidden lg:block">
+                <Button href={siteConfig.primaryCtaHref} className="px-7">
                   Book a Strategy Call
                 </Button>
               </div>
@@ -81,7 +81,7 @@ export function Navbar() {
                 aria-expanded={isMenuOpen}
                 aria-controls="mobile-navigation"
                 aria-label="Toggle menu"
-                className="flex size-11 items-center justify-center rounded-full border border-brand-primary/12 bg-white/70 text-brand-primary md:hidden"
+                className="flex size-11 items-center justify-center rounded-full border border-brand-primary/12 bg-white/70 text-brand-primary lg:hidden"
                 onClick={() => setIsMenuOpen((open) => !open)}
               >
                 <span className="flex flex-col gap-1.5">
@@ -100,7 +100,7 @@ export function Navbar() {
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-                  className="overflow-hidden md:hidden"
+                  className="overflow-hidden lg:hidden"
                 >
                   <nav aria-label="Mobile" className="mt-4 space-y-2 border-t border-brand-primary/10 pt-4">
                     {navigation.map((item) => (

@@ -45,7 +45,7 @@ function ScoreRow({ label, value }: { label: string; value: number }) {
 
 function MobileVisual() {
   return (
-    <div className="relative lg:hidden">
+    <div className="relative xl:hidden">
       <div className="absolute inset-x-[8%] top-3 h-32 rounded-full bg-[radial-gradient(circle,rgba(84,185,255,0.18),transparent_66%)] blur-3xl" />
 
       <div className="hero-dashboard relative overflow-hidden rounded-[30px] border border-white/14 bg-[linear-gradient(180deg,rgba(22,16,37,0.9),rgba(31,20,51,0.82))] p-5 shadow-[0_30px_100px_rgba(12,6,24,0.32)] backdrop-blur-2xl">
@@ -166,7 +166,7 @@ export function HeroVisual() {
     <div ref={ref} onPointerMove={handlePointerMove} onPointerLeave={resetPointer} className="relative">
       <MobileVisual />
 
-      <div aria-hidden="true" className="relative hidden h-[540px] lg:block xl:h-[600px]" style={{ perspective: 1500 }}>
+      <div aria-hidden="true" className="relative hidden h-[540px] xl:block xl:h-[600px]" style={{ perspective: 1500 }}>
         <m.div
           className="hero-backplate absolute left-[10%] top-[12%] h-[72%] w-[74%] rounded-[40px]"
           style={lowMotion ? undefined : { x: backX, y: backOffsetY, willChange: "transform" }}

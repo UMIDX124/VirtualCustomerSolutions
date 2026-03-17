@@ -25,7 +25,7 @@ export function CaseStudies() {
                 eyebrow={study.category}
                 title={study.title}
                 description={study.summary}
-                className="transition duration-300 hover:-translate-y-2 hover:border-brand-primary/18"
+                className="overflow-hidden transition duration-300 hover:-translate-y-2 hover:border-brand-primary/18"
                 headerSlot={<span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted/70">Snapshot 0{index + 1}</span>}
               >
                 <div className="space-y-4 border-t border-brand-primary/10 pt-6">

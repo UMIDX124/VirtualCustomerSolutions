@@ -26,7 +26,8 @@ export function Benefits() {
               <FeatureCard
                 title={benefit}
                 eyebrow={`Outcome 0${index + 1}`}
-                headerSlot={<span className="mt-2 h-2.5 w-2.5 rounded-full bg-[linear-gradient(135deg,#3E1E68_0%,#E45A92_100%)]" />}
+                className="relative overflow-hidden"
+                headerSlot={<span className="mt-2 h-2.5 w-2.5 rounded-full bg-[linear-gradient(135deg,#3E1E68_0%,#E45A92_100%)] shadow-[0_0_18px_rgba(228,90,146,0.22)]" />}
               />
             </Reveal>
           ))}
@@ -36,7 +37,7 @@ export function Benefits() {
           <FeatureCard
             title="A premium execution layer for growth-minded teams."
             eyebrow="What the partnership delivers"
-            className="mt-12"
+            className="mt-14 overflow-hidden"
             description="The structure is designed to create clarity, accountability, and sustainable momentum across the business."
           >
             <div className="grid gap-4 md:grid-cols-2">
@@ -46,7 +47,10 @@ export function Benefits() {
                 "Technology and workflow improvements that reduce day-to-day drag",
                 "A more confident leadership view of pipeline, priorities, and delivery",
               ].map((item) => (
-                <div key={item} className="rounded-2xl border border-brand-primary/10 bg-brand-primary/5 px-4 py-4 text-base leading-[1.7] text-muted">
+                <div
+                  key={item}
+                  className="rounded-[22px] border border-brand-primary/10 bg-[linear-gradient(180deg,rgba(62,30,104,0.04),rgba(228,90,146,0.03))] px-5 py-5 text-[15px] leading-[1.8] text-muted"
+                >
                   {item}
                 </div>
               ))}

@@ -79,12 +79,12 @@ export function StrategyCallForm() {
       id="strategy-call-form"
       onSubmit={handleSubmit}
       tabIndex={-1}
-      className="scroll-mt-32 rounded-[28px] border border-white/12 bg-white/8 p-8 text-white shadow-[0_24px_80px_rgba(18,9,35,0.18)] backdrop-blur-md sm:scroll-mt-36"
+      className="scroll-mt-32 rounded-[30px] border border-white/12 bg-white/8 p-8 text-white shadow-[0_24px_80px_rgba(18,9,35,0.18)] backdrop-blur-md sm:scroll-mt-36"
     >
       <div className="flex flex-col gap-3">
-        <p className="text-[14px] font-medium uppercase tracking-[0.22em] text-white/58">Strategy call form</p>
-        <h3 className="text-2xl font-semibold leading-[1.2] tracking-[-0.03em] text-white">Tell us what you need.</h3>
-        <p className="text-base leading-[1.7] text-white/70">
+        <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-white/56">Strategy call form</p>
+        <h3 className="text-[28px] font-semibold leading-[1.16] tracking-[-0.04em] text-white">Tell us what you need.</h3>
+        <p className="text-[15px] leading-[1.8] text-white/68">
           Fill out the form and we will send the booking request directly through FormSubmit without redirecting you away from the page.
         </p>
       </div>
@@ -101,7 +101,7 @@ export function StrategyCallForm() {
             type="text"
             autoComplete="name"
             required
-            className="rounded-2xl border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
             placeholder="Your full name"
           />
         </label>
@@ -113,7 +113,7 @@ export function StrategyCallForm() {
             type="email"
             autoComplete="email"
             required
-            className="rounded-2xl border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
             placeholder="you@company.com"
           />
         </label>
@@ -125,7 +125,7 @@ export function StrategyCallForm() {
             type="text"
             autoComplete="organization"
             required
-            className="rounded-2xl border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
             placeholder="Company name"
           />
         </label>
@@ -136,7 +136,7 @@ export function StrategyCallForm() {
             name="website"
             type="url"
             autoComplete="url"
-            className="rounded-2xl border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
             placeholder="https://yourcompany.com"
           />
         </label>
@@ -147,7 +147,7 @@ export function StrategyCallForm() {
             name="service"
             required
             defaultValue=""
-            className="rounded-2xl border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition focus:border-white/28"
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition focus:border-white/28"
           >
             <option value="" disabled className="text-ink">
               Select a service
@@ -165,7 +165,7 @@ export function StrategyCallForm() {
           <input
             name="teamSize"
             type="text"
-            className="rounded-2xl border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
             placeholder="e.g. 10-25 employees"
           />
         </label>
@@ -182,7 +182,7 @@ export function StrategyCallForm() {
         </label>
       </div>
 
-      <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <CTAButton type="submit" className="min-w-[220px]" disabled={submitState === "submitting"}>
           {submitState === "submitting" ? "Sending Request..." : "Send Strategy Call Request"}
         </CTAButton>

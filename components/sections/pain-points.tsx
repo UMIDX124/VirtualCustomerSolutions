@@ -29,7 +29,7 @@ export function PainPoints() {
                 className="transition duration-300 hover:-translate-y-1.5 hover:border-brand-primary/20 hover:shadow-[0_26px_70px_rgba(62,30,104,0.14)]"
                 headerSlot={
                   <>
-                    <span className="inline-flex size-10 items-center justify-center rounded-2xl border border-brand-primary/12 bg-brand-primary/5 text-[14px] font-semibold text-brand-primary">
+                    <span className="inline-flex size-10 items-center justify-center rounded-2xl border border-brand-primary/12 bg-brand-primary/6 text-[13px] font-semibold text-brand-primary">
                       0{index + 1}
                     </span>
                     <span className="mt-3 h-2.5 w-2.5 rounded-full bg-brand-secondary/65 shadow-[0_0_18px_rgba(228,90,146,0.35)]" />

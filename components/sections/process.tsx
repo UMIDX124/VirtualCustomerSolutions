@@ -8,32 +8,56 @@ import { processSteps } from "@/lib/content";
 
 export function Process() {
   return (
-    <Section id="process" labelledBy="process-heading">
+    <Section id="process" labelledBy="process-heading" className="overflow-hidden">
       <SectionContainer>
         <SectionHeader
           id="process-heading"
           eyebrow="How it works"
           title="A clean process designed to create momentum quickly."
           description="Every phase is built to reduce ambiguity, tighten execution, and give leadership a clearer operating system."
-          align="center"
           className="mb-16"
         />
 
-        <CardGrid columns="four">
-          {processSteps.map((step, index) => (
-            <Reveal key={step.title} delay={index * 0.08}>
-              <FeatureCard
-                title={step.title}
-                description={step.description}
-                headerSlot={
-                  <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#3E1E68_0%,#E45A92_100%)] text-[14px] font-semibold text-white shadow-[0_14px_30px_rgba(62,30,104,0.2)]">
-                    0{index + 1}
-                  </span>
-                }
-              />
-            </Reveal>
-          ))}
-        </CardGrid>
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] lg:gap-10">
+          <Reveal>
+            <div className="rounded-[28px] border border-brand-primary/10 bg-white/64 p-8 shadow-[0_22px_68px_rgba(62,30,104,0.08)] backdrop-blur-xl">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-primary/56">Delivery rhythm</p>
+              <p className="mt-5 text-[28px] font-semibold leading-[1.08] tracking-[-0.05em] text-ink">4 phases.</p>
+              <p className="mt-4 text-[15px] leading-[1.8] text-muted">
+                One disciplined path from diagnosis to scaled execution, with less ambiguity between strategy and delivery.
+              </p>
+              <div className="mt-8 space-y-3">
+                {["Audit", "Roadmap", "Deployment", "Optimization"].map((label, index) => (
+                  <div key={label} className="flex items-center justify-between rounded-2xl border border-brand-primary/10 bg-white/72 px-4 py-3">
+                    <span className="text-[14px] font-medium text-ink/78">{label}</span>
+                    <span className="text-[12px] font-semibold uppercase tracking-[0.16em] text-brand-primary/48">0{index + 1}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          <CardGrid columns="four">
+            {processSteps.map((step, index) => (
+              <Reveal key={step.title} delay={index * 0.08}>
+                <FeatureCard
+                  title={step.title}
+                  description={step.description}
+                  className="relative overflow-hidden"
+                  headerSlot={
+                    <span className="inline-flex size-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#3E1E68_0%,#E45A92_100%)] text-[14px] font-semibold text-white shadow-[0_14px_30px_rgba(62,30,104,0.2)]">
+                      0{index + 1}
+                    </span>
+                  }
+                >
+                  <div className="mt-auto pt-2">
+                    <div className="h-px w-full bg-[linear-gradient(90deg,rgba(62,30,104,0.18),rgba(228,90,146,0.18),transparent)]" />
+                  </div>
+                </FeatureCard>
+              </Reveal>
+            ))}
+          </CardGrid>
+        </div>
       </SectionContainer>
     </Section>
   );

@@ -27,15 +27,15 @@ function isLinkProps(props: CTAButtonProps): props is LinkProps {
 
 const variants = {
   primary:
-    "border border-white/10 bg-[linear-gradient(135deg,#37185F_0%,#522A88_46%,#E45A92_100%)] text-white shadow-[0_20px_54px_rgba(62,30,104,0.3)] hover:shadow-[0_28px_74px_rgba(62,30,104,0.26)]",
+    "border border-white/10 bg-[linear-gradient(135deg,#35165B_0%,#4E277F_44%,#E45A92_100%)] text-white shadow-[0_22px_58px_rgba(62,30,104,0.3)] hover:shadow-[0_30px_76px_rgba(62,30,104,0.24)]",
   secondary:
-    "border border-brand-primary/14 bg-white/88 text-brand-primary shadow-[0_18px_50px_rgba(62,30,104,0.08)] hover:border-brand-primary/20 hover:bg-white",
+    "border border-brand-primary/14 bg-white/90 text-brand-primary shadow-[0_18px_48px_rgba(62,30,104,0.08)] hover:border-brand-primary/20 hover:bg-white",
   ghost:
-    "border border-white/20 bg-white/10 text-white shadow-[0_12px_34px_rgba(15,8,28,0.08)] backdrop-blur-md hover:border-white/30 hover:bg-white/14",
+    "border border-white/18 bg-white/10 text-white shadow-[0_12px_34px_rgba(15,8,28,0.08)] backdrop-blur-md hover:border-white/30 hover:bg-white/14",
 } as const;
 
 const baseClassName =
-  "group relative inline-flex min-h-14 items-center justify-center overflow-hidden rounded-full px-6 py-4 text-[15px] font-semibold leading-none tracking-[-0.018em] transition duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+  "group relative inline-flex min-h-[58px] items-center justify-center overflow-hidden rounded-full px-6 py-4 text-[15px] font-semibold leading-none tracking-[-0.018em] transition duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.985] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 export function CTAButton(props: CTAButtonProps) {
   const shine = (
@@ -43,6 +43,7 @@ export function CTAButton(props: CTAButtonProps) {
       <span className="absolute -left-12 top-0 h-full w-10 -skew-x-12 bg-white/25 transition-transform duration-700 group-hover:translate-x-[250px]" />
     </span>
   );
+  const innerGlow = <span className="pointer-events-none absolute inset-[1px] rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.18),transparent_46%)] opacity-80" />;
 
   if (isLinkProps(props)) {
     const { children, variant = "primary", className, ariaLabel, href, ...linkProps } = props;
@@ -50,6 +51,7 @@ export function CTAButton(props: CTAButtonProps) {
 
     return (
       <a aria-label={ariaLabel} className={classes} href={href} {...linkProps}>
+        {innerGlow}
         {shine}
         <span className="relative z-10">{children}</span>
       </a>
@@ -61,6 +63,7 @@ export function CTAButton(props: CTAButtonProps) {
 
   return (
     <button aria-label={ariaLabel} className={classes} type={type} {...buttonProps}>
+      {innerGlow}
       {shine}
       <span className="relative z-10">{children}</span>
     </button>

@@ -28,7 +28,7 @@ export function FeatureCard({
     <Card
       className={cn(
         "flex h-full flex-col rounded-[20px] p-8 md:p-9",
-        isDark ? "border-white/10 bg-white/8 text-white" : "border-white/70 bg-white/84",
+        isDark ? "border-white/12 bg-white/10 text-white" : "border-white/72 bg-white/90",
         className,
       )}
     >
@@ -54,7 +54,7 @@ export function FeatureCard({
         {title}
       </h3>
       {description ? (
-        <p className={cn("mt-4 text-[15px] leading-[1.8]", isDark ? "text-white/68" : "text-muted/95")}>{description}</p>
+        <p className={cn("mt-4 text-[15px] leading-[1.82]", isDark ? "text-white/70" : "text-muted/92")}>{description}</p>
       ) : null}
       {children ? <div className="mt-7 flex flex-1 flex-col">{children}</div> : null}
     </Card>

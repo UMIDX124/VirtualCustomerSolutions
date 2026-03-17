@@ -21,16 +21,19 @@ export function Testimonials() {
           className="mb-16"
         />
 
-        <CardGrid columns="three">
+        <CardGrid columns="three" className="max-w-[1120px] mx-auto">
           {testimonials.map((testimonial, index) => (
             <Reveal key={testimonial.company} delay={index * 0.08}>
-              <Card className="group h-full p-8 transition duration-300 hover:-translate-y-2 hover:border-brand-primary/18">
+              <Card className="group h-full rounded-[24px] p-8 transition duration-300 hover:-translate-y-2 hover:border-brand-primary/18">
                 <div className="flex h-full flex-col">
-                  <span className="text-[40px] leading-none text-brand-secondary/40">"</span>
-                  <p className="mt-4 text-base leading-[1.7] text-ink/84">{testimonial.quote}</p>
-                  <div className="mt-auto pt-8">
-                    <p className="text-base font-semibold leading-[1.2] text-ink">{testimonial.name}</p>
-                    <p className="mt-2 text-[14px] leading-[1.7] text-muted">{testimonial.company}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[36px] leading-none text-brand-secondary/34">"</span>
+                    <span className="h-px w-12 bg-[linear-gradient(90deg,rgba(62,30,104,0.18),rgba(228,90,146,0.28))]" />
+                  </div>
+                  <p className="mt-5 text-[16px] leading-[1.82] text-ink/84">{testimonial.quote}</p>
+                  <div className="mt-auto pt-9">
+                    <p className="text-[15px] font-semibold leading-[1.2] text-ink">{testimonial.name}</p>
+                    <p className="mt-2 text-[14px] leading-[1.75] text-muted">{testimonial.company}</p>
                   </div>
                 </div>
               </Card>

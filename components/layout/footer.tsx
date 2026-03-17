@@ -8,17 +8,17 @@ export function Footer() {
   return (
     <footer className="pb-8 pt-6 md:pb-10">
       <Container>
-        <div className="glass-panel panel-outline rounded-[32px] px-8 py-8">
+        <div className="glass-panel panel-outline rounded-[34px] px-8 py-8 md:px-10 md:py-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-xl">
-              <BrandLogo className="w-[176px] sm:w-[220px]" />
+              <BrandLogo className="w-[188px] sm:w-[236px]" imageClassName="drop-shadow-[0_18px_34px_rgba(62,30,104,0.12)]" />
               <div className="mt-4">
-                <Kicker>DigitalPoint LLC</Kicker>
+                <Kicker className="px-4 py-2 text-[11px] font-semibold tracking-[0.22em]">DigitalPoint LLC</Kicker>
               </div>
-              <h2 className="mt-6 text-[32px] font-semibold leading-[1.2] text-ink">
+              <h2 className="mt-7 text-[33px] font-semibold leading-[1.14] tracking-[-0.045em] text-ink">
                 Premium growth systems for teams that want cleaner execution.
               </h2>
-              <p className="mt-6 max-w-lg text-base leading-[1.7] text-muted">
+              <p className="mt-5 max-w-lg text-[16px] leading-[1.8] text-muted">
                 Marketing, remote workforce support, technology, and operations brought together in one scalable model.
               </p>
             </div>

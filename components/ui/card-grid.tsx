@@ -15,5 +15,9 @@ const columnStyles = {
 } as const;
 
 export function CardGrid({ children, className, columns = "three" }: CardGridProps) {
-  return <div className={cn("grid gap-6 md:gap-8 lg:gap-9 md:[grid-auto-rows:1fr]", columnStyles[columns], className)}>{children}</div>;
+  return (
+    <div className={cn("grid gap-6 md:gap-7 lg:gap-8 md:[grid-auto-rows:1fr]", columnStyles[columns], className)}>
+      {children}
+    </div>
+  );
 }

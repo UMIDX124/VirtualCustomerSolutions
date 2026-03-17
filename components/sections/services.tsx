@@ -15,7 +15,7 @@ export function Services() {
           eyebrow="Services"
           title="Three service pillars built to make revenue easier to manage."
           description="The model stays focused: strengthen growth systems, improve revenue marketing, and add the execution capacity needed to keep performance moving."
-          className="mb-14 md:mb-16"
+          className="mb-14 md:mb-[4.5rem]"
         />
 
         <CardGrid columns="three">

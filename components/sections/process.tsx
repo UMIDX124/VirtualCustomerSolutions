@@ -15,14 +15,14 @@ export function Process() {
           eyebrow="Framework"
           title="A four-step framework for turning growth chaos into a system leadership can trust."
           description="The process is designed to move from diagnosis to execution quickly, without skipping the operational layer that makes results sustainable."
-          className="mb-14 md:mb-16"
+          className="mb-14 md:mb-[4.5rem]"
         />
 
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] lg:gap-10">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,270px)_minmax(0,1fr)] lg:gap-8 xl:gap-10">
           <Reveal>
             <div className="rounded-[28px] border border-brand-primary/10 bg-white/72 p-8 shadow-[0_22px_68px_rgba(62,30,104,0.08)] backdrop-blur-xl">
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-primary/56">Agency framework</p>
-              <p className="mt-5 text-[28px] font-semibold leading-[1.08] tracking-[-0.05em] text-ink">4 steps.</p>
+              <p className="mt-5 text-[30px] font-semibold leading-[1.04] tracking-[-0.05em] text-ink">4 steps.</p>
               <p className="mt-4 text-[15px] leading-[1.8] text-muted">
                 One disciplined path from growth diagnosis to scalable execution, with clearer ownership between strategy and delivery.
               </p>

@@ -46,7 +46,7 @@ export function CaseStudies() {
           eyebrow="Case studies"
           title="A few examples of what changes when the operating layer gets fixed."
           description="These anonymized snapshots are meant to show the operating changes behind the numbers, not just the headline result."
-          className="mb-14 md:mb-16"
+          className="mb-14 md:mb-[4.5rem]"
         />
 
         <CardGrid columns="three">
@@ -66,7 +66,7 @@ export function CaseStudies() {
                   </div>
                 }
               >
-                <div className="rounded-[18px] border border-brand-primary/8 bg-brand-primary/[0.03] px-4 py-4 text-[13px] leading-[1.65] text-muted/92">
+                <div className="rounded-[18px] border border-brand-primary/8 bg-brand-primary/[0.03] px-4 py-4 text-[13px] leading-[1.68] text-muted/92">
                   <span className="font-semibold text-ink/78">What changed:</span> {study.summary}
                 </div>
                 <div className="mt-6 border-t border-brand-primary/10 pt-5">

@@ -47,14 +47,14 @@ export function FeatureCard({
       <h3
         className={cn(
           eyebrow || headerSlot ? "mt-5" : "",
-          "text-[21px] font-semibold leading-[1.26] tracking-[-0.035em] md:text-[23px]",
+          "max-w-[18ch] text-[22px] font-semibold leading-[1.22] tracking-[-0.038em] md:text-[24px]",
           isDark ? "text-white" : "text-ink",
         )}
       >
         {title}
       </h3>
       {description ? (
-        <p className={cn("mt-4 text-[15px] leading-[1.78]", isDark ? "text-white/72" : "text-muted/92")}>{description}</p>
+        <p className={cn("mt-4 max-w-[34ch] text-[15px] leading-[1.78]", isDark ? "text-white/72" : "text-muted/92")}>{description}</p>
       ) : null}
       {children ? <div className="mt-6 flex flex-1 flex-col">{children}</div> : null}
     </Card>

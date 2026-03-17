@@ -14,10 +14,10 @@ export function Faq() {
           title="Answers to the questions most teams ask before starting."
           description="Everything is designed to be practical, commercially useful, and clear from the first conversation."
           align="center"
-          className="mb-14 md:mb-16"
+          className="mb-14 md:mb-[4.5rem]"
         />
 
-        <div className="mx-auto max-w-[960px]">
+        <div className="mx-auto max-w-[920px]">
           <FaqAccordion items={faqItems} />
         </div>
       </SectionContainer>

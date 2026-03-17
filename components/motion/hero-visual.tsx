@@ -57,9 +57,9 @@ function MobilePanel({
 function MobileVisual() {
   return (
     <div className="relative xl:hidden">
-      <div className="absolute inset-x-[8%] top-3 h-32 rounded-full bg-[radial-gradient(circle,rgba(84,185,255,0.18),transparent_66%)] blur-3xl" />
+      <div className="absolute inset-x-[10%] top-4 h-28 rounded-full bg-[radial-gradient(circle,rgba(84,185,255,0.16),transparent_66%)] blur-3xl" />
 
-      <div className="hero-dashboard relative overflow-hidden rounded-[26px] border border-white/14 bg-[linear-gradient(180deg,rgba(22,16,37,0.9),rgba(31,20,51,0.82))] p-4 shadow-[0_30px_100px_rgba(12,6,24,0.32)] backdrop-blur-2xl sm:rounded-[30px] sm:p-5">
+      <div className="hero-dashboard relative overflow-hidden rounded-[26px] border border-white/14 bg-[linear-gradient(180deg,rgba(22,16,37,0.9),rgba(31,20,51,0.82))] p-4 shadow-[0_28px_90px_rgba(12,6,24,0.28)] backdrop-blur-xl sm:rounded-[30px] sm:p-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_34%),linear-gradient(160deg,rgba(76,42,132,0.32),transparent_52%)]" />
         <div className="absolute inset-0 grid-accent opacity-15" />
 
@@ -166,16 +166,16 @@ export function HeroVisual() {
     <div ref={ref} onPointerMove={handlePointerMove} onPointerLeave={resetPointer} className="relative">
       <MobileVisual />
 
-      <div aria-hidden="true" className="relative hidden h-[540px] xl:block xl:h-[590px]" style={{ perspective: 1500 }}>
-        <div className="hero-backplate absolute left-[12%] top-[11%] h-[76%] w-[76%] rounded-[40px]" />
+      <div aria-hidden="true" className="relative hidden h-[520px] xl:block xl:h-[560px]" style={{ perspective: 1500 }}>
+        <div className="hero-backplate absolute left-[13%] top-[10%] h-[76%] w-[74%] rounded-[40px]" />
 
         <m.div
-          className="absolute left-1/2 top-[4%] w-[74%] -translate-x-1/2"
+          className="absolute left-1/2 top-[4%] w-[72%] -translate-x-1/2"
           style={lowMotion ? undefined : { x: panelOneX, y: panelOneOffsetY, willChange: "transform" }}
           animate={lowMotion ? undefined : { y: [0, -3, 0] }}
           transition={{ duration: 9.2, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}
         >
-          <div className="overflow-hidden rounded-[34px] border border-white/14 bg-[linear-gradient(180deg,rgba(22,16,37,0.95),rgba(29,19,49,0.88))] p-6 shadow-[0_28px_72px_rgba(10,6,22,0.18)] backdrop-blur-lg">
+          <div className="overflow-hidden rounded-[34px] border border-white/14 bg-[linear-gradient(180deg,rgba(22,16,37,0.95),rgba(29,19,49,0.9))] p-6 shadow-[0_24px_62px_rgba(10,6,22,0.16)] backdrop-blur-lg">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_34%),linear-gradient(150deg,rgba(76,42,132,0.16),transparent_52%)]" />
             <div className="absolute inset-0 grid-accent opacity-12" />
             <div className="absolute inset-x-[18%] top-6 h-10 rounded-full bg-[radial-gradient(circle,rgba(84,185,255,0.14),transparent_70%)] blur-2xl" />
@@ -183,7 +183,7 @@ export function HeroVisual() {
             <div className="relative">
               <div className="flex items-start justify-between gap-5">
                 <div>
-                  <h3 className="text-[30px] font-semibold leading-[1.12] tracking-[-0.045em] text-white">
+                  <h3 className="text-[28px] font-semibold leading-[1.1] tracking-[-0.045em] text-white">
                     Revenue Dashboard
                   </h3>
                   <p className="mt-2 max-w-[22rem] text-[14px] leading-[1.7] text-white/64">
@@ -228,7 +228,7 @@ export function HeroVisual() {
         </m.div>
 
         <m.div
-          className="absolute bottom-[7%] left-[4%] w-[45%]"
+          className="absolute bottom-[6%] left-[4%] w-[44%]"
           style={lowMotion ? undefined : { x: panelTwoX, y: panelTwoOffsetY, willChange: "transform" }}
           animate={lowMotion ? undefined : { y: [0, 4, 0] }}
           transition={{ duration: 8.8, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}
@@ -242,7 +242,7 @@ export function HeroVisual() {
         </m.div>
 
         <m.div
-          className="absolute bottom-[7%] right-[4%] w-[45%]"
+          className="absolute bottom-[6%] right-[4%] w-[44%]"
           style={lowMotion ? undefined : { x: panelThreeX, y: panelThreeOffsetY, willChange: "transform" }}
           animate={lowMotion ? undefined : { y: [0, 4, 0] }}
           transition={{ duration: 9, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}

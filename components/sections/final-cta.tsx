@@ -17,22 +17,26 @@ export function FinalCta() {
       <ParallaxOrnament className="left-10 top-12 h-60 w-60 bg-brand-secondary/18" travel={28} />
       <SectionContainer className="relative">
         <div className="section-frame overflow-hidden border-white/10 bg-white/6 px-8 py-8 backdrop-blur-md md:px-10 md:py-10 lg:px-12 lg:py-14">
-          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,450px)] lg:items-start">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,430px)] lg:items-start lg:gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(0,450px)]">
             <Reveal>
               <Kicker tone="light" className="border-white/16 bg-white/8 px-4 py-2 text-[11px] font-semibold tracking-[0.22em] text-white/76">
                 Free growth audit
               </Kicker>
+              <div
+                aria-hidden="true"
+                className="mt-4 h-px w-20 bg-[linear-gradient(90deg,rgba(255,255,255,0.45),rgba(255,255,255,0.16),transparent)]"
+              />
               <h2
                 id="strategy-call-heading"
-                className="mt-7 max-w-[660px] text-[31px] font-semibold leading-[1.14] tracking-[-0.045em] text-white md:text-[36px] lg:text-[40px]"
+                className="mt-6 max-w-[14ch] text-[35px] font-semibold leading-[1.1] tracking-[-0.052em] text-white md:text-[40px] lg:max-w-[15ch] lg:text-[46px]"
               >
                 If growth feels harder to manage than it should, request a direct audit of the gaps slowing it down.
               </h2>
-              <p className="mt-6 max-w-[560px] text-[16px] leading-[1.78] text-white/72 md:text-[17px]">
+              <p className="mt-6 max-w-[34rem] text-[16px] leading-[1.82] text-white/72 md:text-[17px]">
                 We will review where revenue gets stuck, where execution slows down, and what to fix first across systems, marketing, or delivery.
               </p>
 
-              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+              <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
                 <Button
                   href={siteConfig.primaryCtaHref}
                   className="sm:min-w-[220px]"
@@ -63,7 +67,7 @@ export function FinalCta() {
             <Reveal delay={0.12}>
               <div className="space-y-6">
                 <StrategyCallForm />
-                <Card className="border-white/12 bg-white/8 p-8 text-white">
+                <Card className="border-white/12 bg-white/8 p-7 md:p-8 text-white">
                   <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-white/54">What to expect</p>
                   <div className="mt-6 space-y-4">
                     {[

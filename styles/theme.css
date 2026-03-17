@@ -84,10 +84,12 @@
   h3,
   h4 {
     @apply tracking-[-0.04em];
+    text-wrap: balance;
   }
 
   p {
     @apply text-muted;
+    text-wrap: pretty;
   }
 
   ::selection {
@@ -214,6 +216,12 @@
 
   .hero-dashboard {
     transform-style: preserve-3d;
+  }
+
+  .hero-stage h1,
+  .hero-stage h2,
+  .hero-stage h3 {
+    text-wrap: initial;
   }
 
   .skip-link {

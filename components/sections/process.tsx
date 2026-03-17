@@ -12,23 +12,23 @@ export function Process() {
       <SectionContainer>
         <SectionHeader
           id="process-heading"
-          eyebrow="How it works"
-          title="A clean process designed to create momentum quickly."
-          description="Every phase is built to reduce ambiguity, tighten execution, and give leadership a clearer operating system."
-          className="mb-16"
+          eyebrow="Framework"
+          title="A four-step framework for turning growth chaos into a system leadership can trust."
+          description="The process is designed to move from diagnosis to execution quickly, without skipping the operational layer that makes results sustainable."
+          className="mb-14 md:mb-16"
         />
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] lg:gap-10">
           <Reveal>
-            <div className="rounded-[28px] border border-brand-primary/10 bg-white/64 p-8 shadow-[0_22px_68px_rgba(62,30,104,0.08)] backdrop-blur-xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-primary/56">Delivery rhythm</p>
-              <p className="mt-5 text-[28px] font-semibold leading-[1.08] tracking-[-0.05em] text-ink">4 phases.</p>
+            <div className="rounded-[28px] border border-brand-primary/10 bg-white/72 p-8 shadow-[0_22px_68px_rgba(62,30,104,0.08)] backdrop-blur-xl">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-primary/56">Agency framework</p>
+              <p className="mt-5 text-[28px] font-semibold leading-[1.08] tracking-[-0.05em] text-ink">4 steps.</p>
               <p className="mt-4 text-[15px] leading-[1.8] text-muted">
-                One disciplined path from diagnosis to scaled execution, with less ambiguity between strategy and delivery.
+                One disciplined path from growth diagnosis to scalable execution, with clearer ownership between strategy and delivery.
               </p>
               <div className="mt-8 space-y-3">
                 {["Audit", "Roadmap", "Deployment", "Optimization"].map((label, index) => (
-                  <div key={label} className="flex items-center justify-between rounded-2xl border border-brand-primary/10 bg-white/72 px-4 py-3">
+                  <div key={label} className="flex items-center justify-between rounded-2xl border border-brand-primary/10 bg-white/80 px-4 py-3">
                     <span className="text-[14px] font-medium text-ink/78">{label}</span>
                     <span className="text-[12px] font-semibold uppercase tracking-[0.16em] text-brand-primary/48">0{index + 1}</span>
                   </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { LazyMotion, domAnimation } from "framer-motion";
 
@@ -12,10 +12,12 @@ type MotionProviderProps = {
 };
 
 export function MotionProvider({ children }: MotionProviderProps) {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const [isCompact, setIsCompact] = useState(true);
-  const [isDesktop, setIsDesktop] = useState(false);
-  const [canHover, setCanHover] = useState(false);
+  const [profile, setProfile] = useState({
+    prefersReducedMotion: false,
+    isCompact: true,
+    isDesktop: false,
+    canHover: false,
+  });
 
   useEffect(() => {
     const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -24,10 +26,21 @@ export function MotionProvider({ children }: MotionProviderProps) {
     const hoverQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
 
     const update = () => {
-      setPrefersReducedMotion(reducedMotionQuery.matches);
-      setIsCompact(compactQuery.matches);
-      setIsDesktop(desktopQuery.matches);
-      setCanHover(hoverQuery.matches);
+      const nextProfile = {
+        prefersReducedMotion: reducedMotionQuery.matches,
+        isCompact: compactQuery.matches,
+        isDesktop: desktopQuery.matches,
+        canHover: hoverQuery.matches,
+      };
+
+      setProfile((current) =>
+        current.prefersReducedMotion === nextProfile.prefersReducedMotion &&
+        current.isCompact === nextProfile.isCompact &&
+        current.isDesktop === nextProfile.isDesktop &&
+        current.canHover === nextProfile.canHover
+          ? current
+          : nextProfile,
+      );
     };
 
     update();
@@ -45,24 +58,26 @@ export function MotionProvider({ children }: MotionProviderProps) {
     };
   }, []);
 
-  const lowMotion = prefersReducedMotion || isCompact;
+  const lowMotion = profile.prefersReducedMotion || profile.isCompact;
+  const motionValue = useMemo(
+    () => ({
+      prefersReducedMotion: profile.prefersReducedMotion,
+      isCompact: profile.isCompact,
+      isDesktop: profile.isDesktop,
+      canHover: profile.canHover,
+      lowMotion,
+      allowPointerParallax: profile.isDesktop && profile.canHover && !profile.prefersReducedMotion,
+      allowScrollParallax: !profile.isCompact && !profile.prefersReducedMotion,
+      ambientDriftScale: profile.prefersReducedMotion ? 0 : profile.isCompact ? 0.42 : 1,
+      revealDistance: profile.prefersReducedMotion ? 0 : profile.isCompact ? 14 : 26,
+      counterDuration: profile.isCompact ? 0.9 : 1.35,
+    }),
+    [lowMotion, profile.canHover, profile.isCompact, profile.isDesktop, profile.prefersReducedMotion],
+  );
 
   return (
     <LazyMotion features={domAnimation}>
-      <MotionProfileContext.Provider
-        value={{
-          prefersReducedMotion,
-          isCompact,
-          isDesktop,
-          canHover,
-          lowMotion,
-          allowPointerParallax: isDesktop && canHover && !prefersReducedMotion,
-          allowScrollParallax: !isCompact && !prefersReducedMotion,
-          ambientDriftScale: prefersReducedMotion ? 0 : isCompact ? 0.42 : 1,
-          revealDistance: prefersReducedMotion ? 0 : isCompact ? 14 : 26,
-          counterDuration: isCompact ? 0.9 : 1.35,
-        }}
-      >
+      <MotionProfileContext.Provider value={motionValue}>
         {children}
       </MotionProfileContext.Provider>
     </LazyMotion>

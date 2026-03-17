@@ -13,9 +13,9 @@ export function CaseStudies() {
         <SectionHeader
           id="case-studies-heading"
           eyebrow="Case studies"
-          title="Anonymized outcomes that show what cleaner execution looks like in practice."
-          description="The strongest gains usually come from fixing the system around growth, not just one isolated channel."
-          className="mb-16"
+          title="A few examples of what changes when the operating layer gets fixed."
+          description="These anonymized snapshots are meant to show the operating changes behind the numbers, not just the headline result."
+          className="mb-14 md:mb-16"
         />
 
         <CardGrid columns="three">
@@ -25,10 +25,21 @@ export function CaseStudies() {
                 eyebrow={study.category}
                 title={study.title}
                 description={study.summary}
-                className="overflow-hidden transition duration-300 hover:-translate-y-2 hover:border-brand-primary/18"
-                headerSlot={<span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted/70">Snapshot 0{index + 1}</span>}
+                className="overflow-hidden transition-[transform,border-color,box-shadow] duration-200 hover:-translate-y-1 hover:border-brand-primary/18 hover:shadow-[0_20px_46px_rgba(62,30,104,0.1)]"
+                headerSlot={
+                  <div className="flex w-full items-center justify-between gap-4">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted/70">Snapshot 0{index + 1}</span>
+                    <span className="rounded-full border border-brand-primary/10 bg-brand-primary/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-brand-primary/62">
+                      Anonymized
+                    </span>
+                  </div>
+                }
               >
-                <div className="space-y-4 border-t border-brand-primary/10 pt-6">
+                <div className="rounded-[18px] border border-brand-primary/8 bg-brand-primary/[0.03] px-4 py-4 text-[13px] leading-[1.65] text-muted/92">
+                  <span className="font-semibold text-ink/78">What changed:</span> {study.summary}
+                </div>
+                <div className="mt-5 space-y-4 border-t border-brand-primary/10 pt-5">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-primary/52">Measured outcomes</p>
                   {study.outcomes.map((outcome) => (
                     <div key={outcome} className="flex items-start gap-3.5 text-[15px] leading-[1.8] text-ink/78">
                       <span className="mt-[11px] h-1.5 w-1.5 rounded-full bg-[linear-gradient(135deg,#3E1E68_0%,#E45A92_100%)]" />

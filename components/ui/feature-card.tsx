@@ -27,8 +27,8 @@ export function FeatureCard({
   return (
     <Card
       className={cn(
-        "flex h-full flex-col rounded-[20px] p-8 md:p-9",
-        isDark ? "border-white/12 bg-white/10 text-white" : "border-white/72 bg-white/90",
+        "flex h-full flex-col rounded-[22px] p-7 md:p-8",
+        isDark ? "border-white/12 bg-white/12 text-white" : "border-white/72 bg-white/92",
         className,
       )}
     >
@@ -47,16 +47,16 @@ export function FeatureCard({
       <h3
         className={cn(
           eyebrow || headerSlot ? "mt-5" : "",
-          "text-[22px] font-semibold leading-[1.24] tracking-[-0.035em] md:text-[24px]",
+          "text-[21px] font-semibold leading-[1.26] tracking-[-0.035em] md:text-[23px]",
           isDark ? "text-white" : "text-ink",
         )}
       >
         {title}
       </h3>
       {description ? (
-        <p className={cn("mt-4 text-[15px] leading-[1.82]", isDark ? "text-white/70" : "text-muted/92")}>{description}</p>
+        <p className={cn("mt-4 text-[15px] leading-[1.78]", isDark ? "text-white/72" : "text-muted/92")}>{description}</p>
       ) : null}
-      {children ? <div className="mt-7 flex flex-1 flex-col">{children}</div> : null}
+      {children ? <div className="mt-6 flex flex-1 flex-col">{children}</div> : null}
     </Card>
   );
 }

@@ -10,7 +10,7 @@ type CardGridProps = {
 
 const columnStyles = {
   two: "grid-cols-1 md:grid-cols-2",
-  three: "grid-cols-1 md:grid-cols-2 xl:grid-cols-3",
+  three: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
   four: "grid-cols-1 md:grid-cols-2 xl:grid-cols-4",
 } as const;
 

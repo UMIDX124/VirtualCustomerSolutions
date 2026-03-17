@@ -12,21 +12,20 @@ export function Services() {
       <SectionContainer>
         <SectionHeader
           id="services-heading"
-          eyebrow="Capabilities"
-          title="Everything needed to build a cleaner, faster, more scalable growth operation."
-          description="Each capability is designed to strengthen execution, increase visibility, and create leverage for leadership teams that need more than isolated tactics."
-          align="center"
-          className="mb-16"
+          eyebrow="Services"
+          title="Three service pillars built to make revenue easier to manage."
+          description="The model stays focused: strengthen growth systems, improve revenue marketing, and add the execution capacity needed to keep performance moving."
+          className="mb-14 md:mb-16"
         />
 
         <CardGrid columns="three">
           {services.map((service, index) => (
             <Reveal key={service.title} delay={index * 0.06}>
               <FeatureCard
-                eyebrow={`Capability 0${index + 1}`}
+                eyebrow={`Pillar 0${index + 1}`}
                 title={service.title}
                 description={service.description}
-                className="relative overflow-hidden transition duration-300 hover:-translate-y-2 hover:border-brand-primary/18 hover:shadow-[0_28px_72px_rgba(62,30,104,0.14)]"
+                className="relative overflow-hidden transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-brand-primary/18 hover:shadow-[0_24px_56px_rgba(62,30,104,0.12)]"
               >
                 <div className="mb-6 h-px w-full bg-[linear-gradient(90deg,rgba(62,30,104,0.18),rgba(228,90,146,0.18),transparent)]" />
                 <ul className="space-y-4">

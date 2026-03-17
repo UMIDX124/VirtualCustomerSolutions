@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "DigitalPoint LLC",
   description:
-    "DigitalPoint LLC helps businesses scale through performance-driven marketing, remote workforce solutions, smarter systems, technology support, and operational execution.",
+    "DigitalPoint LLC is a B2B growth systems and marketing automation agency that helps companies improve revenue operations, execution support, and reporting clarity without operational drag.",
   siteUrl: "https://digitalpointllc.com",
   ogImage: "/opengraph-image",
   primaryCtaHref: "#strategy-call-form",
@@ -17,141 +17,97 @@ export const navigation = [
   { label: "FAQ", href: "#faq" },
 ];
 
+export const trustBarItems = [
+  "Growth systems design",
+  "Revenue reporting clarity",
+  "Execution support built into delivery",
+  "Automation where it removes real friction",
+  "Weekly KPI accountability",
+] as const;
+
 export const heroSignals = [
   {
-    title: "Marketing with visibility",
-    description: "Channel strategy, reporting, and funnel optimization tied to revenue goals.",
+    title: "Growth systems",
+    description: "Reporting, workflows, and automation built so leadership can see performance and act faster.",
   },
   {
-    title: "Remote execution capacity",
-    description: "Reliable support across operations, customer touchpoints, and daily delivery.",
+    title: "Revenue marketing",
+    description: "Campaigns, funnels, and reporting tied to qualified pipeline instead of vanity metrics.",
   },
   {
-    title: "Systems that scale cleanly",
-    description: "Technology, SOPs, and automation that remove friction as you grow.",
+    title: "Remote execution",
+    description: "Reliable implementation support that keeps priorities moving without pulling the founder back in.",
   },
 ];
 
 export const painPoints = [
   {
-    title: "Growth feels inconsistent",
+    title: "Revenue growth is not predictable",
     description:
-      "Pipeline spikes happen, but they do not hold because campaigns, follow-up, and reporting are not synchronized.",
+      "Marketing is active, but pipeline quality, conversion rates, and follow-up performance change month to month with no stable operating rhythm.",
   },
   {
-    title: "Execution is fragmented",
+    title: "Execution depends on too many handoffs",
     description:
-      "Too many tools, vendors, and handoffs create slow delivery, missed opportunities, and reactive leadership.",
+      "Leaders are still coordinating freelancers, internal teams, and tools by hand instead of running one system with clear ownership.",
   },
   {
-    title: "Hiring creates drag",
+    title: "Automation is underbuilt",
     description:
-      "You need dependable support fast, but building the right team internally takes time and management overhead.",
+      "Too much work still runs through spreadsheets, inboxes, and manual reporting, which slows response time and hides bottlenecks.",
   },
   {
-    title: "Operations stay manual",
+    title: "Founders still carry the execution load",
     description:
-      "Critical workflows still rely on spreadsheets, follow-up gaps, and knowledge trapped inside a few people.",
-  },
-  {
-    title: "Technology is underused",
-    description:
-      "The stack exists, but the data, automations, and integrations are not configured to actually improve speed.",
-  },
-  {
-    title: "Leaders lack clarity",
-    description:
-      "Without one clear operating rhythm, it is hard to see what is working, what is blocked, and where to invest next.",
-  },
-];
-
-export const solutionPillars = [
-  {
-    title: "Marketing systems that compound",
-    description:
-      "We align acquisition, conversion, lifecycle, and reporting so your marketing becomes measurable and repeatable.",
-  },
-  {
-    title: "Remote workforce support with structure",
-    description:
-      "We help build dependable remote execution capacity across support, operations, coordination, and delivery.",
-  },
-  {
-    title: "Technology and automation that reduce friction",
-    description:
-      "We connect the tools, automations, dashboards, and SOPs that keep your team moving with less manual effort.",
-  },
-  {
-    title: "Operational support that keeps momentum high",
-    description:
-      "We introduce ownership, cadence, and follow-through so growth plans become weekly progress instead of stalled ideas.",
+      "The business may be growing, but leadership is still too involved in delivery, reporting, and follow-through for scale to feel dependable.",
   },
 ];
 
 export const services = [
   {
-    title: "Digital Marketing",
+    title: "Growth Systems",
     description:
-      "Performance marketing, content operations, retention campaigns, and conversion optimization tied to business KPIs.",
-    bullets: ["Paid media strategy", "Funnel optimization", "Lifecycle and reporting"],
+      "We build the reporting and operating layer that gives your team clearer numbers, cleaner handoffs, and fewer manual gaps.",
+    bullets: ["KPI dashboards and scorecards", "CRM flow and lead routing", "Automation, SOPs, and weekly operating cadence"],
   },
   {
-    title: "Remote Workforce Solutions",
+    title: "Revenue Marketing",
     description:
-      "Structured remote support that helps you expand capacity without compromising quality, accountability, or speed.",
-    bullets: ["Remote hiring support", "Role design and onboarding", "Team performance rhythms"],
+      "We improve the path from traffic to qualified pipeline with sharper messaging, stronger conversion points, and better reporting.",
+    bullets: ["Paid and lifecycle strategy", "Landing pages and funnel optimization", "Attribution and pipeline reporting"],
   },
   {
-    title: "Systems & Automation",
+    title: "Remote Execution",
     description:
-      "Systems architecture that turns scattered tools into a cleaner operating environment with fewer manual bottlenecks.",
-    bullets: ["Workflow automation", "Dashboard design", "SOP and process mapping"],
-  },
-  {
-    title: "Operations Support",
-    description:
-      "Execution support across coordination, follow-up, internal operations, and recurring delivery work that slows leadership down.",
-    bullets: ["Project coordination", "Admin and delivery support", "Process accountability"],
-  },
-  {
-    title: "Growth Strategy",
-    description:
-      "Strategic planning that connects goals, resourcing, offers, funnel performance, and execution priorities into one roadmap.",
-    bullets: ["90-day planning", "Offer and channel prioritization", "Execution roadmaps"],
-  },
-  {
-    title: "Performance Optimization",
-    description:
-      "Ongoing reviews that improve speed, tighten spend, increase visibility, and remove friction across the growth engine.",
-    bullets: ["KPI reviews", "Efficiency improvements", "Continuous testing"],
+      "We add structured execution support so campaigns, systems, reporting, and follow-through keep moving without founder dependency.",
+    bullets: ["Remote support pods and coordination", "Weekly delivery accountability", "Execution across ops and marketing"],
   },
 ];
 
-export const stats = [
+export const trustStats = [
   {
-    value: 48,
-    suffix: "h",
-    label: "to shortlist remote support roles",
-    description: "Fast mobilization for teams that need dependable execution capacity.",
-  },
-  {
-    value: 90,
-    suffix: " days",
-    label: "to structure a scalable growth roadmap",
-    description: "Clear priorities, ownership, and performance visibility from the start.",
-  },
-  {
-    value: 6,
-    label: "core growth disciplines aligned",
-    description: "Strategy, marketing, workforce, systems, technology, and operations under one rhythm.",
+    value: 3,
+    suffix: " core pillars",
+    label: "under one operating model",
+    description: "Systems, marketing, and execution aligned in one engagement instead of split across multiple vendors.",
   },
   {
     value: 1,
     suffix: " weekly cadence",
-    label: "for reporting and optimization",
-    description: "Momentum stays visible instead of waiting for monthly guesswork.",
+    label: "for visibility and follow-through",
+    description: "A clear reporting rhythm that keeps priorities visible and follow-through measurable.",
+  },
+  {
+    value: 90,
+    suffix: " day roadmap",
+    label: "to build the next scaling layer",
+    description: "Clear priorities for what to fix, build, automate, and execute first.",
   },
 ];
+
+// Legacy section compatibility exports
+export const stats = trustStats;
+export const solutionPillars = services;
 
 export const industries = [
   "SaaS",
@@ -164,48 +120,65 @@ export const industries = [
 
 export const caseStudies = [
   {
-    title: "Multi-location services brand",
-    category: "Marketing + Operations",
+    title: "B2B service operator",
+    category: "Growth systems + execution",
     summary:
-      "Rebuilt lead flow, response handling, and reporting into one operating system across five locations.",
-    outcomes: ["42% increase in qualified pipeline", "31% faster lead response time", "Unified weekly reporting for leadership"],
+      "Rebuilt reporting, handoff workflow, and weekly delivery routines so leadership could manage pipeline and execution from one view.",
+    outcomes: ["42% increase in qualified pipeline", "31% faster lead response", "Weekly operator scorecard adopted company-wide"],
   },
   {
-    title: "Founder-led B2B SaaS team",
-    category: "Growth Strategy + Remote Support",
+    title: "Founder-led B2B SaaS company",
+    category: "Revenue marketing + remote execution",
     summary:
-      "Combined paid growth, CRM cleanup, and remote execution support to remove founder bottlenecks and improve sales quality.",
-    outcomes: ["27% lift in demo-to-opportunity rate", "22% lower acquisition waste", "Weekly scorecard adopted across revenue teams"],
+      "Combined campaign execution, CRM cleanup, and remote support to take day-to-day revenue operations off the founder's desk.",
+    outcomes: ["27% lift in demo-to-opportunity rate", "22% lower acquisition waste", "Shared weekly scorecard across revenue teams"],
   },
   {
-    title: "eCommerce operator with scaling pressure",
-    category: "Systems + Workforce",
+    title: "Growth-stage eCommerce team",
+    category: "Automation + remote support",
     summary:
-      "Built a remote support pod and automated reporting so campaigns, support, and operations could scale in sync.",
-    outcomes: ["2.4x faster campaign launch velocity", "Backlog cleared in under 3 weeks", "Support and ops workflows standardized"],
+      "Built a remote support pod and automated operating flow so launches, customer operations, and reporting could scale together.",
+    outcomes: ["2.4x faster launch velocity", "Backlog cleared in under 3 weeks", "Support workflows standardized across the team"],
   },
 ];
 
 export const testimonials = [
   {
     quote:
-      "DigitalPoint gave us one operating rhythm instead of five disconnected vendors. Execution became faster, clearer, and easier to lead.",
+      "DigitalPoint gave us one operating system instead of disconnected freelancers and tools. We finally had visibility, rhythm, and execution leadership could trust.",
     name: "COO",
-    company: "Regional services group",
+    company: "Regional B2B services group",
   },
   {
     quote:
-      "They did more than improve marketing. They brought structure, remote support, and accountability to the parts of the business that were slowing growth down.",
+      "They did more than improve marketing. They fixed the reporting and execution layer that was making growth harder to manage behind the scenes.",
     name: "Founder",
     company: "Growth-stage SaaS company",
   },
   {
     quote:
-      "The strategy call led to an actual execution plan. Within weeks, our reporting improved, the team had clarity, and decisions stopped feeling reactive.",
+      "The strategy call turned into a real operating plan. Within weeks, we had clearer reporting, better delegation, and stronger weekly momentum.",
     name: "Managing Partner",
     company: "Professional services firm",
   },
 ];
+
+export const founderProfile = {
+  eyebrow: "Founder-led partnership",
+  title: "You work directly with the person shaping the strategy, priorities, and operating model.",
+  description:
+    "DigitalPoint stays founder-led so strategy does not get diluted between sales, account management, and delivery. You get direct thinking on what to fix first, what to automate, and what the team needs to execute next.",
+  highlights: [
+    "Direct strategic guidance from discovery through implementation",
+    "Systems and execution decisions built for B2B operators",
+    "Recommendations tied to pipeline, delivery, and team capacity",
+  ],
+  proofPoints: [
+    "Founder stays close to discovery, system design, and priorities",
+    "No handoff from sales deck to junior account layer",
+    "Recommendations shaped around operational reality, not generic retainers",
+  ],
+};
 
 export const processSteps = [
   {
@@ -241,34 +214,24 @@ export const benefits = [
 
 export const faqItems = [
   {
-    question: "What types of companies do you work with?",
+    question: "Who is this best for?",
     answer:
-      "DigitalPoint LLC is built for founders, operators, and growth-minded companies that need stronger systems, better execution, and flexible support across marketing and operations.",
+      "DigitalPoint is best for B2B founders, operators, and service-led teams that need clearer reporting, stronger execution, and a more reliable growth operating model.",
   },
   {
-    question: "Do you only provide marketing services?",
+    question: "Do you only do marketing?",
     answer:
-      "No. Marketing is one part of the model. We also help with remote workforce solutions, systems, technology support, and operational execution so growth can actually be sustained.",
-  },
-  {
-    question: "How do your remote workforce solutions work?",
-    answer:
-      "We help identify the right roles, structure responsibilities, support onboarding, and build the reporting rhythm needed to make remote teams productive and accountable.",
+      "No. Marketing is one pillar, but the work also covers systems, automation, and execution support so revenue growth is easier to manage and sustain.",
   },
   {
     question: "What happens on the strategy call?",
     answer:
-      "The strategy call is focused and practical. We look at your growth goals, current bottlenecks, team capacity, and where the biggest leverage exists so the next step is clear.",
+      "We review your current bottlenecks across pipeline, reporting, systems, and team execution so the next practical move is clear.",
   },
   {
-    question: "Can you help with implementation after the strategy phase?",
+    question: "Can you help with implementation too?",
     answer:
-      "Yes. We are designed to move beyond recommendations into execution, with support across systems, campaigns, workflows, and remote operational capacity.",
-  },
-  {
-    question: "How quickly can we get started?",
-    answer:
-      "Most engagements can move quickly once scope is aligned. For teams that need immediate momentum, we prioritize fast discovery, clear ownership, and early wins in the first phase.",
+      "Yes. The work is designed to move beyond advice into implementation support across systems, marketing, reporting, and remote delivery.",
   },
 ];
 
@@ -283,11 +246,11 @@ export const siteSchema = [
     logo: `${siteConfig.siteUrl}/digitalpoint-logo.png`,
     areaServed: "Worldwide",
     knowsAbout: [
-      "Digital marketing",
-      "Remote workforce solutions",
+      "Marketing automation",
+      "Revenue operations",
       "Growth systems",
-      "Technology support",
-      "Operational support",
+      "B2B growth strategy",
+      "Remote execution support",
     ],
   },
   {
@@ -299,8 +262,22 @@ export const siteSchema = [
   },
   {
     "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "B2B Growth Systems and Marketing Automation Agency",
+    url: siteConfig.siteUrl,
+    description: siteConfig.description,
+    about: [
+      "Growth systems",
+      "Marketing automation",
+      "Revenue operations",
+      "B2B growth agency",
+      "Remote execution support",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Digital growth services and remote workforce solutions",
+    serviceType: "Growth systems, marketing automation, revenue operations, and remote execution support",
     provider: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -308,6 +285,17 @@ export const siteSchema = [
     },
     areaServed: "Worldwide",
     description: siteConfig.description,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Core service pillars",
+    itemListElement: services.map((service, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: service.title,
+      description: service.description,
+    })),
   },
   {
     "@context": "https://schema.org",

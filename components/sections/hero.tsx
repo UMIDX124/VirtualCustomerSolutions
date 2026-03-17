@@ -34,56 +34,78 @@ export function Hero() {
                     tone="light"
                     className="border-white/18 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.06))] px-4 py-2 text-[10px] font-semibold tracking-[0.2em] text-white/80 shadow-[0_18px_40px_rgba(10,6,24,0.16)] sm:px-5 sm:py-2.5 sm:text-[11px] sm:tracking-[0.22em]"
                   >
-                    Digital growth + remote workforce infrastructure
+                    Growth systems and automation agency
                   </Kicker>
                 </Reveal>
 
-                <Reveal delay={0.12} className="mt-8 max-w-[620px] xl:mt-10 xl:max-w-[640px]">
+                <Reveal delay={0.12} className="mt-8 max-w-[650px] xl:mt-10 xl:max-w-[660px]">
                   <h1
                     id="hero-heading"
-                    className="text-[31px] font-semibold leading-[1.03] tracking-[-0.055em] text-white sm:text-[34px] md:text-[42px] lg:text-[46px] xl:text-[56px]"
+                    className="text-[31px] font-semibold leading-[1.04] tracking-[-0.052em] text-white sm:text-[35px] md:text-[42px] lg:text-[45px] xl:text-[52px]"
                   >
-                    Build a <span className="hero-text-glow">cinematic growth engine</span> with smarter systems, remote
-                    execution, and marketing that compounds.
+                    Build a <span className="hero-text-glow">clearer revenue system</span> with stronger marketing,
+                    better reporting, and execution your team can actually sustain.
                   </h1>
                 </Reveal>
 
-                <Reveal delay={0.22} className="mt-6 max-w-[34rem] xl:mt-8 xl:max-w-[600px]">
-                  <p className="text-[15px] leading-[1.8] text-white/72 sm:text-[16px] md:text-[17px] xl:text-[18px]">
-                    DigitalPoint LLC helps founders and operators scale through layered systems, expert remote workforce
-                    support, and performance-driven execution that feels coordinated from strategy to delivery.
+                <Reveal delay={0.22} className="mt-7 max-w-[35rem] xl:mt-8 xl:max-w-[610px]">
+                  <p className="text-[15px] leading-[1.78] text-white/72 sm:text-[16px] md:text-[17px] xl:text-[18px]">
+                    DigitalPoint helps B2B companies improve growth systems, marketing automation, revenue operations,
+                    and execution support so pipeline is easier to see, manage, and scale.
                   </p>
                 </Reveal>
 
-                <Reveal delay={0.3} className="mt-7 xl:mt-10">
+                <Reveal delay={0.3} className="mt-8 xl:mt-10">
                   <div className="flex w-full flex-col items-center gap-4 sm:flex-row lg:items-start">
-                    <Button href={siteConfig.primaryCtaHref} className="w-full sm:min-w-[220px] sm:w-auto">
-                      Book a Strategy Call
+                    <Button
+                      href={siteConfig.primaryCtaHref}
+                      className="w-full sm:min-w-[220px] sm:w-auto"
+                      trackingEventName="cta_click"
+                      trackingParams={{ section: "hero", cta_label: "Request Free Growth Audit", cta_type: "primary" }}
+                    >
+                      Request Free Growth Audit
                     </Button>
-                    <Button href="#services" variant="ghost" className="w-full sm:min-w-[190px] sm:w-auto">
-                      Explore Services
+                    <Button
+                      href="#services"
+                      variant="secondary"
+                      className="w-full sm:min-w-[190px] sm:w-auto"
+                      trackingEventName="cta_click"
+                      trackingParams={{ section: "hero", cta_label: "See How We Work", cta_type: "secondary" }}
+                    >
+                      See How We Work
                     </Button>
                   </div>
                 </Reveal>
 
-                <Reveal delay={0.36} className="mt-8 hidden lg:block">
-                  <p className="max-w-[34rem] text-[13px] font-medium uppercase tracking-[0.16em] text-white/42">
-                    Strategic marketing, remote workforce support, systems architecture, and operational execution under one premium operating model.
-                  </p>
+                <Reveal delay={0.36} className="mt-8 max-w-[34rem]">
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {[
+                      "Founder-led review",
+                      "Practical recommendations",
+                      "Clear next steps",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-[18px] border border-white/10 bg-white/5 px-4 py-3 text-[12px] font-medium uppercase tracking-[0.14em] text-white/62"
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
                 </Reveal>
               </div>
 
-              <div className="relative mx-auto w-full max-w-[460px] lg:justify-self-end xl:max-w-[580px]">
+              <div aria-hidden="true" className="relative mx-auto w-full max-w-[460px] lg:justify-self-end xl:max-w-[580px]">
                 <Reveal delay={0.4}>
                   <HeroVisual />
                 </Reveal>
               </div>
             </div>
 
-            <CardGrid columns="three" className="mt-12 w-full max-w-[1080px] self-center md:mt-14 xl:mt-20">
+            <CardGrid columns="three" className="mt-14 w-full max-w-[1080px] self-center md:mt-16 xl:mt-20">
               {heroSignals.map((signal, index) => (
                 <Reveal key={signal.title} delay={0.45 + index * 0.06}>
-                  <div className="hero-signal-card group relative h-full overflow-hidden rounded-[24px] border border-white/12 bg-[linear-gradient(180deg,rgba(24,17,39,0.9),rgba(21,15,34,0.76))] p-6 shadow-[0_28px_82px_rgba(7,4,16,0.24)] backdrop-blur-2xl sm:rounded-[26px] sm:p-7 md:p-8">
+                  <div className="hero-signal-card group relative h-full overflow-hidden rounded-[24px] border border-white/12 bg-[linear-gradient(180deg,rgba(24,17,39,0.92),rgba(21,15,34,0.82))] p-6 shadow-[0_28px_82px_rgba(7,4,16,0.24)] backdrop-blur-2xl sm:rounded-[26px] sm:p-7 md:p-8">
                     <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.48),transparent)]" />
                     <div className="absolute inset-x-8 top-0 h-1 rounded-full bg-[linear-gradient(90deg,#84DBFF_0%,#8B6DFF_48%,#E45A92_100%)] opacity-85" />
 
@@ -97,7 +119,7 @@ export function Hero() {
                       <h3 className="mt-7 text-[22px] font-semibold leading-[1.24] tracking-[-0.04em] text-white md:text-[24px]">
                         {signal.title}
                       </h3>
-                      <p className="mt-5 max-w-[28ch] text-[15px] leading-[1.82] text-white/62">{signal.description}</p>
+                      <p className="mt-5 max-w-[30ch] text-[15px] leading-[1.76] text-white/64">{signal.description}</p>
                     </div>
                   </div>
                 </Reveal>

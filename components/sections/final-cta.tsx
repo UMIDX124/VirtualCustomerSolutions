@@ -20,35 +20,39 @@ export function FinalCta() {
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,450px)] lg:items-start">
             <Reveal>
               <Kicker tone="light" className="border-white/16 bg-white/8 px-4 py-2 text-[11px] font-semibold tracking-[0.22em] text-white/76">
-                Final call to action
+                Free growth audit
               </Kicker>
               <h2
                 id="strategy-call-heading"
-                className="mt-7 max-w-[680px] text-[33px] font-semibold leading-[1.12] tracking-[-0.045em] text-white md:text-[37px] lg:text-[42px]"
+                className="mt-7 max-w-[660px] text-[31px] font-semibold leading-[1.14] tracking-[-0.045em] text-white md:text-[36px] lg:text-[40px]"
               >
-                Ready to build a more scalable growth engine and a stronger execution layer?
+                If growth feels harder to manage than it should, request a direct audit of the gaps slowing it down.
               </h2>
-              <p className="mt-6 max-w-[580px] text-[17px] leading-[1.82] text-white/70">
-                Book a strategy call to map the biggest growth bottlenecks, where remote support can create leverage, and what your next 90
-                days should look like.
+              <p className="mt-6 max-w-[560px] text-[16px] leading-[1.78] text-white/72 md:text-[17px]">
+                We will review where revenue gets stuck, where execution slows down, and what to fix first across systems, marketing, or delivery.
               </p>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <Button href={siteConfig.primaryCtaHref} className="sm:min-w-[220px]">
-                  Book a Strategy Call
+                <Button
+                  href={siteConfig.primaryCtaHref}
+                  className="sm:min-w-[220px]"
+                  trackingEventName="cta_click"
+                  trackingParams={{ section: "final_cta", cta_label: "Request Free Growth Audit", cta_type: "primary" }}
+                >
+                  Request Free Growth Audit
                 </Button>
-                <Button href="#case-studies" variant="ghost" className="sm:min-w-[190px]">
+                <Button href="#case-studies" variant="secondary" className="sm:min-w-[190px]">
                   See Case Studies
                 </Button>
               </div>
 
               <div className="mt-10 grid gap-4 md:grid-cols-3">
                 {[
-                  ["Focused intake", "Clear goals, blockers, and priorities in one discussion."],
-                  ["Fast next step", "You leave with an obvious path instead of vague follow-up."],
-                  ["High-fit onboarding", "We stay selective so delivery quality remains premium."],
+                  ["Founder-led review", "Your audit is reviewed through the lens of systems, marketing, and delivery."],
+                  ["Practical recommendations", "You leave with a clear recommendation, not a vague follow-up."],
+                  ["No-pressure next step", "If there is a fit, we outline the right next move without forcing a sale."],
                 ].map(([title, copy]) => (
-                  <div key={title} className="rounded-[22px] border border-white/10 bg-white/6 px-5 py-5">
+                  <div key={title} className="rounded-[22px] border border-white/12 bg-white/8 px-5 py-5">
                     <p className="text-[13px] font-semibold uppercase tracking-[0.12em] text-white/86">{title}</p>
                     <p className="mt-3 text-[14px] leading-[1.75] text-white/62">{copy}</p>
                   </div>
@@ -63,15 +67,18 @@ export function FinalCta() {
                   <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-white/54">What to expect</p>
                   <div className="mt-6 space-y-4">
                     {[
-                      "A focused discussion around growth goals, bottlenecks, and execution capacity",
-                      "A clear recommendation on the fastest path to better systems and stronger delivery",
-                      "Next-step clarity without a generic agency pitch deck",
+                      "A focused review of goals, bottlenecks, and execution capacity",
+                      "A clear recommendation on what to fix first across systems, marketing, or delivery",
+                      "Next-step clarity without a long generic pitch deck",
                     ].map((item) => (
-                      <div key={item} className="rounded-[22px] border border-white/10 bg-white/6 px-4 py-4 text-[15px] leading-[1.75] text-white/74">
+                      <div key={item} className="rounded-[22px] border border-white/12 bg-white/8 px-4 py-4 text-[15px] leading-[1.75] text-white/76">
                         {item}
                       </div>
                     ))}
                   </div>
+                  <p className="mt-6 text-[13px] leading-[1.7] text-white/54">
+                    This works best for qualified B2B teams that want practical recommendations and a clear implementation path.
+                  </p>
                 </Card>
               </div>
             </Reveal>

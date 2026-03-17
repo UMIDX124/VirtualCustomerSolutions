@@ -1,31 +1,61 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { CTAButton } from "@/components/ui/cta-button";
+import { trackEvent } from "@/lib/analytics";
 import { siteConfig } from "@/lib/content";
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
 const serviceOptions = [
-  "Digital Marketing",
-  "Remote Workforce Solutions",
-  "Systems & Automation",
-  "Operations Support",
-  "Growth Strategy",
-  "Performance Optimization",
+  "Growth Systems",
+  "Revenue Marketing",
+  "Remote Execution",
+  "Need help deciding",
 ];
 
 export function StrategyCallForm() {
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [submitMessage, setSubmitMessage] = useState(
-    "Submit the form and your request will be sent without leaving the page."
+    "Submit the form and request your free growth audit without leaving the page."
   );
   const [currentUrl, setCurrentUrl] = useState(siteConfig.siteUrl);
+  const hasTrackedStart = useRef(false);
+  const [attribution, setAttribution] = useState({
+    utmSource: "",
+    utmMedium: "",
+    utmCampaign: "",
+    utmTerm: "",
+    utmContent: "",
+    referrer: "",
+  });
 
   useEffect(() => {
     setCurrentUrl(window.location.href);
+    const searchParams = new URLSearchParams(window.location.search);
+
+    setAttribution({
+      utmSource: searchParams.get("utm_source") ?? "",
+      utmMedium: searchParams.get("utm_medium") ?? "",
+      utmCampaign: searchParams.get("utm_campaign") ?? "",
+      utmTerm: searchParams.get("utm_term") ?? "",
+      utmContent: searchParams.get("utm_content") ?? "",
+      referrer: document.referrer || "",
+    });
   }, []);
+
+  const handleFormStart = () => {
+    if (hasTrackedStart.current) {
+      return;
+    }
+
+    hasTrackedStart.current = true;
+    trackEvent("lead_form_start", {
+      section: "final_cta",
+      form_type: "free_growth_audit",
+    });
+  };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -34,7 +64,7 @@ export function StrategyCallForm() {
     const formData = new FormData(form);
     const email = String(formData.get("email") ?? "").trim();
     const company = String(formData.get("company") ?? "").trim();
-    const subject = `Strategy Call Request${company ? ` - ${company}` : ""}`;
+    const subject = `Free Growth Audit Request${company ? ` - ${company}` : ""}`;
 
     formData.set("_subject", subject);
     formData.set("_template", "table");
@@ -42,13 +72,20 @@ export function StrategyCallForm() {
     formData.set("_captcha", "false");
     formData.set("_replyto", email);
     formData.set("_url", currentUrl);
+    formData.set("page_url", currentUrl);
+    formData.set("utm_source", attribution.utmSource);
+    formData.set("utm_medium", attribution.utmMedium);
+    formData.set("utm_campaign", attribution.utmCampaign);
+    formData.set("utm_term", attribution.utmTerm);
+    formData.set("utm_content", attribution.utmContent);
+    formData.set("referrer", attribution.referrer);
     formData.set(
       "_autoresponse",
-      "Thank you. We received your strategy call request and will review it shortly."
+      "Thank you. We received your free growth audit request and will review it shortly."
     );
 
     setSubmitState("submitting");
-    setSubmitMessage("Sending your strategy call request...");
+    setSubmitMessage("Sending your free growth audit request...");
 
     try {
       const response = await fetch(siteConfig.formSubmitAction, {
@@ -67,10 +104,15 @@ export function StrategyCallForm() {
 
       form.reset();
       setSubmitState("success");
-      setSubmitMessage("Request sent successfully. We received your booking inquiry and you can stay on this page.");
+      setSubmitMessage("Request sent successfully. We received your audit request and will review it shortly.");
+      trackEvent("lead_form_submit_success", {
+        section: "final_cta",
+        form_type: "free_growth_audit",
+        primary_focus_area: String(formData.get("service") ?? ""),
+      });
     } catch {
       setSubmitState("error");
-      setSubmitMessage("We could not send the request right now. Please try again, or use the direct email link below.");
+      setSubmitMessage("We could not send the request right now. Please try again, or use the direct email option below.");
     }
   };
 
@@ -79,19 +121,39 @@ export function StrategyCallForm() {
       id="strategy-call-form"
       onSubmit={handleSubmit}
       tabIndex={-1}
+      onFocusCapture={handleFormStart}
+      onInputCapture={handleFormStart}
       className="scroll-mt-32 rounded-[30px] border border-white/12 bg-white/8 p-8 text-white shadow-[0_24px_80px_rgba(18,9,35,0.18)] backdrop-blur-md sm:scroll-mt-36"
     >
       <div className="flex flex-col gap-3">
-        <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-white/56">Strategy call form</p>
-        <h3 className="text-[28px] font-semibold leading-[1.16] tracking-[-0.04em] text-white">Tell us what you need.</h3>
+        <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-white/56">Free growth audit</p>
+        <h3 className="text-[28px] font-semibold leading-[1.16] tracking-[-0.04em] text-white">Request a direct founder-led review.</h3>
         <p className="text-[15px] leading-[1.8] text-white/68">
-          Fill out the form and we will send the booking request directly through FormSubmit without redirecting you away from the page.
+          Share a few details and we will review your current growth bottlenecks, systems gaps, and best next step without redirecting you away from the page.
         </p>
+        <div className="mt-2 grid gap-3 sm:grid-cols-3">
+          {[
+            "No-pressure audit",
+            "Practical recommendations",
+            "Clear next steps",
+          ].map((item) => (
+            <div key={item} className="rounded-[18px] border border-white/10 bg-white/6 px-4 py-3 text-[13px] font-medium text-white/78">
+              {item}
+            </div>
+          ))}
+        </div>
       </div>
 
       <input type="hidden" name="_honey" value="" />
       <input type="hidden" name="_url" value={currentUrl} />
       <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="utm_source" value={attribution.utmSource} />
+      <input type="hidden" name="utm_medium" value={attribution.utmMedium} />
+      <input type="hidden" name="utm_campaign" value={attribution.utmCampaign} />
+      <input type="hidden" name="utm_term" value={attribution.utmTerm} />
+      <input type="hidden" name="utm_content" value={attribution.utmContent} />
+      <input type="hidden" name="referrer" value={attribution.referrer} />
+      <input type="hidden" name="page_url" value={currentUrl} />
 
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         <label className="flex flex-col gap-2">
@@ -101,7 +163,7 @@ export function StrategyCallForm() {
             type="text"
             autoComplete="name"
             required
-            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition-colors duration-150 placeholder:text-white/36 focus:border-white/28"
             placeholder="Your full name"
           />
         </label>
@@ -113,7 +175,7 @@ export function StrategyCallForm() {
             type="email"
             autoComplete="email"
             required
-            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition-colors duration-150 placeholder:text-white/36 focus:border-white/28"
             placeholder="you@company.com"
           />
         </label>
@@ -125,7 +187,7 @@ export function StrategyCallForm() {
             type="text"
             autoComplete="organization"
             required
-            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition-colors duration-150 placeholder:text-white/36 focus:border-white/28"
             placeholder="Company name"
           />
         </label>
@@ -136,21 +198,21 @@ export function StrategyCallForm() {
             name="website"
             type="url"
             autoComplete="url"
-            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition-colors duration-150 placeholder:text-white/36 focus:border-white/28"
             placeholder="https://yourcompany.com"
           />
         </label>
 
         <label className="flex flex-col gap-2">
-          <span className="text-[14px] font-medium text-white">Primary need</span>
+          <span className="text-[14px] font-medium text-white">Primary focus area</span>
           <select
             name="service"
             required
             defaultValue=""
-            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition focus:border-white/28"
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition-colors duration-150 focus:border-white/28"
           >
             <option value="" disabled className="text-ink">
-              Select a service
+              Select the closest fit
             </option>
             {serviceOptions.map((option) => (
               <option key={option} value={option} className="text-ink">
@@ -161,38 +223,53 @@ export function StrategyCallForm() {
         </label>
 
         <label className="flex flex-col gap-2">
-          <span className="text-[14px] font-medium text-white">Team size</span>
+          <span className="text-[14px] font-medium text-white">Monthly revenue or team size</span>
           <input
-            name="teamSize"
+            name="companyScale"
             type="text"
-            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
-            placeholder="e.g. 10-25 employees"
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition-colors duration-150 placeholder:text-white/36 focus:border-white/28"
+            placeholder="e.g. 10-25 employees or $100k/mo"
           />
         </label>
 
         <label className="flex flex-col gap-2 md:col-span-2">
-          <span className="text-[14px] font-medium text-white">Goals or bottlenecks</span>
+          <span className="text-[14px] font-medium text-white">Biggest bottleneck right now</span>
+          <input
+            name="bottleneck"
+            type="text"
+            required
+            className="rounded-[20px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition-colors duration-150 placeholder:text-white/36 focus:border-white/28"
+            placeholder="e.g. poor lead handoff, weak reporting, founder bottleneck, inconsistent pipeline"
+          />
+        </label>
+
+        <label className="flex flex-col gap-2 md:col-span-2">
+          <span className="text-[14px] font-medium text-white">What would a good outcome look like?</span>
           <textarea
             name="goals"
             rows={5}
             required
-            className="min-h-32 rounded-[24px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition placeholder:text-white/36 focus:border-white/28"
-            placeholder="Tell us what you want to improve, what is slowing growth down, and what support would be most valuable."
+            className="min-h-32 rounded-[24px] border border-white/12 bg-white/8 px-4 py-3 text-base text-white outline-none transition-colors duration-150 placeholder:text-white/36 focus:border-white/28"
+            placeholder="Tell us what you want to improve over the next 90 days and where support would be most useful."
           />
         </label>
       </div>
 
       <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <CTAButton type="submit" className="min-w-[220px]" disabled={submitState === "submitting"}>
-          {submitState === "submitting" ? "Sending Request..." : "Send Strategy Call Request"}
+          {submitState === "submitting" ? "Sending Audit Request..." : "Request Free Growth Audit"}
         </CTAButton>
         <a
           href={siteConfig.bookingEmailHref}
-          className="text-[14px] leading-[1.7] text-[#FFCAD7] transition hover:text-white"
+          className="text-[14px] leading-[1.7] text-[#FFCAD7] transition-colors duration-150 hover:text-white"
         >
           Prefer direct email? {siteConfig.email}
         </a>
       </div>
+
+      <p className="mt-4 text-[13px] leading-[1.7] text-white/54">
+        No-pressure review. If there is a fit, we will share practical recommendations and a clear next step.
+      </p>
 
       <div
         aria-live="polite"

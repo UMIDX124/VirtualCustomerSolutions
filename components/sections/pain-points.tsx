@@ -14,9 +14,9 @@ export function PainPoints() {
       <SectionContainer>
         <SectionHeader
           id="pain-points-heading"
-          eyebrow="The friction"
-          title="Most businesses do not have a growth problem. They have an execution problem."
-          description="When marketing, operations, systems, and support are disconnected, scale becomes expensive, slow, and hard to manage."
+          eyebrow="The problem"
+          title="Most teams do not have a lead problem. They have a systems and execution problem."
+          description="When reporting, automation, marketing, and follow-through are disconnected, revenue becomes harder to forecast and harder to scale."
           className="mb-16"
         />
 
@@ -26,7 +26,7 @@ export function PainPoints() {
               <FeatureCard
                 title={point.title}
                 description={point.description}
-                className="transition duration-300 hover:-translate-y-1.5 hover:border-brand-primary/20 hover:shadow-[0_26px_70px_rgba(62,30,104,0.14)]"
+                className="transition-[transform,border-color,box-shadow] duration-200 hover:-translate-y-1 hover:border-brand-primary/20 hover:shadow-[0_22px_52px_rgba(62,30,104,0.12)]"
                 headerSlot={
                   <>
                     <span className="inline-flex size-10 items-center justify-center rounded-2xl border border-brand-primary/12 bg-brand-primary/6 text-[13px] font-semibold text-brand-primary">

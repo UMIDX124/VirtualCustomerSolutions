@@ -25,7 +25,7 @@ export function SectionHeader({
   const isLight = tone === "light";
 
   return (
-    <Reveal className={cn(isCentered ? "mx-auto max-w-[780px] text-center" : "max-w-[760px]", className)}>
+    <Reveal className={cn(isCentered ? "mx-auto max-w-[760px] text-center" : "max-w-[740px]", className)}>
       <Kicker
         tone={isLight ? "light" : "default"}
         className={cn(
@@ -38,7 +38,7 @@ export function SectionHeader({
       <h2
         id={id}
         className={cn(
-          "mt-7 text-[33px] font-semibold leading-[1.14] tracking-[-0.045em] md:text-[37px] lg:text-[42px]",
+          "mt-7 text-[31px] font-semibold leading-[1.14] tracking-[-0.045em] md:text-[36px] lg:text-[40px]",
           isLight ? "text-white" : "text-ink",
         )}
       >
@@ -46,8 +46,8 @@ export function SectionHeader({
       </h2>
       <p
         className={cn(
-          "mt-5 text-[16px] leading-[1.8] md:text-[17px]",
-          isCentered ? "mx-auto max-w-[680px]" : "max-w-[680px]",
+          "mt-5 text-[16px] leading-[1.78] md:text-[17px]",
+          isCentered ? "mx-auto max-w-[640px]" : "max-w-[640px]",
           isLight ? "text-white/70" : "text-muted/95",
         )}
       >

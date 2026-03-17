@@ -72,7 +72,7 @@ export function Navbar() {
 
               <div className="hidden lg:block">
                 <Button href={siteConfig.primaryCtaHref} className="px-7">
-                  Book a Strategy Call
+                  Request Free Growth Audit
                 </Button>
               </div>
 
@@ -114,7 +114,7 @@ export function Navbar() {
                       </a>
                     ))}
                     <Button href={siteConfig.primaryCtaHref} className="mt-3 w-full">
-                      Book a Strategy Call
+                      Request Free Growth Audit
                     </Button>
                   </nav>
                 </m.div>

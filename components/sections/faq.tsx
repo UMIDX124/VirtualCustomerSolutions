@@ -11,10 +11,10 @@ export function Faq() {
         <SectionHeader
           id="faq-heading"
           eyebrow="FAQ"
-          title="Answers to the questions most teams ask before they commit."
-          description="The right growth partner should reduce complexity, not add more of it. Here is how the engagement typically works."
+          title="Answers to the questions most teams ask before starting."
+          description="Everything is designed to be practical, commercially useful, and clear from the first conversation."
           align="center"
-          className="mb-16"
+          className="mb-14 md:mb-16"
         />
 
         <div className="mx-auto max-w-[960px]">

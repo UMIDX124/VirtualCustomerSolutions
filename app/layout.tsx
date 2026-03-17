@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { Footer } from "@/components/layout/footer";
 import { MotionProvider } from "@/components/motion/motion-provider";
 import { Navbar } from "@/components/layout/navbar";
@@ -17,18 +18,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: "DigitalPoint LLC | Digital Growth & Remote Workforce Solutions",
+    default: "DigitalPoint LLC | Growth Systems, Revenue Operations, and Marketing Automation",
     template: "%s | DigitalPoint LLC",
   },
   applicationName: siteConfig.name,
   description: siteConfig.description,
   keywords: [
-    "digital growth partner",
-    "remote workforce solutions",
-    "digital marketing services",
+    "growth systems agency",
+    "marketing automation agency",
+    "revenue operations agency",
+    "B2B growth agency",
+    "remote execution support",
+    "growth systems consultant",
     "growth systems",
-    "technology support",
-    "operational support",
+    "marketing automation",
+    "revenue operations",
   ],
   alternates: {
     canonical: "/",
@@ -51,7 +55,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "DigitalPoint LLC | Digital Growth & Remote Workforce Solutions",
+    title: "DigitalPoint LLC | Growth Systems, Revenue Operations, and Marketing Automation",
     description: siteConfig.description,
     siteName: "DigitalPoint LLC",
     url: siteConfig.siteUrl,
@@ -67,7 +71,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DigitalPoint LLC | Digital Growth & Remote Workforce Solutions",
+    title: "DigitalPoint LLC | Growth Systems, Revenue Operations, and Marketing Automation",
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
@@ -87,9 +91,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans`}>
+        <GoogleAnalytics measurementId={measurementId} />
         <MotionProvider>
           <a href="#main-content" className="skip-link">
             Skip to content

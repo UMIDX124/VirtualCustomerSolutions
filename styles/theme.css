@@ -103,7 +103,7 @@
 
 @layer components {
   .glass-panel {
-    @apply rounded-2xl border border-white/72 bg-white/88 backdrop-blur-xl;
+    @apply rounded-2xl border border-white/72 bg-white/90 backdrop-blur-xl;
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.76),
       0 22px 70px rgba(34, 18, 62, 0.09);
@@ -114,7 +114,7 @@
   }
 
   .section-frame {
-    @apply relative overflow-hidden rounded-[32px] border border-white/60 bg-white/64 backdrop-blur-xl;
+    @apply relative overflow-hidden rounded-[32px] border border-white/60 bg-white/68 backdrop-blur-xl;
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.58),
       var(--hero-shadow);

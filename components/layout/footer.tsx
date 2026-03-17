@@ -24,7 +24,7 @@ export function Footer() {
             </div>
 
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Button href={siteConfig.primaryCtaHref}>Book a Strategy Call</Button>
+              <Button href={siteConfig.primaryCtaHref}>Request Free Growth Audit</Button>
               <Button href="#services" variant="secondary">
                 Explore Services
               </Button>

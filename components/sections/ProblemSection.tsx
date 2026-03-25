@@ -53,8 +53,8 @@ export function ProblemSection() {
             <StaggerItem key={problem.title}>
               <GlassCard className="p-6 h-full">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-red-700/10 flex items-center justify-center flex-shrink-0">
-                    <problem.icon className="w-6 h-6 text-red-600" />
+                  <div className="w-12 h-12 rounded-xl bg-[#41431B]/10 flex items-center justify-center flex-shrink-0">
+                    <problem.icon className="w-6 h-6 text-[#AEB784]" />
                   </div>
                   <div>
                     <h3 className="font-display font-semibold text-text-primary mb-2">

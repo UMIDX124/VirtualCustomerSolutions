@@ -121,7 +121,7 @@ export default function ServicesPage() {
                   <ul className="space-y-3">
                     {category.items.map((item) => (
                       <li key={item.name} className="flex items-start gap-3">
-                        <span className="w-2 h-2 rounded-full bg-red-600 mt-2 flex-shrink-0" />
+                        <span className="w-2 h-2 rounded-full bg-[#AEB784] mt-2 flex-shrink-0" />
                         <div>
                           <span className="font-medium text-text-primary">{item.name}</span>
                           <span className="text-text-muted"> — {item.description}</span>
@@ -139,7 +139,7 @@ export default function ServicesPage() {
                   </p>
                   <a
                     href="/free-audit"
-                    className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-[#41431B] hover:bg-[#AEB784] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300"
                   >
                     Get Started →
                   </a>
@@ -158,7 +158,7 @@ export default function ServicesPage() {
             </p>
             <a
               href="/free-audit"
-              className="inline-flex items-center gap-2 bg-red-700 hover:bg-red-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-[#41431B] hover:bg-[#AEB784] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300"
             >
               🎯 Get Your FREE Digital Audit
             </a>

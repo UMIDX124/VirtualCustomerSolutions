@@ -23,8 +23,8 @@ export function HeroSection() {
       
       {/* Radial Glows */}
       <div className="absolute inset-0 radial-glow" />
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#FF0000]/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#171A1F]/10 rounded-full blur-[120px]" />
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#41431B]/10 rounded-full blur-[120px]" />
+      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#AEB784]/10 rounded-full blur-[120px]" />
 
       {/* Floating Orbs */}
       <motion.div 
@@ -32,14 +32,14 @@ export function HeroSection() {
           y: [0, -20, 0],
         }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 left-1/4 w-64 h-64 bg-[#FF0000]/5 rounded-full blur-3xl" 
+        className="absolute top-1/3 left-1/4 w-64 h-64 bg-[#41431B]/5 rounded-full blur-3xl" 
       />
       <motion.div 
         animate={{ 
           y: [0, 20, 0],
         }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-[#171A1F]/5 rounded-full blur-3xl" 
+        className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-[#AEB784]/5 rounded-full blur-3xl" 
       />
 
       <div className="container-wide relative z-10 pt-32 pb-20">
@@ -53,7 +53,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[rgba(255,0,0,0.3)] text-[#FF0000] text-sm mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[rgba(65,67,27,0.3)] text-[#41431B] text-sm mb-6"
             >
               <Sparkles size="sm" className="animate-pulse" />
               <span className="tracking-wide">AI-Powered Operations</span>
@@ -87,7 +87,7 @@ export function HeroSection() {
             >
               <Button
                 onClick={() => navigateTo('free-audit')}
-                className="group bg-gradient-to-r from-[#FF0000] to-[#CC0000] hover:shadow-[0_0_40px_rgba(255,0,0,0.5)] text-black font-bold px-8 py-6 text-lg transition-all duration-300"
+                className="group bg-gradient-to-r from-[#41431B] to-[#2E3013] hover:shadow-[0_0_40px_rgba(65,67,27,0.5)] text-black font-bold px-8 py-6 text-lg transition-all duration-300"
               >
                 🎯 Get Your Free Audit
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -95,7 +95,7 @@ export function HeroSection() {
               <Button
                 onClick={() => navigateTo('services')}
                 variant="outline"
-                className="border border-[rgba(255,0,0,0.3)] hover:border-[#FF0000] hover:bg-[rgba(255,0,0,0.1)] text-white px-8 py-6 text-lg bg-transparent backdrop-blur-sm"
+                className="border border-[rgba(65,67,27,0.3)] hover:border-[#41431B] hover:bg-[rgba(65,67,27,0.1)] text-white px-8 py-6 text-lg bg-transparent backdrop-blur-sm"
               >
                 Explore Services
               </Button>
@@ -109,9 +109,9 @@ export function HeroSection() {
               className="flex flex-wrap gap-6 mt-10 justify-center lg:justify-start"
             >
               {[
-                { icon: Zap, label: '500+ Clients', color: '#FF0000' },
-                { icon: Globe, label: '50+ Countries', color: '#171A1F' },
-                { icon: Cpu, label: 'AI-Powered', color: '#FF0000' },
+                { icon: Zap, label: '500+ Clients', color: '#41431B' },
+                { icon: Globe, label: '50+ Countries', color: '#AEB784' },
+                { icon: Cpu, label: 'AI-Powered', color: '#41431B' },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-2 text-gray-500">
                   <item.icon size="16" style={{ color: item.color }} />
@@ -136,7 +136,7 @@ export function HeroSection() {
                 className="w-full h-full liquid-glass rounded-3xl flex items-center justify-center relative"
                 style={{
                   boxShadow: `
-                    0 0 60px rgba(255,0,0,0.2),
+                    0 0 60px rgba(65,67,27,0.2),
                     0 0 100px rgba(65,210,197,0.1),
                     inset 0 0 60px rgba(255,255,255,0.05)
                   `
@@ -146,13 +146,13 @@ export function HeroSection() {
                 <svg viewBox="0 0 120 120" className="w-48 h-48">
                   <defs>
                     <linearGradient id="robotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#FF0000" />
-                      <stop offset="50%" stopColor="#171A1F" />
-                      <stop offset="100%" stopColor="#FF0000" />
+                      <stop offset="0%" stopColor="#41431B" />
+                      <stop offset="50%" stopColor="#AEB784" />
+                      <stop offset="100%" stopColor="#41431B" />
                     </linearGradient>
                     <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#171A1F" />
-                      <stop offset="100%" stopColor="#FF0000" />
+                      <stop offset="0%" stopColor="#AEB784" />
+                      <stop offset="100%" stopColor="#41431B" />
                     </linearGradient>
                     <filter id="robotGlow">
                       <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -163,7 +163,7 @@ export function HeroSection() {
                     </filter>
                     <filter id="neonGlow">
                       <feGaussianBlur stdDeviation="2" result="blur"/>
-                      <feFlood floodColor="#FF0000" floodOpacity="0.8"/>
+                      <feFlood floodColor="#41431B" floodOpacity="0.8"/>
                       <feComposite in2="blur" operator="in"/>
                       <feMerge>
                         <feMergeNode/>
@@ -217,12 +217,12 @@ export function HeroSection() {
                   />
                   
                   {/* Antenna */}
-                  <line x1="60" y1="3" x2="60" y2="20" stroke="#171A1F" strokeWidth="2" />
-                  <circle cx="60" cy="5" r="3" fill="#FF0000" className="animate-pulse" />
+                  <line x1="60" y1="3" x2="60" y2="20" stroke="#AEB784" strokeWidth="2" />
+                  <circle cx="60" cy="5" r="3" fill="#41431B" className="animate-pulse" />
                   
                   {/* Side Accents */}
-                  <circle cx="25" cy="50" r="4" fill="#171A1F" className="animate-pulse" />
-                  <circle cx="95" cy="50" r="4" fill="#171A1F" className="animate-pulse" />
+                  <circle cx="25" cy="50" r="4" fill="#AEB784" className="animate-pulse" />
+                  <circle cx="95" cy="50" r="4" fill="#AEB784" className="animate-pulse" />
                 </svg>
                 
                 {/* Floating particles */}
@@ -232,7 +232,7 @@ export function HeroSection() {
                     opacity: [0.5, 1, 0.5]
                   }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#FF0000] blur-[2px]"
+                  className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#41431B] blur-[2px]"
                 />
                 <motion.div
                   animate={{ 
@@ -240,7 +240,7 @@ export function HeroSection() {
                     opacity: [0.5, 1, 0.5]
                   }}
                   transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-                  className="absolute bottom-8 left-4 w-2 h-2 rounded-full bg-[#171A1F] blur-[2px]"
+                  className="absolute bottom-8 left-4 w-2 h-2 rounded-full bg-[#AEB784] blur-[2px]"
                 />
               </motion.div>
             </div>

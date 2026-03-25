@@ -71,7 +71,7 @@ export default function BlogPage() {
                       <span>{post.readTime}</span>
                     </div>
                     
-                    <h2 className="font-display text-xl font-bold text-text-primary mb-3 group-hover:text-red-600 transition-colors">
+                    <h2 className="font-display text-xl font-bold text-text-primary mb-3 group-hover:text-[#AEB784] transition-colors">
                       {post.title}
                     </h2>
                     
@@ -81,7 +81,7 @@ export default function BlogPage() {
                   </div>
                   
                   {/* Read More */}
-                  <div className="flex items-center text-red-600 font-medium text-sm group-hover:text-red-700 transition-colors">
+                  <div className="flex items-center text-[#AEB784] font-medium text-sm group-hover:text-[#41431B] transition-colors">
                     Read More →
                   </div>
                 </GlassCard>
@@ -102,11 +102,11 @@ export default function BlogPage() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 h-12 px-4 rounded-lg bg-surface-glass border border-border-glass text-text-primary focus:outline-none focus:ring-2 focus:ring-red-700"
+                  className="flex-1 h-12 px-4 rounded-lg bg-surface-glass border border-border-glass text-text-primary focus:outline-none focus:ring-2 focus:ring-[#AEB784]"
                 />
                 <button
                   type="submit"
-                  className="bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition-all"
+                  className="bg-[#41431B] hover:bg-[#AEB784] text-white font-semibold px-6 py-3 rounded-lg transition-all"
                 >
                   Subscribe
                 </button>

@@ -230,8 +230,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Theme color for mobile browsers */}
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="msapplication-TileColor" content="#FF0000" />
+        <meta name="theme-color" content="#F8F3E1" />
+        <meta name="msapplication-TileColor" content="#41431B" />
       </head>
       <body
         className={`${merriweather.variable} ${roboto.variable} antialiased`}

@@ -9,7 +9,7 @@ const services = [
     icon: Brain,
     title: 'AI-Powered CX',
     description: 'Intelligent customer experience solutions powered by advanced AI algorithms.',
-    gradient: 'from-[#FF0000] to-[#CC0000]',
+    gradient: 'from-[#41431B] to-[#2E3013]',
     features: ['AI Chatbots', 'Sentiment Analysis', 'Predictive Support', 'Smart Routing'],
     size: 'large',
   },
@@ -17,7 +17,7 @@ const services = [
     icon: Cloud,
     title: 'Cloud Infrastructure',
     description: 'Scalable cloud solutions designed for performance and reliability.',
-    gradient: 'from-[#171A1F] to-[#0D1117]',
+    gradient: 'from-[#AEB784] to-[#8A9A5E]',
     features: ['Cloud Migration', 'AWS/Azure/GCP', 'Serverless Architecture', '24/7 Monitoring'],
     size: 'medium',
   },
@@ -25,7 +25,7 @@ const services = [
     icon: Shield,
     title: 'Cybersecurity',
     description: 'Enterprise-grade security to protect your digital assets.',
-    gradient: 'from-[#171A1F] to-[#FF0000]',
+    gradient: 'from-[#AEB784] to-[#41431B]',
     features: ['Threat Detection', 'Compliance', 'Penetration Testing', 'Security Audit'],
     size: 'small',
   },
@@ -33,7 +33,7 @@ const services = [
     icon: Workflow,
     title: 'Digital Engineering',
     description: 'Custom software solutions built for scale and efficiency.',
-    gradient: 'from-[#FF0000] to-[#171A1F]',
+    gradient: 'from-[#41431B] to-[#AEB784]',
     features: ['Custom Development', 'API Integration', 'Microservices', 'DevOps'],
     size: 'small',
   },
@@ -41,7 +41,7 @@ const services = [
     icon: MessageSquare,
     title: 'Remote Workforce',
     description: 'Dedicated remote teams that integrate seamlessly with your operations.',
-    gradient: 'from-[#171A1F] to-[#FF0000]',
+    gradient: 'from-[#AEB784] to-[#41431B]',
     features: ['Virtual Assistants', 'Tech Support', 'Sales & Marketing', '24/7 Coverage'],
     size: 'medium',
   },
@@ -49,7 +49,7 @@ const services = [
     icon: Zap,
     title: 'Digital Marketing',
     description: 'Data-driven marketing strategies that deliver measurable results.',
-    gradient: 'from-[#FF0000] to-[#CC0000]',
+    gradient: 'from-[#41431B] to-[#2E3013]',
     features: ['SEO & PPC', 'Social Media', 'Content Strategy', 'Analytics'],
     size: 'small',
   },
@@ -63,7 +63,7 @@ export function PillarsSection() {
       {/* Background */}
       <div className="absolute inset-0 bg-black" />
       <div className="absolute inset-0 grid-bg opacity-20" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#FF0000]/5 rounded-full blur-[150px]" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#41431B]/5 rounded-full blur-[150px]" />
 
       <div className="container-wide relative z-10">
         {/* Section Header */}
@@ -73,7 +73,7 @@ export function PillarsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full glass border border-[rgba(255,0,0,0.3)] text-[#FF0000] text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full glass border border-[rgba(65,67,27,0.3)] text-[#41431B] text-sm font-medium mb-4">
             Our Services
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
@@ -118,7 +118,7 @@ export function PillarsSection() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-display text-xl font-bold text-white mb-2 group-hover:text-[#FF0000] transition-colors">
+                <h3 className="font-display text-xl font-bold text-white mb-2 group-hover:text-[#41431B] transition-colors">
                   {service.title}
                 </h3>
 
@@ -132,7 +132,7 @@ export function PillarsSection() {
                   {service.features.slice(0, 3).map((feature) => (
                     <span 
                       key={feature}
-                      className="text-xs px-2 py-1 rounded-full bg-[rgba(255,0,0,0.1)] text-[#FF0000] border border-[rgba(255,0,0,0.2)]"
+                      className="text-xs px-2 py-1 rounded-full bg-[rgba(65,67,27,0.1)] text-[#41431B] border border-[rgba(65,67,27,0.2)]"
                     >
                       {feature}
                     </span>
@@ -150,7 +150,7 @@ export function PillarsSection() {
               </div>
 
               {/* Hover Glow Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-br from-[#FF0000]/20 to-[#171A1F]/20 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500" />
+              <div className="absolute -inset-1 bg-gradient-to-br from-[#41431B]/20 to-[#AEB784]/20 opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500" />
             </motion.div>
           ))}
         </div>

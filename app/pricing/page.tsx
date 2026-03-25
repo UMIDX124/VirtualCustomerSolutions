@@ -144,7 +144,7 @@ export default function PricingPage() {
       <div className="container-wide">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-12">
-          <div className="inline-block bg-red-700/10 text-red-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-block bg-[#41431B]/10 text-[#AEB784] px-4 py-2 rounded-full text-sm font-medium mb-6">
             🎁 LAUNCH SPECIAL: First month 50% OFF on any package!
           </div>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-4">
@@ -163,17 +163,17 @@ export default function PricingPage() {
           {packages.map((pkg, index) => (
             <FadeUp key={pkg.name} delay={index * 0.1}>
               <GlassCard 
-                className={`p-6 lg:p-8 h-full flex flex-col ${pkg.highlighted ? 'border-2 border-red-600 relative' : ''}`}
+                className={`p-6 lg:p-8 h-full flex flex-col ${pkg.highlighted ? 'border-2 border-[#AEB784] relative' : ''}`}
               >
                 {pkg.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-red-700 text-white text-sm font-medium rounded-full">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#41431B] text-white text-sm font-medium rounded-full">
                     ⭐ Most Popular
                   </div>
                 )}
                 
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-2">{pkg.badge}</div>
-                  <div className="inline-block bg-red-700/10 text-red-600 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  <div className="inline-block bg-[#41431B]/10 text-[#AEB784] px-3 py-1 rounded-full text-sm font-medium mb-4">
                     {pkg.badgeText}
                   </div>
                   <h3 className="font-display text-2xl font-bold text-text-primary mb-2">
@@ -183,12 +183,12 @@ export default function PricingPage() {
                     <span className="text-text-muted line-through">{pkg.originalPrice}</span>
                   </div>
                   <div className="mb-2">
-                    <span className="text-4xl font-bold text-red-600">{pkg.price}</span>
+                    <span className="text-4xl font-bold text-[#AEB784]">{pkg.price}</span>
                     <span className="text-text-muted text-sm">{pkg.period}</span>
                   </div>
                   {pkg.firstMonth && (
                     <p className="text-sm text-text-muted mb-2">
-                      First month: <span className="text-red-600 font-semibold">{pkg.firstMonth}</span>
+                      First month: <span className="text-[#AEB784] font-semibold">{pkg.firstMonth}</span>
                     </p>
                   )}
                   {pkg.offer && (
@@ -220,7 +220,7 @@ export default function PricingPage() {
                   <p className="text-xs text-text-muted mb-2">Bonuses included:</p>
                   <ul className="space-y-1">
                     {pkg.bonuses.map((bonus) => (
-                      <li key={bonus} className="text-xs text-red-600">
+                      <li key={bonus} className="text-xs text-[#AEB784]">
                         {bonus}
                       </li>
                     ))}
@@ -234,7 +234,7 @@ export default function PricingPage() {
 
                 <Button
                   onClick={() => navigateTo('free-audit')}
-                  className={`w-full ${pkg.highlighted ? 'bg-red-700 hover:bg-red-600' : 'bg-surface-glass border border-border-glass hover:bg-red-700/10'}`}
+                  className={`w-full ${pkg.highlighted ? 'bg-[#41431B] hover:bg-[#AEB784]' : 'bg-surface-glass border border-border-glass hover:bg-[#41431B]/10'}`}
                 >
                   {pkg.highlighted ? 'Start Growing — Claim Your Free Month' : 'Get Started'}
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -246,7 +246,7 @@ export default function PricingPage() {
 
         {/* Launch Offers */}
         <FadeUp className="mb-20">
-          <div className="bg-gradient-to-r from-red-700/20 to-red-500/20 border border-border-glass rounded-2xl p-8 text-center">
+          <div className="bg-gradient-to-r from-[#41431B]/20 to-[#AEB784]/20 border border-border-glass rounded-2xl p-8 text-center">
             <h2 className="font-display text-2xl font-bold text-text-primary mb-6">
               🚀 Launch Offers — Limited Time!
             </h2>

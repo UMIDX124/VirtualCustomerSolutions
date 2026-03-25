@@ -164,7 +164,7 @@ export function MetricDisplay({ value, label, prefix, suffix, className }: Metri
   return (
     <div className={cn('text-center', className)}>
       <div className="font-display text-3xl md:text-4xl font-bold text-text-primary tabular-nums">
-        {prefix && <span className="text-red-600">{prefix}</span>}
+        {prefix && <span className="text-[#AEB784]">{prefix}</span>}
         {value}
         {suffix && <span className="text-text-secondary text-xl">{suffix}</span>}
       </div>
@@ -249,7 +249,7 @@ export function SectionHeader({ eyebrow, title, description, align = 'center', c
   return (
     <div className={cn('mb-12 md:mb-16', align === 'center' && 'text-center max-w-3xl mx-auto', className)}>
       {eyebrow && (
-        <span className="text-red-600 text-sm font-medium uppercase tracking-wider mb-4 block">
+        <span className="text-[#AEB784] text-sm font-medium uppercase tracking-wider mb-4 block">
           {eyebrow}
         </span>
       )}

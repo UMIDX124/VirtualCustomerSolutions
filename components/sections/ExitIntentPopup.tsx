@@ -66,7 +66,7 @@ export function ExitIntentPopup() {
             Wait! Before You Go...
           </h2>
           <p className="text-text-secondary mb-6">
-            Get a <span className="text-red-600 font-semibold">FREE $499 Digital Audit</span> — On Us.
+            Get a <span className="text-[#AEB784] font-semibold">FREE $499 Digital Audit</span> — On Us.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -80,7 +80,7 @@ export function ExitIntentPopup() {
             />
             <Button
               type="submit"
-              className="w-full bg-red-700 hover:bg-red-600 text-white font-semibold py-3"
+              className="w-full bg-[#41431B] hover:bg-[#AEB784] text-white font-semibold py-3"
             >
               🎯 YES, I Want My Free Audit
             </Button>

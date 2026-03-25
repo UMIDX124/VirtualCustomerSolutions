@@ -48,7 +48,7 @@ export function ProofSection() {
             <StaggerItem key={study.category}>
               <GlassCard className="p-6 h-full">
                 {/* Result Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-700/10 text-red-600 text-sm font-semibold mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#41431B]/10 text-[#AEB784] text-sm font-semibold mb-4">
                   {study.result}
                 </div>
 
@@ -84,7 +84,7 @@ export function ProofSection() {
           <Button
             onClick={() => navigateTo('results')}
             variant="outline"
-            className="border-border-glass hover:border-red-600 hover:text-text-primary group"
+            className="border-border-glass hover:border-[#AEB784] hover:text-text-primary group"
           >
             View All Results
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

@@ -55,7 +55,7 @@ export function TestimonialsSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((stat) => (
               <div key={stat.label} className="bg-surface-glass backdrop-blur-xl border border-border-glass rounded-2xl p-6 text-center">
-                <div className="font-display text-3xl md:text-4xl font-bold text-red-600 tabular-nums">
+                <div className="font-display text-3xl md:text-4xl font-bold text-[#AEB784] tabular-nums">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="text-text-muted text-sm mt-2">{stat.label}</div>
@@ -66,7 +66,7 @@ export function TestimonialsSection() {
 
         {/* Section Header */}
         <FadeUp className="text-center mb-12 max-w-3xl mx-auto">
-          <span className="text-red-600 text-sm font-medium uppercase tracking-wider mb-4 block">
+          <span className="text-[#AEB784] text-sm font-medium uppercase tracking-wider mb-4 block">
             Client Results
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary leading-tight">
@@ -83,7 +83,7 @@ export function TestimonialsSection() {
             <StaggerItem key={index}>
               <GlassCard className="p-6 h-full flex flex-col">
                 {/* Quote Icon */}
-                <Quote className="w-8 h-8 text-red-600/30 mb-4" />
+                <Quote className="w-8 h-8 text-[#AEB784]/30 mb-4" />
 
                 {/* Rating */}
                 <div className="flex gap-1 mb-4">
@@ -102,7 +102,7 @@ export function TestimonialsSection() {
                   {testimonial.results.map((result) => (
                     <span
                       key={result}
-                      className="text-xs px-2 py-1 rounded-full bg-red-600/10 text-red-600"
+                      className="text-xs px-2 py-1 rounded-full bg-[#AEB784]/10 text-[#AEB784]"
                     >
                       {result}
                     </span>
@@ -112,7 +112,7 @@ export function TestimonialsSection() {
                 {/* Author */}
                 <div className="flex items-center gap-3 pt-4 border-t border-border-glass">
                   <div className="w-10 h-10 rounded-full bg-surface-glass-strong flex items-center justify-center">
-                    <span className="text-red-600 font-medium text-sm">
+                    <span className="text-[#AEB784] font-medium text-sm">
                       {testimonial.author.charAt(0)}
                     </span>
                   </div>

@@ -31,7 +31,7 @@ export function Navigation() {
   return (
     <>
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-[#2E3013] via-[#41431B] to-[#2E3013] py-2 px-4 text-center text-sm font-medium">
+      <div className="bg-gradient-to-r from-[#18230F] via-[#1F7D53] to-[#18230F] py-2 px-4 text-center text-sm font-medium">
         <span className="text-black">
           🔥 Launch Special: First 50 clients get LIFETIME rate lock + 50% OFF — 
           <button 
@@ -64,22 +64,22 @@ export function Navigation() {
                 <svg viewBox="0 0 48 48" className="w-full h-full">
                   <defs>
                     <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#41431B" />
-                      <stop offset="100%" stopColor="#AEB784" />
+                      <stop offset="0%" stopColor="#1F7D53" />
+                      <stop offset="100%" stopColor="#255F38" />
                     </linearGradient>
                   </defs>
                   <path
                     d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4z"
                     fill="url(#navLogoGrad)"
                   />
-                  <text x="24" y="30" textAnchor="middle" fill="#41431B" fontSize="16" fontWeight="bold">VCS</text>
+                  <text x="24" y="30" textAnchor="middle" fill="#1F7D53" fontSize="16" fontWeight="bold">VCS</text>
                 </svg>
-                <div className="absolute -inset-1 bg-[#41431B]/20 blur-xl rounded-full group-hover:bg-[#41431B]/30 transition-all" />
+                <div className="absolute -inset-1 bg-[#1F7D53]/20 blur-xl rounded-full group-hover:bg-[#1F7D53]/30 transition-all" />
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-lg lg:text-xl tracking-tight text-[#41431B]">
+                <span className="font-bold text-lg lg:text-xl tracking-tight text-[#1F7D53]">
                   VCS
-                  <span className="text-[#41431B]">.</span>
+                  <span className="text-[#1F7D53]">.</span>
                 </span>
                 <span className="text-[10px] text-[#94A3B8] tracking-widest hidden sm:block">PAKISTAN</span>
               </div>
@@ -94,7 +94,7 @@ export function Navigation() {
                   className={`
                     px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300
                     ${currentPage === item.href
-                      ? 'text-black bg-[rgba(65,67,27,0.8)]'
+                      ? 'text-black bg-[rgba(31,125,83,0.8)]'
                       : 'text-[#94A3B8] hover:text-white hover:bg-[rgba(255,255,255,0.05)]'
                     }
                   `}
@@ -108,7 +108,7 @@ export function Navigation() {
             <div className="hidden lg:block">
               <button
                 onClick={() => navigateTo('free-audit')}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#41431B] to-[#AEB784] text-black font-semibold rounded-full hover:shadow-[0_0_40px_rgba(65,67,27,0.4)] transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#1F7D53] to-[#255F38] text-black font-semibold rounded-full hover:shadow-[0_0_40px_rgba(31,125,83,0.4)] transition-all duration-300 hover:scale-105"
               >
                 <Rocket className="w-4 h-4" />
                 Get Free Audit
@@ -117,7 +117,7 @@ export function Navigation() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 text-white hover:text-[#41431B] transition-colors"
+              className="lg:hidden p-2 text-white hover:text-[#1F7D53] transition-colors"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -145,7 +145,7 @@ export function Navigation() {
                     className={`
                       w-full text-left px-4 py-3 rounded-lg transition-colors
                       ${currentPage === item.href
-                        ? 'text-[#41431B] bg-[rgba(16,185,129,0.1)]'
+                        ? 'text-[#1F7D53] bg-[rgba(16,185,129,0.1)]'
                         : 'text-[#94A3B8] hover:text-white hover:bg-[rgba(255,255,255,0.05)]'
                       }
                     `}
@@ -159,7 +159,7 @@ export function Navigation() {
                       navigateTo('free-audit');
                       setIsOpen(false);
                     }}
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2E3013] to-[#41431B] text-black font-semibold rounded-full"
+                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#18230F] to-[#1F7D53] text-black font-semibold rounded-full"
                   >
                     <Rocket className="w-4 h-4" />
                     Get Free Audit

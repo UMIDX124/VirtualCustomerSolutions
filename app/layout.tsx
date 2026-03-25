@@ -99,7 +99,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         {/* Organization Schema */}
         <script
@@ -230,8 +230,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Theme color for mobile browsers */}
-        <meta name="theme-color" content="#F8F3E1" />
-        <meta name="msapplication-TileColor" content="#41431B" />
+        <meta name="theme-color" content="#18230F" />
+        <meta name="msapplication-TileColor" content="#1F7D53" />
       </head>
       <body
         className={`${merriweather.variable} ${roboto.variable} antialiased`}

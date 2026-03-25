@@ -16,8 +16,8 @@ export default function OpenGraphImage() {
           height: "100%",
           width: "100%",
           background:
-            "linear-gradient(135deg, #F8F3E1 0%, #E3DBBB 48%, #F8F3E1 100%)",
-          color: "#41431B",
+            "linear-gradient(135deg, #18230F 0%, #27391C 48%, #255F38 100%)",
+          color: "#E8F0E4",
           fontFamily: "Merriweather, Georgia, serif",
           position: "relative",
           overflow: "hidden",
@@ -28,7 +28,7 @@ export default function OpenGraphImage() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "radial-gradient(circle at 20% 20%, rgba(174,183,132,0.15), transparent 28%), radial-gradient(circle at 85% 18%, rgba(65,67,27,0.08), transparent 24%)",
+              "radial-gradient(circle at 20% 20%, rgba(31,125,83,0.2), transparent 28%), radial-gradient(circle at 85% 18%, rgba(37,95,56,0.15), transparent 24%)",
           }}
         />
         <div
@@ -36,8 +36,8 @@ export default function OpenGraphImage() {
             position: "absolute",
             inset: 40,
             borderRadius: 36,
-            border: "1px solid rgba(65,67,27,0.1)",
-            background: "rgba(248,243,225,0.6)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            background: "rgba(39,57,28,0.5)",
           }}
         />
         <div
@@ -59,27 +59,27 @@ export default function OpenGraphImage() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                background: "linear-gradient(135deg, #41431B 0%, #AEB784 100%)",
+                background: "linear-gradient(135deg, #255F38 0%, #1F7D53 100%)",
                 fontSize: 28,
                 fontWeight: 700,
-                color: "white",
+                color: "#E8F0E4",
               }}
             >
               VCS
             </div>
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <span style={{ fontSize: 18, letterSpacing: 5, textTransform: "uppercase", opacity: 0.76, color: "#5A5C2A" }}>
+              <span style={{ fontSize: 18, letterSpacing: 5, textTransform: "uppercase", opacity: 0.76, color: "#B8CCAE" }}>
                 Virtual Customer Solution
               </span>
-              <span style={{ fontSize: 22, opacity: 0.78, color: "#7A7C5A" }}>IT, Marketing & Remote Workforce Solutions</span>
+              <span style={{ fontSize: 22, opacity: 0.78, color: "#7A9A6E" }}>IT, Marketing & Remote Workforce Solutions</span>
             </div>
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 820 }}>
-            <div style={{ fontSize: 78, lineHeight: 0.98, fontWeight: 700, color: "#41431B" }}>
+            <div style={{ fontSize: 78, lineHeight: 0.98, fontWeight: 700, color: "#E8F0E4" }}>
               Scale with smarter systems, remote support, and performance-driven marketing.
             </div>
-            <div style={{ fontSize: 28, lineHeight: 1.45, opacity: 0.84, color: "#5A5C2A" }}>
+            <div style={{ fontSize: 28, lineHeight: 1.45, opacity: 0.84, color: "#B8CCAE" }}>
               Virtual Customer Solution helps businesses grow through marketing, operations, technology, and expert remote execution.
             </div>
           </div>

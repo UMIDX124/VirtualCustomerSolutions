@@ -27,9 +27,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-black border-t border-[rgba(65,67,27,0.15)] mt-auto">
+    <footer className="relative bg-black border-t border-[rgba(31,125,83,0.15)] mt-auto">
       {/* Glow Effect */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#41431B]/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1F7D53]/5 to-transparent pointer-events-none" />
 
       <div className="container-wide relative z-10">
         <div className="grid grid-cols-1 gap-12 py-16 md:grid-cols-2 md:py-20 lg:grid-cols-4">
@@ -41,8 +41,8 @@ export function Footer() {
                 <svg viewBox="0 0 48 48" className="h-full w-full">
                   <defs>
                     <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#41431B" />
-                      <stop offset="100%" stopColor="#AEB784" />
+                      <stop offset="0%" stopColor="#1F7D53" />
+                      <stop offset="100%" stopColor="#255F38" />
                     </linearGradient>
                   </defs>
                   <path
@@ -51,14 +51,14 @@ export function Footer() {
                   />
                   <path d="M14 18l6-4 6 4" stroke="#000" strokeWidth="2.5" fill="none" strokeLinecap="round" />
                   <path d="M16 26c2-4 6-4 8 0s6 4 8 0" stroke="#000" strokeWidth="2" fill="none" strokeLinecap="round" />
-                  <circle cx="14" cy="14" r="2" fill="#AEB784" />
-                  <circle cx="34" cy="14" r="2" fill="#AEB784" />
+                  <circle cx="14" cy="14" r="2" fill="#255F38" />
+                  <circle cx="34" cy="14" r="2" fill="#255F38" />
                 </svg>
-                <div className="absolute -inset-2 bg-[#41431B]/20 blur-xl rounded-full" />
+                <div className="absolute -inset-2 bg-[#1F7D53]/20 blur-xl rounded-full" />
               </div>
               <div>
-                <span className="font-display text-xl font-bold tracking-tight text-[#41431B]">
-                  VCS<span className="text-[#41431B]">.</span>
+                <span className="font-display text-xl font-bold tracking-tight text-[#1F7D53]">
+                  VCS<span className="text-[#1F7D53]">.</span>
                 </span>
                 <span className="text-[#333] text-xs block -mt-1 tracking-widest">PAKISTAN</span>
               </div>
@@ -68,16 +68,16 @@ export function Footer() {
               We deliver scalable solutions for the world's most ambitious companies.
             </p>
             <div className="flex gap-3">
-              <a href="https://facebook.com/nexusvcs" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#41431B] transition-colors">
+              <a href="https://facebook.com/nexusvcs" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#1F7D53] transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://instagram.com/nexusvcs" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#41431B] transition-colors">
+              <a href="https://instagram.com/nexusvcs" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#1F7D53] transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://linkedin.com/company/nexusvcs" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#41431B] transition-colors">
+              <a href="https://linkedin.com/company/nexusvcs" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#1F7D53] transition-colors">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="https://twitter.com/nexusvcs" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#41431B] transition-colors">
+              <a href="https://twitter.com/nexusvcs" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#1F7D53] transition-colors">
                 <Twitter className="w-4 h-4" />
               </a>
             </div>
@@ -91,7 +91,7 @@ export function Footer() {
                 <li key={link.name}>
                   <button
                     onClick={() => navigateTo(link.page)}
-                    className="group inline-flex items-center gap-1 text-sm text-gray-400 hover:text-[#41431B] transition-colors"
+                    className="group inline-flex items-center gap-1 text-sm text-gray-400 hover:text-[#1F7D53] transition-colors"
                   >
                     {link.name}
                     <ArrowUpRight className="h-3 w-3 translate-y-1 -translate-x-1 opacity-0 transition-all group-hover:translate-y-0 group-hover:translate-x-0 group-hover:opacity-100" />
@@ -109,7 +109,7 @@ export function Footer() {
                 <li key={link.name}>
                   <button
                     onClick={() => navigateTo(link.page)}
-                    className="group inline-flex items-center gap-1 text-sm text-gray-400 hover:text-[#41431B] transition-colors"
+                    className="group inline-flex items-center gap-1 text-sm text-gray-400 hover:text-[#1F7D53] transition-colors"
                   >
                     {link.name}
                     <ArrowUpRight className="h-3 w-3 translate-y-1 -translate-x-1 opacity-0 transition-all group-hover:translate-y-0 group-hover:translate-x-0 group-hover:opacity-100" />
@@ -125,18 +125,18 @@ export function Footer() {
             <div className="space-y-4">
               <a
                 href="mailto:info@virtualcustomersolution.com"
-                className="group flex items-center gap-3 text-sm text-gray-400 hover:text-[#41431B] transition-colors"
+                className="group flex items-center gap-3 text-sm text-gray-400 hover:text-[#1F7D53] transition-colors"
               >
-                <Mail className="h-4 w-4 text-[#AEB784]" />
+                <Mail className="h-4 w-4 text-[#255F38]" />
                 info@virtualcustomersolution.com
               </a>
               <a
                 href="https://linkedin.com/company/nexusvcs"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 text-sm text-gray-400 hover:text-[#41431B] transition-colors"
+                className="group flex items-center gap-3 text-sm text-gray-400 hover:text-[#1F7D53] transition-colors"
               >
-                <Linkedin className="h-4 w-4 text-[#AEB784]" />
+                <Linkedin className="h-4 w-4 text-[#255F38]" />
                 LinkedIn
               </a>
             </div>
@@ -144,7 +144,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-[rgba(65,67,27,0.15)] py-6 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-[rgba(31,125,83,0.15)] py-6 sm:flex-row">
           <p className="text-xs text-gray-500">© {currentYear} NEXUS VCS Global. All Rights Reserved.</p>
           <div className="flex items-center gap-6">
             <span className="text-xs text-gray-500 hover:text-gray-400 cursor-pointer">Privacy Policy</span>

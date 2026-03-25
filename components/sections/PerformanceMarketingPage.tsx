@@ -98,7 +98,7 @@ export function PerformanceMarketingPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <Button
                 onClick={() => navigateTo('free-growth-audit')}
-                className="bg-[#41431B] hover:bg-[#AEB784] text-white font-semibold px-6 group"
+                className="bg-[#1F7D53] hover:bg-[#255F38] text-white font-semibold px-6 group"
               >
                 Get Audit
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -106,7 +106,7 @@ export function PerformanceMarketingPage() {
               <Button
                 onClick={() => navigateTo('results')}
                 variant="outline"
-                className="border-border-glass hover:border-[#AEB784] hover:text-text-primary bg-transparent"
+                className="border-border-glass hover:border-[#1F7D53] hover:text-text-primary bg-transparent"
               >
                 See Results
               </Button>
@@ -134,7 +134,7 @@ export function PerformanceMarketingPage() {
                     onClick={() => setActiveChannel(index)}
                     className={`w-full text-left p-4 rounded-xl transition-all duration-300 ${
                       activeChannel === index
-                        ? 'bg-surface-glass border border-[#AEB784]'
+                        ? 'bg-surface-glass border border-[#1F7D53]'
                         : 'bg-surface-glass border border-transparent hover:border-border-glass'
                     }`}
                   >
@@ -156,8 +156,8 @@ export function PerformanceMarketingPage() {
             <FadeUp delay={0.2}>
               <GlassCard className="p-8 h-full flex items-center justify-center min-h-[300px]">
                 <div className="text-center">
-                  <div className="w-20 h-20 rounded-2xl bg-[#41431B]/10 flex items-center justify-center mx-auto mb-4">
-                    <Target className="w-10 h-10 text-[#AEB784]" />
+                  <div className="w-20 h-20 rounded-2xl bg-[#1F7D53]/10 flex items-center justify-center mx-auto mb-4">
+                    <Target className="w-10 h-10 text-[#1F7D53]" />
                   </div>
                   <h3 className="font-display text-xl font-bold text-text-primary mb-2">
                     {channels[activeChannel].name}
@@ -185,8 +185,8 @@ export function PerformanceMarketingPage() {
             {capabilities.map((cap) => (
               <StaggerItem key={cap.title}>
                 <GlassCard className="p-6 h-full">
-                  <div className="w-12 h-12 rounded-xl bg-[#41431B]/10 flex items-center justify-center mb-4">
-                    <cap.icon className="w-6 h-6 text-[#AEB784]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#1F7D53]/10 flex items-center justify-center mb-4">
+                    <cap.icon className="w-6 h-6 text-[#1F7D53]" />
                   </div>
                   <h3 className="font-display font-semibold text-text-primary mb-2">
                     {cap.title}
@@ -239,7 +239,7 @@ export function PerformanceMarketingPage() {
               </p>
               <Button
                 onClick={() => navigateTo('free-growth-audit')}
-                className="bg-[#41431B] hover:bg-[#AEB784] text-white font-semibold px-8 py-6 group"
+                className="bg-[#1F7D53] hover:bg-[#255F38] text-white font-semibold px-8 py-6 group"
               >
                 Request Free Growth Audit
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

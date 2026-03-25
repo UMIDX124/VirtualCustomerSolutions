@@ -182,7 +182,7 @@ export function ResultsPage() {
                 onClick={() => setActiveFilter(filter)}
                 className={`px-4 py-2 rounded-lg text-sm transition-all ${
                   activeFilter === filter
-                    ? 'bg-[#41431B] text-white'
+                    ? 'bg-[#1F7D53] text-white'
                     : 'bg-surface-glass text-text-secondary hover:text-text-primary'
                 }`}
               >
@@ -205,7 +205,7 @@ export function ResultsPage() {
                   </div>
 
                   {/* Headline */}
-                  <h3 className="font-display text-xl font-bold text-text-primary mb-3 group-hover:text-[#AEB784] transition-colors">
+                  <h3 className="font-display text-xl font-bold text-text-primary mb-3 group-hover:text-[#1F7D53] transition-colors">
                     {study.headline}
                   </h3>
 
@@ -213,7 +213,7 @@ export function ResultsPage() {
                   <div className="flex gap-4 mb-4">
                     {study.outcomes.slice(0, 2).map((outcome) => (
                       <div key={outcome.label}>
-                        <div className="text-[#AEB784] font-display font-bold text-lg tabular-nums">
+                        <div className="text-[#1F7D53] font-display font-bold text-lg tabular-nums">
                           {outcome.metric}
                         </div>
                         <div className="text-text-muted text-xs">{outcome.label}</div>
@@ -288,7 +288,7 @@ export function ResultsPage() {
                       key={outcome.label}
                       className="bg-surface-glass-strong rounded-xl p-4 text-center"
                     >
-                      <div className="text-[#AEB784] font-display font-bold text-2xl tabular-nums">
+                      <div className="text-[#1F7D53] font-display font-bold text-2xl tabular-nums">
                         {outcome.metric}
                       </div>
                       <div className="text-text-muted text-xs mt-1">{outcome.label}</div>
@@ -332,7 +332,7 @@ export function ResultsPage() {
                   {selectedCase.services.map((service) => (
                     <span
                       key={service}
-                      className="text-xs px-3 py-1 rounded-full bg-[#41431B]/10 text-[#AEB784]"
+                      className="text-xs px-3 py-1 rounded-full bg-[#1F7D53]/10 text-[#1F7D53]"
                     >
                       {service}
                     </span>
@@ -357,7 +357,7 @@ export function ResultsPage() {
               </p>
               <Button
                 onClick={() => navigateTo('free-growth-audit')}
-                className="bg-[#41431B] hover:bg-[#AEB784] text-white font-semibold px-8 py-6 group"
+                className="bg-[#1F7D53] hover:bg-[#255F38] text-white font-semibold px-8 py-6 group"
               >
                 Request Free Growth Audit
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

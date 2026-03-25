@@ -121,7 +121,7 @@ export function SystemsReportingPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <Button
                 onClick={() => navigateTo('free-growth-audit')}
-                className="bg-[#41431B] hover:bg-[#AEB784] text-white font-semibold px-6 group"
+                className="bg-[#1F7D53] hover:bg-[#255F38] text-white font-semibold px-6 group"
               >
                 Get Audit
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -129,7 +129,7 @@ export function SystemsReportingPage() {
               <Button
                 onClick={() => navigateTo('results')}
                 variant="outline"
-                className="border-border-glass hover:border-[#AEB784] hover:text-text-primary bg-transparent"
+                className="border-border-glass hover:border-[#1F7D53] hover:text-text-primary bg-transparent"
               >
                 See Results
               </Button>
@@ -152,8 +152,8 @@ export function SystemsReportingPage() {
             {systemTypes.map((system) => (
               <StaggerItem key={system.title}>
                 <GlassCard className="p-6 h-full">
-                  <div className="w-12 h-12 rounded-xl bg-[#AEB784]/10 flex items-center justify-center mb-4">
-                    <system.icon className="w-6 h-6 text-[#AEB784]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#255F38]/10 flex items-center justify-center mb-4">
+                    <system.icon className="w-6 h-6 text-[#1F7D53]" />
                   </div>
                   <h3 className="font-display font-semibold text-text-primary mb-2">
                     {system.title}
@@ -188,7 +188,7 @@ export function SystemsReportingPage() {
                     onClick={() => setActiveTab(tab)}
                     className={`w-full text-left p-4 rounded-xl transition-all ${
                       activeTab.id === tab.id
-                        ? 'bg-surface-glass border border-[#AEB784]'
+                        ? 'bg-surface-glass border border-[#1F7D53]'
                         : 'bg-surface-glass border border-transparent hover:border-border-glass'
                     }`}
                   >
@@ -217,7 +217,7 @@ export function SystemsReportingPage() {
                       transition={{ delay: i * 0.1 }}
                       className="flex items-center gap-3"
                     >
-                      <div className="w-8 h-8 rounded-full bg-[#AEB784]/10 flex items-center justify-center text-[#AEB784] text-sm font-mono">
+                      <div className="w-8 h-8 rounded-full bg-[#255F38]/10 flex items-center justify-center text-[#1F7D53] text-sm font-mono">
                         {i + 1}
                       </div>
                       <span className="text-text-primary">{step}</span>
@@ -268,7 +268,7 @@ export function SystemsReportingPage() {
               </p>
               <Button
                 onClick={() => navigateTo('free-growth-audit')}
-                className="bg-[#41431B] hover:bg-[#AEB784] text-white font-semibold px-8 py-6 group"
+                className="bg-[#1F7D53] hover:bg-[#255F38] text-white font-semibold px-8 py-6 group"
               >
                 Request Free Growth Audit
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

@@ -109,10 +109,10 @@ export function WhyChooseUsSection() {
           {packages.map((pkg, index) => (
             <FadeUp key={pkg.name} delay={index * 0.1}>
               <GlassCard 
-                className={`p-6 text-center ${pkg.highlighted ? 'border-2 border-[#AEB784] relative' : ''}`}
+                className={`p-6 text-center ${pkg.highlighted ? 'border-2 border-[#1F7D53] relative' : ''}`}
               >
                 {pkg.highlighted && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#AEB784] text-black text-xs font-medium rounded-full">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#255F38] text-black text-xs font-medium rounded-full">
                     Most Popular
                   </div>
                 )}
@@ -121,7 +121,7 @@ export function WhyChooseUsSection() {
                   {pkg.name}
                 </h4>
                 <div className="mb-2">
-                  <span className="text-3xl font-bold text-[#AEB784]">{pkg.price}</span>
+                  <span className="text-3xl font-bold text-[#1F7D53]">{pkg.price}</span>
                   <span className="text-text-muted text-sm">{pkg.period}</span>
                 </div>
                 <p className="text-text-muted text-sm mb-4">{pkg.description}</p>

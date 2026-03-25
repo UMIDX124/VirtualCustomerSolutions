@@ -5,47 +5,47 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Core Colors — ColorHunt Earth Palette */
-  --bg-primary: #F8F3E1;
-  --bg-secondary: #E3DBBB;
-  --bg-card: rgba(65, 67, 27, 0.03);
-  --white: #F8F3E1;
+  /* Core Colors — Dark Forest Green Palette */
+  --bg-primary: #18230F;
+  --bg-secondary: #27391C;
+  --bg-card: rgba(31, 125, 83, 0.05);
+  --white: #18230F;
 
-  /* Brand Colors — Olive & Sage */
-  --red-primary: #41431B;
-  --red-dark: #2E3013;
-  --red-light: #5A5C2A;
-  --red-glow: rgba(65, 67, 27, 0.2);
-  --red-border: rgba(65, 67, 27, 0.25);
-  --red-soft: #AEB784;
+  /* Brand Colors — Forest & Emerald */
+  --red-primary: #1F7D53;
+  --red-dark: #255F38;
+  --red-light: #2A9A66;
+  --red-glow: rgba(31, 125, 83, 0.25);
+  --red-border: rgba(31, 125, 83, 0.3);
+  --red-soft: #255F38;
 
   /* Text Colors */
-  --text-primary: #41431B;
-  --text-secondary: #5A5C2A;
-  --text-muted: #7A7C5A;
-  --text-light: #AEB784;
+  --text-primary: #E8F0E4;
+  --text-secondary: #B8CCAE;
+  --text-muted: #7A9A6E;
+  --text-light: #5A7A4E;
 
   /* Surface Colors */
-  --surface: #F8F3E1;
-  --surface-elevated: #E3DBBB;
-  --surface-glass: rgba(65, 67, 27, 0.03);
-  --surface-glass-strong: rgba(65, 67, 27, 0.06);
+  --surface: #18230F;
+  --surface-elevated: #27391C;
+  --surface-glass: rgba(31, 125, 83, 0.05);
+  --surface-glass-strong: rgba(31, 125, 83, 0.1);
 
   /* Border */
-  --border-subtle: rgba(65, 67, 27, 0.1);
-  --border-glass: rgba(65, 67, 27, 0.12);
-  --border-strong: #D4CCA8;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.1);
+  --border-strong: #2A4A1E;
 
   /* Component */
-  --card: #F8F3E1;
-  --card-foreground: #41431B;
-  --ring: #AEB784;
-  --input: rgba(174, 183, 132, 0.15);
+  --card: #27391C;
+  --card-foreground: #E8F0E4;
+  --ring: #1F7D53;
+  --input: rgba(31, 125, 83, 0.15);
 
   /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #F8F3E1, #E3DBBB, #F8F3E1);
-  --gradient-red: linear-gradient(135deg, #41431B, #AEB784);
-  --gradient-dark: linear-gradient(135deg, #41431B, #2E3013);
+  --gradient-hero: linear-gradient(135deg, #18230F, #27391C, #18230F);
+  --gradient-red: linear-gradient(135deg, #255F38, #1F7D53);
+  --gradient-dark: linear-gradient(135deg, #18230F, #27391C);
 
   /* Radius */
   --radius: 16px;
@@ -53,30 +53,30 @@
   --radius-pill: 100px;
 
   /* Tailwind HSL overrides */
-  --background: 47 56% 93%;
-  --foreground: 62 41% 18%;
-  --card: 47 56% 93%;
-  --card-foreground: 62 41% 18%;
-  --popover: 47 56% 93%;
-  --popover-foreground: 62 41% 18%;
-  --primary: 62 41% 18%;
-  --primary-foreground: 47 56% 93%;
-  --secondary: 42 30% 80%;
-  --secondary-foreground: 62 41% 18%;
-  --muted: 42 30% 80%;
-  --muted-foreground: 64 16% 42%;
-  --accent: 74 24% 60%;
-  --accent-foreground: 62 41% 18%;
+  --background: 100 40% 10%;
+  --foreground: 110 25% 91%;
+  --card: 110 35% 16%;
+  --card-foreground: 110 25% 91%;
+  --popover: 110 35% 16%;
+  --popover-foreground: 110 25% 91%;
+  --primary: 153 61% 31%;
+  --primary-foreground: 110 25% 91%;
+  --secondary: 110 35% 16%;
+  --secondary-foreground: 110 25% 91%;
+  --muted: 110 35% 16%;
+  --muted-foreground: 110 18% 52%;
+  --accent: 145 44% 26%;
+  --accent-foreground: 110 25% 91%;
   --destructive: 0 84% 60%;
-  --destructive-foreground: 47 56% 93%;
-  --border: 42 30% 78%;
-  --input: 74 24% 60%;
-  --ring: 74 24% 60%;
-  --chart-1: 62 41% 18%;
-  --chart-2: 74 24% 60%;
-  --chart-3: 42 30% 80%;
-  --chart-4: 47 56% 93%;
-  --chart-5: 64 16% 42%;
+  --destructive-foreground: 110 25% 91%;
+  --border: 110 35% 16%;
+  --input: 153 61% 31%;
+  --ring: 153 61% 31%;
+  --chart-1: 153 61% 31%;
+  --chart-2: 145 44% 26%;
+  --chart-3: 110 35% 16%;
+  --chart-4: 100 40% 10%;
+  --chart-5: 110 18% 52%;
 }
 
 /* ── Base ───────────────────────────────────────────── */
@@ -117,23 +117,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(65, 67, 27, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(65, 67, 27, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(31, 125, 83, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 125, 83, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 .radial-glow {
-  background: radial-gradient(ellipse at center, rgba(174, 183, 132, 0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(31, 125, 83, 0.12) 0%, transparent 70%);
 }
 
 .liquid-glass {
-  background: linear-gradient(135deg, rgba(174, 183, 132, 0.1), rgba(65, 67, 27, 0.03));
+  background: linear-gradient(135deg, rgba(31, 125, 83, 0.1), rgba(31, 125, 83, 0.03));
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(174, 183, 132, 0.2);
+  border: 1px solid rgba(31, 125, 83, 0.2);
 }
 
 .text-gradient-lime {
-  background: linear-gradient(135deg, #41431B, #AEB784);
+  background: linear-gradient(135deg, #1F7D53, #255F38);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -144,7 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass {
-  background: rgba(248, 243, 225, 0.7);
+  background: rgba(39, 57, 28, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-glass);
@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-strong {
-  background: rgba(248, 243, 225, 0.85);
+  background: rgba(39, 57, 28, 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--border-glass);
@@ -161,7 +161,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .card-accent {
   position: relative;
-  background: #F8F3E1;
+  background: #18230F;
   border: 1px solid var(--border-strong);
   border-radius: var(--radius);
   overflow: hidden;
@@ -190,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #41431B, #5A5C2A);
+  background: linear-gradient(135deg, #255F38, #1F7D53);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -201,7 +201,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-dots {
-  background-image: radial-gradient(circle, rgba(174, 183, 132, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(31, 125, 83, 0.12) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -316,7 +316,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   padding: 0.875rem 1.75rem;
   background: var(--gradient-red);
-  color: #F8F3E1;
+  color: #18230F;
   font-weight: 600;
   border-radius: var(--radius-pill);
   transition: all 0.3s ease;
@@ -326,7 +326,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 24px rgba(65, 67, 27, 0.25);
+  box-shadow: 0 4px 24px rgba(31, 125, 83, 0.25);
 }
 
 .btn-outline {
@@ -346,7 +346,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-outline:hover {
   border-color: var(--red-primary);
   color: var(--red-primary);
-  background: rgba(174, 183, 132, 0.1);
+  background: rgba(31, 125, 83, 0.1);
 }
 
 .btn-cyan {
@@ -355,7 +355,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   padding: 0.875rem 1.75rem;
   background: var(--gradient-dark);
-  color: #F8F3E1;
+  color: #18230F;
   font-weight: 600;
   border-radius: var(--radius-pill);
   transition: all 0.3s ease;
@@ -387,19 +387,19 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Selection & Scrollbar ──────────────────────────── */
 
 ::selection {
-  background: rgba(174, 183, 132, 0.3);
-  color: #41431B;
+  background: rgba(31, 125, 83, 0.3);
+  color: #1F7D53;
 }
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #F8F3E1; }
-::-webkit-scrollbar-thumb { background: #D4CCA8; border-radius: 4px; }
+::-webkit-scrollbar-track { background: #18230F; }
+::-webkit-scrollbar-thumb { background: #2A4A1E; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--red-primary); }
 
 /* ── Form Inputs ────────────────────────────────────── */
 
 input, textarea, select {
-  background: #F8F3E1;
+  background: #18230F;
   border: 1px solid var(--border-strong);
   color: var(--text-primary);
   padding: 0.75rem 1rem;
@@ -439,7 +439,7 @@ input:focus, textarea:focus, select:focus {
 .loading-screen {
   position: fixed;
   inset: 0;
-  background: #F8F3E1;
+  background: #18230F;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -452,7 +452,7 @@ input:focus, textarea:focus, select:focus {
 .loading-progress {
   width: 200px;
   height: 4px;
-  background: #D4CCA8;
+  background: #2A4A1E;
   border-radius: 2px;
   overflow: hidden;
 }
@@ -503,7 +503,7 @@ input:focus, textarea:focus, select:focus {
   right: 90px;
   width: 48px;
   height: 48px;
-  background: #F8F3E1;
+  background: #18230F;
   border: 1px solid var(--border-strong);
   border-radius: 50%;
   display: flex;
@@ -518,7 +518,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .scroll-top.visible { opacity: 1; visibility: visible; }
-.scroll-top:hover { background: #41431B; color: #F8F3E1; border-color: #41431B; }
+.scroll-top:hover { background: #1F7D53; color: #18230F; border-color: #1F7D53; }
 
 /* ── Exit Popup ─────────────────────────────────────── */
 
@@ -539,7 +539,7 @@ input:focus, textarea:focus, select:focus {
 .exit-popup-overlay.active { opacity: 1; visibility: visible; }
 
 .exit-popup {
-  background: #F8F3E1;
+  background: #18230F;
   border: 1px solid var(--border-strong);
   border-radius: var(--radius);
   padding: 2rem;
@@ -559,7 +559,7 @@ input:focus, textarea:focus, select:focus {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: rgba(174, 183, 132, 0.12);
+  background: rgba(31, 125, 83, 0.12);
   border: 1px solid var(--red-border);
   border-radius: var(--radius-pill);
   font-size: 0.875rem;
@@ -568,8 +568,8 @@ input:focus, textarea:focus, select:focus {
 }
 
 .badge-cyan {
-  background: rgba(65, 67, 27, 0.06);
-  border-color: rgba(65, 67, 27, 0.15);
+  background: rgba(31, 125, 83, 0.06);
+  border-color: rgba(31, 125, 83, 0.15);
   color: var(--text-primary);
 }
 
@@ -609,7 +609,7 @@ input:focus, textarea:focus, select:focus {
 .faq-question {
   width: 100%;
   padding: 1.25rem;
-  background: #F8F3E1;
+  background: #18230F;
   color: var(--text-primary);
   font-weight: 600;
   text-align: left;
@@ -620,14 +620,14 @@ input:focus, textarea:focus, select:focus {
   transition: all 0.3s ease;
 }
 
-.faq-question:hover { background: #E3DBBB; }
+.faq-question:hover { background: #27391C; }
 
 .faq-answer {
   padding: 0 1.25rem;
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease;
-  background: #E3DBBB;
+  background: #27391C;
 }
 
 .faq-item.active .faq-answer { padding: 1.25rem; max-height: 500px; }

@@ -5,15 +5,15 @@ import { siteConfig } from "@/lib/content";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,
-    short_name: "DigitalPoint",
+    short_name: "VCS Pakistan",
     description: siteConfig.description,
     start_url: "/",
     display: "standalone",
-    background_color: "#f7f3fb",
-    theme_color: "#3E1E68",
+    background_color: "#FFFFFF",
+    theme_color: "#FF0000",
     icons: [
       {
-        src: "/digitalpoint-favicon.png",
+        src: "/logo.svg",
         sizes: "512x512",
         type: "image/png",
         purpose: "any",

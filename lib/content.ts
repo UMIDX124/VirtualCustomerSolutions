@@ -1,15 +1,15 @@
 export const siteConfig = {
-  name: "DigitalPoint LLC",
+  name: "Virtual Customer Solution",
   description:
-    "DigitalPoint LLC is a B2B growth systems and marketing automation agency that helps companies improve revenue operations, execution support, and reporting clarity without operational drag.",
-  siteUrl: "https://digitalpointllc.com",
+    "Virtual Customer Solution delivers comprehensive digital solutions including IT consulting, cloud solutions, cybersecurity, digital marketing, and remote workforce services for businesses worldwide.",
+  siteUrl: "https://virtualcustomersolution.com",
   ogImage: "/opengraph-image",
   primaryCtaHref: "#strategy-call-form",
-  bookingEmailHref: "mailto:digitalpointllc1122@gmail.com?subject=Strategy%20Call%20Request",
-  email: "digitalpointllc1122@gmail.com",
-  formApiPath: "/api/free-growth-audit",
-  formSubmitBrowserAction: "https://formsubmit.co/digitalpointllc1122@gmail.com",
-  formSubmitAction: "https://formsubmit.co/ajax/digitalpointllc1122@gmail.com",
+  bookingEmailHref: "mailto:info@virtualcustomersolution.com?subject=Strategy%20Call%20Request",
+  email: "info@virtualcustomersolution.com",
+  formApiPath: "/api/free-audit",
+  formSubmitBrowserAction: "https://formsubmit.co/info@virtualcustomersolution.com",
+  formSubmitAction: "https://formsubmit.co/ajax/info@virtualcustomersolution.com",
 };
 
 export const navigation = [

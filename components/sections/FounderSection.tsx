@@ -1,0 +1,132 @@
+'use client';
+
+import { Linkedin, Mail, ArrowRight } from 'lucide-react';
+import { FadeUp, GlassCard, SignalPoint, StaggerContainer, StaggerItem } from '@/components/ui-dp/AnimatedElements';
+import { useNavigation } from '@/lib/navigation';
+
+const companyValues = [
+  {
+    title: 'Proof Over Promises',
+    description: 'We show you what\'s working with real numbers, not marketing fluff. If something isn\'t performing, we tell you.',
+  },
+  {
+    title: 'Execution, Not Just Strategy',
+    description: 'We don\'t hand you a PDF and walk away. We build, implement, and run the systems we design.',
+  },
+  {
+    title: 'Founder-Level Accountability',
+    description: 'Every engagement has direct founder oversight. You\'re not passed off to junior staff.',
+  },
+];
+
+const trustMetrics = [
+  { value: '10+', label: 'Years in Performance Marketing' },
+  { value: '50+', label: 'Businesses Served' },
+  { value: '$10M+', label: 'Ad Spend Managed' },
+];
+
+export function FounderSection() {
+  const { navigateTo } = useNavigation();
+
+  return (
+    <section className="section-padding relative">
+      <div className="container-wide">
+        {/* Section Header */}
+        <FadeUp className="text-center mb-12 max-w-3xl mx-auto">
+          <span className="text-red-600 text-sm font-medium uppercase tracking-wider mb-4 block">
+            Why Virtual Customer Solution
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary leading-tight">
+            Built by operators, for operators.
+          </h2>
+          <p className="text-text-secondary text-lg mt-4 leading-relaxed">
+            We've lived the chaos of fragmented vendors, broken reporting, and founder-dependent execution. Virtual Customer Solution exists to solve it.
+          </p>
+        </FadeUp>
+
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          {/* Founder Card */}
+          <FadeUp className="lg:col-span-1">
+            <GlassCard className="p-8 h-full">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-red-700/10 flex items-center justify-center">
+                  <span className="font-display text-2xl font-bold text-red-600">VCS</span>
+                </div>
+                <div>
+                  <h3 className="font-display font-semibold text-text-primary">Virtual Customer Solution</h3>
+                  <p className="text-text-muted text-sm">Founded 2020</p>
+                </div>
+              </div>
+
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                10+ years in performance marketing and operations. Built and scaled acquisition systems across B2B, e-commerce, and service businesses.
+              </p>
+
+              {/* Trust Metrics */}
+              <div className="space-y-3 mb-6">
+                {trustMetrics.map((metric) => (
+                  <div key={metric.label} className="flex items-center justify-between text-sm">
+                    <span className="text-text-muted">{metric.label}</span>
+                    <span className="text-red-600 font-medium tabular-nums">{metric.value}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex gap-3">
+                <a
+                  href="https://linkedin.com/company/digitalpointllc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-surface-glass-strong flex items-center justify-center text-text-muted hover:text-red-600 transition-colors"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href="mailto:info@virtualcustomersolution.com"
+                  className="w-10 h-10 rounded-lg bg-surface-glass-strong flex items-center justify-center text-text-muted hover:text-red-600 transition-colors"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+              </div>
+            </GlassCard>
+          </FadeUp>
+
+          {/* Values */}
+          <StaggerContainer className="lg:col-span-2 grid sm:grid-cols-3 gap-6">
+            {companyValues.map((value, index) => (
+              <StaggerItem key={value.title}>
+                <GlassCard className="p-6 h-full">
+                  <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mb-4">
+                    <span className="font-display font-bold text-red-500">{index + 1}</span>
+                  </div>
+                  <h3 className="font-display font-semibold text-text-primary mb-2">
+                    {value.title}
+                  </h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">
+                    {value.description}
+                  </p>
+                </GlassCard>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+
+        {/* Bottom CTA */}
+        <FadeUp className="text-center">
+          <GlassCard className="inline-block p-6">
+            <p className="text-text-secondary text-sm mb-4">
+              Ready to see what clarity looks like?
+            </p>
+            <button
+              onClick={() => navigateTo('free-growth-audit')}
+              className="inline-flex items-center gap-2 text-red-600 hover:text-red-700 font-medium group"
+            >
+              Request a Growth Audit
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </GlassCard>
+        </FadeUp>
+      </div>
+    </section>
+  );
+}

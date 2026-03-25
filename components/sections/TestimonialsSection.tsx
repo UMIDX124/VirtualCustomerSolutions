@@ -1,0 +1,135 @@
+'use client';
+
+import { Quote, Star } from 'lucide-react';
+import { FadeUp, GlassCard, SignalPoint, StaggerContainer, StaggerItem } from '@/components/ui-dp/AnimatedElements';
+import { AnimatedCounter } from '@/components/motion/animated-counter';
+
+const testimonials = [
+  {
+    quote: "We were paying $8,000/month to two companies. Digital Point gave us BETTER results for $999/month. Unreal.",
+    author: 'Sarah M.',
+    company: 'E-Commerce Owner',
+    location: 'USA',
+    results: ['50-75% Savings', 'Better Results'],
+    rating: 5,
+  },
+  {
+    quote: "Their remote marketing specialist feels like part of our team. Best decision we made this year.",
+    author: 'James R.',
+    company: 'SaaS Founder',
+    location: 'UK',
+    results: ['Dedicated Team', 'Seamless Integration'],
+    rating: 5,
+  },
+  {
+    quote: "We got 3X ROI in just 4 months. The Domination Mode package is worth every penny.",
+    author: 'Ahmed K.',
+    company: 'Agency Owner',
+    location: 'Dubai',
+    results: ['3X ROI', '4 Months'],
+    rating: 5,
+  },
+  {
+    quote: "The free website redesign alone was worth more than what we pay monthly. Incredible value.",
+    author: 'Lisa T.',
+    company: 'Real Estate Agent',
+    location: 'Canada',
+    results: ['Free Redesign', 'Great ROI'],
+    rating: 5,
+  },
+];
+
+const stats = [
+  { value: 500, suffix: '+', label: 'Clients Served' },
+  { value: 10, suffix: 'M+', label: 'Leads Generated' },
+  { value: 50, suffix: '+', label: 'Countries' },
+  { value: 98, suffix: '%', label: 'Retention' },
+];
+
+export function TestimonialsSection() {
+  return (
+    <section className="section-padding relative radial-glow">
+      <div className="container-wide">
+        {/* Stats Counter Bar */}
+        <FadeUp className="mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div key={stat.label} className="bg-surface-glass backdrop-blur-xl border border-border-glass rounded-2xl p-6 text-center">
+                <div className="font-display text-3xl md:text-4xl font-bold text-red-600 tabular-nums">
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                </div>
+                <div className="text-text-muted text-sm mt-2">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </FadeUp>
+
+        {/* Section Header */}
+        <FadeUp className="text-center mb-12 max-w-3xl mx-auto">
+          <span className="text-red-600 text-sm font-medium uppercase tracking-wider mb-4 block">
+            Client Results
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary leading-tight">
+            What our clients say about working with us.
+          </h2>
+          <p className="text-text-secondary text-lg mt-4 leading-relaxed">
+            Real feedback from businesses that transformed their growth with our marketing + remote team solutions.
+          </p>
+        </FadeUp>
+
+        {/* Testimonials Grid */}
+        <StaggerContainer className="grid md:grid-cols-2 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <StaggerItem key={index}>
+              <GlassCard className="p-6 h-full flex flex-col">
+                {/* Quote Icon */}
+                <Quote className="w-8 h-8 text-red-600/30 mb-4" />
+
+                {/* Rating */}
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                  ))}
+                </div>
+
+                {/* Quote */}
+                <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-grow italic">
+                  "{testimonial.quote}"
+                </p>
+
+                {/* Results Tags */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {testimonial.results.map((result) => (
+                    <span
+                      key={result}
+                      className="text-xs px-2 py-1 rounded-full bg-red-600/10 text-red-600"
+                    >
+                      {result}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Author */}
+                <div className="flex items-center gap-3 pt-4 border-t border-border-glass">
+                  <div className="w-10 h-10 rounded-full bg-surface-glass-strong flex items-center justify-center">
+                    <span className="text-red-600 font-medium text-sm">
+                      {testimonial.author.charAt(0)}
+                    </span>
+                  </div>
+                  <div>
+                    <div className="text-text-primary font-medium text-sm">
+                      {testimonial.author}
+                    </div>
+                    <div className="text-text-muted text-xs">
+                      {testimonial.company}, {testimonial.location}
+                    </div>
+                  </div>
+                </div>
+              </GlassCard>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+      </div>
+    </section>
+  );
+}

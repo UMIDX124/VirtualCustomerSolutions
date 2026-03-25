@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "DigitalPoint LLC";
+export const alt = "Virtual Customer Solution";
 export const size = {
   width: 1200,
   height: 630,
@@ -16,9 +16,9 @@ export default function OpenGraphImage() {
           height: "100%",
           width: "100%",
           background:
-            "linear-gradient(135deg, rgba(36,18,67,1) 0%, rgba(62,30,104,1) 48%, rgba(228,90,146,1) 100%)",
-          color: "white",
-          fontFamily: "Inter, Arial, sans-serif",
+            "linear-gradient(135deg, #FFFFFF 0%, #F7FCFF 48%, #FFF5F5 100%)",
+          color: "#000000",
+          fontFamily: "Merriweather, Georgia, serif",
           position: "relative",
           overflow: "hidden",
         }}
@@ -28,7 +28,7 @@ export default function OpenGraphImage() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "radial-gradient(circle at 20% 20%, rgba(255,172,172,0.24), transparent 28%), radial-gradient(circle at 85% 18%, rgba(255,255,255,0.12), transparent 24%)",
+              "radial-gradient(circle at 20% 20%, rgba(255,0,0,0.08), transparent 28%), radial-gradient(circle at 85% 18%, rgba(255,179,179,0.12), transparent 24%)",
           }}
         />
         <div
@@ -36,8 +36,8 @@ export default function OpenGraphImage() {
             position: "absolute",
             inset: 40,
             borderRadius: 36,
-            border: "1px solid rgba(255,255,255,0.18)",
-            background: "rgba(255,255,255,0.08)",
+            border: "1px solid rgba(0,0,0,0.08)",
+            background: "rgba(255,255,255,0.6)",
           }}
         />
         <div
@@ -59,27 +59,28 @@ export default function OpenGraphImage() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                background: "linear-gradient(135deg, #3E1E68 0%, #E45A92 100%)",
+                background: "linear-gradient(135deg, #006233 0%, #FF0000 100%)",
                 fontSize: 28,
                 fontWeight: 700,
+                color: "white",
               }}
             >
-              DP
+              VCS
             </div>
             <div style={{ display: "flex", flexDirection: "column" }}>
-              <span style={{ fontSize: 18, letterSpacing: 5, textTransform: "uppercase", opacity: 0.76 }}>
-                DigitalPoint LLC
+              <span style={{ fontSize: 18, letterSpacing: 5, textTransform: "uppercase", opacity: 0.76, color: "#333" }}>
+                Virtual Customer Solution
               </span>
-              <span style={{ fontSize: 22, opacity: 0.78 }}>Digital growth and remote workforce systems</span>
+              <span style={{ fontSize: 22, opacity: 0.78, color: "#666" }}>IT, Marketing & Remote Workforce Solutions</span>
             </div>
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 820 }}>
-            <div style={{ fontSize: 78, lineHeight: 0.98, fontWeight: 700 }}>
+            <div style={{ fontSize: 78, lineHeight: 0.98, fontWeight: 700, color: "#000000" }}>
               Scale with smarter systems, remote support, and performance-driven marketing.
             </div>
-            <div style={{ fontSize: 28, lineHeight: 1.45, opacity: 0.84 }}>
-              DigitalPoint LLC helps businesses grow through marketing, operations, technology, and expert remote execution.
+            <div style={{ fontSize: 28, lineHeight: 1.45, opacity: 0.84, color: "#333" }}>
+              Virtual Customer Solution helps businesses grow through marketing, operations, technology, and expert remote execution.
             </div>
           </div>
         </div>
@@ -88,4 +89,3 @@ export default function OpenGraphImage() {
     size,
   );
 }
-

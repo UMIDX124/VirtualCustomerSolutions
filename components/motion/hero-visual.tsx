@@ -1,268 +1,135 @@
 "use client";
 
-import type { PointerEvent as ReactPointerEvent } from "react";
+import { m } from "framer-motion";
 
-import { m, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { cn } from "@/lib/utils";
 
-import { MOTION_EASE } from "@/lib/motion";
+const cardMotion = {
+  initial: { opacity: 0, y: 18 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
+};
 
-import { useMotionProfile } from "./use-motion-profile";
+const floatTransition = {
+  duration: 3.6,
+  repeat: Number.POSITIVE_INFINITY,
+  repeatType: "mirror" as const,
+  ease: "easeInOut" as const,
+};
 
-const dashboardBars = [34, 58, 44, 72, 86, 64, 104];
-const revenueRows = [
-  ["Pipeline visibility", "Live"],
-  ["Forecasting", "Weekly"],
-  ["Reporting", "Aligned"],
-] as const;
-const automationRows = [
-  ["Campaign workflows", "Active"],
-  ["Lead routing", "Connected"],
-  ["CRM sync", "Stable"],
-] as const;
-const executionRows = [
-  ["Remote team execution", "In motion"],
-  ["Operational support", "Structured"],
-  ["Delivery rhythm", "Weekly"],
-] as const;
-
-function MobilePanel({
-  title,
-  subtitle,
-  rows,
+function MetricRow({
+  label,
+  value,
 }: {
-  title: string;
-  subtitle: string;
-  rows: readonly (readonly [string, string])[];
+  label: string;
+  value: string;
 }) {
   return (
-    <m.div
-      className="rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(27,20,44,0.92),rgba(31,22,51,0.84))] p-4 shadow-[0_20px_48px_rgba(10,6,22,0.18)]"
-      animate={{ y: [0, -3, 0], boxShadow: ["0 20px 48px rgba(10,6,22,0.18)", "0 24px 54px rgba(10,6,22,0.22)", "0 20px 48px rgba(10,6,22,0.18)"] }}
-      transition={{ duration: 7.5, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}
-    >
-      <p className="text-[20px] font-semibold leading-[1.14] tracking-[-0.04em] text-white">{title}</p>
-      <p className="mt-2 text-[14px] leading-[1.7] text-white/64">{subtitle}</p>
-      <div className="mt-4 space-y-3">
-        {rows.map(([label, value], index) => (
-          <m.div
-            key={label}
-            className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/7 px-3 py-3"
-            animate={{ y: [0, -1.5, 0], opacity: [0.92, 1, 0.94] }}
-            transition={{ duration: 5.8, delay: index * 0.16, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}
-          >
-            <span className="text-sm text-white/68">{label}</span>
-            <span className="text-sm font-semibold text-white">{value}</span>
-          </m.div>
-        ))}
-      </div>
-    </m.div>
-  );
-}
-
-function MobileVisual() {
-  return (
-    <div className="relative xl:hidden">
-      <div className="absolute inset-x-[10%] top-4 h-28 rounded-full bg-[radial-gradient(circle,rgba(84,185,255,0.16),transparent_66%)] blur-3xl" />
-
-      <div className="hero-dashboard relative overflow-hidden rounded-[26px] border border-white/14 bg-[linear-gradient(180deg,rgba(22,16,37,0.9),rgba(31,20,51,0.82))] p-4 shadow-[0_28px_90px_rgba(12,6,24,0.28)] backdrop-blur-xl sm:rounded-[30px] sm:p-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_34%),linear-gradient(160deg,rgba(76,42,132,0.32),transparent_52%)]" />
-        <div className="absolute inset-0 grid-accent opacity-15" />
-
-        <div className="relative space-y-4">
-          <MobilePanel
-            title="Revenue Dashboard"
-            subtitle="Pipeline visibility, forecasting, reporting"
-            rows={revenueRows}
-          />
-          <MobilePanel
-            title="Marketing Automation"
-            subtitle="Campaign workflows, lead routing, CRM sync"
-            rows={automationRows}
-          />
-          <MobilePanel
-            title="Execution Layer"
-            subtitle="Remote team execution and operational support"
-            rows={executionRows}
-          />
-        </div>
-      </div>
+    <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 rounded-[18px] border border-white/10 bg-white/[0.05] px-4 py-3">
+      <span className="text-[14px] font-medium leading-[1.45] text-white/72">{label}</span>
+      <span className="text-[14px] font-semibold leading-none text-white">{value}</span>
     </div>
   );
 }
 
-function DesktopPanel({
+function VisualCard({
+  className,
   title,
   subtitle,
-  rows,
-  className = "",
+  children,
 }: {
+  className?: string;
   title: string;
   subtitle: string;
-  rows: readonly (readonly [string, string])[];
-  className?: string;
+  children: React.ReactNode;
 }) {
   return (
-    <m.div
-      className={`rounded-[28px] border border-white/12 bg-[linear-gradient(180deg,rgba(23,17,37,0.96),rgba(29,20,49,0.9))] p-5 shadow-[0_20px_48px_rgba(10,6,22,0.14)] backdrop-blur-lg ${className}`}
-      animate={{ boxShadow: ["0 20px 48px rgba(10,6,22,0.14)", "0 24px 58px rgba(10,6,22,0.18)", "0 20px 48px rgba(10,6,22,0.14)"] }}
-      transition={{ duration: 7.2, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}
+    <div
+      className={cn(
+        "rounded-[30px] border border-white/12 bg-[linear-gradient(180deg,rgba(25,12,29,0.92),rgba(46,17,39,0.84))] p-6 shadow-[0_24px_70px_rgba(8,4,18,0.3)] backdrop-blur-xl",
+        className,
+      )}
     >
-      <h3 className="max-w-[12ch] text-[19px] font-semibold leading-[1.08] tracking-[-0.038em] text-white">{title}</h3>
-      <p className="mt-2 max-w-[18rem] text-[12px] leading-[1.55] text-white/62">{subtitle}</p>
-      <div className="mt-4 space-y-2.5">
-        {rows.map(([label, value], index) => (
-          <m.div
-            key={label}
-            className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-[20px] border border-white/10 bg-white/7 px-4 py-3"
-            animate={{ y: [0, -1.5, 0], opacity: [0.9, 1, 0.92], borderColor: ["rgba(255,255,255,0.10)", "rgba(255,255,255,0.16)", "rgba(255,255,255,0.10)"] }}
-            transition={{ duration: 5.6, delay: index * 0.18, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}
-          >
-            <span className="text-[11px] leading-[1.45] text-white/66">{label}</span>
-            <span className="shrink-0 text-[11px] font-semibold leading-none text-white">{value}</span>
-          </m.div>
-        ))}
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h3 className="text-[21px] font-semibold leading-[1.08] tracking-[-0.04em] text-white">{title}</h3>
+          <p className="mt-3 max-w-[28ch] text-[14px] leading-[1.6] text-white/62">{subtitle}</p>
+        </div>
       </div>
-    </m.div>
+      <div className="mt-6 flex flex-col gap-3">{children}</div>
+    </div>
   );
 }
 
 export function HeroVisual() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { allowPointerParallax, allowScrollParallax, lowMotion } = useMotionProfile();
-
-  const pointerX = useMotionValue(0);
-  const pointerY = useMotionValue(0);
-  const smoothX = useSpring(pointerX, { stiffness: 70, damping: 18, mass: 0.85 });
-  const smoothY = useSpring(pointerY, { stiffness: 70, damping: 18, mass: 0.85 });
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const depthScale = allowScrollParallax ? 1 : 0;
-  const panelOneY = useTransform(scrollYProgress, [0, 1], [14 * depthScale, -12 * depthScale]);
-  const panelTwoY = useTransform(scrollYProgress, [0, 1], [16 * depthScale, -12 * depthScale]);
-  const panelThreeY = useTransform(scrollYProgress, [0, 1], [16 * depthScale, -12 * depthScale]);
-
-  const panelOneX = useTransform(() => (allowPointerParallax ? smoothX.get() * 8 : 0));
-  const panelTwoX = useTransform(() => (allowPointerParallax ? smoothX.get() * 10 : 0));
-  const panelThreeX = useTransform(() => (allowPointerParallax ? smoothX.get() * 10 : 0));
-
-  const panelOneOffsetY = useTransform(() => (allowPointerParallax ? smoothY.get() * 6 : 0) + panelOneY.get());
-  const panelTwoOffsetY = useTransform(() => (allowPointerParallax ? smoothY.get() * 6 : 0) + panelTwoY.get());
-  const panelThreeOffsetY = useTransform(() => (allowPointerParallax ? smoothY.get() * 6 : 0) + panelThreeY.get());
-
-  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!ref.current || !allowPointerParallax) {
-      return;
-    }
-
-    const bounds = ref.current.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
-    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
-
-    pointerX.set(x);
-    pointerY.set(y);
-  };
-
-  const resetPointer = () => {
-    pointerX.set(0);
-    pointerY.set(0);
-  };
-
   return (
-    <div ref={ref} onPointerMove={handlePointerMove} onPointerLeave={resetPointer} className="relative">
-      <MobileVisual />
+    <div className="relative mx-auto w-full max-w-[560px] overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(180deg,rgba(81,29,67,0.16),rgba(144,30,62,0.08))] p-4 shadow-[0_30px_90px_rgba(8,4,18,0.22)]">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(155,192,156,0.08),transparent_22%),radial-gradient(circle_at_82%_16%,rgba(220,37,37,0.14),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.02),transparent)]"
+      />
 
-      <div aria-hidden="true" className="relative hidden h-[500px] xl:block xl:h-[540px]" style={{ perspective: 1500 }}>
-        <div className="hero-backplate absolute left-[15%] top-[12%] h-[72%] w-[70%] rounded-[38px]" />
-
+      <div className="relative grid gap-4 md:grid-cols-2 md:grid-rows-[auto_auto]">
         <m.div
-          className="absolute left-1/2 top-[8%] w-[68%] -translate-x-1/2"
-          style={lowMotion ? undefined : { x: panelOneX, y: panelOneOffsetY, willChange: "transform" }}
-          animate={lowMotion ? undefined : { y: [0, -3, 0] }}
-          transition={{ duration: 9.2, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}
+          {...cardMotion}
+          animate={{ y: [0, -4, 0], opacity: 1 }}
+          transition={floatTransition}
+          className="md:col-span-2"
         >
-          <div className="overflow-hidden rounded-[32px] border border-white/14 bg-[linear-gradient(180deg,rgba(22,16,37,0.96),rgba(29,19,49,0.92))] p-5 shadow-[0_22px_56px_rgba(10,6,22,0.14)] backdrop-blur-lg">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_34%),linear-gradient(150deg,rgba(76,42,132,0.16),transparent_52%)]" />
-            <div className="absolute inset-0 grid-accent opacity-12" />
-            <div className="absolute inset-x-[18%] top-6 h-10 rounded-full bg-[radial-gradient(circle,rgba(84,185,255,0.14),transparent_70%)] blur-2xl" />
-
-            <div className="relative">
-              <div className="flex items-start justify-between gap-5">
-                <div>
-                  <h3 className="text-[24px] font-semibold leading-[1.04] tracking-[-0.042em] text-white">
-                    Revenue Dashboard
-                  </h3>
-                  <p className="mt-2 max-w-[18rem] text-[12px] leading-[1.55] text-white/62">
-                    Pipeline visibility, forecasting, reporting
-                  </p>
+          <VisualCard
+            title="Revenue Dashboard"
+            subtitle="Pipeline value, forecast, campaigns, and conversion metrics"
+          >
+            <div className="grid grid-cols-4 gap-3 rounded-[20px] border border-white/10 bg-white/[0.04] px-4 py-4">
+              {[44, 62, 53, 78].map((height, index) => (
+                <div key={height} className="flex flex-col items-center gap-2">
+                  <div
+                    className="w-full rounded-full bg-[linear-gradient(180deg,rgba(155,192,156,0.95),rgba(220,37,37,0.9))]"
+                    style={{ height }}
+                  />
+                  <span className="text-[11px] font-medium text-white/48">Q{index + 1}</span>
                 </div>
-                <div className="rounded-full border border-emerald-400/18 bg-emerald-400/10 px-3 py-1 text-[10px] font-medium text-emerald-200">
-                  Live
-                </div>
-              </div>
-
-              <div className="mt-5 rounded-[26px] border border-white/12 bg-black/18 p-4">
-                <div className="flex items-end gap-2">
-                  {dashboardBars.map((bar, index) => (
-                    <m.span
-                      key={bar}
-                      className="w-full rounded-t-full bg-[linear-gradient(180deg,rgba(132,219,255,0.95),rgba(36,118,255,0.72)_58%,rgba(110,63,255,0.28)_100%)]"
-                      style={{ height: bar }}
-                      animate={lowMotion ? undefined : { opacity: [0.9, 1, 0.92] }}
-                      transition={{
-                        duration: 1.9,
-                        delay: index * 0.04,
-                        repeat: Number.POSITIVE_INFINITY,
-                        repeatType: "mirror",
-                        ease: MOTION_EASE,
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                {revenueRows.map(([label, value]) => (
-                  <div key={label} className="rounded-[20px] border border-white/10 bg-white/8 px-4 py-3.5">
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-white/46">{label}</p>
-                    <p className="mt-2 text-[14px] font-semibold text-white">{value}</p>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
-          </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <MetricRow label="Pipeline value" value="$184K" />
+              <MetricRow label="Forecast" value="86%" />
+              <MetricRow label="Active campaigns" value="12" />
+              <MetricRow label="Lead conversion" value="18.4%" />
+            </div>
+          </VisualCard>
         </m.div>
 
         <m.div
-          className="absolute bottom-[8%] left-[4%] w-[45%]"
-          style={lowMotion ? undefined : { x: panelTwoX, y: panelTwoOffsetY, willChange: "transform" }}
-          animate={lowMotion ? undefined : { y: [0, 4, 0] }}
-          transition={{ duration: 8.8, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}
+          {...cardMotion}
+          animate={{ y: [0, 3, 0], opacity: 1 }}
+          transition={{ ...floatTransition, duration: 4 }}
         >
-          <DesktopPanel
+          <VisualCard
             title="Marketing Automation"
-            subtitle="Campaign workflows, lead routing, CRM sync"
-            rows={automationRows}
-            className="min-h-[246px]"
-          />
+            subtitle="Workflow automation features such as CRM sync, campaign automation, and attribution"
+            className="h-full"
+          >
+            <MetricRow label="CRM sync" value="Live" />
+            <MetricRow label="Lead routing" value="Automated" />
+            <MetricRow label="Attribution" value="Tracked" />
+          </VisualCard>
         </m.div>
 
         <m.div
-          className="absolute bottom-[8%] right-[4%] w-[45%]"
-          style={lowMotion ? undefined : { x: panelThreeX, y: panelThreeOffsetY, willChange: "transform" }}
-          animate={lowMotion ? undefined : { y: [0, 4, 0] }}
-          transition={{ duration: 9, repeat: Number.POSITIVE_INFINITY, ease: MOTION_EASE }}
+          {...cardMotion}
+          animate={{ y: [0, -3, 0], opacity: 1 }}
+          transition={{ ...floatTransition, duration: 3.8 }}
         >
-          <DesktopPanel
+          <VisualCard
             title="Execution Layer"
-            subtitle="Remote team execution and operational support"
-            rows={executionRows}
-            className="min-h-[246px]"
-          />
+            subtitle="Operational support tasks like reporting updates, campaign operations, and system maintenance"
+            className="h-full"
+          >
+            <MetricRow label="Reporting updates" value="Weekly" />
+            <MetricRow label="Campaign ops" value="Active" />
+            <MetricRow label="System maintenance" value="Ongoing" />
+          </VisualCard>
         </m.div>
       </div>
     </div>

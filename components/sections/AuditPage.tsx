@@ -218,7 +218,7 @@ export function AuditPage() {
                     'Scheduled call if there\'s a fit',
                   ].map((step, i) => (
                     <div key={step} className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-[#1F7D53]/20 flex items-center justify-center text-[#1F7D53] text-sm">
+                      <div className="w-6 h-6 rounded-full bg-[#3B82F6]/20 flex items-center justify-center text-[#3B82F6] text-sm">
                         {i + 1}
                       </div>
                       <span className="text-text-secondary text-sm">{step}</span>
@@ -229,7 +229,7 @@ export function AuditPage() {
 
               <p className="text-text-muted text-sm">
                 Questions? Reach out directly at{' '}
-                <a href="mailto:hello@virtualcustomersolution.com" className="text-[#1F7D53] hover:text-[#E8F0E4] transition-colors">
+                <a href="mailto:hello@virtualcustomersolution.com" className="text-[#3B82F6] hover:text-[#F8FAFC] transition-colors">
                   hello@virtualcustomersolution.com
                 </a>
               </p>
@@ -289,7 +289,7 @@ export function AuditPage() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Your name"
-                        className="bg-surface-glass-strong border-border-glass focus:border-[#1F7D53]"
+                        className="bg-surface-glass-strong border-border-glass focus:border-[#3B82F6]"
                       />
                       {errors.name && (
                         <p className="text-signal text-xs mt-1">{errors.name}</p>
@@ -305,7 +305,7 @@ export function AuditPage() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="you@company.com"
-                        className="bg-surface-glass-strong border-border-glass focus:border-[#1F7D53]"
+                        className="bg-surface-glass-strong border-border-glass focus:border-[#3B82F6]"
                       />
                       {errors.email && (
                         <p className="text-signal text-xs mt-1">{errors.email}</p>
@@ -324,7 +324,7 @@ export function AuditPage() {
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="Company name"
-                        className="bg-surface-glass-strong border-border-glass focus:border-[#1F7D53]"
+                        className="bg-surface-glass-strong border-border-glass focus:border-[#3B82F6]"
                       />
                     </div>
                     <div>
@@ -336,7 +336,7 @@ export function AuditPage() {
                         value={formData.website}
                         onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                         placeholder="https://"
-                        className="bg-surface-glass-strong border-border-glass focus:border-[#1F7D53]"
+                        className="bg-surface-glass-strong border-border-glass focus:border-[#3B82F6]"
                       />
                     </div>
                   </div>
@@ -435,7 +435,7 @@ export function AuditPage() {
                           key={service.id}
                           className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${
                             formData.services.includes(service.id)
-                              ? 'border-[#1F7D53] bg-[#1F7D53]/5'
+                              ? 'border-[#3B82F6] bg-[#3B82F6]/5'
                               : 'border-border-glass bg-surface-glass-strong hover:border-border-active'
                           }`}
                         >
@@ -460,7 +460,7 @@ export function AuditPage() {
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       placeholder="Describe your current situation, what you've tried, and what you're hoping to achieve..."
                       rows={4}
-                      className="bg-surface-glass-strong border-border-glass focus:border-[#1F7D53] resize-none"
+                      className="bg-surface-glass-strong border-border-glass focus:border-[#3B82F6] resize-none"
                     />
                     {errors.notes && (
                       <p className="text-signal text-xs mt-1">{errors.notes}</p>
@@ -480,7 +480,7 @@ export function AuditPage() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#1F7D53] hover:bg-[#255F38] text-white font-semibold py-6 text-lg group"
+                    className="w-full bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold py-6 text-lg group"
                   >
                     {isSubmitting ? (
                       <>
@@ -524,7 +524,7 @@ export function AuditPage() {
               {/* Timeline */}
               <GlassCard className="p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <Clock className="w-5 h-5 text-[#1F7D53]" />
+                  <Clock className="w-5 h-5 text-[#3B82F6]" />
                   <h3 className="font-display font-semibold text-text-primary">
                     Response Time
                   </h3>
@@ -537,7 +537,7 @@ export function AuditPage() {
               {/* Founder-led */}
               <GlassCard className="p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <User className="w-5 h-5 text-[#1F7D53]" />
+                  <User className="w-5 h-5 text-[#3B82F6]" />
                   <h3 className="font-display font-semibold text-text-primary">
                     Founder-Led Review
                   </h3>
@@ -557,7 +557,7 @@ export function AuditPage() {
                     href="mailto:hello@virtualcustomersolution.com"
                     className="flex items-center gap-3 text-text-secondary hover:text-text-primary text-sm transition-colors"
                   >
-                    <Mail className="w-4 h-4 text-[#1F7D53]" />
+                    <Mail className="w-4 h-4 text-[#3B82F6]" />
                     hello@virtualcustomersolution.com
                   </a>
                   <a
@@ -566,7 +566,7 @@ export function AuditPage() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-text-secondary hover:text-text-primary text-sm transition-colors"
                   >
-                    <Linkedin className="w-4 h-4 text-[#1F7D53]" />
+                    <Linkedin className="w-4 h-4 text-[#3B82F6]" />
                     LinkedIn
                   </a>
                 </div>

@@ -164,15 +164,15 @@ export default function AboutPage() {
               {team.map((member, index) => (
                 <FadeUp key={member.name} delay={index * 0.1}>
                   <GlassCard className="p-6 text-center">
-                    <div className="w-20 h-20 rounded-full bg-[#1F7D53]/20 flex items-center justify-center mx-auto mb-4">
-                      <span className="text-3xl font-bold text-[#1F7D53]">
+                    <div className="w-20 h-20 rounded-full bg-[#3B82F6]/20 flex items-center justify-center mx-auto mb-4">
+                      <span className="text-3xl font-bold text-[#3B82F6]">
                         {member.name.charAt(0)}
                       </span>
                     </div>
                     <h3 className="font-display text-lg font-bold text-text-primary mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-[#1F7D53] text-sm font-medium mb-2">
+                    <p className="text-[#3B82F6] text-sm font-medium mb-2">
                       {member.role}
                     </p>
                     <p className="text-text-muted text-sm">
@@ -194,7 +194,7 @@ export default function AboutPage() {
             </p>
             <a
               href="/free-audit"
-              className="inline-flex items-center gap-2 bg-[#1F7D53] hover:bg-[#255F38] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300"
             >
               🎯 Get Your FREE Digital Audit
             </a>

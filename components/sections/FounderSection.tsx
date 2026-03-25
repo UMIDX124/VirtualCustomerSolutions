@@ -33,7 +33,7 @@ export function FounderSection() {
       <div className="container-wide">
         {/* Section Header */}
         <FadeUp className="text-center mb-12 max-w-3xl mx-auto">
-          <span className="text-[#1F7D53] text-sm font-medium uppercase tracking-wider mb-4 block">
+          <span className="text-[#3B82F6] text-sm font-medium uppercase tracking-wider mb-4 block">
             Why Virtual Customer Solution
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary leading-tight">
@@ -49,8 +49,8 @@ export function FounderSection() {
           <FadeUp className="lg:col-span-1">
             <GlassCard className="p-8 h-full">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-[#1F7D53]/10 flex items-center justify-center">
-                  <span className="font-display text-2xl font-bold text-[#1F7D53]">VCS</span>
+                <div className="w-16 h-16 rounded-2xl bg-[#3B82F6]/10 flex items-center justify-center">
+                  <span className="font-display text-2xl font-bold text-[#3B82F6]">VCS</span>
                 </div>
                 <div>
                   <h3 className="font-display font-semibold text-text-primary">Virtual Customer Solution</h3>
@@ -67,7 +67,7 @@ export function FounderSection() {
                 {trustMetrics.map((metric) => (
                   <div key={metric.label} className="flex items-center justify-between text-sm">
                     <span className="text-text-muted">{metric.label}</span>
-                    <span className="text-[#1F7D53] font-medium tabular-nums">{metric.value}</span>
+                    <span className="text-[#3B82F6] font-medium tabular-nums">{metric.value}</span>
                   </div>
                 ))}
               </div>
@@ -77,13 +77,13 @@ export function FounderSection() {
                   href="https://linkedin.com/company/digitalpointllc"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-surface-glass-strong flex items-center justify-center text-text-muted hover:text-[#1F7D53] transition-colors"
+                  className="w-10 h-10 rounded-lg bg-surface-glass-strong flex items-center justify-center text-text-muted hover:text-[#3B82F6] transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
                   href="mailto:info@virtualcustomersolution.com"
-                  className="w-10 h-10 rounded-lg bg-surface-glass-strong flex items-center justify-center text-text-muted hover:text-[#1F7D53] transition-colors"
+                  className="w-10 h-10 rounded-lg bg-surface-glass-strong flex items-center justify-center text-text-muted hover:text-[#3B82F6] transition-colors"
                 >
                   <Mail className="w-5 h-5" />
                 </a>
@@ -96,8 +96,8 @@ export function FounderSection() {
             {companyValues.map((value, index) => (
               <StaggerItem key={value.title}>
                 <GlassCard className="p-6 h-full">
-                  <div className="w-10 h-10 rounded-xl bg-[#255F38]/10 flex items-center justify-center mb-4">
-                    <span className="font-display font-bold text-[#1F7D53]">{index + 1}</span>
+                  <div className="w-10 h-10 rounded-xl bg-[#1D4ED8]/10 flex items-center justify-center mb-4">
+                    <span className="font-display font-bold text-[#3B82F6]">{index + 1}</span>
                   </div>
                   <h3 className="font-display font-semibold text-text-primary mb-2">
                     {value.title}
@@ -119,7 +119,7 @@ export function FounderSection() {
             </p>
             <button
               onClick={() => navigateTo('free-growth-audit')}
-              className="inline-flex items-center gap-2 text-[#1F7D53] hover:text-[#E8F0E4] font-medium group"
+              className="inline-flex items-center gap-2 text-[#3B82F6] hover:text-[#F8FAFC] font-medium group"
             >
               Request a Growth Audit
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -1,111 +1,108 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Sparkles, Zap, Globe, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigation } from '@/lib/navigation';
+import { TextReveal, MagneticHover, FloatingElement } from '@/components/animations/ScrollAnimations';
+
+const smoothEase = [0.16, 1, 0.3, 1] as const;
 
 export function HeroSection() {
   const { navigateTo } = useNavigation();
   const { scrollY } = useScroll();
-  
-  const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const scale = useTransform(scrollY, [0, 300], [1, 0.95]);
+
+  const rawY = useTransform(scrollY, [0, 800], [0, 80]);
+  const rawOpacity = useTransform(scrollY, [0, 600], [1, 0]);
+  const rawScale = useTransform(scrollY, [0, 600], [1, 0.97]);
+
+  // Smooth scroll-linked values with useSpring
+  const y = useSpring(rawY, { stiffness: 100, damping: 30 });
+  const opacity = useSpring(rawOpacity, { stiffness: 100, damping: 30 });
+  const scale = useSpring(rawScale, { stiffness: 100, damping: 30 });
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-black" />
-      
-      {/* Grid Background */}
-      <div className="absolute inset-0 grid-bg opacity-30" />
-      
-      {/* Radial Glows */}
-      <div className="absolute inset-0 radial-glow" />
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#3B82F6]/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#1D4ED8]/10 rounded-full blur-[120px]" />
-
-      {/* Floating Orbs */}
-      <motion.div 
-        animate={{ 
-          y: [0, -20, 0],
-        }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 left-1/4 w-64 h-64 bg-[#3B82F6]/5 rounded-full blur-3xl" 
-      />
-      <motion.div 
-        animate={{ 
-          y: [0, 20, 0],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-[#1D4ED8]/5 rounded-full blur-3xl" 
-      />
+      {/* Spline 3D Particle Background */}
+      <div className="absolute inset-0 z-0">
+        <iframe
+          src="https://my.spline.design/particlesflow-u25QqndZtedASENFl1pLex1v/"
+          frameBorder="0"
+          width="100%"
+          height="100%"
+          className="absolute inset-0 w-full h-full"
+          style={{ pointerEvents: 'none' }}
+          loading="lazy"
+          title="Particle flow background"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#0F172A]" />
+      </div>
 
       <div className="container-wide relative z-10 pt-32 pb-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
-          <motion.div 
+          <motion.div
             style={{ y, opacity }}
             className="text-center lg:text-left"
           >
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8, ease: smoothEase }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[rgba(59,130,246,0.3)] text-[#3B82F6] text-sm mb-6"
             >
               <Sparkles size="sm" className="animate-pulse" />
               <span className="tracking-wide">AI-Powered Operations</span>
             </motion.div>
 
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+            <TextReveal
+              text="Revolutionizing Operations through Human-Centric AI"
+              as="h1"
               className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.05] tracking-tight"
-            >
-              Revolutionizing Operations through{' '}
-              <span className="text-gradient-lime">Human-Centric AI</span>
-            </motion.h1>
+            />
 
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: smoothEase }}
               className="text-gray-400 text-lg mt-6 max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
-              Scalable solutions for the world's most ambitious companies. 
+              Scalable solutions for the world's most ambitious companies.
               We combine cutting-edge AI with human expertise to transform your business operations.
             </motion.p>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.45, ease: smoothEase }}
               className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start"
             >
-              <Button
-                onClick={() => navigateTo('free-audit')}
-                className="group bg-gradient-to-r from-[#3B82F6] to-[#0F172A] hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] text-black font-bold px-8 py-6 text-lg transition-all duration-300"
-              >
-                🎯 Get Your Free Audit
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button
-                onClick={() => navigateTo('services')}
-                variant="outline"
-                className="border border-[rgba(59,130,246,0.3)] hover:border-[#3B82F6] hover:bg-[rgba(59,130,246,0.1)] text-white px-8 py-6 text-lg bg-transparent backdrop-blur-sm"
-              >
-                Explore Services
-              </Button>
+              <MagneticHover strength={0.3}>
+                <Button
+                  onClick={() => navigateTo('free-audit')}
+                  className="group bg-gradient-to-r from-[#3B82F6] to-[#0F172A] hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] text-black font-bold px-8 py-6 text-lg transition-all duration-[400ms]"
+                >
+                  Get Your Free Audit
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-[400ms]" />
+                </Button>
+              </MagneticHover>
+              <MagneticHover strength={0.3}>
+                <Button
+                  onClick={() => navigateTo('services')}
+                  variant="outline"
+                  className="border border-[rgba(59,130,246,0.3)] hover:border-[#3B82F6] hover:bg-[rgba(59,130,246,0.1)] text-white px-8 py-6 text-lg bg-transparent backdrop-blur-sm transition-all duration-[400ms]"
+                >
+                  Explore Services
+                </Button>
+              </MagneticHover>
             </motion.div>
 
             {/* Trust Indicators */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: smoothEase }}
               className="flex flex-wrap gap-6 mt-10 justify-center lg:justify-start"
             >
               {[
@@ -122,17 +119,17 @@ export function HeroSection() {
           </motion.div>
 
           {/* Right - 3D Logo Visual */}
-          <motion.div 
+          <motion.div
             style={{ scale }}
             className="hidden lg:flex justify-center items-center"
           >
             <div className="relative w-80 h-80">
               {/* Liquid Glass Container */}
               <motion.div
-                animate={{ 
-                  rotate: [0, 5, 0, -5, 0],
+                animate={{
+                  rotate: [0, 3, 0, -3, 0],
                 }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
                 className="w-full h-full liquid-glass rounded-3xl flex items-center justify-center relative"
                 style={{
                   boxShadow: `
@@ -171,7 +168,7 @@ export function HeroSection() {
                       </feMerge>
                     </filter>
                   </defs>
-                  
+
                   {/* Robot Head Outer */}
                   <path
                     d="M20 25c0-12 8-22 22-22h36c14 0 22 10 22 22v70c0 12-8 22-22 22H42c-14 0-22-10-22-22V25z"
@@ -179,7 +176,7 @@ export function HeroSection() {
                     filter="url(#robotGlow)"
                     opacity="0.9"
                   />
-                  
+
                   {/* V Shape - Eyes */}
                   <path
                     d="M35 45l18-12 18 12"
@@ -198,7 +195,7 @@ export function HeroSection() {
                     strokeLinejoin="round"
                     filter="url(#neonGlow)"
                   />
-                  
+
                   {/* S Shape - Mouth */}
                   <path
                     d="M38 65c4-12 14-12 22 0s18 12 22 0"
@@ -215,33 +212,23 @@ export function HeroSection() {
                     strokeLinecap="round"
                     filter="url(#neonGlow)"
                   />
-                  
+
                   {/* Antenna */}
                   <line x1="60" y1="3" x2="60" y2="20" stroke="#1D4ED8" strokeWidth="2" />
                   <circle cx="60" cy="5" r="3" fill="#3B82F6" className="animate-pulse" />
-                  
+
                   {/* Side Accents */}
                   <circle cx="25" cy="50" r="4" fill="#1D4ED8" className="animate-pulse" />
                   <circle cx="95" cy="50" r="4" fill="#1D4ED8" className="animate-pulse" />
                 </svg>
-                
+
                 {/* Floating particles */}
-                <motion.div
-                  animate={{ 
-                    y: [0, -10, 0],
-                    opacity: [0.5, 1, 0.5]
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#3B82F6] blur-[2px]"
-                />
-                <motion.div
-                  animate={{ 
-                    y: [0, 10, 0],
-                    opacity: [0.5, 1, 0.5]
-                  }}
-                  transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-                  className="absolute bottom-8 left-4 w-2 h-2 rounded-full bg-[#1D4ED8] blur-[2px]"
-                />
+                <FloatingElement amplitude={8} duration={6} className="absolute top-4 right-4">
+                  <div className="w-2 h-2 rounded-full bg-[#3B82F6] blur-[2px] opacity-60" />
+                </FloatingElement>
+                <FloatingElement amplitude={10} duration={8} className="absolute bottom-8 left-4">
+                  <div className="w-2 h-2 rounded-full bg-[#1D4ED8] blur-[2px] opacity-60" />
+                </FloatingElement>
               </motion.div>
             </div>
           </motion.div>

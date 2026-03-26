@@ -1,10 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useNavigation } from '@/lib/navigation';
+
+const smoothEase = [0.16, 1, 0.3, 1] as const;
 
 export function ExitIntentPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,59 +44,71 @@ export function ExitIntentPopup() {
     navigateTo('free-audit');
   };
 
-  if (!isVisible) return null;
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
-      {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        onClick={handleDismiss}
-      />
-      
-      {/* Popup */}
-      <div className="relative z-10 bg-surface border border-border-glass rounded-2xl p-8 max-w-md mx-4 shadow-2xl animate-in fade-in zoom-in-95 duration-300">
-        <button
-          onClick={handleDismiss}
-          className="absolute top-4 right-4 p-1 text-text-muted hover:text-text-primary transition-colors"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        <div className="text-center">
-          <div className="text-4xl mb-4">🛑</div>
-          <h2 className="font-display text-2xl font-bold text-text-primary mb-2">
-            Wait! Before You Go...
-          </h2>
-          <p className="text-text-secondary mb-6">
-            Get a <span className="text-[#3B82F6] font-semibold">FREE $499 Digital Audit</span> — On Us.
-          </p>
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="bg-surface-glass border-border-glass"
-            />
-            <Button
-              type="submit"
-              className="w-full bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold py-3"
-            >
-              🎯 YES, I Want My Free Audit
-            </Button>
-          </form>
-
-          <button
+    <AnimatePresence>
+      {isVisible && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: smoothEase }}
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
             onClick={handleDismiss}
-            className="mt-4 text-xs text-text-muted hover:text-text-secondary"
+          />
+
+          {/* Popup */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 10 }}
+            transition={{ duration: 0.5, ease: smoothEase }}
+            className="relative z-10 bg-surface border border-border-glass rounded-2xl p-8 max-w-md mx-4 shadow-2xl"
           >
-            No thanks, I don't want free stuff
-          </button>
+            <button
+              onClick={handleDismiss}
+              className="absolute top-4 right-4 p-1 text-text-muted hover:text-text-primary transition-colors duration-[400ms]"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="text-center">
+              <div className="text-4xl mb-4">🛑</div>
+              <h2 className="font-display text-2xl font-bold text-text-primary mb-2">
+                Wait! Before You Go...
+              </h2>
+              <p className="text-text-secondary mb-6">
+                Get a <span className="text-[#3B82F6] font-semibold">FREE $499 Digital Audit</span> — On Us.
+              </p>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <Input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="bg-surface-glass border-border-glass"
+                />
+                <Button
+                  type="submit"
+                  className="w-full bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold py-3"
+                >
+                  YES, I Want My Free Audit
+                </Button>
+              </form>
+
+              <button
+                onClick={handleDismiss}
+                className="mt-4 text-xs text-text-muted hover:text-text-secondary"
+              >
+                No thanks, I don't want free stuff
+              </button>
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </div>
+      )}
+    </AnimatePresence>
   );
 }

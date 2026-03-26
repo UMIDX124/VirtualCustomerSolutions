@@ -25,7 +25,7 @@ export const defaultMotionProfile: MotionProfile = {
   allowScrollParallax: false,
   ambientDriftScale: 0.42,
   revealDistance: 14,
-  counterDuration: 0.9,
+  counterDuration: 2,
 };
 
 export const MotionProfileContext = createContext<MotionProfile>(defaultMotionProfile);

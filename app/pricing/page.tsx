@@ -141,7 +141,23 @@ export default function PricingPage() {
 
   return (
     <SiteShell>
-      <div className="container-wide">
+      {/* Spline 3D wave background */}
+      <div className="relative">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <iframe
+            src="https://my.spline.design/uiinfocardswavebackground-aWcqI8t41uSllSwwGuDLPbuK/"
+            frameBorder="0"
+            width="100%"
+            height="100%"
+            className="absolute inset-0 w-full h-full min-h-[200vh]"
+            style={{ pointerEvents: 'none' }}
+            loading="lazy"
+            title="Pricing wave background"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/60 via-[#0F172A]/40 to-[#0F172A]/90" />
+        </div>
+      </div>
+      <div className="container-wide relative z-10">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-12">
           <div className="inline-block bg-[#3B82F6]/10 text-[#3B82F6] px-4 py-2 rounded-full text-sm font-medium mb-6">

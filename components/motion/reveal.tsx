@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { m } from "framer-motion";
 
-import { MOTION_EASE } from "@/lib/motion";
+import { QUICK_EASE } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 import { useMotionProfile } from "./use-motion-profile";
@@ -33,9 +33,9 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
       whileInView={shouldAnimate ? { opacity: 1, y: 0, scale: 1 } : undefined}
       viewport={{ once: true, amount: isCompact ? 0.14 : 0.22 }}
       transition={{
-        duration: isCompact ? 0.55 : 0.68,
+        duration: isCompact ? 0.8 : 1.0,
         delay,
-        ease: MOTION_EASE,
+        ease: QUICK_EASE,
       }}
       style={shouldAnimate ? { willChange: "transform, opacity" } : undefined}
     >

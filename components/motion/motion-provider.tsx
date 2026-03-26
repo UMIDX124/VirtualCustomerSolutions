@@ -70,7 +70,7 @@ export function MotionProvider({ children }: MotionProviderProps) {
       allowScrollParallax: !profile.isCompact && !profile.prefersReducedMotion,
       ambientDriftScale: profile.prefersReducedMotion ? 0 : profile.isCompact ? 0.42 : 1,
       revealDistance: profile.prefersReducedMotion ? 0 : profile.isCompact ? 14 : 26,
-      counterDuration: profile.isCompact ? 0.9 : 1.35,
+      counterDuration: profile.isCompact ? 1.5 : 2,
     }),
     [lowMotion, profile.canHover, profile.isCompact, profile.isDesktop, profile.prefersReducedMotion],
   );

@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Rocket } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { useNavigation, type PageRoute } from '@/lib/navigation';
+import { Mascot } from './Mascot';
 
 const navigation: { name: string; href: PageRoute }[] = [
   { name: 'Home', href: 'home' },
@@ -21,155 +22,142 @@ export function Navigation() {
   const { currentPage, navigateTo } = useNavigation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <>
-      {/* Top Banner */}
-      <div className="bg-gradient-to-r from-[#0F172A] via-[#3B82F6] to-[#0F172A] py-2 px-4 text-center text-sm font-medium">
-        <span className="text-black">
-          🔥 Launch Special: First 50 clients get LIFETIME rate lock + 50% OFF — 
-          <button 
+    <header
+      className={`
+        sticky top-0 z-50 transition-all duration-500
+        ${isScrolled
+          ? 'bg-[rgba(5,5,12,0.92)] backdrop-blur-2xl border-b border-white/[0.05]'
+          : 'bg-[rgba(5,5,12,0.6)] backdrop-blur-md'
+        }
+      `}
+    >
+      {/* Single row — logo far left, pill center, CTA far right */}
+      <div className="flex items-center justify-between h-[72px] px-3 lg:px-5 max-w-[1400px] mx-auto w-full">
+
+        {/* ─── LEFT: Mascot + Brand — flush left ─── */}
+        <button
+          onClick={() => navigateTo('home')}
+          className="flex items-center gap-2.5 group flex-shrink-0"
+        >
+          {/* Mascot elevated above the bar */}
+          <div className="relative -mt-4 lg:-mt-5">
+            <Mascot size={52} />
+          </div>
+          <div className="flex flex-col leading-none">
+            <span className="font-bold text-[17px] lg:text-xl tracking-tight whitespace-nowrap" style={{ fontFamily: 'var(--font-display)' }}>
+              <span className="text-white">Virtual </span>
+              <span className="text-[#60A5FA] font-extrabold">Customer</span>
+            </span>
+            <span className="text-[7px] lg:text-[8px] text-[#60A5FA]/50 tracking-[0.35em] font-semibold mt-0.5 uppercase">Solution</span>
+          </div>
+        </button>
+
+        {/* ─── CENTER: Pill nav (exactly like Backup Solutions) ─── */}
+        <div className="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2">
+          <div className="flex items-center gap-0 px-1.5 py-1 rounded-full bg-white/[0.03] border border-white/[0.07]">
+            {navigation.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => navigateTo(item.href)}
+                className="relative px-4 py-1.5 text-[13px] font-medium rounded-full transition-all duration-300"
+              >
+                {currentPage === item.href && (
+                  <motion.div
+                    layoutId="navPill"
+                    className="absolute inset-0 rounded-full bg-[#3B82F6]"
+                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                  />
+                )}
+                <span className={`relative z-10 ${
+                  currentPage === item.href
+                    ? 'text-white font-semibold'
+                    : 'text-[#7A8BA7] hover:text-white'
+                }`}>
+                  {item.name}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* ─── RIGHT: CTA button (with border glow like Backup Solutions) ─── */}
+        <div className="hidden lg:block flex-shrink-0">
+          <button
             onClick={() => navigateTo('free-audit')}
-            className="underline hover:no-underline ml-1"
+            className="
+              relative group inline-flex items-center gap-2
+              px-6 py-2.5
+              rounded-full
+              border border-[#3B82F6]/40
+              bg-gradient-to-r from-[#3B82F6]/10 to-[#6366F1]/10
+              text-white text-sm font-semibold
+              transition-all duration-400
+              hover:border-[#3B82F6]/70
+              hover:bg-gradient-to-r hover:from-[#3B82F6]/20 hover:to-[#6366F1]/20
+              hover:shadow-[0_0_25px_rgba(59,130,246,0.3)]
+            "
           >
-            Claim Now →
+            <span>Free Consultation</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
           </button>
-        </span>
+        </div>
+
+        {/* ─── Mobile menu toggle ─── */}
+        <button
+          className="lg:hidden p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/[0.05] transition-all"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
 
-      {/* Main Nav */}
-      <header
-        className={`
-          sticky top-0 z-50 transition-all duration-500
-          ${isScrolled 
-            ? 'bg-[rgba(10,10,10,0.9)] backdrop-blur-xl border-b border-[rgba(255,255,255,0.08)]' 
-            : 'bg-transparent'
-          }
-        `}
-      >
-        <nav className="container-wide">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo */}
-            <button
-              onClick={() => navigateTo('home')}
-              className="flex items-center gap-3 group"
-            >
-              <div className="relative w-10 h-10 lg:w-12 lg:h-12">
-                <svg viewBox="0 0 48 48" className="w-full h-full">
-                  <defs>
-                    <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#3B82F6" />
-                      <stop offset="100%" stopColor="#1D4ED8" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4z"
-                    fill="url(#navLogoGrad)"
-                  />
-                  <text x="24" y="30" textAnchor="middle" fill="#3B82F6" fontSize="16" fontWeight="bold">VCS</text>
-                </svg>
-                <div className="absolute -inset-1 bg-[#3B82F6]/20 blur-xl rounded-full group-hover:bg-[#3B82F6]/30 transition-all" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-lg lg:text-xl tracking-tight text-[#3B82F6]">
-                  VCS
-                  <span className="text-[#3B82F6]">.</span>
-                </span>
-                <span className="text-[10px] text-[#94A3B8] tracking-widest hidden sm:block">PAKISTAN</span>
-              </div>
-            </button>
-
-            {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-1">
-              {navigation.map((item) => (
-                <button
+      {/* ─── Mobile drawer ─── */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:hidden bg-[rgba(5,5,12,0.97)] backdrop-blur-2xl border-t border-white/[0.05]"
+          >
+            <div className="px-5 py-5 space-y-1">
+              {navigation.map((item, i) => (
+                <motion.button
                   key={item.name}
-                  onClick={() => navigateTo(item.href)}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.04, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  onClick={() => { navigateTo(item.href); setIsOpen(false); }}
                   className={`
-                    px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300
+                    w-full text-left px-4 py-3 rounded-xl text-[15px] transition-all duration-300
                     ${currentPage === item.href
-                      ? 'text-black bg-[rgba(59,130,246,0.8)]'
-                      : 'text-[#94A3B8] hover:text-white hover:bg-[rgba(255,255,255,0.05)]'
+                      ? 'text-white bg-[#3B82F6]/10 font-semibold border border-[#3B82F6]/15'
+                      : 'text-[#7A8BA7] hover:text-white hover:bg-white/[0.03]'
                     }
                   `}
                 >
                   {item.name}
-                </button>
+                </motion.button>
               ))}
-            </div>
-
-            {/* CTA */}
-            <div className="hidden lg:block">
-              <button
-                onClick={() => navigateTo('free-audit')}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#3B82F6] to-[#1D4ED8] text-black font-semibold rounded-full hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] transition-all duration-300 hover:scale-105"
-              >
-                <Rocket className="w-4 h-4" />
-                Get Free Audit
-              </button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 text-white hover:text-[#3B82F6] transition-colors"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </nav>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-[#0A0A0A] border-t border-[rgba(255,255,255,0.08)]"
-            >
-              <div className="container-wide py-4 space-y-1">
-                {navigation.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => {
-                      navigateTo(item.href);
-                      setIsOpen(false);
-                    }}
-                    className={`
-                      w-full text-left px-4 py-3 rounded-lg transition-colors
-                      ${currentPage === item.href
-                        ? 'text-[#3B82F6] bg-[rgba(16,185,129,0.1)]'
-                        : 'text-[#94A3B8] hover:text-white hover:bg-[rgba(255,255,255,0.05)]'
-                      }
-                    `}
-                  >
-                    {item.name}
-                  </button>
-                ))}
-                <div className="pt-4 px-4">
-                  <button
-                    onClick={() => {
-                      navigateTo('free-audit');
-                      setIsOpen(false);
-                    }}
-                    className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#0F172A] to-[#3B82F6] text-black font-semibold rounded-full"
-                  >
-                    <Rocket className="w-4 h-4" />
-                    Get Free Audit
-                  </button>
-                </div>
+              <div className="pt-3">
+                <button
+                  onClick={() => { navigateTo('free-audit'); setIsOpen(false); }}
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#3B82F6]/40 bg-[#3B82F6]/10 text-white font-semibold text-[15px]"
+                >
+                  Free Consultation <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
-    </>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { m, useScroll, useTransform } from "framer-motion";
+import { m, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 import { cn } from "@/lib/utils";
@@ -20,7 +20,8 @@ export function ParallaxOrnament({ className, travel = 40 }: ParallaxOrnamentPro
     offset: ["start end", "end start"],
   });
   const movement = isCompact ? travel * 0.35 : travel;
-  const y = useTransform(scrollYProgress, [0, 1], [movement, -movement]);
+  const rawY = useTransform(scrollYProgress, [0, 1], [movement, -movement]);
+  const y = useSpring(rawY, { stiffness: 100, damping: 30, mass: 0.5 });
 
   return (
     <m.div

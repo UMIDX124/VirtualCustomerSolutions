@@ -48,7 +48,7 @@ const variants = {
       x: -24,
       y: -16,
       scale: 1.14,
-      duration: 26,
+      duration: 25,
     },
   ],
   cta: [
@@ -99,7 +99,7 @@ export function AmbientOrbs({ className, variant = "section" }: AmbientOrbsProps
             duration: isCompact ? orb.duration * 0.88 : orb.duration,
             repeat: Number.POSITIVE_INFINITY,
             repeatType: "mirror",
-            ease: "easeInOut",
+            ease: "linear",
           }}
           style={prefersReducedMotion ? undefined : { willChange: "transform" }}
         />

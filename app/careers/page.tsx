@@ -81,7 +81,7 @@ export default function CareersPage() {
               Join Our Team
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Build Your Future with <span className="text-gradient-green">VCS</span>
+              Build Your Future with <span className="text-gradient-lime">VCS</span>
             </h1>
             <p className="text-xl text-[var(--text-secondary)] mb-8">
               Join Pakistan's leading digital services company and work with global clients.
@@ -109,7 +109,7 @@ export default function CareersPage() {
               { value: '24/7', label: 'Support' },
             ].map((stat, i) => (
               <div key={i} className="card-accent p-8 text-center">
-                <div className="text-4xl font-bold text-gradient-green mb-2">{stat.value}</div>
+                <div className="text-4xl font-bold text-gradient-lime mb-2">{stat.value}</div>
                 <div className="text-[var(--text-secondary)]">{stat.label}</div>
               </div>
             ))}
@@ -127,7 +127,7 @@ export default function CareersPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {benefits.map((benefit, i) => (
-              <div key={i} className="glass p-6 text-center hover:border-[var(--green-primary)] transition-all">
+              <div key={i} className="glass p-6 text-center hover:border-[#3B82F6] transition-all">
                 <div className="text-[var(--text-primary)]">{benefit}</div>
               </div>
             ))}
@@ -145,11 +145,11 @@ export default function CareersPage() {
           </div>
           <div className="grid gap-6 max-w-4xl mx-auto">
             {jobs.map((job, i) => (
-              <div key={i} className="card-accent p-8 hover:glow-green-sm transition-all">
+              <div key={i} className="card-accent p-8 hover:glow-lime-sm transition-all">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="badge-gold text-sm">{job.department}</span>
+                      <span className="badge text-sm">{job.department}</span>
                       <span className="text-sm text-[var(--text-muted)]">{job.type}</span>
                     </div>
                     <h3 className="text-xl font-bold mb-2">{job.title}</h3>

@@ -1,5 +1,6 @@
 import { SiteShell } from '@/components/layout/SiteShell';
 import { Metadata } from 'next';
+// import Image from 'next/image'; // Ready for real images
 import { FadeUp, GlassCard } from '@/components/ui-dp/AnimatedElements';
 
 export const metadata: Metadata = {
@@ -91,6 +92,32 @@ export default function AboutPage() {
             <p className="text-text-secondary text-xl leading-relaxed">
               We were born from a simple idea — businesses shouldn't have to choose between great marketing and affordable remote talent.
             </p>
+          </div>
+
+          {/* Hero Image Section */}
+          <div className="relative h-[400px] rounded-2xl overflow-hidden mb-20 group">
+            {/* Premium gradient placeholder with geometric shapes */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6] via-[#1D4ED8] to-[#0F172A]" />
+            {/* Decorative geometric elements */}
+            <div className="absolute top-12 left-12 w-40 h-40 rounded-full border border-white/10 group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute top-16 left-16 w-32 h-32 rounded-full border border-white/[0.07]" />
+            <div className="absolute bottom-16 right-16 w-64 h-64 rotate-45 border border-white/[0.05] group-hover:rotate-[50deg] transition-transform duration-700" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-white/[0.04] blur-2xl" />
+            <div className="absolute -bottom-4 -right-4 w-80 h-80 rounded-full bg-[#3B82F6]/20 blur-[100px]" />
+            {/* Grid pattern overlay */}
+            <div className="absolute inset-0 grid-bg opacity-10" />
+            {/* Gradient overlay from dark to transparent */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/40 to-transparent" />
+            {/* Content overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-10">
+              <p className="text-[#3B82F6] text-sm font-semibold uppercase tracking-widest mb-2">Est. 2020</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-2">
+                Building the Future of Work
+              </h2>
+              <p className="text-gray-300 max-w-lg">
+                500+ clients across 50+ countries trust us to deliver results.
+              </p>
+            </div>
           </div>
 
           {/* Story Section */}

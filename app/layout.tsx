@@ -1,20 +1,28 @@
 import type { Metadata } from "next";
-import { Merriweather, Roboto } from "next/font/google";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- Uncomment when enabling AdSense
+import Script from "next/script";
+import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
-const merriweather = Merriweather({
-  variable: "--font-merriweather",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "700", "900"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+const inter = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "700"],
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -85,9 +93,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
+  // verification: { google: "ADD_YOUR_GOOGLE_VERIFICATION_CODE" },
   alternates: {
     canonical: "https://virtualcustomersolution.com",
   },
@@ -113,21 +119,37 @@ export default function RootLayout({
               logo: "https://virtualcustomersolution.com/logo.svg",
               description:
                 "A comprehensive digital solutions company offering IT consulting, cloud solutions, cybersecurity, digital marketing, and remote workforce services.",
+              email: "umidx932@gmail.com",
               sameAs: [
                 "https://facebook.com/virtualcustomersolution",
                 "https://linkedin.com/company/virtualcustomersolution",
                 "https://twitter.com/virtualcustomersolution",
+                "https://instagram.com/virtualcustomersolution",
+                "https://github.com/virtualcustomersolution",
+                "https://youtube.com/@virtualcustomersolution",
               ],
               contactPoint: {
                 "@type": "ContactPoint",
-                email: "info@virtualcustomersolution.com",
+                email: "umidx932@gmail.com",
                 contactType: "customer service",
+                availableLanguage: ["English", "Urdu"],
               },
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "PK",
+                addressLocality: "Pakistan",
               },
-              foundingDate: "2020",
+              founder: {
+                "@type": "Person",
+                name: "M Faizan Rafiq",
+                jobTitle: "Founder & CEO",
+              },
+              foundingDate: "2018",
+              numberOfEmployees: {
+                "@type": "QuantitativeValue",
+                minValue: 2,
+                maxValue: 10,
+              },
             }),
           }}
         />
@@ -176,54 +198,7 @@ export default function RootLayout({
         
         {/* FAQPage Schema - Will be added dynamically on FAQ section */}
         
-        {/* BreadcrumbList Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://digitalpointllc.com",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Performance Marketing",
-                  item: "https://digitalpointllc.com/performance-marketing",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 3,
-                  name: "Remote Workforce",
-                  item: "https://digitalpointllc.com/remote-workforce",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 4,
-                  name: "Systems & Reporting",
-                  item: "https://digitalpointllc.com/systems-reporting",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 5,
-                  name: "Results",
-                  item: "https://digitalpointllc.com/results",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 6,
-                  name: "Free Growth Audit",
-                  item: "https://digitalpointllc.com/free-growth-audit",
-                },
-              ],
-            }),
-          }}
-        />
+        {/* BreadcrumbList — handled per-page via components/seo/Breadcrumbs.tsx */}
         
         {/* Preconnect to external resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -232,9 +207,20 @@ export default function RootLayout({
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#0F172A" />
         <meta name="msapplication-TileColor" content="#3B82F6" />
+
+        {/* Google AdSense — uncomment after approval and replace pub-XXXXXXXXXX */}
+        {/* <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        /> */}
+
+        {/* Preconnect to AdSense (enable when ads are active) */}
+        {/* <link rel="preconnect" href="https://pagead2.googlesyndication.com" /> */}
       </head>
       <body
-        className={`${merriweather.variable} ${roboto.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${inter.variable} ${ibmPlexMono.variable} antialiased`}
       >
         {children}
         <Toaster />

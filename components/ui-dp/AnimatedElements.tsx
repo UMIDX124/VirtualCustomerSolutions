@@ -4,7 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
-const premiumEase = [0.25, 0.4, 0.25, 1] as [number, number, number, number];
+const premiumEase = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
 interface FadeUpProps {
   children: ReactNode;
@@ -13,7 +13,7 @@ interface FadeUpProps {
   duration?: number;
 }
 
-export function FadeUp({ children, className, delay = 0, duration = 0.6 }: FadeUpProps) {
+export function FadeUp({ children, className, delay = 0, duration = 0.8 }: FadeUpProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
@@ -45,7 +45,7 @@ export function FadeIn({ children, className, delay = 0 }: FadeInProps) {
       ref={ref}
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-      transition={{ duration: 0.5, delay }}
+      transition={{ duration: 0.7, delay, ease: premiumEase }}
       className={className}
     >
       {children}
@@ -66,9 +66,9 @@ export function ScaleIn({ children, className, delay = 0 }: ScaleInProps) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-      transition={{ duration: 0.5, delay, ease: premiumEase }}
+      initial={{ opacity: 0, scale: 0.96 }}
+      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.96 }}
+      transition={{ duration: 0.8, delay, ease: premiumEase }}
       className={className}
     >
       {children}
@@ -107,11 +107,11 @@ export function StaggerContainer({ children, className, staggerDelay = 0.1 }: St
 }
 
 export const staggerItem = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: premiumEase },
+    transition: { duration: 0.8, ease: premiumEase },
   },
 };
 
@@ -141,7 +141,7 @@ export function GlassCard({ children, className, hover = true, onClick }: GlassC
       onClick={onClick}
       className={cn(
         'relative bg-surface-glass backdrop-blur-xl border border-border-glass rounded-2xl overflow-hidden',
-        hover && 'transition-all duration-300 hover:border-border-active hover:shadow-xl hover:shadow-black/20',
+        hover && 'transition-all duration-[400ms] hover:border-border-active hover:shadow-xl hover:shadow-black/20',
         className
       )}
     >

@@ -1,119 +1,93 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server'
+import { z } from 'zod/v4'
+import { db } from '@/lib/db'
+import { sendAuditConfirmation, sendAdminNotification } from '@/lib/email'
+import { rateLimit } from '@/lib/rate-limit'
 
-type AuditPayload = {
-  name?: string;
-  email?: string;
-  company?: string;
-  website?: string;
-  businessType?: string;
-  adSpend?: string;
-  teamSize?: string;
-  bottleneck?: string;
-  services?: string[];
-  notes?: string;
-  utmSource?: string;
-  utmMedium?: string;
-  utmCampaign?: string;
-};
+const auditSchema = z.object({
+  name: z.string().min(1, 'Name is required').max(200),
+  email: z.email('Invalid email address'),
+  company: z.string().max(200).optional(),
+  phone: z.string().max(50).optional(),
+  message: z.string().max(5000).optional(),
+  source: z.string().max(200).optional(),
+  utmSource: z.string().max(200).optional(),
+  utmMedium: z.string().max(200).optional(),
+  utmCampaign: z.string().max(200).optional(),
+})
 
-function escapeHtml(value: string) {
-  return value
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#39;');
-}
-
-function field(label: string, value?: string | string[]) {
-  if (!value || (Array.isArray(value) && value.length === 0)) return '';
-  const output = Array.isArray(value) ? value.join(', ') : value;
-  return `<p><strong>${escapeHtml(label)}:</strong> ${escapeHtml(output)}</p>`;
-}
-
-export async function POST(request: NextRequest) {
+export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as AuditPayload;
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
+    const { success, remaining } = rateLimit(ip, 'audit', 3)
 
-    if (!body.name?.trim() || !body.email?.trim() || !body.bottleneck?.trim() || !body.notes?.trim()) {
+    if (!success) {
       return NextResponse.json(
-        { success: false, message: 'Please complete the required audit fields before submitting.' },
-        { status: 400 },
-      );
+        { success: false, message: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'X-RateLimit-Remaining': String(remaining) } }
+      )
     }
 
-    const resendKey = process.env.RESEND_API_KEY;
-    const resendFrom = process.env.RESEND_FROM;
-    const resendTo = process.env.RESEND_TO || 'digitalpointllc1122@gmail.com';
+    const body = await request.json()
+    const parsed = auditSchema.safeParse(body)
 
-    if (!resendKey || !resendFrom) {
+    if (!parsed.success) {
+      const errors = parsed.error.issues.map((i) => i.message)
       return NextResponse.json(
-        {
-          success: false,
-          message: 'Email delivery is not configured yet. Add RESEND_API_KEY and RESEND_FROM to continue.',
-        },
-        { status: 500 },
-      );
+        { success: false, message: 'Validation failed.', errors },
+        { status: 400 }
+      )
     }
 
-    const subject = `New Free Growth Audit Request from ${body.name.trim()}`;
-    const html = `
-      <h2>Free Growth Audit Request</h2>
-      ${field('Name', body.name)}
-      ${field('Email', body.email)}
-      ${field('Company', body.company)}
-      ${field('Website', body.website)}
-      ${field('Business Type', body.businessType)}
-      ${field('Monthly Ad Spend', body.adSpend)}
-      ${field('Team Size', body.teamSize)}
-      ${field('Primary Bottleneck', body.bottleneck)}
-      ${field('Service Focus', body.services)}
-      ${field('Notes', body.notes)}
-      ${field('UTM Source', body.utmSource)}
-      ${field('UTM Medium', body.utmMedium)}
-      ${field('UTM Campaign', body.utmCampaign)}
-    `;
+    const data = parsed.data
 
-    const resendResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${resendKey}`,
-        'Content-Type': 'application/json',
+    // Save to database
+    const submission = await db.auditSubmission.create({
+      data: {
+        name: data.name,
+        email: data.email,
+        company: data.company ?? null,
+        phone: data.phone ?? null,
+        message: data.message ?? null,
+        source: data.source ?? null,
+        utmSource: data.utmSource ?? null,
+        utmMedium: data.utmMedium ?? null,
+        utmCampaign: data.utmCampaign ?? null,
       },
-      body: JSON.stringify({
-        from: resendFrom,
-        to: [resendTo],
-        reply_to: body.email.trim(),
-        subject,
-        html,
+    })
+
+    // Send emails (non-blocking, don't fail the request if emails fail)
+    Promise.allSettled([
+      sendAuditConfirmation({
+        name: data.name,
+        email: data.email,
+        company: data.company,
       }),
-    });
+      sendAdminNotification('audit', {
+        name: data.name,
+        email: data.email,
+        company: data.company,
+        phone: data.phone,
+        message: data.message,
+        source: data.source,
+      }),
+    ]).catch((err) => {
+      console.error('Email sending failed:', err)
+    })
 
-    const resendData = await resendResponse.json();
-
-    if (!resendResponse.ok) {
-      const message =
-        typeof resendData?.message === 'string'
-          ? resendData.message
-          : 'We could not send your request right now. Please try again in a moment.';
-
-      console.error('Resend audit submission failed:', resendData);
-      return NextResponse.json({ success: false, message }, { status: 502 });
-    }
-
-    return NextResponse.json({
-      success: true,
-      message: 'Audit request received successfully.',
-      id: resendData?.id,
-    });
-  } catch (error) {
-    console.error('Audit form error:', error);
     return NextResponse.json(
       {
-        success: false,
-        message: 'An unexpected error occurred while processing your request.',
+        success: true,
+        message: 'Audit request received successfully.',
+        id: submission.id,
       },
-      { status: 500 },
-    );
+      { status: 201, headers: { 'X-RateLimit-Remaining': String(remaining) } }
+    )
+  } catch (error) {
+    console.error('Audit form error:', error)
+    return NextResponse.json(
+      { success: false, message: 'An unexpected error occurred while processing your request.' },
+      { status: 500 }
+    )
   }
 }

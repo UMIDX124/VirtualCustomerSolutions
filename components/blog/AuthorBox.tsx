@@ -1,0 +1,90 @@
+import { Linkedin } from 'lucide-react';
+import Link from 'next/link';
+
+interface AuthorData {
+  name: string;
+  initials: string;
+  title: string;
+  bio: string;
+  expertise: string[];
+  linkedin: string;
+}
+
+const AUTHORS: Record<string, AuthorData> = {
+  'M Faizan Rafiq': {
+    name: 'M Faizan Rafiq',
+    initials: 'MF',
+    title: 'Founder & CEO',
+    bio: 'Faizan leads Virtual Customer Solution with a vision for making world-class digital services accessible to businesses of all sizes. With deep expertise in digital strategy and remote team building, he has helped hundreds of companies scale efficiently.',
+    expertise: ['Digital Strategy', 'Business Growth', 'Remote Teams'],
+    linkedin: 'https://linkedin.com/in/mfaizanrafiq',
+  },
+  'Sarah Mitchell': {
+    name: 'Sarah Mitchell',
+    initials: 'SM',
+    title: 'Head of Content',
+    bio: 'Sarah drives the content and SEO strategy at Virtual Customer Solution. She brings years of experience in content marketing and digital trends, helping businesses build authority and attract qualified leads through strategic content.',
+    expertise: ['Content Marketing', 'SEO', 'Digital Trends'],
+    linkedin: 'https://linkedin.com/in/sarahmitchell',
+  },
+};
+
+interface AuthorBoxProps {
+  authorName: string;
+}
+
+export function AuthorBox({ authorName }: AuthorBoxProps) {
+  const author = AUTHORS[authorName];
+  if (!author) return null;
+
+  return (
+    <div className="glass-panel p-6 md:p-8">
+      <div className="flex flex-col sm:flex-row gap-5">
+        {/* Initials Avatar */}
+        <div className="shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#1D4ED8] flex items-center justify-center">
+          <span className="font-display text-xl font-bold text-white">
+            {author.initials}
+          </span>
+        </div>
+
+        <div className="flex-1 min-w-0">
+          {/* Name & Title */}
+          <div className="flex items-start justify-between gap-4 mb-2">
+            <div>
+              <h3 className="font-display text-lg font-bold text-[#F8FAFC]">
+                {author.name}
+              </h3>
+              <p className="text-sm text-[#3B82F6] font-medium">{author.title}</p>
+            </div>
+            <Link
+              href={author.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${author.name} on LinkedIn`}
+              className="shrink-0 p-2 rounded-lg border border-[rgba(255,255,255,0.06)] bg-[rgba(59,130,246,0.04)] hover:bg-[rgba(59,130,246,0.1)] transition-colors"
+            >
+              <Linkedin className="w-4 h-4 text-[#94A3B8]" />
+            </Link>
+          </div>
+
+          {/* Bio */}
+          <p className="text-sm text-[#94A3B8] leading-relaxed mb-4">
+            {author.bio}
+          </p>
+
+          {/* Expertise Tags */}
+          <div className="flex flex-wrap gap-2">
+            {author.expertise.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs font-medium px-2.5 py-1 rounded-full bg-[rgba(59,130,246,0.08)] text-[#60A5FA] border border-[rgba(59,130,246,0.15)]"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

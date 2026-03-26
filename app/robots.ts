@@ -1,12 +1,17 @@
-import type { MetadataRoute } from "next";
+import type { MetadataRoute } from 'next';
 
-import { siteConfig } from "@/lib/content";
+const SITE_URL = 'https://virtualcustomersolution.com';
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [{ userAgent: "*", allow: "/" }],
-    sitemap: `${siteConfig.siteUrl}/sitemap.xml`,
-    host: siteConfig.siteUrl,
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/', '/free-audit'],
+      },
+    ],
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }
-

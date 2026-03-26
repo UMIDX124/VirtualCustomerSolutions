@@ -1,5 +1,5 @@
 @theme inline {
-  --font-sans: var(--font-roboto);
+  --font-sans: var(--font-body);
   --color-background: #0F172A;
   --color-surface: #1E293B;
   --color-surface-strong: #334155;
@@ -51,7 +51,7 @@ body::after {
 
 h1, h2, h3, h4 {
   letter-spacing: -0.04em;
-  font-family: var(--font-merriweather), 'Merriweather', Georgia, serif;
+  font-family: var(--font-display), 'Space Grotesk', sans-serif;
   text-wrap: balance;
 }
 

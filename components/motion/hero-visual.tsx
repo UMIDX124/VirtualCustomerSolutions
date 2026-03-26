@@ -11,7 +11,7 @@ const cardMotion = {
 };
 
 const floatTransition = {
-  duration: 3.6,
+  duration: 8,
   repeat: Number.POSITIVE_INFINITY,
   repeatType: "mirror" as const,
   ease: "easeInOut" as const,
@@ -72,7 +72,7 @@ export function HeroVisual() {
       <div className="relative grid gap-4 md:grid-cols-2 md:grid-rows-[auto_auto]">
         <m.div
           {...cardMotion}
-          animate={{ y: [0, -4, 0], opacity: 1 }}
+          animate={{ y: [0, -3, 0], opacity: 1 }}
           transition={floatTransition}
           className="md:col-span-2"
         >
@@ -103,7 +103,7 @@ export function HeroVisual() {
         <m.div
           {...cardMotion}
           animate={{ y: [0, 3, 0], opacity: 1 }}
-          transition={{ ...floatTransition, duration: 4 }}
+          transition={{ ...floatTransition, duration: 7 }}
         >
           <VisualCard
             title="Marketing Automation"
@@ -118,8 +118,8 @@ export function HeroVisual() {
 
         <m.div
           {...cardMotion}
-          animate={{ y: [0, -3, 0], opacity: 1 }}
-          transition={{ ...floatTransition, duration: 3.8 }}
+          animate={{ y: [0, -4, 0], opacity: 1 }}
+          transition={{ ...floatTransition, duration: 9 }}
         >
           <VisualCard
             title="Execution Layer"

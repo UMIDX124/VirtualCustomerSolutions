@@ -5,6 +5,7 @@ import { WhatsAppButton } from '@/components/sections/WhatsAppButton';
 import { ExitIntentPopup } from '@/components/sections/ExitIntentPopup';
 import { CookieConsent } from '@/components/CookieConsent';
 import { StickyCTABar } from '@/components/sections/StickyCTABar';
+import { ChatbotLoader } from '@/components/ui/ChatbotLoader';
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
@@ -18,6 +19,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <ExitIntentPopup />
         <CookieConsent />
         <StickyCTABar />
+        <ChatbotLoader />
       </div>
     </div>
   );

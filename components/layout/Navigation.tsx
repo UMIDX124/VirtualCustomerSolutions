@@ -45,16 +45,23 @@ export function Navigation() {
           onClick={() => navigateTo('home')}
           className="flex items-center gap-2.5 group flex-shrink-0"
         >
-          {/* Mascot elevated above the bar */}
+          {/* Mascot */}
           <div className="relative -mt-4 lg:-mt-5">
             <Mascot size={52} />
           </div>
-          <div className="flex flex-col leading-none">
-            <span className="font-bold text-[17px] lg:text-xl tracking-tight whitespace-nowrap" style={{ fontFamily: 'var(--font-display)' }}>
-              <span className="text-white">Virtual </span>
-              <span className="text-[#4ADE80] font-extrabold">Customer</span>
+          {/* Virtual.png image + "Customer Solution" below */}
+          <div className="flex flex-col items-start leading-none">
+            <Image
+              src="/Virtual.png"
+              alt="Virtual"
+              width={120}
+              height={28}
+              className="h-6 lg:h-7 w-auto object-contain"
+              priority
+            />
+            <span className="text-[9px] lg:text-[10px] text-[#4ADE80]/60 tracking-[0.25em] font-semibold mt-0.5 uppercase">
+              Customer Solution
             </span>
-            <span className="text-[7px] lg:text-[8px] text-[#4ADE80]/50 tracking-[0.35em] font-semibold mt-0.5 uppercase">Solution</span>
           </div>
         </button>
 

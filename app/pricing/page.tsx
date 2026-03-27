@@ -1,316 +1,502 @@
 'use client';
 
-import { Check, X, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { FadeUp, GlassCard } from '@/components/ui-dp/AnimatedElements';
+import { useState, useRef, useEffect } from 'react';
+import { Check, X, ArrowRight, Rocket, Zap, Crown, ChevronDown, Minus } from 'lucide-react';
 import { useNavigation } from '@/lib/navigation';
 import { SiteShell } from '@/components/layout/SiteShell';
 
-const packages = [
+/* ─── Data ──────────────────────────────────────────────────────────────── */
+
+const plans = [
   {
+    id: 'launch',
     name: 'Launch Pack',
-    price: '$399',
-    originalPrice: '$799',
-    period: '/mo',
-    firstMonth: '$199',
-    description: 'For Startups & Small Businesses',
-    badge: '🚀',
-    badgeText: 'First Month 50% OFF',
-    highlighted: false,
+    subtitle: 'For Startups & Small Businesses',
+    price: 399,
+    original: 799,
+    firstMonth: 199,
+    offer: null as string | null,
+    badge: 'Save 50%',
+    Icon: Rocket,
+    color: '#4ADE80',
+    glow: 'rgba(74,222,128,0.18)',
+    border: 'rgba(74,222,128,0.2)',
+    popular: false,
+    cta: 'Get Started',
+    guarantee: '30-Day Money-Back',
     features: [
-      { name: '8 SEO keywords + on-page optimization', included: true },
-      { name: 'Social Media: 2 platforms (Facebook + Instagram)', included: true },
-      { name: '8 designed posts/month', included: true },
-      { name: 'Part-time Remote VA (20 hrs/week)', included: true },
-      { name: 'Monthly analytics report', included: true },
-      { name: 'WhatsApp direct support', included: true },
-      { name: 'Full-time Marketing Specialist', included: false },
-      { name: 'Bi-weekly strategy calls', included: false },
-      { name: 'PPC / Google Ads management', included: false },
-      { name: 'Blog content writing', included: false },
-      { name: 'CRM setup', included: false },
+      { label: '8 SEO keywords + on-page optimization', ok: true },
+      { label: 'Social Media: 2 platforms (FB + IG)', ok: true },
+      { label: '8 designed posts / month', ok: true },
+      { label: 'Part-time Remote VA (20 hrs/wk)', ok: true },
+      { label: 'Monthly analytics report', ok: true },
+      { label: 'WhatsApp direct support', ok: true },
+      { label: 'PPC / Google Ads management', ok: false },
+      { label: 'Blog content writing', ok: false },
+      { label: 'CRM setup', ok: false },
+      { label: 'Bi-weekly strategy calls', ok: false },
     ],
-    bonuses: [
-      '🎁 Brand Kit — logo refresh + templates (Worth $299)',
-      '🎁 $0 setup fee (others charge $200–$500)',
-    ],
-    guarantee: '30-Day Money-Back Guarantee',
+    bonuses: ['Brand Kit + templates (worth $299)', '$0 setup fee'],
   },
   {
+    id: 'growth',
     name: 'Growth Suite',
-    price: '$999',
-    originalPrice: '$3,999',
-    period: '/mo',
-    firstMonth: '$999',
-    offer: '3-month signup = 4th month FREE',
-    description: 'For Growing Businesses & E-Commerce',
-    badge: '⚡',
-    badgeText: '⭐ Most Popular — Save 75%',
-    highlighted: true,
+    subtitle: 'For Growing Businesses & E-Commerce',
+    price: 999,
+    original: 3999,
+    firstMonth: 999,
+    offer: '3 months → 4th month FREE',
+    badge: '⭐ Most Popular',
+    Icon: Zap,
+    color: '#22C55E',
+    glow: 'rgba(34,197,94,0.28)',
+    border: 'rgba(34,197,94,0.45)',
+    popular: true,
+    cta: 'Start Growing',
+    guarantee: '20% traffic boost in 90 days',
     features: [
-      { name: '20 SEO keywords + full technical audit', included: true },
-      { name: 'PPC: Google Ads + Meta Ads management', included: true },
-      { name: 'Social Media: 4 platforms', included: true },
-      { name: '16 posts + 4 reels/month', included: true },
-      { name: '2 blog articles/month + 1 newsletter', included: true },
-      { name: 'Full-time Marketing Specialist (40 hrs/week)', included: true },
-      { name: 'Bi-weekly strategy calls', included: true },
-      { name: 'Monthly competitor analysis report', included: true },
-      { name: 'CRM setup (HubSpot/GoHighLevel)', included: true },
-      { name: 'WhatsApp direct + priority support', included: true },
+      { label: '20 SEO keywords + full technical audit', ok: true },
+      { label: 'PPC: Google Ads + Meta Ads management', ok: true },
+      { label: 'Social Media: 4 platforms', ok: true },
+      { label: '16 posts + 4 reels / month', ok: true },
+      { label: '2 blog articles + 1 newsletter/mo', ok: true },
+      { label: 'Full-time Marketing Specialist', ok: true },
+      { label: 'Bi-weekly strategy calls', ok: true },
+      { label: 'Monthly competitor analysis report', ok: true },
+      { label: 'CRM setup (HubSpot / GoHighLevel)', ok: true },
+      { label: 'WhatsApp priority support', ok: true },
     ],
-    bonuses: [
-      '🎁 Custom Landing Page (Worth $799)',
-      '🎁 1-Hour Strategy Session (Worth $299)',
-      '🎁 Refer a Friend = $200 OFF for both',
-    ],
-    guarantee: '20% traffic increase in 90 days or next month FREE',
+    bonuses: ['Custom Landing Page ($799)', '1-Hr Strategy Session ($299)', 'Refer a friend = $200 OFF both'],
   },
   {
+    id: 'enterprise',
     name: 'Enterprise Pro',
-    price: '$2,499',
-    originalPrice: '$9,999',
-    period: '/mo',
-    firstMonth: '$2,499',
-    offer: '6-month signup = 2 months FREE',
-    description: 'For Established Businesses & Agencies',
-    badge: '👑',
-    badgeText: 'Best Value — Save 75%',
-    highlighted: false,
+    subtitle: 'For Established Businesses & Agencies',
+    price: 2499,
+    original: 9999,
+    firstMonth: 2499,
+    offer: '6 months → 2 months FREE',
+    badge: 'Best Value',
+    Icon: Crown,
+    color: '#A78BFA',
+    glow: 'rgba(167,139,250,0.18)',
+    border: 'rgba(167,139,250,0.25)',
+    popular: false,
+    cta: 'Go Enterprise',
+    guarantee: '3× ROI in 6 months or work FREE',
     features: [
-      { name: '40+ SEO keywords + link building + technical audits', included: true },
-      { name: 'Multi-platform PPC (Google, Meta, TikTok, LinkedIn)', included: true },
-      { name: 'Social Media: 5 platforms', included: true },
-      { name: '24 posts + 8 reels + daily stories', included: true },
-      { name: '4 blogs + 2 email campaigns + 1 lead magnet/month', included: true },
-      { name: '2 Full-Time Remote Staff (1 Marketer + 1 VA)', included: true },
-      { name: 'Weekly strategy calls with account manager', included: true },
-      { name: 'CRO, A/B testing, funnel optimization', included: true },
-      { name: 'Competitor intelligence reports', included: true },
-      { name: 'White-label reports (for agencies)', included: true },
-      { name: 'Priority support + 4-hour response SLA', included: true },
+      { label: '40+ SEO keywords + link building', ok: true },
+      { label: 'Multi-platform PPC (Google, Meta, TikTok, LinkedIn)', ok: true },
+      { label: 'Social Media: 5 platforms', ok: true },
+      { label: '24 posts + 8 reels + daily stories', ok: true },
+      { label: '4 blogs + 2 email campaigns/mo', ok: true },
+      { label: '2 Full-Time Remote Staff (Mktr + VA)', ok: true },
+      { label: 'Weekly strategy calls + account mgr', ok: true },
+      { label: 'CRO, A/B testing, funnel optimization', ok: true },
+      { label: 'Competitor intelligence reports', ok: true },
+      { label: 'White-label reports + priority SLA', ok: true },
     ],
-    bonuses: [
-      '🎁 Complete Website Redesign (Worth $2,999)',
-      '🎁 Marketing Funnel Build (Worth $1,499)',
-      '🎁 Full-Day Strategy Sprint (Worth $1,999)',
-      '🎁 Total Bonus Value: $6,497!',
-      '🎁 VIP Referral: $500 credit per referral',
-    ],
-    guarantee: '3X ROI in 6 months or we work FREE until achieved',
+    bonuses: ['Full Website Redesign ($2,999)', 'Marketing Funnel ($1,499)', 'Strategy Sprint ($1,999)', 'Total bonus value: $6,497'],
   },
 ];
 
 const faqs = [
-  {
-    question: 'Is there a setup fee?',
-    answer: 'No! All packages include FREE setup and onboarding. Zero hidden fees.',
-  },
-  {
-    question: 'Can I cancel anytime?',
-    answer: 'Yes. No long-term contracts. Cancel with 30-day notice.',
-  },
-  {
-    question: 'How fast will I see results?',
-    answer: 'Most clients see improvements in 30-60 days. Growth Engine guarantees 20% traffic increase in 90 days.',
-  },
-  {
-    question: 'Who will work on my account?',
-    answer: 'Your OWN dedicated team — not shared, not outsourced.',
-  },
-  {
-    question: 'What if I\'m not satisfied?',
-    answer: 'Every plan has a guarantee. Starter has 30-day money-back, Growth has performance guarantee, Domination has ROI guarantee.',
-  },
-  {
-    question: 'Can I upgrade later?',
-    answer: 'Absolutely! Upgrade anytime. We prorate the difference.',
-  },
-  {
-    question: 'Do you work with international clients?',
-    answer: 'Yes! We serve clients in 50+ countries.',
-  },
-  {
-    question: 'What tools do you use?',
-    answer: 'Google Analytics, SEMrush, Ahrefs, Canva Pro, HubSpot, GoHighLevel, Meta Business Suite, Google Ads — all included.',
-  },
+  { q: 'Is there a setup fee?', a: 'No — all packages include free setup and onboarding. Zero hidden charges.' },
+  { q: 'Can I cancel anytime?', a: 'Yes. No long-term contracts. Cancel with 30-day notice, no questions asked.' },
+  { q: 'How fast will I see results?', a: 'Most clients see measurable improvements in 30–60 days. Growth Suite guarantees 20% traffic increase in 90 days.' },
+  { q: 'Who works on my account?', a: 'Your own dedicated team — not shared, not outsourced. People who work only for you.' },
+  { q: "What if I'm not satisfied?", a: 'Every plan has a guarantee: Launch gets 30-day money-back, Growth gets performance guarantee, Enterprise gets ROI guarantee.' },
+  { q: 'Can I upgrade later?', a: 'Absolutely. Upgrade anytime — we prorate the difference so you never overpay.' },
+  { q: 'Do you work internationally?', a: 'Yes — we serve clients in 50+ countries across every major time zone.' },
 ];
+
+/* ─── Hooks ─────────────────────────────────────────────────────────────── */
+
+function useReveal(delay = 0) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setVisible(true);
+      return;
+    }
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.08 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return {
+    ref,
+    style: {
+      opacity: visible ? 1 : 0,
+      transform: visible ? 'translateY(0)' : 'translateY(28px)',
+      transition: `opacity 0.55s ease ${delay}ms, transform 0.55s ease ${delay}ms`,
+    },
+  };
+}
+
+/* ─── PlanCard ──────────────────────────────────────────────────────────── */
+
+function PlanCard({ plan, index, onCta }: { plan: typeof plans[0]; index: number; onCta: () => void }) {
+  const reveal = useReveal(index * 100);
+
+  return (
+    <div
+      ref={reveal.ref}
+      style={reveal.style}
+      className={`relative flex flex-col rounded-2xl overflow-hidden ${plan.popular ? 'md:-mt-5 md:mb-0' : ''}`}
+    >
+      {/* Glow border */}
+      <div
+        className="absolute inset-0 rounded-2xl pointer-events-none z-10"
+        style={{
+          border: `1px solid ${plan.border}`,
+          boxShadow: plan.popular
+            ? `0 0 0 1px ${plan.border}, 0 0 40px ${plan.glow}, 0 20px 60px ${plan.glow}`
+            : `0 0 20px ${plan.glow}`,
+        }}
+      />
+
+      {/* Popular top bar */}
+      {plan.popular && (
+        <div
+          className="relative z-20 py-2.5 text-center text-[11px] font-black tracking-widest"
+          style={{ background: plan.color, color: '#09090B' }}
+        >
+          ⭐ MOST POPULAR
+        </div>
+      )}
+
+      {/* Card body */}
+      <div
+        className="flex flex-col flex-1 p-7"
+        style={{
+          background: plan.popular
+            ? `linear-gradient(160deg, rgba(34,197,94,0.07) 0%, rgba(9,9,11,0.95) 60%)`
+            : 'rgba(9,9,11,0.85)',
+          backdropFilter: 'blur(24px)',
+        }}
+      >
+        {/* Header */}
+        <div className="mb-6">
+          <div className="flex items-center gap-2 mb-3">
+            <div
+              className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+              style={{ background: `${plan.color}15`, border: `1px solid ${plan.color}25` }}
+            >
+              <plan.Icon className="w-4 h-4" style={{ color: plan.color }} />
+            </div>
+            <span
+              className="text-[11px] font-bold px-2.5 py-1 rounded-full"
+              style={{ color: plan.color, background: `${plan.color}12` }}
+            >
+              {plan.badge}
+            </span>
+          </div>
+          <h3 className="font-display text-2xl font-black text-white mb-1">{plan.name}</h3>
+          <p className="text-white/35 text-xs">{plan.subtitle}</p>
+        </div>
+
+        {/* Price */}
+        <div className="mb-6">
+          <div className="text-white/25 text-sm line-through mb-0.5">
+            ${plan.original.toLocaleString()}/mo
+          </div>
+          <div className="flex items-baseline gap-1.5 mb-1">
+            <span className="font-black text-5xl leading-none" style={{ color: plan.color }}>
+              ${plan.price.toLocaleString()}
+            </span>
+            <span className="text-white/35 text-sm">/mo</span>
+          </div>
+          {plan.firstMonth !== plan.price && (
+            <p className="text-xs text-white/35">
+              First month:{' '}
+              <span className="font-semibold" style={{ color: plan.color }}>
+                ${plan.firstMonth}
+              </span>
+            </p>
+          )}
+          {plan.offer && (
+            <div
+              className="mt-2 text-xs font-semibold px-2.5 py-1 rounded-lg inline-block"
+              style={{ color: plan.color, background: `${plan.color}10` }}
+            >
+              {plan.offer}
+            </div>
+          )}
+        </div>
+
+        {/* CTA */}
+        <button
+          onClick={onCta}
+          className="group w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] mb-7"
+          style={{
+            background: plan.popular ? plan.color : `${plan.color}10`,
+            color: plan.popular ? '#09090B' : plan.color,
+            border: `1px solid ${plan.popular ? plan.color : plan.color + '30'}`,
+            boxShadow: plan.popular ? `0 4px 20px ${plan.glow}` : 'none',
+          }}
+        >
+          {plan.cta}
+          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+        </button>
+
+        {/* Divider */}
+        <div className="h-px mb-6" style={{ background: `${plan.color}15` }} />
+
+        {/* Features */}
+        <ul className="space-y-2.5 flex-1 mb-6">
+          {plan.features.map((f, i) => (
+            <li key={i} className="flex items-start gap-2.5">
+              {f.ok ? (
+                <Check className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: plan.color }} />
+              ) : (
+                <Minus className="w-4 h-4 flex-shrink-0 mt-0.5 text-white/15" />
+              )}
+              <span className={`text-xs leading-relaxed ${f.ok ? 'text-white/65' : 'text-white/20 line-through'}`}>
+                {f.label}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Bonuses */}
+        <div
+          className="rounded-xl p-4 mb-4"
+          style={{ background: `${plan.color}07`, border: `1px solid ${plan.color}15` }}
+        >
+          <p className="text-[10px] font-bold uppercase tracking-widest mb-2.5" style={{ color: plan.color }}>
+            🎁 Included Bonuses
+          </p>
+          <ul className="space-y-1.5">
+            {plan.bonuses.map((b, i) => (
+              <li key={i} className="flex items-start gap-1.5 text-xs text-white/35">
+                <span style={{ color: plan.color }} className="flex-shrink-0">›</span>
+                {b}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Guarantee */}
+        <p className="text-[11px] text-white/25 flex items-center gap-1.5">
+          <span>🛡️</span> {plan.guarantee}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/* ─── FaqItem ───────────────────────────────────────────────────────────── */
+
+function FaqItem({ q, a, i }: { q: string; a: string; i: number }) {
+  const [open, setOpen] = useState(false);
+  const reveal = useReveal(i * 55);
+
+  return (
+    <div
+      ref={reveal.ref}
+      style={reveal.style}
+      className="border-b border-white/6 last:border-0"
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex justify-between items-center py-5 text-left gap-4 group"
+      >
+        <span className="text-white/75 text-sm font-medium group-hover:text-white transition-colors">
+          {q}
+        </span>
+        <ChevronDown
+          className="w-4 h-4 text-white/25 flex-shrink-0 transition-transform duration-300"
+          style={{ transform: open ? 'rotate(180deg)' : 'none' }}
+        />
+      </button>
+      <div
+        className="overflow-hidden transition-all duration-300"
+        style={{ maxHeight: open ? '150px' : '0' }}
+      >
+        <p className="text-white/38 text-sm pb-5 leading-relaxed">{a}</p>
+      </div>
+    </div>
+  );
+}
+
+/* ─── Page ──────────────────────────────────────────────────────────────── */
 
 export default function PricingPage() {
   const { navigateTo } = useNavigation();
 
   return (
     <SiteShell>
-      <div className="container-wide">
-        {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12">
-          <div className="inline-block bg-[#22C55E]/10 text-[#4ADE80] border border-[#22C55E]/30 px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-[0_0_12px_rgba(34,197,94,0.15)]">
-            🎁 LAUNCH SPECIAL — First month 50% OFF on any package!
+
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <section className="pt-24 pb-20 text-center px-4 relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(34,197,94,0.12) 1px, transparent 0)',
+            backgroundSize: '44px 44px',
+            opacity: 0.4,
+          }}
+        />
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at top, rgba(34,197,94,0.12) 0%, transparent 70%)' }}
+        />
+
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-xs font-semibold tracking-wide mb-7"
+            style={{
+              borderColor: 'rgba(34,197,94,0.25)',
+              background: 'rgba(34,197,94,0.08)',
+              color: '#4ADE80',
+              boxShadow: '0 0 20px rgba(34,197,94,0.1)',
+            }}
+          >
+            🎁 LAUNCH SPECIAL — First month 50% OFF
           </div>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-4">
-            Simple, Transparent Pricing 💰
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black text-white mb-5 leading-[1.05]">
+            Pricing that pays
+            <br />
+            <span style={{ color: '#22C55E', textShadow: '0 0 40px rgba(34,197,94,0.35)' }}>
+              for itself.
+            </span>
           </h1>
-          <p className="text-text-secondary text-xl mb-2">
-            No hidden fees. No long-term contracts. Just results.
+          <p className="text-white/40 text-lg mb-3">
+            Marketing + dedicated remote staff — all in one plan.
           </p>
-          <p className="text-text-muted">
-            All plans include marketing + dedicated remote staff.
+          <p className="text-white/20 text-sm">
+            No hidden fees · No long-term contracts · Results guaranteed
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* Pricing Cards Section with Spline 3D wave background */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      {/* ── Cards ────────────────────────────────────────────────────── */}
+      <section className="relative pb-28 px-4">
+        {/* Spline BG */}
+        <div className="absolute inset-0 z-0 overflow-hidden mx-2 rounded-3xl">
           <iframe
             src="https://my.spline.design/3duipricing-eHOz23ohPwRwYNHu59vcCg2z/"
             frameBorder="0"
             width="100%"
             height="100%"
             className="absolute inset-0 w-full h-full"
-            style={{ pointerEvents: 'none' }}
+            style={{ pointerEvents: 'none', opacity: 0.3 }}
             loading="lazy"
-            title="3D Pricing background"
+            title="3D pricing background"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/30 via-transparent to-[#0F172A]/40" />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(9,9,11,0.5) 0%, transparent 30%, transparent 70%, rgba(9,9,11,0.7) 100%)' }} />
         </div>
 
-        <div className="container-wide relative z-10 py-12">
-          {/* Pricing Cards */}
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
-            {packages.map((pkg, index) => (
-            <FadeUp key={pkg.name} delay={index * 0.1}>
-              <GlassCard
-                className={`p-6 lg:p-8 h-full flex flex-col ${pkg.highlighted ? 'border-2 border-[#22C55E] relative shadow-[0_0_30px_rgba(34,197,94,0.25)]' : 'border border-white/10'}`}
-              >
-                {pkg.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#22C55E] text-white text-sm font-bold rounded-full shadow-[0_0_12px_rgba(34,197,94,0.5)]">
-                    ⭐ Most Popular
-                  </div>
-                )}
-                
-                <div className="text-center mb-6">
-                  <div className="text-4xl mb-2">{pkg.badge}</div>
-                  <div className="inline-block bg-[#22C55E]/10 text-[#22C55E] px-3 py-1 rounded-full text-sm font-medium mb-4">
-                    {pkg.badgeText}
-                  </div>
-                  <h3 className="font-display text-2xl font-bold text-text-primary mb-2">
-                    {pkg.name}
-                  </h3>
-                  <div className="mb-2">
-                    <span className="text-text-muted line-through">{pkg.originalPrice}</span>
-                  </div>
-                  <div className="mb-2">
-                    <span className="text-4xl font-bold text-[#22C55E]">{pkg.price}</span>
-                    <span className="text-text-muted text-sm">{pkg.period}</span>
-                  </div>
-                  {pkg.firstMonth && (
-                    <p className="text-sm text-text-muted mb-2">
-                      First month: <span className="text-[#22C55E] font-semibold">{pkg.firstMonth}</span>
-                    </p>
-                  )}
-                  {pkg.offer && (
-                    <p className="text-sm text-green-500 font-medium mb-2">
-                      {pkg.offer}
-                    </p>
-                  )}
-                  <p className="text-text-muted">{pkg.description}</p>
-                </div>
-
-                <div className="flex-1">
-                  <ul className="space-y-3 mb-6">
-                    {pkg.features.map((feature) => (
-                      <li key={feature.name} className="flex items-start gap-3">
-                        {feature.included ? (
-                          <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        ) : (
-                          <X className="w-5 h-5 text-text-muted/50 flex-shrink-0 mt-0.5" />
-                        )}
-                        <span className={feature.included ? 'text-text-primary text-sm' : 'text-text-muted/50 text-sm'}>
-                          {feature.name}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="border-t border-border-glass pt-4 mb-4">
-                  <p className="text-xs text-text-muted mb-2">Bonuses included:</p>
-                  <ul className="space-y-1">
-                    {pkg.bonuses.map((bonus) => (
-                      <li key={bonus} className="text-xs text-[#22C55E]">
-                        {bonus}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="bg-surface-glass rounded-lg p-3 mb-4 text-center">
-                  <p className="text-xs text-text-muted">Guarantee:</p>
-                  <p className="text-sm text-text-primary font-medium">{pkg.guarantee}</p>
-                </div>
-
-                <Button
-                  onClick={() => navigateTo('free-audit')}
-                  className={`w-full ${pkg.highlighted ? 'bg-[#22C55E] hover:bg-[#059669]' : 'bg-surface-glass border border-border-glass hover:bg-[#22C55E]/10'}`}
-                >
-                  {pkg.highlighted ? 'Start Growing — Claim Your Free Month' : 'Get Started'}
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </GlassCard>
-            </FadeUp>
-          ))}
-        </div>
-
-        {/* Launch Offers */}
-        <FadeUp className="mb-20">
-          <div className="bg-gradient-to-r from-[#22C55E]/10 via-[#4ADE80]/5 to-[#059669]/10 border border-[#22C55E]/20 rounded-2xl p-8 text-center">
-            <h2 className="font-display text-2xl font-bold text-text-primary mb-6">
-              🚀 Launch Offers — Limited Time!
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div>
-                <div className="text-3xl mb-2">⏰</div>
-                <h3 className="font-semibold text-text-primary">First 50 Clients</h3>
-                <p className="text-text-muted text-sm">Lifetime rate lock</p>
-              </div>
-              <div>
-                <div className="text-3xl mb-2">💚</div>
-                <h3 className="font-semibold text-text-primary">First Month</h3>
-                <p className="text-text-muted text-sm">50% OFF any package</p>
-              </div>
-              <div>
-                <div className="text-3xl mb-2">💳</div>
-                <h3 className="font-semibold text-text-primary">Pay Annually</h3>
-                <p className="text-text-muted text-sm">Get 3 months FREE</p>
-              </div>
-              <div>
-                <div className="text-3xl mb-2">👥</div>
-                <h3 className="font-semibold text-text-primary">Buddy Deal</h3>
-                <p className="text-text-muted text-sm">Sign up with friend = 20% OFF for 3 months</p>
-              </div>
-            </div>
-          </div>
-        </FadeUp>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <div className="container-wide">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl font-bold text-text-primary text-center mb-12">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <GlassCard key={index} className="p-6" hover={false}>
-                <h3 className="font-semibold text-text-primary mb-2">{faq.question}</h3>
-                <p className="text-text-secondary text-sm">{faq.answer}</p>
-              </GlassCard>
+        <div className="container-wide relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7 items-start">
+            {plans.map((plan, i) => (
+              <PlanCard
+                key={plan.id}
+                plan={plan}
+                index={i}
+                onCta={() => navigateTo('free-audit')}
+              />
             ))}
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* ── Stats ────────────────────────────────────────────────────── */}
+      <section className="border-y border-white/5 py-10">
+        <div className="container-wide grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {[
+            { n: '300+', l: 'Clients served' },
+            { n: '50+', l: 'Countries' },
+            { n: '3×', l: 'Average ROI' },
+            { n: '95%', l: 'Retention rate' },
+          ].map(({ n, l }) => (
+            <div key={l}>
+              <div className="text-3xl font-black mb-1" style={{ color: '#22C55E' }}>{n}</div>
+              <div className="text-white/28 text-xs uppercase tracking-wider">{l}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Launch Offers ────────────────────────────────────────────── */}
+      <section className="container-wide py-20">
+        <div className="text-center mb-10">
+          <h2 className="font-display text-3xl font-black text-white mb-2">
+            Limited-time launch offers
+          </h2>
+          <p className="text-white/30 text-sm">First 50 clients only</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            { icon: '⏰', title: 'Rate Lock', desc: 'Lifetime pricing for first 50 clients' },
+            { icon: '💚', title: 'First Month', desc: '50% OFF any package' },
+            { icon: '💳', title: 'Annual Plan', desc: '3 months FREE' },
+            { icon: '👥', title: 'Buddy Deal', desc: '20% OFF for 3 months when you refer' },
+          ].map(({ icon, title, desc }) => (
+            <div
+              key={title}
+              className="p-5 rounded-2xl text-center border border-white/6 transition-all duration-200 hover:border-[#22C55E]/20 hover:bg-[#22C55E]/3"
+              style={{ background: 'rgba(255,255,255,0.02)' }}
+            >
+              <div className="text-2xl mb-2">{icon}</div>
+              <div className="text-white text-sm font-semibold mb-1">{title}</div>
+              <div className="text-white/30 text-xs leading-relaxed">{desc}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── FAQ ──────────────────────────────────────────────────────── */}
+      <section className="container-wide pb-24 max-w-2xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="font-display text-3xl font-black text-white mb-2">
+            Frequently asked
+          </h2>
+          <p className="text-white/30 text-sm">Everything you need to know</p>
+        </div>
+        <div
+          className="rounded-2xl px-6 border border-white/6"
+          style={{ background: 'rgba(255,255,255,0.02)' }}
+        >
+          {faqs.map((faq, i) => (
+            <FaqItem key={i} q={faq.q} a={faq.a} i={i} />
+          ))}
+        </div>
+      </section>
+
+      {/* ── Bottom CTA ───────────────────────────────────────────────── */}
+      <section className="container-wide pb-28 text-center">
+        <div className="max-w-xl mx-auto">
+          <h2 className="font-display text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+            Ready to start growing?
+          </h2>
+          <p className="text-white/30 text-sm mb-8">
+            Book a free audit — no commitment, just a clear growth plan for your business.
+          </p>
+          <button
+            onClick={() => navigateTo('free-audit')}
+            className="group inline-flex items-center gap-3 px-9 py-4 rounded-xl font-bold text-base transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
+            style={{
+              background: '#22C55E',
+              color: '#09090B',
+              boxShadow: '0 0 30px rgba(34,197,94,0.3), 0 4px 20px rgba(34,197,94,0.2)',
+            }}
+          >
+            Get My Free Audit
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" />
+          </button>
+          <p className="text-white/18 text-xs mt-4">No credit card · Cancel anytime · Results guaranteed</p>
+        </div>
+      </section>
+
     </SiteShell>
   );
 }

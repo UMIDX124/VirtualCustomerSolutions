@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { useNavigation, type PageRoute } from '@/lib/navigation';
 import { Mascot } from './Mascot';
+import Image from 'next/image';
 
 const navigation: { name: string; href: PageRoute }[] = [
   { name: 'Home', href: 'home' },

@@ -39,8 +39,8 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#0F172A]" />
       </div>
 
-      <div className="container-wide relative z-10 pt-8 sm:pt-12 lg:pt-16 pb-8 lg:pb-12">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      <div className="relative z-10 px-6 md:px-10 lg:px-16 xl:px-20 max-w-[1440px] mx-auto w-full pt-12 sm:pt-16 lg:pt-20 pb-12 lg:pb-16">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           {/* Left Content */}
           <motion.div
             style={{ y, opacity }}

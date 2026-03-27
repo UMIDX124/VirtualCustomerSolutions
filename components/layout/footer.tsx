@@ -1,6 +1,7 @@
 'use client';
 
 import { Linkedin, Mail, ArrowUpRight, Instagram, Twitter, Facebook } from 'lucide-react';
+import Image from 'next/image';
 import { useNavigation } from '@/lib/navigation';
 
 const footerLinks = {
@@ -36,31 +37,23 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <button onClick={() => navigateTo('home')} className="mb-6 flex items-center gap-3">
-              <div className="relative h-12 w-12">
-                {/* NEXUS VCS Logo */}
-                <svg viewBox="0 0 48 48" className="h-full w-full">
-                  <defs>
-                    <linearGradient id="footerLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#22C55E" />
-                      <stop offset="100%" stopColor="#059669" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d="M8 12c0-4 3-8 8-8h16c5 0 8 4 8 8v24c0 4-3 8-8 8H16c-5 0-8-4-8-8V12z"
-                    fill="url(#footerLogoGradient)"
-                  />
-                  <path d="M14 18l6-4 6 4" stroke="#000" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                  <path d="M16 26c2-4 6-4 8 0s6 4 8 0" stroke="#000" strokeWidth="2" fill="none" strokeLinecap="round" />
-                  <circle cx="14" cy="14" r="2" fill="#059669" />
-                  <circle cx="34" cy="14" r="2" fill="#059669" />
-                </svg>
-                <div className="absolute -inset-2 bg-[#22C55E]/20 blur-xl rounded-full" />
+              <div className="relative h-14 w-14">
+                <Image
+                  src="/mascot.png"
+                  alt="VCS Mascot"
+                  width={56}
+                  height={56}
+                  className="w-full h-full object-contain"
+                  style={{ filter: 'drop-shadow(0 0 16px rgba(74,222,128,0.5))' }}
+                />
+                <div className="absolute -inset-3 bg-[#22C55E]/25 blur-xl rounded-full animate-mascot-glow" />
               </div>
               <div>
-                <span className="font-display text-xl font-bold tracking-tight text-[#22C55E]">
-                  VCS<span className="text-[#22C55E]">.</span>
+                <span className="font-display text-xl font-bold tracking-tight">
+                  <span className="text-white">Virtual </span>
+                  <span className="text-[#22C55E] font-extrabold">Customer</span>
                 </span>
-                <span className="text-[#333] text-xs block -mt-1 tracking-widest">PAKISTAN</span>
+                <span className="text-[#22C55E]/50 text-[8px] block -mt-0.5 tracking-[0.3em] font-semibold uppercase">Solution</span>
               </div>
             </button>
             <p className="max-w-xs text-sm leading-relaxed text-gray-400 mb-6">

@@ -196,7 +196,7 @@ export default function BusinessAutomationTrendsPage() {
                   stroke="#22C55E"
                   strokeWidth={3}
                   fill="url(#adoptionGrad)"
-                  dot={{ fill: "#22C55E", r: 5, strokeWidth: 2, stroke: "#0F172A" }}
+                  dot={{ fill: "#22C55E", r: 5, strokeWidth: 2, stroke: "#000000" }}
                 />
               </AreaChart>
             </ResponsiveContainer>
@@ -366,7 +366,7 @@ export default function BusinessAutomationTrendsPage() {
                   stroke="#22C55E"
                   strokeWidth={3}
                   fill="url(#roiGrad)"
-                  dot={{ fill: "#22C55E", r: 5, strokeWidth: 2, stroke: "#0F172A" }}
+                  dot={{ fill: "#22C55E", r: 5, strokeWidth: 2, stroke: "#000000" }}
                 />
               </AreaChart>
             </ResponsiveContainer>

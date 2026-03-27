@@ -15,10 +15,10 @@ export function InContentCTA() {
         </div>
 
         <div className="flex-1 min-w-0">
-          <p className="font-display text-base font-semibold text-[#F8FAFC] mb-1">
+          <p className="font-display text-base font-semibold text-white mb-1">
             Want to see how this applies to your business?
           </p>
-          <p className="text-sm text-[#94A3B8]">
+          <p className="text-sm text-white/60">
             Get a free growth audit and discover untapped opportunities for your brand.
           </p>
         </div>

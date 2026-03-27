@@ -108,11 +108,11 @@ export default function ResearchPage() {
                 <FileText className="w-4 h-4" />
                 Data-Driven Insights
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#F8FAFC]">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
                 Research &{" "}
                 <span className="text-gradient">Insights</span>
               </h1>
-              <p className="text-lg md:text-xl text-[#CBD5E1] max-w-2xl mx-auto mb-8">
+              <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8">
                 Actionable research reports backed by real-world data. Each
                 report features interactive Recharts visualizations, key
                 statistics, and practical takeaways.
@@ -138,10 +138,10 @@ export default function ResearchPage() {
                       <Icon className="w-5 h-5 text-[#22C55E]" />
                     </div>
                     <div className="text-left">
-                      <div className="font-mono text-lg font-bold text-[#F8FAFC]">
+                      <div className="font-mono text-lg font-bold text-white">
                         {stat.value}
                       </div>
-                      <div className="text-xs text-[#94A3B8]">{stat.label}</div>
+                      <div className="text-xs text-white/60">{stat.label}</div>
                     </div>
                   </div>
                 );
@@ -195,10 +195,10 @@ export default function ResearchPage() {
                         </span>
                       </div>
 
-                      <h2 className="text-xl font-bold text-[#F8FAFC] mb-3 group-hover:text-[#22C55E] transition-colors">
+                      <h2 className="text-xl font-bold text-white mb-3 group-hover:text-[#22C55E] transition-colors">
                         {report.title}
                       </h2>
-                      <p className="text-sm text-[#94A3B8] mb-4 leading-relaxed">
+                      <p className="text-sm text-white/60 mb-4 leading-relaxed">
                         {report.description}
                       </p>
 
@@ -207,7 +207,7 @@ export default function ResearchPage() {
                         {report.highlights.map((h) => (
                           <div
                             key={h}
-                            className="flex items-center gap-2 text-xs text-[#CBD5E1]"
+                            className="flex items-center gap-2 text-xs text-white/70"
                           >
                             <div
                               className="w-1.5 h-1.5 rounded-full shrink-0"
@@ -223,10 +223,10 @@ export default function ResearchPage() {
                     <div className="px-6 py-3 border-t border-[rgba(255,255,255,0.06)] flex gap-6">
                       {report.stats.map((stat) => (
                         <div key={stat.label}>
-                          <div className="font-mono text-sm font-semibold text-[#F8FAFC]">
+                          <div className="font-mono text-sm font-semibold text-white">
                             {stat.value}
                           </div>
-                          <div className="text-xs text-[#64748B]">
+                          <div className="text-xs text-white/40">
                             {stat.label}
                           </div>
                         </div>
@@ -235,7 +235,7 @@ export default function ResearchPage() {
 
                     {/* Footer */}
                     <div className="px-6 py-3 border-t border-[rgba(255,255,255,0.06)] flex items-center justify-between">
-                      <div className="flex items-center gap-4 text-xs text-[#64748B]">
+                      <div className="flex items-center gap-4 text-xs text-white/40">
                         <span className="flex items-center gap-1">
                           <Calendar className="w-3 h-3" />
                           {report.date}
@@ -262,10 +262,10 @@ export default function ResearchPage() {
       <section className="section-padding">
         <div className="container-wide">
           <div className="glass-panel p-8 md:p-12 text-center max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#F8FAFC] mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Want Custom Research for Your Business?
             </h2>
-            <p className="text-[#CBD5E1] mb-6 max-w-xl mx-auto">
+            <p className="text-white/70 mb-6 max-w-xl mx-auto">
               Our team can provide tailored research and data analysis specific
               to your industry and business goals.
             </p>

@@ -105,10 +105,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" style={{ backgroundColor: '#0F172A' }} suppressHydrationWarning>
+    <html lang="en" className="" style={{ backgroundColor: '#FFFFFF' }} suppressHydrationWarning>
       <head>
-        {/* Prevent white/blue flash on load */}
-        <style dangerouslySetInnerHTML={{ __html: `html,body{background-color:#0F172A!important;color:#F8FAFC}` }} />
+        {/* Prevent flash on load */}
+        <style dangerouslySetInnerHTML={{ __html: `html,body{background-color:#FFFFFF!important;color:#09090B}` }} />
         {/* Organization Schema */}
         <script
           type="application/ld+json"
@@ -207,7 +207,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Theme color for mobile browsers */}
-        <meta name="theme-color" content="#0F172A" />
+        <meta name="theme-color" content="#FFFFFF" />
         <meta name="msapplication-TileColor" content="#22C55E" />
 
         {/* Google AdSense — uncomment after approval and replace pub-XXXXXXXXXX */}

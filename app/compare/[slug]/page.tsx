@@ -345,7 +345,7 @@ export default async function ComparisonPage({
           </p>
           <Link
             href="/free-growth-audit"
-            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[var(--red-primary)] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition-[background-color,box-shadow] hover:bg-[var(--red-dark)] hover:shadow-blue-500/30 font-[family-name:var(--font-body)]"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[var(--red-primary)] px-8 py-3.5 text-sm font-semibold text-black shadow-lg shadow-[#22C55E]/20 transition-[background-color,box-shadow] hover:bg-[var(--red-dark)] hover:shadow-[#22C55E]/30 font-[family-name:var(--font-body)]"
           >
             Get a Free Growth Audit
             <ArrowRight className="h-4 w-4" />

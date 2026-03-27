@@ -97,10 +97,10 @@ const keyStats = [
 function DarkTooltip({ active, payload, label }: any) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="bg-[#0F172A] border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
-      <p className="font-semibold text-[#F8FAFC] mb-1">{label}</p>
+    <div className="bg-black border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
+      <p className="font-semibold text-white mb-1">{label}</p>
       {payload.map((entry: any, i: number) => (
-        <p key={i} className="text-[#CBD5E1]">
+        <p key={i} className="text-white/70">
           <span
             style={{ color: entry.color || entry.stroke }}
             className="font-mono font-semibold"
@@ -120,8 +120,8 @@ function DarkPieTooltip({ active, payload }: any) {
   if (!active || !payload?.length) return null;
   const d = payload[0].payload;
   return (
-    <div className="bg-[#0F172A] border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
-      <p className="font-semibold text-[#F8FAFC]">{d.name}</p>
+    <div className="bg-black border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
+      <p className="font-semibold text-white">{d.name}</p>
       <p className="font-mono text-[#22C55E]">{d.value}%</p>
     </div>
   );
@@ -147,7 +147,7 @@ export default function RemoteWorkStatisticsPage() {
         <div className="container-wide relative z-10">
           <Link
             href="/research"
-            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-[#22C55E] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Research
           </Link>
@@ -162,11 +162,11 @@ export default function RemoteWorkStatisticsPage() {
               <Users className="w-4 h-4" />
               Workforce Research
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#F8FAFC] mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
               Remote Work Statistics{" "}
               <span className="text-gradient">2025</span>
             </h1>
-            <p className="text-lg text-[#CBD5E1] max-w-2xl">
+            <p className="text-lg text-white/70 max-w-2xl">
               A comprehensive look at remote work adoption, productivity
               metrics, and cost savings data from over 2,400 data points
               across 12 industries.
@@ -190,10 +190,10 @@ export default function RemoteWorkStatisticsPage() {
                 className="card-accent p-5 text-center"
               >
                 <Icon className="w-5 h-5 text-[#22C55E] mx-auto mb-2" />
-                <div className="font-mono text-2xl md:text-3xl font-bold text-[#F8FAFC] mb-1">
+                <div className="font-mono text-2xl md:text-3xl font-bold text-white mb-1">
                   {stat.value}
                 </div>
-                <div className="text-xs text-[#94A3B8]">{stat.label}</div>
+                <div className="text-xs text-white/60">{stat.label}</div>
               </motion.div>
             );
           })}
@@ -208,10 +208,10 @@ export default function RemoteWorkStatisticsPage() {
           viewport={{ once: true }}
           className="glass-panel p-6 md:p-8"
         >
-          <h2 className="text-xl md:text-2xl font-bold text-[#F8FAFC] mb-2">
+          <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
             Remote Work Adoption Rate (2019-2025)
           </h2>
-          <p className="text-sm text-[#94A3B8] mb-6">
+          <p className="text-sm text-white/60 mb-6">
             Percentage of workforce working remotely. The 2020 spike reflects
             pandemic-driven adoption, with sustained growth continuing into
             2025.
@@ -247,7 +247,7 @@ export default function RemoteWorkStatisticsPage() {
                     fill: "#22C55E",
                     r: 5,
                     strokeWidth: 2,
-                    stroke: "#0F172A",
+                    stroke: "#000000",
                   }}
                   activeDot={{ r: 7, stroke: "#22C55E", strokeWidth: 2 }}
                 />
@@ -265,10 +265,10 @@ export default function RemoteWorkStatisticsPage() {
           viewport={{ once: true }}
           className="glass-panel p-6 md:p-8"
         >
-          <h2 className="text-xl md:text-2xl font-bold text-[#F8FAFC] mb-2">
+          <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
             Productivity, Satisfaction & Retention by Work Model
           </h2>
-          <p className="text-sm text-[#94A3B8] mb-6">
+          <p className="text-sm text-white/60 mb-6">
             Self-reported productivity index, employee satisfaction, and
             retention rates across work arrangements.
           </p>
@@ -320,10 +320,10 @@ export default function RemoteWorkStatisticsPage() {
             viewport={{ once: true }}
             className="glass-panel p-6 md:p-8"
           >
-            <h2 className="text-xl font-bold text-[#F8FAFC] mb-2">
+            <h2 className="text-xl font-bold text-white mb-2">
               Remote Work by Industry
             </h2>
-            <p className="text-sm text-[#94A3B8] mb-6">
+            <p className="text-sm text-white/60 mb-6">
               Percentage of employees working remotely by industry sector
             </p>
             <div className="h-[280px] sm:h-[320px]">
@@ -358,10 +358,10 @@ export default function RemoteWorkStatisticsPage() {
             transition={{ delay: 0.1 }}
             className="glass-panel p-6 md:p-8"
           >
-            <h2 className="text-xl font-bold text-[#F8FAFC] mb-2">
+            <h2 className="text-xl font-bold text-white mb-2">
               Cost Savings Breakdown
             </h2>
-            <p className="text-sm text-[#94A3B8] mb-6">
+            <p className="text-sm text-white/60 mb-6">
               Where companies save the most with remote teams
             </p>
             <div className="h-[280px] sm:h-[320px]">
@@ -400,10 +400,10 @@ export default function RemoteWorkStatisticsPage() {
             viewport={{ once: true }}
             className="glass-panel p-6 md:p-8"
           >
-            <h2 className="text-xl font-bold text-[#F8FAFC] mb-2">
+            <h2 className="text-xl font-bold text-white mb-2">
               Work Model Distribution by Industry
             </h2>
-            <p className="text-sm text-[#94A3B8] mb-6">
+            <p className="text-sm text-white/60 mb-6">
               Percentage of employees in each work arrangement
             </p>
             <div className="h-[280px] sm:h-[360px]">
@@ -461,10 +461,10 @@ export default function RemoteWorkStatisticsPage() {
             transition={{ delay: 0.1 }}
             className="glass-panel p-6 md:p-8"
           >
-            <h2 className="text-xl font-bold text-[#F8FAFC] mb-2">
+            <h2 className="text-xl font-bold text-white mb-2">
               Savings per Employee Over Time
             </h2>
-            <p className="text-sm text-[#94A3B8] mb-6">
+            <p className="text-sm text-white/60 mb-6">
               Annual cost savings per remote employee (USD)
             </p>
             <div className="h-[280px] sm:h-[360px]">
@@ -491,7 +491,7 @@ export default function RemoteWorkStatisticsPage() {
                       fill: "#10B981",
                       r: 5,
                       strokeWidth: 2,
-                      stroke: "#0F172A",
+                      stroke: "#000000",
                     }}
                   />
                 </LineChart>
@@ -504,10 +504,10 @@ export default function RemoteWorkStatisticsPage() {
       {/* CTA */}
       <section className="container-wide pb-16">
         <div className="glass-panel p-8 md:p-12 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#F8FAFC] mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Ready to Build Your Remote Team?
           </h2>
-          <p className="text-[#CBD5E1] mb-6 max-w-xl mx-auto">
+          <p className="text-white/70 mb-6 max-w-xl mx-auto">
             Our remote workforce solutions can help you tap into global talent
             while reducing costs by up to 60%.
           </p>

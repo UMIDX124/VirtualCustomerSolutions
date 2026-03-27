@@ -51,7 +51,7 @@ export function AuthorBox({ authorName }: AuthorBoxProps) {
           {/* Name & Title */}
           <div className="flex items-start justify-between gap-4 mb-2">
             <div>
-              <h3 className="font-display text-lg font-bold text-[#F8FAFC]">
+              <h3 className="font-display text-lg font-bold text-white">
                 {author.name}
               </h3>
               <p className="text-sm text-[#22C55E] font-medium">{author.title}</p>
@@ -63,12 +63,12 @@ export function AuthorBox({ authorName }: AuthorBoxProps) {
               aria-label={`${author.name} on LinkedIn`}
               className="shrink-0 p-2 rounded-lg border border-[rgba(255,255,255,0.06)] bg-[rgba(34,197,94,0.04)] hover:bg-[rgba(34,197,94,0.1)] transition-colors"
             >
-              <Linkedin className="w-4 h-4 text-[#94A3B8]" />
+              <Linkedin className="w-4 h-4 text-white/60" />
             </Link>
           </div>
 
           {/* Bio */}
-          <p className="text-sm text-[#94A3B8] leading-relaxed mb-4">
+          <p className="text-sm text-white/60 leading-relaxed mb-4">
             {author.bio}
           </p>
 

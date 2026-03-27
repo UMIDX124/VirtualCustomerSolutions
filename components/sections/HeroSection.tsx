@@ -35,8 +35,8 @@ export function HeroSection() {
         >
           <source src="/hero-bg.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#0F172A]" />
+        {/* Light overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/30 to-white" />
       </div>
 
       <div className="relative z-10 px-6 md:px-10 lg:px-16 xl:px-20 max-w-[1440px] mx-auto w-full pt-6 sm:pt-8 lg:pt-10 pb-16 lg:pb-20">
@@ -59,14 +59,14 @@ export function HeroSection() {
             <TextReveal
               text="Revolutionizing Operations through Human-Centric AI"
               as="h1"
-              className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.05] tracking-tight"
+              className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#09090B] leading-[1.05] tracking-tight"
             />
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: smoothEase }}
-              className="text-gray-400 text-lg mt-6 max-w-xl mx-auto leading-relaxed"
+              className="text-gray-600 text-lg mt-6 max-w-xl mx-auto leading-relaxed"
             >
               Scalable solutions for the world's most ambitious companies.
               We combine cutting-edge AI with human expertise to transform your business operations.
@@ -81,7 +81,7 @@ export function HeroSection() {
               <MagneticHover strength={0.3}>
                 <Button
                   onClick={() => navigateTo('free-audit')}
-                  className="group w-full sm:w-auto bg-gradient-to-r from-[#22C55E] to-[#0F172A] hover:shadow-[0_0_40px_rgba(34,197,94,0.5)] text-black font-bold px-8 py-6 text-lg transition-shadow duration-[400ms] neon-box-strong"
+                  className="group w-full sm:w-auto bg-[#22C55E] hover:bg-[#4ADE80] hover:shadow-[0_0_40px_rgba(34,197,94,0.5)] text-black font-bold px-8 py-6 text-lg transition-[background-color,box-shadow] duration-[400ms] neon-box-strong"
                 >
                   Get Your Free Audit
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-[400ms]" />
@@ -91,7 +91,7 @@ export function HeroSection() {
                 <Button
                   onClick={() => navigateTo('services')}
                   variant="outline"
-                  className="w-full sm:w-auto border border-[rgba(34,197,94,0.3)] hover:border-[#22C55E] hover:bg-[rgba(34,197,94,0.1)] text-white px-8 py-6 text-lg bg-transparent backdrop-blur-sm transition-[border-color,background-color] duration-[400ms] neon-border"
+                  className="w-full sm:w-auto border border-[rgba(34,197,94,0.3)] hover:border-[#22C55E] hover:bg-[rgba(34,197,94,0.1)] text-[#09090B] px-8 py-6 text-lg bg-transparent backdrop-blur-sm transition-[border-color,background-color] duration-[400ms] neon-border"
                 >
                   Explore Services
                 </Button>
@@ -110,7 +110,7 @@ export function HeroSection() {
                 { icon: Globe, label: '50+ Countries', color: '#059669' },
                 { icon: Cpu, label: 'AI-Powered', color: '#22C55E' },
               ].map((item) => (
-                <div key={item.label} className="flex items-center gap-2 text-gray-500">
+                <div key={item.label} className="flex items-center gap-2 text-gray-600">
                   <item.icon size="16" style={{ color: item.color }} />
                   <span className="text-sm font-medium">{item.label}</span>
                 </div>

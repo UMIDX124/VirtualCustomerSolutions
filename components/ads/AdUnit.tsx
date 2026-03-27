@@ -96,7 +96,7 @@ export function AdUnit({
     >
       {/* Placeholder shown until ad content loads */}
       {!adLoaded && (
-        <div className="flex min-h-[90px] items-center justify-center rounded-lg border border-white/[0.06] bg-[#1E293B]/40 text-xs text-[#64748B]">
+        <div className="flex min-h-[90px] items-center justify-center rounded-lg border border-white/[0.06] bg-[#1E293B]/40 text-xs text-white/40">
           <span>Advertisement</span>
         </div>
       )}

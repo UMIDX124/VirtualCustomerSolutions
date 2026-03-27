@@ -43,7 +43,7 @@ export function CookieConsent() {
             <button
               onClick={handleDecline}
               aria-label="Dismiss cookie consent"
-              className="absolute right-3 top-3 rounded-full p-1 min-h-[44px] min-w-[44px] flex items-center justify-center text-[#94A3B8] transition-colors hover:bg-white/5 hover:text-[#F8FAFC]"
+              className="absolute right-3 top-3 rounded-full p-1 min-h-[44px] min-w-[44px] flex items-center justify-center text-white/60 transition-colors hover:bg-white/5 hover:text-white"
             >
               <X className="h-4 w-4" />
             </button>
@@ -55,10 +55,10 @@ export function CookieConsent() {
                   <Cookie className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-[#F8FAFC]">
+                  <p className="text-sm font-medium text-white">
                     We use cookies to enhance your experience
                   </p>
-                  <p className="mt-1 text-xs leading-relaxed text-[#94A3B8]">
+                  <p className="mt-1 text-xs leading-relaxed text-white/60">
                     We use cookies and similar technologies to personalise content, analyse
                     traffic, and improve our services.{' '}
                     <Link
@@ -76,7 +76,7 @@ export function CookieConsent() {
               <div className="flex shrink-0 items-center gap-2">
                 <button
                   onClick={handleDecline}
-                  className="rounded-full border border-white/[0.08] bg-transparent px-4 py-2 text-sm font-medium text-[#CBD5E1] transition hover:border-white/20 hover:text-[#F8FAFC]"
+                  className="rounded-full border border-white/[0.08] bg-transparent px-4 py-2 text-sm font-medium text-white/70 transition hover:border-white/20 hover:text-white"
                 >
                   Decline
                 </button>

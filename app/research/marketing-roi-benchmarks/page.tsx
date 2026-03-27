@@ -72,10 +72,10 @@ const channelColors: Record<string, string> = {
 function DarkTooltip({ active, payload, label }: any) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="bg-[#0F172A] border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
-      <p className="font-semibold text-[#F8FAFC] mb-1">{label}</p>
+    <div className="bg-black border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
+      <p className="font-semibold text-white mb-1">{label}</p>
       {payload.map((entry: any, i: number) => (
-        <p key={i} className="text-[#CBD5E1]">
+        <p key={i} className="text-white/70">
           <span
             style={{ color: entry.color || entry.stroke }}
             className="font-mono font-semibold"
@@ -102,7 +102,7 @@ export default function MarketingROIBenchmarksPage() {
         <div className="container-wide relative z-10">
           <Link
             href="/research"
-            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-[#22C55E] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Research
           </Link>
@@ -117,11 +117,11 @@ export default function MarketingROIBenchmarksPage() {
               <Target className="w-4 h-4" />
               Marketing Research
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#F8FAFC] mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
               Marketing ROI Benchmarks{" "}
               <span className="text-gradient">by Channel</span>
             </h1>
-            <p className="text-lg text-[#CBD5E1] max-w-2xl">
+            <p className="text-lg text-white/70 max-w-2xl">
               Detailed ROI comparison across five major marketing channels,
               based on survey data from over 850 companies. Featuring grouped
               bar charts, area trend charts, and radar comparisons.
@@ -145,11 +145,11 @@ export default function MarketingROIBenchmarksPage() {
                 className="w-3 h-3 rounded-full mx-auto mb-2"
                 style={{ background: channelColors[ch.channel] }}
               />
-              <div className="text-xs text-[#94A3B8] mb-1">{ch.channel}</div>
-              <div className="font-mono text-2xl font-bold text-[#F8FAFC]">
+              <div className="text-xs text-white/60 mb-1">{ch.channel}</div>
+              <div className="font-mono text-2xl font-bold text-white">
                 {ch.roi}%
               </div>
-              <div className="text-xs text-[#64748B]">avg. ROI</div>
+              <div className="text-xs text-white/40">avg. ROI</div>
             </motion.div>
           ))}
         </div>
@@ -163,10 +163,10 @@ export default function MarketingROIBenchmarksPage() {
           viewport={{ once: true }}
           className="glass-panel p-6 md:p-8"
         >
-          <h2 className="text-xl md:text-2xl font-bold text-[#F8FAFC] mb-2">
+          <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
             ROI by Channel vs Industry Average
           </h2>
-          <p className="text-sm text-[#94A3B8] mb-6">
+          <p className="text-sm text-white/60 mb-6">
             Our clients&apos; results compared to industry benchmarks
           </p>
           <div className="h-[280px] sm:h-[340px] md:h-[400px]">
@@ -210,10 +210,10 @@ export default function MarketingROIBenchmarksPage() {
           viewport={{ once: true }}
           className="glass-panel p-6 md:p-8"
         >
-          <h2 className="text-xl md:text-2xl font-bold text-[#F8FAFC] mb-2">
+          <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
             ROI Trends Over Time
           </h2>
-          <p className="text-sm text-[#94A3B8] mb-6">
+          <p className="text-sm text-white/60 mb-6">
             Quarterly ROI performance across channels (2023-2024)
           </p>
           <div className="h-[280px] sm:h-[340px] md:h-[420px]">
@@ -273,10 +273,10 @@ export default function MarketingROIBenchmarksPage() {
             viewport={{ once: true }}
             className="glass-panel p-6 md:p-8"
           >
-            <h2 className="text-xl font-bold text-[#F8FAFC] mb-2">
+            <h2 className="text-xl font-bold text-white mb-2">
               Channel Strengths Comparison
             </h2>
-            <p className="text-sm text-[#94A3B8] mb-6">
+            <p className="text-sm text-white/60 mb-6">
               Multi-factor analysis across key performance dimensions
             </p>
             <div className="h-[300px] sm:h-[360px]">
@@ -329,10 +329,10 @@ export default function MarketingROIBenchmarksPage() {
             transition={{ delay: 0.1 }}
             className="glass-panel p-6 md:p-8"
           >
-            <h2 className="text-xl font-bold text-[#F8FAFC] mb-2">
+            <h2 className="text-xl font-bold text-white mb-2">
               Cost per Lead by Channel
             </h2>
-            <p className="text-sm text-[#94A3B8] mb-6">
+            <p className="text-sm text-white/60 mb-6">
               Average cost to acquire a single qualified lead
             </p>
             <div className="h-[300px] sm:h-[360px]">
@@ -359,8 +359,8 @@ export default function MarketingROIBenchmarksPage() {
                     content={({ active, payload, label }) => {
                       if (!active || !payload?.length) return null;
                       return (
-                        <div className="bg-[#0F172A] border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
-                          <p className="font-semibold text-[#F8FAFC]">
+                        <div className="bg-black border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
+                          <p className="font-semibold text-white">
                             {label}
                           </p>
                           <p className="font-mono text-[#22C55E]">
@@ -386,10 +386,10 @@ export default function MarketingROIBenchmarksPage() {
       {/* CTA */}
       <section className="container-wide pb-16">
         <div className="glass-panel p-8 md:p-12 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#F8FAFC] mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Maximize Your Marketing ROI
           </h2>
-          <p className="text-[#CBD5E1] mb-6 max-w-xl mx-auto">
+          <p className="text-white/70 mb-6 max-w-xl mx-auto">
             Let our team analyze your current marketing mix and identify
             opportunities to improve your returns.
           </p>

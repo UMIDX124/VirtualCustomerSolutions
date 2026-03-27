@@ -32,7 +32,7 @@ const steps = [
 
 export function HomepageProcess() {
   return (
-    <section className="section-padding relative bg-[var(--bg-secondary)]">
+    <section className="section-padding relative bg-transparent">
       {/* Background grid */}
       <div className="absolute inset-0 grid-bg opacity-20" />
 

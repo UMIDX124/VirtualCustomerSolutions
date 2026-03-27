@@ -28,14 +28,14 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-[#94A3B8]">
+      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-white/60">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
             <span key={item.href} className="flex items-center gap-1.5">
-              {index > 0 && <ChevronRight className="w-3.5 h-3.5 text-[#64748B]" />}
+              {index > 0 && <ChevronRight className="w-3.5 h-3.5 text-white/40" />}
               {isLast ? (
-                <span className="text-[#CBD5E1] font-medium truncate max-w-[200px]">
+                <span className="text-white/70 font-medium truncate max-w-[200px]">
                   {item.label}
                 </span>
               ) : (

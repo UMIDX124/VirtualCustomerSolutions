@@ -72,10 +72,10 @@ function AnimatedNumber({
 function DarkTooltip({ active, payload, label }: any) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="bg-[#0F172A] border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
-      <p className="font-semibold text-[#F8FAFC] mb-1">{label}</p>
+    <div className="bg-black border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
+      <p className="font-semibold text-white mb-1">{label}</p>
       {payload.map((entry: any, i: number) => (
-        <p key={i} className="text-[#CBD5E1]">
+        <p key={i} className="text-white/70">
           <span
             style={{ color: entry.color }}
             className="font-mono font-semibold"
@@ -220,7 +220,7 @@ export default function RemoteTeamCostCalculatorPage() {
         <div className="container-wide relative z-10">
           <Link
             href="/tools"
-            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-[#22C55E] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Tools
           </Link>
@@ -233,11 +233,11 @@ export default function RemoteTeamCostCalculatorPage() {
               <Users className="w-4 h-4" />
               Free Tool
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#F8FAFC] mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
               Remote Team Cost{" "}
               <span className="text-gradient">Calculator</span>
             </h1>
-            <p className="text-lg text-[#CBD5E1] max-w-2xl">
+            <p className="text-lg text-white/70 max-w-2xl">
               Compare remote team costs by project type, skill level, and
               location. See detailed savings vs US rates with interactive charts.
             </p>
@@ -256,12 +256,12 @@ export default function RemoteTeamCostCalculatorPage() {
             className="glass-panel p-6 md:p-8"
           >
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-[#F8FAFC]">
+              <h2 className="text-xl font-bold text-white">
                 Team Configuration
               </h2>
               <button
                 onClick={reset}
-                className="text-xs text-[#94A3B8] hover:text-[#22C55E] flex items-center gap-1 transition-colors"
+                className="text-xs text-white/60 hover:text-[#22C55E] flex items-center gap-1 transition-colors"
               >
                 <RotateCcw className="w-3 h-3" /> Reset
               </button>
@@ -270,14 +270,14 @@ export default function RemoteTeamCostCalculatorPage() {
             <div className="space-y-6">
               {/* Project Type */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-white/70 mb-2">
                   <Briefcase className="w-4 h-4 text-[#22C55E]" />
                   Project Type
                 </label>
                 <select
                   value={projectType}
                   onChange={(e) => setProjectType(e.target.value)}
-                  className="w-full rounded-lg bg-[#0F172A] border border-[rgba(255,255,255,0.1)] text-[#F8FAFC] px-4 py-2.5 text-sm focus:border-[#22C55E] focus:outline-none transition-colors"
+                  className="w-full rounded-lg bg-black border border-[rgba(255,255,255,0.1)] text-white px-4 py-2.5 text-sm focus:border-[#22C55E] focus:outline-none transition-colors"
                 >
                   {projectTypes.map((pt) => (
                     <option key={pt.value} value={pt.value}>
@@ -289,7 +289,7 @@ export default function RemoteTeamCostCalculatorPage() {
 
               {/* Team Members Slider */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-white/70 mb-2">
                   <Users className="w-4 h-4 text-[#22C55E]" />
                   Number of Team Members
                 </label>
@@ -306,11 +306,11 @@ export default function RemoteTeamCostCalculatorPage() {
                   onChange={(e) => setTeamMembers(Number(e.target.value))}
                   min={1}
                   max={50}
-                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
+                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-white/[0.04] rounded-full appearance-none cursor-pointer"
                 />
-                <div className="flex justify-between text-xs text-[#64748B] mt-1">
+                <div className="flex justify-between text-xs text-white/40 mt-1">
                   <span>1</span>
-                  <span className="font-mono font-semibold text-[#F8FAFC]">
+                  <span className="font-mono font-semibold text-white">
                     {teamMembers} {teamMembers === 1 ? "member" : "members"}
                   </span>
                   <span>50</span>
@@ -319,7 +319,7 @@ export default function RemoteTeamCostCalculatorPage() {
 
               {/* Skill Level */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-white/70 mb-2">
                   <Award className="w-4 h-4 text-[#22C55E]" />
                   Skill Level
                 </label>
@@ -332,7 +332,7 @@ export default function RemoteTeamCostCalculatorPage() {
                       className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-colors border ${
                         skillLevel === sl.value
                           ? "bg-[rgba(34,197,94,0.15)] border-[#22C55E] text-[#22C55E]"
-                          : "bg-[#0F172A] border-[rgba(255,255,255,0.08)] text-[#94A3B8] hover:border-[#64748B]"
+                          : "bg-black border-[rgba(255,255,255,0.08)] text-white/60 hover:border-[#64748B]"
                       }`}
                     >
                       {sl.label}
@@ -343,7 +343,7 @@ export default function RemoteTeamCostCalculatorPage() {
 
               {/* Location */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-white/70 mb-2">
                   <MapPin className="w-4 h-4 text-[#22C55E]" />
                   Remote Team Location
                 </label>
@@ -358,7 +358,7 @@ export default function RemoteTeamCostCalculatorPage() {
                         className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-all border flex items-center gap-2 ${
                           location === l.value
                             ? "bg-[rgba(34,197,94,0.15)] border-[#22C55E] text-[#22C55E]"
-                            : "bg-[#0F172A] border-[rgba(255,255,255,0.08)] text-[#94A3B8] hover:border-[#64748B]"
+                            : "bg-black border-[rgba(255,255,255,0.08)] text-white/60 hover:border-[#64748B]"
                         }`}
                       >
                         <span>{l.flag}</span>
@@ -385,7 +385,7 @@ export default function RemoteTeamCostCalculatorPage() {
             transition={{ delay: 0.3 }}
             className="glass-panel p-6 md:p-8"
           >
-            <h2 className="text-xl font-bold text-[#F8FAFC] mb-6">
+            <h2 className="text-xl font-bold text-white mb-6">
               Cost Comparison
             </h2>
 
@@ -400,13 +400,13 @@ export default function RemoteTeamCostCalculatorPage() {
                 >
                   {/* Savings banner */}
                   <div className="card-accent p-6 text-center">
-                    <div className="text-sm text-[#94A3B8] mb-1">
+                    <div className="text-sm text-white/60 mb-1">
                       Annual Savings vs US Rates
                     </div>
                     <div className="text-4xl md:text-5xl font-bold text-[#10B981]">
                       <AnimatedNumber value={annualSavings} prefix="$" />
                     </div>
-                    <div className="text-sm text-[#64748B] mt-1">
+                    <div className="text-sm text-white/40 mt-1">
                       <span className="font-mono font-semibold text-[#10B981]">
                         {savingsPercent}%
                       </span>{" "}
@@ -417,19 +417,19 @@ export default function RemoteTeamCostCalculatorPage() {
                   {/* Cost range + comparison */}
                   <div className="grid grid-cols-2 gap-4">
                     <div className="card-accent p-4">
-                      <div className="text-xs text-[#94A3B8] mb-2">
+                      <div className="text-xs text-white/60 mb-2">
                         Monthly Cost Range
                       </div>
-                      <div className="text-lg font-bold text-[#F8FAFC] font-mono">
+                      <div className="text-lg font-bold text-white font-mono">
                         ${monthlyLow.toLocaleString()} - $
                         {monthlyHigh.toLocaleString()}
                       </div>
-                      <div className="text-xs text-[#64748B]">
+                      <div className="text-xs text-white/40">
                         {teamMembers} {skill.label} {loc.label}
                       </div>
                     </div>
                     <div className="card-accent p-4">
-                      <div className="text-xs text-[#94A3B8] mb-2">
+                      <div className="text-xs text-white/60 mb-2">
                         Annual Cost
                       </div>
                       <div className="text-lg font-bold text-[#22C55E] font-mono">
@@ -438,7 +438,7 @@ export default function RemoteTeamCostCalculatorPage() {
                           prefix="$"
                         />
                       </div>
-                      <div className="text-xs text-[#64748B]">
+                      <div className="text-xs text-white/40">
                         vs ${usAnnualCost.toLocaleString()} US
                       </div>
                     </div>
@@ -446,7 +446,7 @@ export default function RemoteTeamCostCalculatorPage() {
 
                   {/* Bar chart comparing locations */}
                   <div>
-                    <div className="text-sm font-semibold text-[#CBD5E1] mb-3">
+                    <div className="text-sm font-semibold text-white/70 mb-3">
                       Monthly Cost per Member by Location
                     </div>
                     <div className="h-[220px]">
@@ -490,13 +490,13 @@ export default function RemoteTeamCostCalculatorPage() {
 
                   {/* Savings percentage visual bar */}
                   <div className="card-accent p-4">
-                    <div className="flex justify-between text-xs text-[#94A3B8] mb-2">
+                    <div className="flex justify-between text-xs text-white/60 mb-2">
                       <span>Savings Percentage</span>
                       <span className="font-mono font-semibold text-[#10B981]">
                         {savingsPercent}%
                       </span>
                     </div>
-                    <div className="w-full h-3 bg-[#1E293B] rounded-full overflow-hidden">
+                    <div className="w-full h-3 bg-white/[0.04] rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: `${savingsPercent}%` }}
@@ -510,18 +510,18 @@ export default function RemoteTeamCostCalculatorPage() {
                   <div className="p-4 rounded-lg bg-[rgba(34,197,94,0.08)] border border-[rgba(34,197,94,0.2)]">
                     <div className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-[#10B981] mt-0.5 shrink-0" />
-                      <p className="text-xs text-[#94A3B8]">
+                      <p className="text-xs text-white/60">
                         Rates include collaboration tools, project management,
                         and dedicated team management. Location:{" "}
-                        <span className="font-semibold text-[#F8FAFC]">
+                        <span className="font-semibold text-white">
                           {loc.flag} {loc.label}
                         </span>
                         . Project:{" "}
-                        <span className="font-semibold text-[#F8FAFC]">
+                        <span className="font-semibold text-white">
                           {projectTypes.find((p) => p.value === projectType)?.label}
                         </span>
                         . Level:{" "}
-                        <span className="font-semibold text-[#F8FAFC]">
+                        <span className="font-semibold text-white">
                           {skill.label}
                         </span>
                         .
@@ -543,9 +543,9 @@ export default function RemoteTeamCostCalculatorPage() {
                   className="flex flex-col items-center justify-center h-[500px] text-center"
                 >
                   <div className="w-16 h-16 rounded-2xl bg-[rgba(34,197,94,0.08)] flex items-center justify-center mb-4">
-                    <Users className="w-8 h-8 text-[#64748B]" />
+                    <Users className="w-8 h-8 text-white/40" />
                   </div>
-                  <p className="text-[#94A3B8] text-sm max-w-xs">
+                  <p className="text-white/60 text-sm max-w-xs">
                     Configure your team details and click &quot;Compare
                     Costs&quot; to see a detailed cost comparison with visual
                     charts.

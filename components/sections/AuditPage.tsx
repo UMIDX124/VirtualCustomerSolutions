@@ -229,7 +229,7 @@ export function AuditPage() {
 
               <p className="text-[var(--text-muted)] text-sm">
                 Questions? Reach out directly at{' '}
-                <a href="mailto:hello@virtualcustomersolution.com" className="text-[#22C55E] hover:text-[#F8FAFC] transition-colors">
+                <a href="mailto:hello@virtualcustomersolution.com" className="text-[#22C55E] hover:text-[#059669] transition-colors">
                   hello@virtualcustomersolution.com
                 </a>
               </p>

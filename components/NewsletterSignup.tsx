@@ -57,14 +57,14 @@ export function NewsletterSignup() {
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
         <div className="flex gap-2">
           <div className="relative flex-1">
-            <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#64748B]" />
+            <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-white/40" />
             <input
               {...register('email')}
               type="email"
               placeholder="Enter your email"
               aria-label="Email address"
               disabled={status === 'loading'}
-              className="w-full rounded-full border border-white/[0.08] bg-[#0F172A] py-2.5 pl-10 pr-4 text-sm text-[#F8FAFC] placeholder-[#64748B] transition focus:border-[#22C55E] focus:outline-none focus:ring-2 focus:ring-[#22C55E]/20 disabled:opacity-60"
+              className="w-full rounded-full border border-white/[0.08] bg-[#0F172A] py-2.5 pl-10 pr-4 text-sm text-white placeholder-[#64748B] transition focus:border-[#22C55E] focus:outline-none focus:ring-2 focus:ring-[#22C55E]/20 disabled:opacity-60"
             />
           </div>
           <button

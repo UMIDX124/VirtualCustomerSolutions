@@ -60,7 +60,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
     >
       <div className="flex items-center gap-2 mb-4">
         <List className="w-4 h-4 text-[#22C55E]" />
-        <h2 className="font-display text-sm font-semibold text-[#F8FAFC] uppercase tracking-wider">
+        <h2 className="font-display text-sm font-semibold text-white uppercase tracking-wider">
           On This Page
         </h2>
       </div>
@@ -76,7 +76,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
               } ${
                 activeId === item.id
                   ? 'border-[#22C55E] text-[#22C55E] font-medium'
-                  : 'border-transparent text-[#94A3B8] hover:text-[#CBD5E1] hover:border-[#334155]'
+                  : 'border-transparent text-white/60 hover:text-white/70 hover:border-[#334155]'
               }`}
             >
               {item.text}

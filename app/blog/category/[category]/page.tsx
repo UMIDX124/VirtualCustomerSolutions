@@ -83,7 +83,7 @@ export default async function CategoryPage({ params }: PageProps) {
           <div className="max-w-3xl mb-12">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1.5 text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors mb-4"
+              className="inline-flex items-center gap-1.5 text-sm text-white/60 hover:text-[#22C55E] transition-colors mb-4"
             >
               <ArrowLeft className="w-4 h-4" />
               All Articles
@@ -91,15 +91,15 @@ export default async function CategoryPage({ params }: PageProps) {
 
             <div className="flex items-center gap-3 mb-4">
               <Tag className="w-5 h-5 text-[#22C55E]" />
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#F8FAFC]">
+              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white">
                 {categoryName}
               </h1>
             </div>
-            <p className="text-lg text-[#94A3B8]">
+            <p className="text-lg text-white/60">
               {CATEGORY_DESCRIPTIONS[category] ||
                 `Explore our latest articles about ${categoryName.toLowerCase()}.`}
             </p>
-            <p className="mt-2 text-sm text-[#64748B]">
+            <p className="mt-2 text-sm text-white/40">
               {posts.length} article{posts.length !== 1 ? 's' : ''}
             </p>
           </div>
@@ -124,15 +124,15 @@ export default async function CategoryPage({ params }: PageProps) {
                       {post.category}
                     </span>
 
-                    <h2 className="font-display text-lg font-bold text-[#F8FAFC] mb-2 group-hover:text-[#22C55E] transition-colors line-clamp-2">
+                    <h2 className="font-display text-lg font-bold text-white mb-2 group-hover:text-[#22C55E] transition-colors line-clamp-2">
                       {post.title}
                     </h2>
 
-                    <p className="text-sm text-[#94A3B8] leading-relaxed mb-4 line-clamp-3 flex-1">
+                    <p className="text-sm text-white/60 leading-relaxed mb-4 line-clamp-3 flex-1">
                       {post.excerpt}
                     </p>
 
-                    <div className="flex items-center gap-3 text-xs text-[#64748B]">
+                    <div className="flex items-center gap-3 text-xs text-white/40">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
                         {formattedDate}
@@ -148,7 +148,7 @@ export default async function CategoryPage({ params }: PageProps) {
             </div>
           ) : (
             <div className="glass-panel p-12 text-center">
-              <p className="text-[#94A3B8] text-lg">
+              <p className="text-white/60 text-lg">
                 No articles found in this category yet.
               </p>
               <Link

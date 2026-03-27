@@ -141,7 +141,7 @@ export function GlassCard({ children, className, hover = true, onClick }: GlassC
       onClick={onClick}
       className={cn(
         'relative bg-surface-glass backdrop-blur-xl border border-border-glass rounded-2xl overflow-hidden',
-        hover && 'transition-[border-color,box-shadow] duration-[400ms] hover:border-border-active hover:shadow-xl hover:shadow-black/20',
+        hover && 'transition-[border-color,box-shadow] duration-[400ms] hover:border-[#22C55E]/30 hover:shadow-xl hover:shadow-black/20',
         className
       )}
     >

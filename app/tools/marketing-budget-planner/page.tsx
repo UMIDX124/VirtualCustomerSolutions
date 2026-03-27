@@ -128,12 +128,12 @@ function DarkPieTooltip({ active, payload }: any) {
   if (!active || !payload?.length) return null;
   const d = payload[0].payload;
   return (
-    <div className="bg-[#0F172A] border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
-      <p className="font-semibold text-[#F8FAFC]">{d.name}</p>
+    <div className="bg-black border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
+      <p className="font-semibold text-white">{d.name}</p>
       <p className="font-mono text-[#22C55E]">
         ${d.amount.toLocaleString()} ({d.percent}%)
       </p>
-      <p className="text-xs text-[#94A3B8] mt-1">
+      <p className="text-xs text-white/60 mt-1">
         Expected ROI: {channelExpectedROI[d.name]}
       </p>
     </div>
@@ -200,7 +200,7 @@ export default function MarketingBudgetPlannerPage() {
         <div className="container-wide relative z-10">
           <Link
             href="/tools"
-            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-[#22C55E] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Tools
           </Link>
@@ -213,11 +213,11 @@ export default function MarketingBudgetPlannerPage() {
               <PieChartIcon className="w-4 h-4" />
               Free Tool
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#F8FAFC] mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
               Marketing Budget{" "}
               <span className="text-gradient">Planner</span>
             </h1>
-            <p className="text-lg text-[#CBD5E1] max-w-2xl">
+            <p className="text-lg text-white/70 max-w-2xl">
               Get a recommended budget allocation across marketing channels
               based on your goals, industry, and total budget. Visualized with
               an interactive pie chart and per-channel tips.
@@ -237,12 +237,12 @@ export default function MarketingBudgetPlannerPage() {
             className="glass-panel p-6 md:p-8"
           >
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-[#F8FAFC]">
+              <h2 className="text-xl font-bold text-white">
                 Your Parameters
               </h2>
               <button
                 onClick={reset}
-                className="text-xs text-[#94A3B8] hover:text-[#22C55E] flex items-center gap-1 transition-colors"
+                className="text-xs text-white/60 hover:text-[#22C55E] flex items-center gap-1 transition-colors"
               >
                 <RotateCcw className="w-3 h-3" /> Reset
               </button>
@@ -251,12 +251,12 @@ export default function MarketingBudgetPlannerPage() {
             <div className="space-y-6">
               {/* Budget */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-white/70 mb-2">
                   <DollarSign className="w-4 h-4 text-[#22C55E]" />
                   Monthly Marketing Budget
                 </label>
                 <div className="relative">
-                  <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" />
+                  <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                   <input
                     type="number"
                     value={budget}
@@ -272,11 +272,11 @@ export default function MarketingBudgetPlannerPage() {
                   min={500}
                   max={100000}
                   step={500}
-                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
+                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-white/[0.04] rounded-full appearance-none cursor-pointer"
                 />
-                <div className="flex justify-between text-xs text-[#64748B] mt-1">
+                <div className="flex justify-between text-xs text-white/40 mt-1">
                   <span>$500</span>
-                  <span className="font-mono font-semibold text-[#F8FAFC]">
+                  <span className="font-mono font-semibold text-white">
                     ${budget.toLocaleString()}
                   </span>
                   <span>$100K</span>
@@ -285,7 +285,7 @@ export default function MarketingBudgetPlannerPage() {
 
               {/* Goal */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-white/70 mb-2">
                   <Target className="w-4 h-4 text-[#22C55E]" />
                   Primary Business Goal
                 </label>
@@ -298,7 +298,7 @@ export default function MarketingBudgetPlannerPage() {
                       className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-colors border flex items-center gap-2 ${
                         goal === g.value
                           ? "bg-[rgba(34,197,94,0.15)] border-[#22C55E] text-[#22C55E]"
-                          : "bg-[#0F172A] border-[rgba(255,255,255,0.08)] text-[#94A3B8] hover:border-[#64748B]"
+                          : "bg-black border-[rgba(255,255,255,0.08)] text-white/60 hover:border-[#64748B]"
                       }`}
                     >
                       <span>{g.icon}</span>
@@ -310,14 +310,14 @@ export default function MarketingBudgetPlannerPage() {
 
               {/* Industry */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-white/70 mb-2">
                   <Building2 className="w-4 h-4 text-[#22C55E]" />
                   Industry
                 </label>
                 <select
                   value={industry}
                   onChange={(e) => setIndustry(e.target.value as Industry)}
-                  className="w-full rounded-lg bg-[#0F172A] border border-[rgba(255,255,255,0.1)] text-[#F8FAFC] px-4 py-2.5 text-sm focus:border-[#22C55E] focus:outline-none transition-colors"
+                  className="w-full rounded-lg bg-black border border-[rgba(255,255,255,0.1)] text-white px-4 py-2.5 text-sm focus:border-[#22C55E] focus:outline-none transition-colors"
                 >
                   {industries.map((ind) => (
                     <option key={ind.value} value={ind.value}>
@@ -344,7 +344,7 @@ export default function MarketingBudgetPlannerPage() {
             transition={{ delay: 0.3 }}
             className="glass-panel p-6 md:p-8"
           >
-            <h2 className="text-xl font-bold text-[#F8FAFC] mb-6">
+            <h2 className="text-xl font-bold text-white mb-6">
               Recommended Allocation
             </h2>
 
@@ -396,22 +396,22 @@ export default function MarketingBudgetPlannerPage() {
                               className="w-3 h-3 rounded-full"
                               style={{ background: ch.color }}
                             />
-                            <span className="text-sm font-semibold text-[#F8FAFC]">
+                            <span className="text-sm font-semibold text-white">
                               {ch.name}
                             </span>
                           </div>
                           <div className="text-right">
-                            <span className="font-mono text-sm font-bold text-[#F8FAFC]">
+                            <span className="font-mono text-sm font-bold text-white">
                               <AnimatedNumber value={ch.amount} prefix="$" />
                             </span>
-                            <span className="text-xs text-[#64748B] ml-2">
+                            <span className="text-xs text-white/40 ml-2">
                               {ch.percent}%
                             </span>
                           </div>
                         </div>
 
                         {/* Progress bar */}
-                        <div className="w-full h-1.5 bg-[#1E293B] rounded-full overflow-hidden mb-2">
+                        <div className="w-full h-1.5 bg-white/[0.04] rounded-full overflow-hidden mb-2">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: `${ch.percent}%` }}
@@ -422,11 +422,11 @@ export default function MarketingBudgetPlannerPage() {
                         </div>
 
                         <div className="flex items-start justify-between gap-4">
-                          <p className="text-xs text-[#94A3B8] flex-1">
+                          <p className="text-xs text-white/60 flex-1">
                             {ch.tip}
                           </p>
                           <div className="shrink-0 text-right">
-                            <div className="text-xs text-[#64748B]">
+                            <div className="text-xs text-white/40">
                               Expected ROI
                             </div>
                             <div
@@ -446,10 +446,10 @@ export default function MarketingBudgetPlannerPage() {
                     <div className="flex items-start gap-3">
                       <Lightbulb className="w-5 h-5 text-[#F59E0B] mt-0.5 shrink-0" />
                       <div>
-                        <p className="text-sm font-medium text-[#F8FAFC] mb-1">
+                        <p className="text-sm font-medium text-white mb-1">
                           Pro Tip
                         </p>
-                        <p className="text-xs text-[#94A3B8]">
+                        <p className="text-xs text-white/60">
                           Start with this allocation and adjust after 90 days
                           based on actual performance data. Shift budget toward
                           channels with the highest ROI. Track cost-per-lead and
@@ -476,9 +476,9 @@ export default function MarketingBudgetPlannerPage() {
                   className="flex flex-col items-center justify-center h-[500px] text-center"
                 >
                   <div className="w-16 h-16 rounded-2xl bg-[rgba(34,197,94,0.08)] flex items-center justify-center mb-4">
-                    <PieChartIcon className="w-8 h-8 text-[#64748B]" />
+                    <PieChartIcon className="w-8 h-8 text-white/40" />
                   </div>
-                  <p className="text-[#94A3B8] text-sm max-w-xs">
+                  <p className="text-white/60 text-sm max-w-xs">
                     Set your budget, goal, and industry, then click &quot;Plan
                     My Budget&quot; to get your recommended allocation with an
                     interactive pie chart.

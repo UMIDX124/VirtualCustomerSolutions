@@ -17,8 +17,8 @@ export function CTASection() {
 
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
-      {/* Dramatic gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[var(--bg-primary)] via-[#0c1629] to-[var(--bg-primary)]" />
+      {/* Light background */}
+      <div className="absolute inset-0 bg-white" />
 
       {/* Large glowing orb behind the card */}
       <FloatingElement amplitude={12} duration={8} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -34,9 +34,9 @@ export function CTASection() {
           <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-b from-[#22C55E]/40 via-[#22C55E]/10 to-[#22C55E]/40 blur-sm neon-line" />
 
           {/* Card */}
-          <div className="relative rounded-2xl border border-[#22C55E]/20 bg-[#0F172A]/90 backdrop-blur-xl p-10 md:p-16 text-center overflow-hidden neon-border">
+          <div className="relative rounded-2xl border border-[#22C55E]/20 bg-[rgba(0,0,0,0.03)] backdrop-blur-xl p-10 md:p-16 text-center overflow-hidden neon-border">
             {/* Inner gradient shine */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#22C55E]/[0.06] via-transparent to-[#059669]/[0.04]" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#22C55E]/[0.04] via-transparent to-transparent" />
 
             <div className="relative z-10">
               {/* Icon */}
@@ -69,7 +69,7 @@ export function CTASection() {
               <MagneticHover strength={0.3}>
                 <button
                   onClick={() => navigateTo('free-audit')}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 text-lg font-bold rounded-full bg-gradient-to-r from-[#22C55E] to-[#059669] text-white shadow-xl shadow-[#22C55E]/30 hover:shadow-2xl hover:shadow-[#22C55E]/40 hover:scale-[1.02] active:scale-[0.98] transition-[box-shadow,transform] duration-300 neon-box-strong"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 text-lg font-bold rounded-full bg-[#22C55E] text-black shadow-xl shadow-[#22C55E]/30 hover:bg-[#4ADE80] hover:shadow-2xl hover:shadow-[#22C55E]/40 hover:scale-[1.02] active:scale-[0.98] transition-[background-color,box-shadow,transform] duration-300 neon-box-strong"
                 >
                   CLAIM YOUR FREE AUDIT NOW
                   <ArrowRight className="w-5 h-5" />

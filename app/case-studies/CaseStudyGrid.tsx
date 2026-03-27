@@ -37,7 +37,7 @@ export function CaseStudyGrid({ caseStudies, services, industries }: CaseStudyGr
             }}
             className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
               !activeService && !activeIndustry
-                ? "bg-[var(--red-primary)] text-[#0F172A]"
+                ? "bg-[var(--red-primary)] text-black"
                 : "border border-[var(--border-strong)] text-[var(--text-secondary)] hover:border-[var(--red-primary)] hover:text-[var(--text-primary)]"
             }`}
           >
@@ -52,7 +52,7 @@ export function CaseStudyGrid({ caseStudies, services, industries }: CaseStudyGr
               }}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                 activeService === service
-                  ? "bg-[var(--red-primary)] text-[#0F172A]"
+                  ? "bg-[var(--red-primary)] text-black"
                   : "border border-[var(--border-strong)] text-[var(--text-secondary)] hover:border-[var(--red-primary)] hover:text-[var(--text-primary)]"
               }`}
             >
@@ -69,7 +69,7 @@ export function CaseStudyGrid({ caseStudies, services, industries }: CaseStudyGr
               }}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                 activeIndustry === industry
-                  ? "bg-[var(--red-primary)] text-[#0F172A]"
+                  ? "bg-[var(--red-primary)] text-black"
                   : "border border-[var(--border-strong)] text-[var(--text-secondary)] hover:border-[var(--red-primary)] hover:text-[var(--text-primary)]"
               }`}
             >

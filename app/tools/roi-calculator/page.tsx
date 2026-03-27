@@ -107,14 +107,14 @@ function ROIProgressBar({ value, max }: { value: number; max: number }) {
 
   return (
     <div className="w-full">
-      <div className="flex justify-between text-xs text-[#94A3B8] mb-2">
+      <div className="flex justify-between text-xs text-white/60 mb-2">
         <span>0%</span>
         <span className="font-mono font-semibold" style={{ color }}>
           {Math.round(value)}% ROI
         </span>
         <span>{max}%+</span>
       </div>
-      <div className="w-full h-3 bg-[#1E293B] rounded-full overflow-hidden border border-[rgba(255,255,255,0.06)]">
+      <div className="w-full h-3 bg-white/[0.04] rounded-full overflow-hidden border border-[rgba(255,255,255,0.06)]">
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${pct}%` }}
@@ -169,7 +169,7 @@ export default function ROICalculatorPage() {
         <div className="container-wide relative z-10">
           <Link
             href="/tools"
-            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-[#22C55E] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Tools
           </Link>
@@ -182,10 +182,10 @@ export default function ROICalculatorPage() {
               <Calculator className="w-4 h-4" />
               Free Tool
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#F8FAFC] mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
               ROI <span className="text-gradient">Calculator</span>
             </h1>
-            <p className="text-lg text-[#CBD5E1] max-w-2xl">
+            <p className="text-lg text-white/70 max-w-2xl">
               Estimate your projected return on investment based on your monthly
               spend, efficiency gains, team size, and hourly rate. See annual
               savings, 3-year ROI, and payback period instantly.
@@ -205,10 +205,10 @@ export default function ROICalculatorPage() {
             className="glass-panel p-6 md:p-8"
           >
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-[#F8FAFC]">Your Metrics</h2>
+              <h2 className="text-xl font-bold text-white">Your Metrics</h2>
               <button
                 onClick={reset}
-                className="text-xs text-[#94A3B8] hover:text-[#22C55E] flex items-center gap-1 transition-colors"
+                className="text-xs text-white/60 hover:text-[#22C55E] flex items-center gap-1 transition-colors"
               >
                 <RotateCcw className="w-3 h-3" /> Reset
               </button>
@@ -217,12 +217,12 @@ export default function ROICalculatorPage() {
             <div className="space-y-6">
               {/* Monthly Spend */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-white/70 mb-2">
                   <DollarSign className="w-4 h-4 text-[#22C55E]" />
                   Monthly Spend (Investment)
                 </label>
                 <div className="relative">
-                  <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" />
+                  <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                   <input
                     type="number"
                     value={spend}
@@ -238,11 +238,11 @@ export default function ROICalculatorPage() {
                   min={500}
                   max={50000}
                   step={500}
-                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
+                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-white/[0.04] rounded-full appearance-none cursor-pointer"
                 />
-                <div className="flex justify-between text-xs text-[#64748B] mt-1">
+                <div className="flex justify-between text-xs text-white/40 mt-1">
                   <span>$500</span>
-                  <span className="font-mono font-semibold text-[#F8FAFC]">
+                  <span className="font-mono font-semibold text-white">
                     ${spend.toLocaleString()}
                   </span>
                   <span>$50K</span>
@@ -251,7 +251,7 @@ export default function ROICalculatorPage() {
 
               {/* Efficiency Gain */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-white/70 mb-2">
                   <Percent className="w-4 h-4 text-[#22C55E]" />
                   Efficiency Gain (%)
                 </label>
@@ -269,11 +269,11 @@ export default function ROICalculatorPage() {
                   onChange={(e) => setEfficiencyGain(Number(e.target.value))}
                   min={1}
                   max={80}
-                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
+                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-white/[0.04] rounded-full appearance-none cursor-pointer"
                 />
-                <div className="flex justify-between text-xs text-[#64748B] mt-1">
+                <div className="flex justify-between text-xs text-white/40 mt-1">
                   <span>1%</span>
-                  <span className="font-mono font-semibold text-[#F8FAFC]">
+                  <span className="font-mono font-semibold text-white">
                     {efficiencyGain}%
                   </span>
                   <span>80%</span>
@@ -282,7 +282,7 @@ export default function ROICalculatorPage() {
 
               {/* Team Size */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-white/70 mb-2">
                   <Users className="w-4 h-4 text-[#22C55E]" />
                   Team Size
                 </label>
@@ -299,11 +299,11 @@ export default function ROICalculatorPage() {
                   onChange={(e) => setTeamSize(Number(e.target.value))}
                   min={1}
                   max={100}
-                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
+                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-white/[0.04] rounded-full appearance-none cursor-pointer"
                 />
-                <div className="flex justify-between text-xs text-[#64748B] mt-1">
+                <div className="flex justify-between text-xs text-white/40 mt-1">
                   <span>1</span>
-                  <span className="font-mono font-semibold text-[#F8FAFC]">
+                  <span className="font-mono font-semibold text-white">
                     {teamSize} people
                   </span>
                   <span>100</span>
@@ -312,12 +312,12 @@ export default function ROICalculatorPage() {
 
               {/* Hourly Rate */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-white/70 mb-2">
                   <Clock className="w-4 h-4 text-[#22C55E]" />
                   Average Hourly Rate ($)
                 </label>
                 <div className="relative">
-                  <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" />
+                  <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                   <input
                     type="number"
                     value={hourlyRate}
@@ -333,11 +333,11 @@ export default function ROICalculatorPage() {
                   onChange={(e) => setHourlyRate(Number(e.target.value))}
                   min={10}
                   max={200}
-                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
+                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-white/[0.04] rounded-full appearance-none cursor-pointer"
                 />
-                <div className="flex justify-between text-xs text-[#64748B] mt-1">
+                <div className="flex justify-between text-xs text-white/40 mt-1">
                   <span>$10</span>
-                  <span className="font-mono font-semibold text-[#F8FAFC]">
+                  <span className="font-mono font-semibold text-white">
                     ${hourlyRate}/hr
                   </span>
                   <span>$200</span>
@@ -361,7 +361,7 @@ export default function ROICalculatorPage() {
             transition={{ delay: 0.3 }}
             className="glass-panel p-6 md:p-8"
           >
-            <h2 className="text-xl font-bold text-[#F8FAFC] mb-6">
+            <h2 className="text-xl font-bold text-white mb-6">
               Projected Results
             </h2>
 
@@ -376,7 +376,7 @@ export default function ROICalculatorPage() {
                 >
                   {/* 3-Year ROI hero */}
                   <div className="card-accent p-6 text-center">
-                    <div className="text-sm text-[#94A3B8] mb-1">
+                    <div className="text-sm text-white/60 mb-1">
                       3-Year ROI
                     </div>
                     <div className="text-4xl md:text-5xl font-bold text-[#22C55E]">
@@ -392,14 +392,14 @@ export default function ROICalculatorPage() {
                     <div className="card-accent p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <DollarSign className="w-4 h-4 text-[#10B981]" />
-                        <span className="text-xs text-[#94A3B8]">
+                        <span className="text-xs text-white/60">
                           Annual Savings
                         </span>
                       </div>
                       <div className="text-xl font-bold text-[#10B981]">
                         <CountUpOnView value={annualSavings} prefix="$" />
                       </div>
-                      <div className="text-xs text-[#64748B]">
+                      <div className="text-xs text-white/40">
                         ${Math.round(monthlySavings).toLocaleString()}/mo
                       </div>
                     </div>
@@ -407,17 +407,17 @@ export default function ROICalculatorPage() {
                     <div className="card-accent p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <TrendingUp className="w-4 h-4 text-[#22C55E]" />
-                        <span className="text-xs text-[#94A3B8]">
+                        <span className="text-xs text-white/60">
                           Net Annual Gain
                         </span>
                       </div>
-                      <div className="text-xl font-bold text-[#F8FAFC]">
+                      <div className="text-xl font-bold text-white">
                         <CountUpOnView
                           value={netAnnualGain}
                           prefix={netAnnualGain >= 0 ? "$" : "-$"}
                         />
                       </div>
-                      <div className="text-xs text-[#64748B]">
+                      <div className="text-xs text-white/40">
                         savings minus cost
                       </div>
                     </div>
@@ -425,7 +425,7 @@ export default function ROICalculatorPage() {
                     <div className="card-accent p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <Clock className="w-4 h-4 text-[#F59E0B]" />
-                        <span className="text-xs text-[#94A3B8]">
+                        <span className="text-xs text-white/60">
                           Payback Period
                         </span>
                       </div>
@@ -435,20 +435,20 @@ export default function ROICalculatorPage() {
                           suffix=" mo"
                         />
                       </div>
-                      <div className="text-xs text-[#64748B]">to break even</div>
+                      <div className="text-xs text-white/40">to break even</div>
                     </div>
 
                     <div className="card-accent p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <Zap className="w-4 h-4 text-[#8B5CF6]" />
-                        <span className="text-xs text-[#94A3B8]">
+                        <span className="text-xs text-white/60">
                           Hours Saved / Month
                         </span>
                       </div>
                       <div className="text-xl font-bold text-[#8B5CF6]">
                         <CountUpOnView value={Math.round(hoursSavedPerMonth)} suffix="h" />
                       </div>
-                      <div className="text-xs text-[#64748B]">
+                      <div className="text-xs text-white/40">
                         across {teamSize} people
                       </div>
                     </div>
@@ -456,7 +456,7 @@ export default function ROICalculatorPage() {
 
                   {/* 3-Year breakdown */}
                   <div className="card-accent p-5">
-                    <div className="text-sm font-semibold text-[#CBD5E1] mb-3">
+                    <div className="text-sm font-semibold text-white/70 mb-3">
                       3-Year Financial Summary
                     </div>
                     <div className="space-y-2">
@@ -481,7 +481,7 @@ export default function ROICalculatorPage() {
                           key={row.label}
                           className="flex items-center justify-between text-sm"
                         >
-                          <span className="text-[#94A3B8]">{row.label}</span>
+                          <span className="text-white/60">{row.label}</span>
                           <span
                             className="font-mono font-semibold"
                             style={{ color: row.color }}
@@ -498,13 +498,13 @@ export default function ROICalculatorPage() {
                     <div className="flex items-start gap-3">
                       <TrendingUp className="w-5 h-5 text-[#22C55E] mt-0.5 shrink-0" />
                       <div>
-                        <p className="text-sm font-medium text-[#F8FAFC] mb-1">
+                        <p className="text-sm font-medium text-white mb-1">
                           Insight
                         </p>
-                        <p className="text-xs text-[#94A3B8]">
+                        <p className="text-xs text-white/60">
                           With a {efficiencyGain}% efficiency gain across{" "}
                           {teamSize} team members at ${hourlyRate}/hr, you save{" "}
-                          <span className="font-mono font-semibold text-[#CBD5E1]">
+                          <span className="font-mono font-semibold text-white/70">
                             {Math.round(hoursSavedPerMonth)} hours/month
                           </span>{" "}
                           worth{" "}
@@ -535,9 +535,9 @@ export default function ROICalculatorPage() {
                   className="flex flex-col items-center justify-center h-[500px] text-center"
                 >
                   <div className="w-16 h-16 rounded-2xl bg-[rgba(34,197,94,0.08)] flex items-center justify-center mb-4">
-                    <Calculator className="w-8 h-8 text-[#64748B]" />
+                    <Calculator className="w-8 h-8 text-white/40" />
                   </div>
-                  <p className="text-[#94A3B8] text-sm max-w-xs">
+                  <p className="text-white/60 text-sm max-w-xs">
                     Fill in your metrics and click &quot;Calculate ROI&quot; to
                     see your projected results with animated counters and visual
                     progress bars.

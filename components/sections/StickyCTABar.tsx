@@ -31,22 +31,22 @@ export function StickyCTABar() {
           transition={{ type: 'tween', duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="fixed bottom-0 left-0 right-0 z-40"
         >
-          <div className="border-t border-white/[0.06] bg-[#0F172A]/95 backdrop-blur-xl">
+          <div className="border-t border-black/[0.08] bg-white/95 backdrop-blur-xl">
             <div className="container-wide flex items-center justify-between gap-4 py-3">
-              <p className="hidden text-sm text-[#CBD5E1] sm:block">
+              <p className="hidden text-sm text-black/70 sm:block">
                 Ready to scale your business?{' '}
-                <span className="font-medium text-[#F8FAFC]">
+                <span className="font-medium text-[#09090B]">
                   Get a free growth audit today.
                 </span>
               </p>
-              <p className="text-sm text-[#CBD5E1] sm:hidden">
-                <span className="font-medium text-[#F8FAFC]">Free growth audit</span>
+              <p className="text-sm text-black/70 sm:hidden">
+                <span className="font-medium text-[#09090B]">Free growth audit</span>
               </p>
 
               <div className="flex items-center gap-2">
                 <Link
                   href="/free-audit"
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#059669] to-[#22C55E] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-[#22C55E]/20 transition hover:shadow-[#22C55E]/30"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#22C55E] px-5 py-2 text-sm font-semibold text-black shadow-lg shadow-[#22C55E]/20 transition hover:bg-[#4ADE80] hover:shadow-[#22C55E]/30"
                 >
                   Get Started
                   <ArrowRight className="h-4 w-4" />
@@ -55,7 +55,7 @@ export function StickyCTABar() {
                 <button
                   onClick={() => setDismissed(true)}
                   aria-label="Dismiss banner"
-                  className="rounded-full p-1.5 min-h-[44px] min-w-[44px] flex items-center justify-center text-[#64748B] transition-colors hover:bg-white/5 hover:text-[#F8FAFC]"
+                  className="rounded-full p-1.5 min-h-[44px] min-w-[44px] flex items-center justify-center text-black/40 transition-colors hover:bg-black/5 hover:text-black"
                 >
                   <X className="h-4 w-4" />
                 </button>

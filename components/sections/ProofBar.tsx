@@ -20,7 +20,7 @@ const metrics: Metric[] = [
 
 export function ProofBar() {
   return (
-    <section className="relative border-y border-white/[0.04] bg-[#1E293B]/40 py-8 backdrop-blur-sm sm:py-10">
+    <section className="relative border-y border-black/[0.06] bg-black/[0.02] py-8 backdrop-blur-sm sm:py-10">
       <div className="container-wide">
         <StaggerChildren staggerDelay={0.12} className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
           {metrics.map((m) => {
@@ -28,10 +28,10 @@ export function ProofBar() {
             return (
               <StaggerItem key={m.label} className="flex flex-col items-center gap-2 text-center">
                 <Icon className="h-5 w-5 text-[#22C55E] neon-text" />
-                <p className="font-display text-2xl font-bold tracking-tight text-[#F8FAFC] sm:text-3xl">
+                <p className="font-display text-2xl font-bold tracking-tight text-[#09090B] sm:text-3xl">
                   <CountUpOnView target={m.value} suffix={m.suffix} duration={2} className="tabular-nums" />
                 </p>
-                <p className="text-xs font-medium uppercase tracking-wider text-[#94A3B8]">
+                <p className="text-xs font-medium uppercase tracking-wider text-black/60">
                   {m.label}
                 </p>
               </StaggerItem>

@@ -25,14 +25,14 @@ export function UrgencyBanner() {
   if (!isVisible || isDismissed) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#22C55E] to-[#0F172A] text-white py-2 px-4">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-[#22C55E] text-black py-2 px-4">
       <div className="container-wide flex items-center justify-center gap-4">
         <p className="text-sm font-medium text-center">
           🔥 Limited: First 50 Clients Get Lifetime Rate Lock — Only 12 Spots Left!
         </p>
         <Button
           onClick={() => navigateTo('free-audit')}
-          className="bg-white text-[#22C55E] hover:bg-gray-100 text-xs px-3 py-1 h-7"
+          className="bg-black text-[#22C55E] hover:bg-black/80 text-xs px-3 py-1 h-7"
         >
           Get Started
         </Button>

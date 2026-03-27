@@ -24,7 +24,7 @@ const posts: BlogPost[] = [
     date: 'Mar 18, 2025',
     readTime: '7 min read',
     author: 'VCS Team',
-    gradient: 'from-[#22C55E] to-[#1E293B]',
+    gradient: 'from-[#22C55E] to-black',
   },
   {
     slug: 'performance-marketing-roi',
@@ -34,7 +34,7 @@ const posts: BlogPost[] = [
     date: 'Mar 10, 2025',
     readTime: '5 min read',
     author: 'VCS Team',
-    gradient: 'from-emerald-600 to-[#1E293B]',
+    gradient: 'from-[#059669] to-black',
   },
   {
     slug: 'business-systems-automation',
@@ -44,7 +44,7 @@ const posts: BlogPost[] = [
     date: 'Feb 28, 2025',
     readTime: '6 min read',
     author: 'VCS Team',
-    gradient: 'from-amber-600 to-[#1E293B]',
+    gradient: 'from-[#22C55E]/70 to-black',
   },
   {
     slug: 'hiring-remote-talent',
@@ -54,7 +54,7 @@ const posts: BlogPost[] = [
     date: 'Feb 20, 2025',
     readTime: '8 min read',
     author: 'VCS Team',
-    gradient: 'from-violet-600 to-[#1E293B]',
+    gradient: 'from-[#4ADE80]/60 to-black',
   },
   {
     slug: 'client-reporting-frameworks',
@@ -64,7 +64,7 @@ const posts: BlogPost[] = [
     date: 'Feb 12, 2025',
     readTime: '5 min read',
     author: 'VCS Team',
-    gradient: 'from-cyan-600 to-[#1E293B]',
+    gradient: 'from-[#059669]/80 to-black',
   },
   {
     slug: 'cost-efficiency-outsourcing',
@@ -74,17 +74,17 @@ const posts: BlogPost[] = [
     date: 'Feb 5, 2025',
     readTime: '6 min read',
     author: 'VCS Team',
-    gradient: 'from-rose-600 to-[#1E293B]',
+    gradient: 'from-[#22C55E]/50 to-black',
   },
 ];
 
 const categoryColors: Record<string, string> = {
   'Remote Work': 'bg-[#22C55E]/10 text-[#4ADE80] neon-text',
-  Marketing: 'bg-emerald-500/10 text-emerald-400',
-  Operations: 'bg-amber-500/10 text-amber-400',
-  Recruitment: 'bg-violet-500/10 text-violet-400',
-  Reporting: 'bg-cyan-500/10 text-cyan-400',
-  Strategy: 'bg-rose-500/10 text-rose-400',
+  Marketing: 'bg-black/[0.08] text-[#09090B]',
+  Operations: 'bg-black/[0.08] text-[#09090B]',
+  Recruitment: 'bg-black/[0.08] text-[#09090B]',
+  Reporting: 'bg-[#22C55E]/10 text-[#4ADE80] neon-text',
+  Strategy: 'bg-black/[0.08] text-[#09090B]',
 };
 
 export function LatestInsights() {
@@ -97,7 +97,7 @@ export function LatestInsights() {
               <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#22C55E] neon-text">
                 Blog
               </p>
-              <h2 className="font-display text-3xl font-bold tracking-tight text-[#F8FAFC] sm:text-4xl">
+              <h2 className="font-display text-3xl font-bold tracking-tight text-[#09090B] sm:text-4xl">
                 Latest Insights
               </h2>
             </div>
@@ -117,14 +117,14 @@ export function LatestInsights() {
               <RevealOnScroll variant="blur-in" duration={0.8}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-[#1E293B]/50 transition-[border-color,background-color] hover:border-[#22C55E]/30 hover:bg-[#1E293B]/70"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-black/[0.06] bg-black/[0.03] transition-[border-color,background-color] hover:border-[#22C55E]/30 hover:bg-black/[0.05]"
                 >
                   <div className="relative h-48 overflow-hidden">
                     <div className={`absolute inset-0 bg-gradient-to-br ${post.gradient} group-hover:scale-110 transition-transform duration-700 ease-out`} />
-                    <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-white/[0.06] group-hover:scale-110 transition-transform duration-700" />
-                    <div className="absolute bottom-4 left-4 w-16 h-16 rotate-12 rounded-lg bg-white/[0.04] group-hover:rotate-[20deg] transition-transform duration-700" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-white/[0.03] blur-xl" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1E293B] via-transparent to-transparent" />
+                    <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-black/[0.06] group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute bottom-4 left-4 w-16 h-16 rotate-12 rounded-lg bg-black/[0.04] group-hover:rotate-[20deg] transition-transform duration-700" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/[0.03] blur-xl" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 z-10">
                       <span
                         className={`inline-flex rounded-full px-3 py-1 text-xs font-medium backdrop-blur-sm ${
@@ -137,13 +137,13 @@ export function LatestInsights() {
                   </div>
 
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="mb-2 font-display text-lg font-semibold leading-snug text-[#F8FAFC] transition-colors group-hover:text-[#22C55E]">
+                    <h3 className="mb-2 font-display text-lg font-semibold leading-snug text-[#09090B] transition-colors group-hover:text-[#22C55E]">
                       {post.title}
                     </h3>
-                    <p className="mb-6 flex-1 text-sm leading-relaxed text-[#94A3B8]">
+                    <p className="mb-6 flex-1 text-sm leading-relaxed text-black/60">
                       {post.excerpt}
                     </p>
-                    <div className="flex items-center gap-4 border-t border-white/[0.06] pt-4 text-xs text-[#64748B]">
+                    <div className="flex items-center gap-4 border-t border-black/[0.06] pt-4 text-xs text-black/40">
                       <span className="flex items-center gap-1">
                         <User className="h-3 w-3" />
                         {post.author}

@@ -90,7 +90,7 @@ export function FAQSection() {
                       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-5 pb-5 text-[var(--text-secondary)] text-sm leading-relaxed border-t border-white/[0.04] pt-4">
+                      <div className="px-5 pb-5 text-[var(--text-secondary)] text-sm leading-relaxed border-t border-black/[0.04] pt-4">
                         {faq.answer}
                       </div>
                     </motion.div>

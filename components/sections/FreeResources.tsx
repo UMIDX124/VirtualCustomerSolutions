@@ -42,10 +42,10 @@ export function FreeResources() {
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#22C55E] neon-text">
             Resources
           </p>
-          <h2 className="font-display text-3xl font-bold tracking-tight text-[#F8FAFC] sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-[#09090B] sm:text-4xl">
             Free Resources
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-[#94A3B8]">
+          <p className="mx-auto mt-4 max-w-xl text-black/60">
             Actionable guides built from real client engagements. No fluff, just frameworks you
             can implement today.
           </p>
@@ -58,7 +58,7 @@ export function FreeResources() {
             return (
               <div key={r.slug} className="scroll-scale">
                 <div
-                  className="group flex flex-col rounded-2xl border border-white/[0.06] bg-[#1E293B]/50 p-7 transition-[border-color,background-color] hover:border-[#22C55E]/25 hover:bg-[#1E293B]/70"
+                  className="group flex flex-col rounded-2xl border border-black/[0.06] bg-black/[0.03] p-7 transition-[border-color,background-color] hover:border-[#22C55E]/25 hover:bg-black/[0.05]"
                 >
                   {/* icon */}
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#22C55E]/10 text-[#22C55E] transition-colors group-hover:bg-[#22C55E]/20 neon-text neon-box">
@@ -66,12 +66,12 @@ export function FreeResources() {
                   </div>
 
                   {/* title */}
-                  <h3 className="mb-3 font-display text-lg font-semibold leading-snug text-[#F8FAFC]">
+                  <h3 className="mb-3 font-display text-lg font-semibold leading-snug text-[#09090B]">
                     {r.title}
                   </h3>
 
                   {/* description */}
-                  <p className="mb-6 flex-1 text-sm leading-relaxed text-[#94A3B8]">
+                  <p className="mb-6 flex-1 text-sm leading-relaxed text-black/60">
                     {r.description}
                   </p>
 

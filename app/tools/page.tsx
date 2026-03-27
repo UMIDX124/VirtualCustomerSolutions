@@ -89,11 +89,11 @@ export default function ToolsPage() {
                 <Wrench className="w-4 h-4" />
                 100% Free &mdash; No Signup
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#F8FAFC]">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
                 Free Business{" "}
                 <span className="text-gradient">Tools</span>
               </h1>
-              <p className="text-lg md:text-xl text-[#CBD5E1] max-w-2xl mx-auto mb-8">
+              <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8">
                 Interactive calculators and planning tools to help you make
                 smarter, data-driven decisions. Instant results, no login required.
               </p>
@@ -118,10 +118,10 @@ export default function ToolsPage() {
                       <Icon className="w-5 h-5 text-[#22C55E]" />
                     </div>
                     <div className="text-left">
-                      <div className="font-mono text-lg font-bold text-[#F8FAFC]">
+                      <div className="font-mono text-lg font-bold text-white">
                         {stat.value}
                       </div>
-                      <div className="text-xs text-[#94A3B8]">{stat.label}</div>
+                      <div className="text-xs text-white/60">{stat.label}</div>
                     </div>
                   </div>
                 );
@@ -172,10 +172,10 @@ export default function ToolsPage() {
                         )}
                       </div>
 
-                      <h2 className="text-xl font-bold text-[#F8FAFC] mb-3 group-hover:text-[#22C55E] transition-colors">
+                      <h2 className="text-xl font-bold text-white mb-3 group-hover:text-[#22C55E] transition-colors">
                         {tool.title}
                       </h2>
-                      <p className="text-sm text-[#94A3B8] mb-5 leading-relaxed flex-1">
+                      <p className="text-sm text-white/60 mb-5 leading-relaxed flex-1">
                         {tool.description}
                       </p>
 
@@ -184,7 +184,7 @@ export default function ToolsPage() {
                         {tool.features.map((f) => (
                           <span
                             key={f}
-                            className="text-xs px-2 py-1 rounded-md bg-[#1E293B] text-[#CBD5E1] border border-[rgba(255,255,255,0.06)]"
+                            className="text-xs px-2 py-1 rounded-md bg-white/[0.04] text-white/70 border border-[rgba(255,255,255,0.06)]"
                           >
                             {f}
                           </span>
@@ -194,11 +194,11 @@ export default function ToolsPage() {
                       {/* Preview metric */}
                       <div className="flex items-center justify-between pt-4 border-t border-[rgba(255,255,255,0.06)]">
                         <div>
-                          <div className="text-xs text-[#94A3B8]">{tool.preview.label}</div>
+                          <div className="text-xs text-white/60">{tool.preview.label}</div>
                           <div className="font-mono text-2xl font-bold" style={{ color: tool.color }}>
                             {tool.preview.value}
                           </div>
-                          <div className="text-xs text-[#64748B]">{tool.preview.sub}</div>
+                          <div className="text-xs text-white/40">{tool.preview.sub}</div>
                         </div>
                         <div className="flex items-center gap-2 text-sm font-semibold text-[#22C55E]">
                           Try Free
@@ -223,10 +223,10 @@ export default function ToolsPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-[#F8FAFC] mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
               How It Works
             </h2>
-            <p className="text-[#94A3B8] max-w-lg mx-auto">
+            <p className="text-white/60 max-w-lg mx-auto">
               Three simple steps to actionable business insights.
             </p>
           </motion.div>
@@ -261,10 +261,10 @@ export default function ToolsPage() {
                 <div className="font-mono text-3xl font-bold text-[#22C55E] mb-3">
                   {item.step}
                 </div>
-                <h3 className="text-lg font-bold text-[#F8FAFC] mb-2">
+                <h3 className="text-lg font-bold text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-[#94A3B8]">{item.desc}</p>
+                <p className="text-sm text-white/60">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -275,10 +275,10 @@ export default function ToolsPage() {
       <section className="section-padding">
         <div className="container-wide">
           <div className="glass-panel p-8 md:p-12 text-center max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#F8FAFC] mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Need a Personalized Analysis?
             </h2>
-            <p className="text-[#CBD5E1] mb-6 max-w-xl mx-auto">
+            <p className="text-white/70 mb-6 max-w-xl mx-auto">
               Our tools provide estimates. For a detailed, custom analysis
               tailored to your business, talk to our experts.
             </p>

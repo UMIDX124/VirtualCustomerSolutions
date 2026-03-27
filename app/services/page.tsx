@@ -130,7 +130,7 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="bg-surface-glass border border-border-glass rounded-2xl p-8">
+                <div className="bg-white/[0.03] border border-white/[0.08] rounded-2xl p-8">
                   <h3 className="font-display text-xl font-bold text-text-primary mb-4">
                     Get Started with {category.title}
                   </h3>
@@ -139,7 +139,7 @@ export default function ServicesPage() {
                   </p>
                   <a
                     href="/free-audit"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#22C55E] hover:bg-[#059669] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#22C55E] hover:bg-[#4ADE80] text-black font-semibold px-6 py-3 rounded-lg transition-colors duration-300"
                   >
                     Get Started →
                   </a>
@@ -158,7 +158,7 @@ export default function ServicesPage() {
             </p>
             <a
               href="/free-audit"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#22C55E] hover:bg-[#059669] text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#22C55E] hover:bg-[#4ADE80] text-black font-semibold px-8 py-4 rounded-lg transition-colors duration-300"
             >
               🎯 Get Your FREE Digital Audit
             </a>

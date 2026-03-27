@@ -105,8 +105,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className="dark" style={{ backgroundColor: '#0F172A' }} suppressHydrationWarning>
       <head>
+        {/* Prevent white/blue flash on load */}
+        <style dangerouslySetInnerHTML={{ __html: `html,body{background-color:#0F172A!important;color:#F8FAFC}` }} />
         {/* Organization Schema */}
         <script
           type="application/ld+json"

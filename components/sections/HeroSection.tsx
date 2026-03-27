@@ -12,9 +12,9 @@ export function HeroSection() {
   const { navigateTo } = useNavigation();
   const { scrollY } = useScroll();
 
-  const rawY = useTransform(scrollY, [0, 800], [0, 80]);
-  const rawOpacity = useTransform(scrollY, [0, 600], [1, 0]);
-  const rawScale = useTransform(scrollY, [0, 600], [1, 0.97]);
+  const rawY = useTransform(scrollY, [0, 800], [0, 60]);
+  const rawOpacity = useTransform(scrollY, [200, 800], [1, 0]);
+  const rawScale = useTransform(scrollY, [200, 800], [1, 0.97]);
 
   // Smooth scroll-linked values with useSpring
   const y = useSpring(rawY, { stiffness: 100, damping: 30 });
@@ -22,7 +22,7 @@ export function HeroSection() {
   const scale = useSpring(rawScale, { stiffness: 100, damping: 30 });
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -39,7 +39,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#0F172A]" />
       </div>
 
-      <div className="container-wide relative z-10 pt-32 pb-20">
+      <div className="container-wide relative z-10 pt-20 lg:pt-24 pb-12 lg:pb-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <motion.div

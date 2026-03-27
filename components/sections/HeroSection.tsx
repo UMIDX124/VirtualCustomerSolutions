@@ -39,7 +39,7 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#0F172A]" />
       </div>
 
-      <div className="relative z-10 px-6 md:px-10 lg:px-16 xl:px-20 max-w-[1440px] mx-auto w-full pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-20">
+      <div className="relative z-10 px-6 md:px-10 lg:px-16 xl:px-20 max-w-[1440px] mx-auto w-full pt-14 sm:pt-16 lg:pt-20 pb-16 lg:pb-20">
         <div className="relative">
           {/* Content — centered on all screens */}
           <motion.div

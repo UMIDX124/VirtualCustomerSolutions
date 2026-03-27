@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback, type FormEvent } from 'react';
 import Image from 'next/image';
-import { useChat } from '@ai-sdk/react';
-import { DefaultChatTransport } from 'ai';
+// Chat uses simple fetch for maximum compatibility
 
 // ---------------------------------------------------------------------------
 // Types
@@ -126,29 +125,48 @@ export default function SupportChatbot() {
     localStorage.setItem('vico-seen', '1');
   }, []);
 
-  // AI chat via AI SDK v6 — `body` removed in v6, input managed via own useState
-  const { messages, sendMessage, status } = useChat({
-    transport: new DefaultChatTransport({ api: '/api/chat' }),
-    messages: [
-      {
-        id: 'welcome',
-        role: 'assistant' as const,
-        content:
-          "Hey! \u{1F44B} I'm Vico, your virtual companion at VCS. How can I help you today?",
-        parts: [
-          {
-            type: 'text' as const,
-            text: "Hey! \u{1F44B} I'm Vico, your virtual companion at VCS. How can I help you today?",
-          },
-        ],
-      },
-    ],
-  });
+  // AI chat — simple fetch-based approach for maximum compatibility
+  const [messages, setMessages] = useState<Array<{ id: string; role: 'user' | 'assistant'; content: string }>>([
+    {
+      id: 'welcome',
+      role: 'assistant',
+      content: "Hey! \u{1F44B} I'm Vico, your virtual companion at VCS. How can I help you today?",
+    },
+  ]);
+  const [chatStatus, setChatStatus] = useState<'idle' | 'streaming'>('idle');
+
+  const sendChatMessage = useCallback(async (text: string) => {
+    const userMsg = { id: `u-${Date.now()}`, role: 'user' as const, content: text };
+    setMessages((prev) => [...prev, userMsg]);
+    setChatStatus('streaming');
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text, sessionId }),
+      });
+
+      if (!res.ok) throw new Error('Chat failed');
+
+      const data = await res.json();
+      const botContent = data.content || data.role === 'assistant' ? data.content : "Sorry, I couldn't process that. Please try again.";
+      setMessages((prev) => [...prev, { id: `a-${Date.now()}`, role: 'assistant', content: botContent }]);
+    } catch {
+      setMessages((prev) => [...prev, {
+        id: `a-${Date.now()}`,
+        role: 'assistant',
+        content: "Oops! Something went wrong. You can reach us directly at umidx932@gmail.com.",
+      }]);
+    } finally {
+      setChatStatus('idle');
+    }
+  }, [sessionId]);
 
   // Auto-scroll on new messages
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, status]);
+  }, [messages, chatStatus]);
 
   // Detect "ticket" intent in assistant responses
   useEffect(() => {
@@ -176,15 +194,15 @@ export default function SupportChatbot() {
     // Detect ticket intent from user input
     const lower = text.toLowerCase();
     if (lower.includes('create ticket') || lower.includes('open ticket')) {
-      sendMessage({ text });
+      sendChatMessage(text);
       setInput('');
       setTimeout(() => setMode('ticket'), 600);
       return;
     }
 
-    sendMessage({ text });
+    sendChatMessage(text);
     setInput('');
-  }, [input, sendMessage]);
+  }, [input, sendChatMessage]);
 
   const handleQuickAction = useCallback(
     (action: string) => {
@@ -192,9 +210,9 @@ export default function SupportChatbot() {
         setMode('ticket');
         return;
       }
-      sendMessage({ text: action });
+      sendChatMessage(action);
     },
-    [sendMessage],
+    [sendChatMessage],
   );
 
   const handleTicketSubmit = useCallback(
@@ -224,7 +242,7 @@ export default function SupportChatbot() {
     });
   }, [dismissBeacon]);
 
-  const isStreaming = status === 'streaming';
+  const isStreaming = chatStatus === 'streaming';
   const hasOnlyWelcome = messages.length === 1 && messages[0].id === 'welcome';
 
   // -----------------------------------------------------------------------

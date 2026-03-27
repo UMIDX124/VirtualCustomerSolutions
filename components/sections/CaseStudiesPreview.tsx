@@ -48,7 +48,7 @@ export function CaseStudiesPreview() {
         {/* header */}
         <div className="scroll-reveal mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#22C55E]">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#22C55E] neon-text">
               Results
             </p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-[#F8FAFC] sm:text-4xl">
@@ -57,7 +57,7 @@ export function CaseStudiesPreview() {
           </div>
           <Link
             href="/case-studies"
-            className="group inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition hover:text-[#4ADE80]"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition hover:text-[#4ADE80] neon-text"
           >
             View All Case Studies
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -73,7 +73,7 @@ export function CaseStudiesPreview() {
                 className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-[#1E293B]/50 transition-[border-color,background-color] hover:border-[#22C55E]/30 hover:bg-[#1E293B]/70"
               >
                 {/* gradient accent top border */}
-                <div className="h-1 w-full bg-gradient-to-r from-[#059669] via-[#22C55E] to-[#4ADE80]" />
+                <div className="h-1 w-full bg-gradient-to-r from-[#059669] via-[#22C55E] to-[#4ADE80] neon-line" />
 
                 <div className="flex flex-1 flex-col p-7">
                   {/* client type */}
@@ -91,16 +91,16 @@ export function CaseStudiesPreview() {
                     {cs.metrics.map((m) => (
                       <span
                         key={m.label}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/[0.06] px-3 py-1 text-xs font-medium"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/[0.06] px-3 py-1 text-xs font-medium neon-border"
                       >
-                        <span className="text-[#22C55E]">{m.value}</span>
+                        <span className="text-[#22C55E] neon-text-strong">{m.value}</span>
                         <span className="text-[#94A3B8]">{m.label}</span>
                       </span>
                     ))}
                   </div>
 
                   {/* link */}
-                  <span className="mt-auto inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition group-hover:text-[#4ADE80]">
+                  <span className="mt-auto inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition group-hover:text-[#4ADE80] neon-text">
                     Read Case Study
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>

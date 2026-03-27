@@ -69,7 +69,7 @@ export function PillarsSection() {
       <div className="container-wide relative z-10">
         {/* Section Header */}
         <RevealOnScroll variant="fade-up" duration={0.8} className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full glass border border-[rgba(34,197,94,0.3)] text-[#22C55E] text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full glass border border-[rgba(34,197,94,0.3)] text-[#22C55E] text-sm font-medium mb-4 neon-text neon-border">
             Our Services
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
@@ -124,7 +124,7 @@ export function PillarsSection() {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-display text-xl font-bold text-white mb-2 group-hover:text-[#22C55E] transition-colors duration-[400ms]">
+                <h3 className="font-display text-xl font-bold text-white mb-2 group-hover:text-[#22C55E] group-hover:neon-text-strong transition-colors duration-[400ms]">
                   {service.title}
                 </h3>
 
@@ -138,7 +138,7 @@ export function PillarsSection() {
                   {service.features.slice(0, 3).map((feature) => (
                     <span 
                       key={feature}
-                      className="text-xs px-2 py-1 rounded-full bg-[rgba(34,197,94,0.1)] text-[#22C55E] border border-[rgba(34,197,94,0.2)]"
+                      className="text-xs px-2 py-1 rounded-full bg-[rgba(34,197,94,0.1)] text-[#22C55E] border border-[rgba(34,197,94,0.2)] neon-text"
                     >
                       {feature}
                     </span>

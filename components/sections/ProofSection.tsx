@@ -48,7 +48,7 @@ export function ProofSection() {
             <StaggerItem key={study.category}>
               <GlassCard className="p-6 h-full">
                 {/* Result Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#22C55E]/10 text-[#22C55E] text-sm font-semibold mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#22C55E]/10 text-[#22C55E] text-sm font-semibold mb-4 neon-text-strong">
                   {study.result}
                 </div>
 

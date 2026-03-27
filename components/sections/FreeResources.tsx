@@ -39,7 +39,7 @@ export function FreeResources() {
       <div className="container-wide">
         {/* header */}
         <div className="scroll-reveal mb-12 text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#22C55E]">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#22C55E] neon-text">
             Resources
           </p>
           <h2 className="font-display text-3xl font-bold tracking-tight text-[#F8FAFC] sm:text-4xl">
@@ -61,7 +61,7 @@ export function FreeResources() {
                   className="group flex flex-col rounded-2xl border border-white/[0.06] bg-[#1E293B]/50 p-7 transition-[border-color,background-color] hover:border-[#22C55E]/25 hover:bg-[#1E293B]/70"
                 >
                   {/* icon */}
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#22C55E]/10 text-[#22C55E] transition-colors group-hover:bg-[#22C55E]/20">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#22C55E]/10 text-[#22C55E] transition-colors group-hover:bg-[#22C55E]/20 neon-text neon-box">
                     <Icon className="h-6 w-6" />
                   </div>
 
@@ -78,7 +78,7 @@ export function FreeResources() {
                   {/* link */}
                   <Link
                     href={`/guides/${r.slug}`}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition hover:text-[#4ADE80]"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition hover:text-[#4ADE80] neon-text"
                   >
                     Read Guide
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

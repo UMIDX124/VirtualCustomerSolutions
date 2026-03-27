@@ -52,8 +52,8 @@ export function ProcessSection() {
                 <div className="relative text-center lg:text-left">
                   {/* Number Badge */}
                   <div className="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--surface-glass)] border border-[var(--border-glass)] mb-6 mx-auto lg:mx-0">
-                    <step.icon className="w-7 h-7 text-[#22C55E]" />
-                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#22C55E] flex items-center justify-center">
+                    <step.icon className="w-7 h-7 text-[#22C55E] neon-text" />
+                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#22C55E] flex items-center justify-center neon-box">
                       <SignalPoint size="sm" pulse={false} />
                     </div>
                   </div>

@@ -79,7 +79,7 @@ const posts: BlogPost[] = [
 ];
 
 const categoryColors: Record<string, string> = {
-  'Remote Work': 'bg-[#22C55E]/10 text-[#4ADE80]',
+  'Remote Work': 'bg-[#22C55E]/10 text-[#4ADE80] neon-text',
   Marketing: 'bg-emerald-500/10 text-emerald-400',
   Operations: 'bg-amber-500/10 text-amber-400',
   Recruitment: 'bg-violet-500/10 text-violet-400',
@@ -94,7 +94,7 @@ export function LatestInsights() {
         <RevealOnScroll variant="fade-up" duration={0.8}>
           <div className="mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#22C55E]">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#22C55E] neon-text">
                 Blog
               </p>
               <h2 className="font-display text-3xl font-bold tracking-tight text-[#F8FAFC] sm:text-4xl">
@@ -103,7 +103,7 @@ export function LatestInsights() {
             </div>
             <Link
               href="/blog"
-              className="group inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition hover:text-[#4ADE80]"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition hover:text-[#4ADE80] neon-text"
             >
               View All Posts
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

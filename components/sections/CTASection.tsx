@@ -31,17 +31,17 @@ export function CTASection() {
       <div className="container-wide relative z-10">
         <div className="relative max-w-3xl mx-auto">
           {/* Outer glow border */}
-          <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-b from-[#22C55E]/40 via-[#22C55E]/10 to-[#22C55E]/40 blur-sm" />
+          <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-b from-[#22C55E]/40 via-[#22C55E]/10 to-[#22C55E]/40 blur-sm neon-line" />
 
           {/* Card */}
-          <div className="relative rounded-2xl border border-[#22C55E]/20 bg-[#0F172A]/90 backdrop-blur-xl p-10 md:p-16 text-center overflow-hidden">
+          <div className="relative rounded-2xl border border-[#22C55E]/20 bg-[#0F172A]/90 backdrop-blur-xl p-10 md:p-16 text-center overflow-hidden neon-border">
             {/* Inner gradient shine */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#22C55E]/[0.06] via-transparent to-[#059669]/[0.04]" />
 
             <div className="relative z-10">
               {/* Icon */}
               <div
-                className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-[#22C55E] to-[#059669] mb-8 shadow-lg shadow-[#22C55E]/25 animate-subtle-scale-pulse will-change-transform"
+                className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-[#22C55E] to-[#059669] mb-8 shadow-lg shadow-[#22C55E]/25 animate-subtle-scale-pulse will-change-transform neon-box-strong"
               >
                 <Sparkles className="w-10 h-10 text-white" />
               </div>
@@ -59,7 +59,7 @@ export function CTASection() {
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-10">
                 {auditIncludes.map((item) => (
                   <div key={item} className="flex items-center gap-2 text-[var(--text-secondary)] text-sm">
-                    <CheckCircle className="w-4 h-4 text-[#22C55E] shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-[#22C55E] shrink-0 neon-text" />
                     {item}
                   </div>
                 ))}
@@ -69,7 +69,7 @@ export function CTASection() {
               <MagneticHover strength={0.3}>
                 <button
                   onClick={() => navigateTo('free-audit')}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 text-lg font-bold rounded-full bg-gradient-to-r from-[#22C55E] to-[#059669] text-white shadow-xl shadow-[#22C55E]/30 hover:shadow-2xl hover:shadow-[#22C55E]/40 hover:scale-[1.02] active:scale-[0.98] transition-[box-shadow,transform] duration-300"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 text-lg font-bold rounded-full bg-gradient-to-r from-[#22C55E] to-[#059669] text-white shadow-xl shadow-[#22C55E]/30 hover:shadow-2xl hover:shadow-[#22C55E]/40 hover:scale-[1.02] active:scale-[0.98] transition-[box-shadow,transform] duration-300 neon-box-strong"
                 >
                   CLAIM YOUR FREE AUDIT NOW
                   <ArrowRight className="w-5 h-5" />

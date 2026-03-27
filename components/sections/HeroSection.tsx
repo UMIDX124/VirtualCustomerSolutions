@@ -50,7 +50,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: smoothEase }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[rgba(34,197,94,0.3)] text-[#22C55E] text-sm mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[rgba(34,197,94,0.3)] text-[#22C55E] text-sm mb-6 neon-text neon-border"
             >
               <Sparkles size="sm" className="animate-pulse" />
               <span className="tracking-wide">AI-Powered Operations</span>
@@ -81,7 +81,7 @@ export function HeroSection() {
               <MagneticHover strength={0.3}>
                 <Button
                   onClick={() => navigateTo('free-audit')}
-                  className="group w-full sm:w-auto bg-gradient-to-r from-[#22C55E] to-[#0F172A] hover:shadow-[0_0_40px_rgba(34,197,94,0.5)] text-black font-bold px-8 py-6 text-lg transition-shadow duration-[400ms]"
+                  className="group w-full sm:w-auto bg-gradient-to-r from-[#22C55E] to-[#0F172A] hover:shadow-[0_0_40px_rgba(34,197,94,0.5)] text-black font-bold px-8 py-6 text-lg transition-shadow duration-[400ms] neon-box-strong"
                 >
                   Get Your Free Audit
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-[400ms]" />
@@ -91,7 +91,7 @@ export function HeroSection() {
                 <Button
                   onClick={() => navigateTo('services')}
                   variant="outline"
-                  className="w-full sm:w-auto border border-[rgba(34,197,94,0.3)] hover:border-[#22C55E] hover:bg-[rgba(34,197,94,0.1)] text-white px-8 py-6 text-lg bg-transparent backdrop-blur-sm transition-[border-color,background-color] duration-[400ms]"
+                  className="w-full sm:w-auto border border-[rgba(34,197,94,0.3)] hover:border-[#22C55E] hover:bg-[rgba(34,197,94,0.1)] text-white px-8 py-6 text-lg bg-transparent backdrop-blur-sm transition-[border-color,background-color] duration-[400ms] neon-border"
                 >
                   Explore Services
                 </Button>

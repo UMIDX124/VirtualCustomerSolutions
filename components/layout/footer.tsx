@@ -28,7 +28,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-black border-t border-[rgba(34,197,94,0.15)] mt-auto">
+    <footer className="relative bg-black border-t border-[rgba(34,197,94,0.15)] mt-auto neon-border">
       {/* Glow Effect */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#22C55E]/5 to-transparent pointer-events-none" />
 
@@ -51,9 +51,9 @@ export function Footer() {
               <div>
                 <span className="font-display text-xl font-bold tracking-tight">
                   <span className="text-white">Virtual </span>
-                  <span className="text-[#22C55E] font-extrabold">Customer</span>
+                  <span className="text-[#22C55E] font-extrabold neon-text-strong">Customer</span>
                 </span>
-                <span className="text-[#22C55E]/50 text-[8px] block -mt-0.5 tracking-[0.3em] font-semibold uppercase">Solution</span>
+                <span className="text-[#22C55E]/50 text-[8px] block -mt-0.5 tracking-[0.3em] font-semibold uppercase neon-text">Solution</span>
               </div>
             </button>
             <p className="max-w-xs text-sm leading-relaxed text-gray-400 mb-6">
@@ -61,16 +61,16 @@ export function Footer() {
               We deliver scalable solutions for the world's most ambitious companies.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a href="https://facebook.com/nexusvcs" target="_blank" rel="noopener noreferrer" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#22C55E] transition-colors">
+              <a href="https://facebook.com/nexusvcs" target="_blank" rel="noopener noreferrer" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#22C55E] hover:neon-text transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://instagram.com/nexusvcs" target="_blank" rel="noopener noreferrer" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#22C55E] transition-colors">
+              <a href="https://instagram.com/nexusvcs" target="_blank" rel="noopener noreferrer" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#22C55E] hover:neon-text transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://linkedin.com/company/nexusvcs" target="_blank" rel="noopener noreferrer" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#22C55E] transition-colors">
+              <a href="https://linkedin.com/company/nexusvcs" target="_blank" rel="noopener noreferrer" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#22C55E] hover:neon-text transition-colors">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="https://twitter.com/nexusvcs" target="_blank" rel="noopener noreferrer" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#22C55E] transition-colors">
+              <a href="https://twitter.com/nexusvcs" target="_blank" rel="noopener noreferrer" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-[#22C55E] hover:neon-text transition-colors">
                 <Twitter className="w-4 h-4" />
               </a>
             </div>
@@ -120,7 +120,7 @@ export function Footer() {
                 href="mailto:info@virtualcustomersolution.com"
                 className="group flex items-center gap-3 text-sm text-gray-400 hover:text-[#22C55E] transition-colors"
               >
-                <Mail className="h-4 w-4 text-[#059669]" />
+                <Mail className="h-4 w-4 text-[#059669] neon-text" />
                 info@virtualcustomersolution.com
               </a>
               <a
@@ -129,7 +129,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 text-sm text-gray-400 hover:text-[#22C55E] transition-colors"
               >
-                <Linkedin className="h-4 w-4 text-[#059669]" />
+                <Linkedin className="h-4 w-4 text-[#059669] neon-text" />
                 LinkedIn
               </a>
             </div>

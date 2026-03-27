@@ -52,7 +52,7 @@ export function FAQSection() {
       <div className="container-narrow">
         {/* Section Header */}
         <FadeUp className="text-center mb-12">
-          <span className="text-[#22C55E] text-sm font-medium uppercase tracking-wider mb-4 block">
+          <span className="text-[#22C55E] text-sm font-medium uppercase tracking-wider mb-4 block neon-text">
             FAQ
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight">

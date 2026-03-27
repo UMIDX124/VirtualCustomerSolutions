@@ -60,7 +60,7 @@ export function Navigation() {
                 className="h-6 lg:h-7 w-auto object-contain"
                 priority
               />
-              <span className="text-[7px] lg:text-[8px] text-[#4ADE80]/45 tracking-[0.18em] font-semibold mt-0.5 uppercase">
+              <span className="text-[7px] lg:text-[8px] text-[#4ADE80]/45 tracking-[0.18em] font-semibold mt-0.5 uppercase neon-text">
                 Customer Solution
               </span>
             </div>
@@ -79,7 +79,7 @@ export function Navigation() {
                 {currentPage === item.href && (
                   <motion.div
                     layoutId="navPill"
-                    className="absolute inset-0 rounded-full bg-[#22C55E]"
+                    className="absolute inset-0 rounded-full bg-[#22C55E] neon-box"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -110,6 +110,7 @@ export function Navigation() {
               hover:border-[#22C55E]/70
               hover:bg-gradient-to-r hover:from-[#22C55E]/20 hover:to-[#6366F1]/20
               hover:shadow-[0_0_25px_rgba(34,197,94,0.3)]
+              neon-box neon-border
             "
           >
             <span>Free Consultation</span>
@@ -158,7 +159,7 @@ export function Navigation() {
               <div className="pt-3">
                 <button
                   onClick={() => { navigateTo('free-audit'); setIsOpen(false); }}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#22C55E]/40 bg-[#22C55E]/10 text-white font-semibold text-[15px]"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#22C55E]/40 bg-[#22C55E]/10 text-white font-semibold text-[15px] neon-box neon-border"
                 >
                   Free Consultation <ArrowRight className="w-4 h-4" />
                 </button>

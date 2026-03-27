@@ -172,7 +172,7 @@ export default function PricingPage() {
             loading="lazy"
             title="Wave background"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#0F172A]/60 to-[#0F172A]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/40 via-[#0F172A]/30 to-[#0F172A]/50" />
         </div>
 
         <div className="container-wide relative z-10 py-12">

@@ -46,9 +46,9 @@ export function Navigation() {
           onClick={() => navigateTo('home')}
           className="flex items-center gap-2.5 group flex-shrink-0"
         >
-          {/* Mascot (big) + Virtual.png (small) aligned */}
-          <div className="flex items-center gap-2.5">
-            <div className="relative -mt-5 lg:-mt-6 flex-shrink-0">
+          {/* Mascot (big) + Virtual.png (small) — text aligned to mascot center */}
+          <div className="flex items-center gap-3">
+            <div className="relative flex-shrink-0">
               <Mascot size={64} />
             </div>
             <div className="flex flex-col items-start justify-center">

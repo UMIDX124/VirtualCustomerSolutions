@@ -55,12 +55,12 @@ export function Navigation() {
               <Image
                 src="/Virtual.png"
                 alt="Virtual"
-                width={100}
-                height={22}
-                className="h-5 lg:h-5.5 w-auto object-contain"
+                width={130}
+                height={28}
+                className="h-6 lg:h-7 w-auto object-contain"
                 priority
               />
-              <span className="text-[7px] lg:text-[7.5px] text-[#4ADE80]/45 tracking-[0.25em] font-semibold mt-0.5 uppercase">
+              <span className="text-[7px] lg:text-[8px] text-[#4ADE80]/45 tracking-[0.18em] font-semibold mt-0.5 uppercase">
                 Customer Solution
               </span>
             </div>

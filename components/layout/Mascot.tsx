@@ -61,7 +61,7 @@ export function Mascot({ size = 56 }: { size?: number }) {
         </div>
       )}
 
-      {/* Mascot image */}
+      {/* Mascot image with eye glow overlay */}
       <div
         className={`
           relative w-full h-full will-change-transform
@@ -79,6 +79,13 @@ export function Mascot({ size = 56 }: { size?: number }) {
           className="w-full h-full object-contain"
           priority
         />
+        {/* Eye glow effect — two small glowing dots positioned over the mascot's eyes */}
+        <div className="absolute pointer-events-none" style={{ top: '42%', left: '28%', width: '12%', height: '8%' }}>
+          <div className="w-full h-full rounded-full animate-mascot-eye-glow" style={{ background: 'radial-gradient(circle, rgba(74,222,128,0.9) 0%, rgba(74,222,128,0.4) 40%, transparent 70%)' }} />
+        </div>
+        <div className="absolute pointer-events-none" style={{ top: '42%', right: '28%', width: '12%', height: '8%' }}>
+          <div className="w-full h-full rounded-full animate-mascot-eye-glow" style={{ background: 'radial-gradient(circle, rgba(74,222,128,0.9) 0%, rgba(74,222,128,0.4) 40%, transparent 70%)' }} />
+        </div>
       </div>
     </div>
   );

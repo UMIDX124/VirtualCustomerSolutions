@@ -121,9 +121,9 @@ export function HeroSection() {
           {/* Right - 3D Logo Visual */}
           <motion.div
             style={{ scale }}
-            className="hidden lg:flex justify-center items-center"
+            className="hidden lg:flex justify-center items-center order-first lg:order-last"
           >
-            <div className="relative w-80 h-80">
+            <div className="relative w-64 h-64 xl:w-80 xl:h-80">
               {/* Liquid Glass Container */}
               <div
                 className="w-full h-full liquid-glass rounded-3xl flex items-center justify-center relative animate-gentle-rotate will-change-transform"

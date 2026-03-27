@@ -145,8 +145,9 @@ export async function handleMessage(
     })
 
     return result.toDataStream()
-  } catch {
+  } catch (err) {
     // Fall back to FAQ on any AI error
+    console.error('[orchestrator] AI error:', err)
     const faqAnswer = matchFAQ(userMessage)
     const fallbackResponse =
       faqAnswer ||

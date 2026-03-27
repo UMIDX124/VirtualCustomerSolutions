@@ -39,7 +39,7 @@ export function Navigation() {
       `}
     >
       {/* Single row — logo far left, pill center, CTA far right */}
-      <div className="flex items-center justify-between h-[72px] mt-4 lg:mt-5 px-4 sm:px-6 md:px-8 w-full">
+      <div className="flex items-center justify-between h-[72px] mt-6 lg:mt-8 px-4 sm:px-6 md:px-8 w-full">
 
         {/* ─── LEFT: Mascot + Brand — flush left ─── */}
         <button

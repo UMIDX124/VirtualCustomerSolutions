@@ -1,4 +1,4 @@
-import { streamText, generateText } from 'ai'
+import { generateText } from 'ai'
 import { createGroq } from '@ai-sdk/groq'
 import {
   classifyIntent,
@@ -80,7 +80,7 @@ function extractContactInfo(message: string): ContactInfo {
 export async function handleMessage(
   sessionId: string,
   userMessage: string
-): Promise<ReadableStream | string> {
+): Promise<string> {
   const groqApiKey = process.env.GROQ_API_KEY
   const session = getSession(sessionId)
 
@@ -128,23 +128,20 @@ export async function handleMessage(
       content: msg.content,
     }))
 
-    // Stream the response
+    // Generate response (non-streaming for reliability)
     const groq = createGroq({ apiKey: groqApiKey })
     const model = process.env.CHAT_MODEL || 'llama-3.3-70b-versatile'
 
-    const result = streamText({
+    const { text } = await generateText({
       model: groq(model),
       system: agent.systemPrompt,
       messages,
       temperature: agent.temperature,
       maxTokens: agent.maxTokens,
-      onFinish: ({ text }) => {
-        // Store assistant response in memory after streaming completes
-        addMessage(sessionId, 'assistant', text)
-      },
     })
 
-    return result.toDataStream()
+    addMessage(sessionId, 'assistant', text)
+    return text
   } catch (err) {
     // Fall back to FAQ on any AI error
     console.error('[orchestrator] AI error:', err)

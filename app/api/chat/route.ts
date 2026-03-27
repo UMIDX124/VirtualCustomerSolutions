@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
     const { success, remaining } = rateLimit(ip, 'chat', 30, 60 * 1000)
     if (!success) {
       return NextResponse.json(
-        { role: 'assistant', content: 'You\'re sending messages too quickly. Please wait a moment.' },
+        { role: 'assistant', content: "You're sending messages too quickly. Please wait a moment." },
         { status: 429, headers: { 'X-RateLimit-Remaining': String(remaining) } }
       )
     }
@@ -36,40 +36,15 @@ export async function POST(request: NextRequest) {
       const faqResponse = matchFAQ(trimmedMessage)
       return NextResponse.json({
         role: 'assistant',
-        content: faqResponse ?? "Thanks for your message! Reach us at umidx932@gmail.com for help.",
+        content: faqResponse ?? "Thanks for reaching out! Email us at umidx932@gmail.com for help.",
       })
     }
 
-    // Use AI orchestrator
+    // Use AI orchestrator — returns a string
     try {
       const { handleMessage } = await import('@/lib/ai-chatbot/orchestrator')
       const response = await handleMessage(sessionId, trimmedMessage)
-
-      // If string returned (FAQ fallback from orchestrator)
-      if (typeof response === 'string') {
-        return NextResponse.json({ role: 'assistant', content: response })
-      }
-
-      // If ReadableStream returned (AI streaming) — collect full text and return as JSON
-      // since our client expects JSON, not streaming
-      const reader = response.getReader()
-      const decoder = new TextDecoder()
-      let fullText = ''
-
-      while (true) {
-        const { done, value } = await reader.read()
-        if (done) break
-        fullText += decoder.decode(value, { stream: true })
-      }
-
-      // Parse the streamed data to extract text content
-      // The stream format has lines like: 0:"text chunk"\n
-      const textParts = fullText.match(/0:"([^"]*)"/g)
-      const cleanText = textParts
-        ? textParts.map(p => p.slice(3, -1)).join('').replace(/\\n/g, '\n')
-        : fullText
-
-      return NextResponse.json({ role: 'assistant', content: cleanText || "I'm here to help! What would you like to know about VCS?" })
+      return NextResponse.json({ role: 'assistant', content: response })
     } catch (aiError) {
       console.error('[chat] AI error:', aiError)
       const faqResponse = matchFAQ(trimmedMessage)

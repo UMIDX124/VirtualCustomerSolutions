@@ -6,7 +6,6 @@ export const maxDuration = 30
 
 export async function POST(request: NextRequest) {
   try {
-    // Rate limit: 30 messages per 60 seconds per IP
     const ip =
       request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
       request.headers.get('x-real-ip') ??
@@ -15,58 +14,74 @@ export async function POST(request: NextRequest) {
     const { success, remaining } = rateLimit(ip, 'chat', 30, 60 * 1000)
     if (!success) {
       return NextResponse.json(
-        { error: 'Too many messages. Please wait a moment before trying again.' },
-        {
-          status: 429,
-          headers: { 'X-RateLimit-Remaining': String(remaining) },
-        }
+        { role: 'assistant', content: 'You\'re sending messages too quickly. Please wait a moment.' },
+        { status: 429, headers: { 'X-RateLimit-Remaining': String(remaining) } }
       )
     }
 
-    // Extract message + sessionId from body
     const body = await request.json()
-    const { message, sessionId } = body
+    const { message, sessionId = 'default' } = body
 
-    // Validate message
-    if (!message || typeof message !== 'string') {
+    if (!message || typeof message !== 'string' || message.trim().length === 0) {
       return NextResponse.json(
-        { error: 'Message is required and must be a string.' },
+        { role: 'assistant', content: 'Please type a message.' },
         { status: 400 }
       )
     }
 
-    if (message.length > 1000) {
-      return NextResponse.json(
-        { error: 'Message must be 1000 characters or less.' },
-        { status: 400 }
-      )
-    }
+    const trimmedMessage = message.trim().slice(0, 1000)
 
-    const trimmedMessage = message.trim()
-    if (trimmedMessage.length === 0) {
-      return NextResponse.json(
-        { error: 'Message cannot be empty.' },
-        { status: 400 }
-      )
-    }
-
-    // If no GROQ_API_KEY, use FAQ fallback (non-streaming)
+    // If no GROQ_API_KEY, use FAQ fallback
     if (!process.env.GROQ_API_KEY) {
       const faqResponse = matchFAQ(trimmedMessage)
       return NextResponse.json({
         role: 'assistant',
-        content: faqResponse,
+        content: faqResponse ?? "Thanks for your message! Reach us at umidx932@gmail.com for help.",
       })
     }
 
-    // If GROQ_API_KEY exists, use AI orchestrator (streaming)
-    const { handleMessage } = await import('@/lib/ai-chatbot/orchestrator')
-    const stream = await handleMessage(trimmedMessage, sessionId)
-    return stream
+    // Use AI orchestrator
+    try {
+      const { handleMessage } = await import('@/lib/ai-chatbot/orchestrator')
+      const response = await handleMessage(sessionId, trimmedMessage)
+
+      // If string returned (FAQ fallback from orchestrator)
+      if (typeof response === 'string') {
+        return NextResponse.json({ role: 'assistant', content: response })
+      }
+
+      // If ReadableStream returned (AI streaming) — collect full text and return as JSON
+      // since our client expects JSON, not streaming
+      const reader = response.getReader()
+      const decoder = new TextDecoder()
+      let fullText = ''
+
+      while (true) {
+        const { done, value } = await reader.read()
+        if (done) break
+        fullText += decoder.decode(value, { stream: true })
+      }
+
+      // Parse the streamed data to extract text content
+      // The stream format has lines like: 0:"text chunk"\n
+      const textParts = fullText.match(/0:"([^"]*)"/g)
+      const cleanText = textParts
+        ? textParts.map(p => p.slice(3, -1)).join('').replace(/\\n/g, '\n')
+        : fullText
+
+      return NextResponse.json({ role: 'assistant', content: cleanText || "I'm here to help! What would you like to know about VCS?" })
+    } catch (aiError) {
+      console.error('[chat] AI error:', aiError)
+      const faqResponse = matchFAQ(trimmedMessage)
+      return NextResponse.json({
+        role: 'assistant',
+        content: faqResponse ?? "I'm having a moment — reach us at umidx932@gmail.com!",
+      })
+    }
   } catch (error) {
     console.error('[chat] Error:', error)
     return NextResponse.json(
-      { error: 'Something went wrong. Please try again later.' },
+      { role: 'assistant', content: "Something went wrong. Reach us at umidx932@gmail.com." },
       { status: 500 }
     )
   }

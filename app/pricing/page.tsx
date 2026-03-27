@@ -8,14 +8,14 @@ import { SiteShell } from '@/components/layout/SiteShell';
 
 const packages = [
   {
-    name: 'Starter Rocket',
+    name: 'Launch Pack',
     price: '$399',
-    originalPrice: '$808',
+    originalPrice: '$799',
     period: '/mo',
     firstMonth: '$199',
     description: 'For Startups & Small Businesses',
-    badge: '🟢',
-    badgeText: 'Save 50%',
+    badge: '🚀',
+    badgeText: 'First Month 50% OFF',
     highlighted: false,
     features: [
       { name: '8 SEO keywords + on-page optimization', included: true },
@@ -26,26 +26,26 @@ const packages = [
       { name: 'WhatsApp direct support', included: true },
       { name: 'Full-time Marketing Specialist', included: false },
       { name: 'Bi-weekly strategy calls', included: false },
-      { name: 'PPC management', included: false },
-      { name: 'Blog content', included: false },
+      { name: 'PPC / Google Ads management', included: false },
+      { name: 'Blog content writing', included: false },
       { name: 'CRM setup', included: false },
     ],
     bonuses: [
       '🎁 Brand Kit — logo refresh + templates (Worth $299)',
-      '🎁 $0 setup fee (others charge $200-$500)',
+      '🎁 $0 setup fee (others charge $200–$500)',
     ],
     guarantee: '30-Day Money-Back Guarantee',
   },
   {
-    name: 'Growth Engine',
+    name: 'Growth Suite',
     price: '$999',
-    originalPrice: '$4,199',
+    originalPrice: '$3,999',
     period: '/mo',
     firstMonth: '$999',
     offer: '3-month signup = 4th month FREE',
     description: 'For Growing Businesses & E-Commerce',
-    badge: '🔵',
-    badgeText: '⭐ Most Popular — Save 76%',
+    badge: '⚡',
+    badgeText: '⭐ Most Popular — Save 75%',
     highlighted: true,
     features: [
       { name: '20 SEO keywords + full technical audit', included: true },
@@ -57,7 +57,7 @@ const packages = [
       { name: 'Bi-weekly strategy calls', included: true },
       { name: 'Monthly competitor analysis report', included: true },
       { name: 'CRM setup (HubSpot/GoHighLevel)', included: true },
-      { name: 'WhatsApp direct support', included: true },
+      { name: 'WhatsApp direct + priority support', included: true },
     ],
     bonuses: [
       '🎁 Custom Landing Page (Worth $799)',
@@ -67,15 +67,15 @@ const packages = [
     guarantee: '20% traffic increase in 90 days or next month FREE',
   },
   {
-    name: 'Domination Mode',
+    name: 'Enterprise Pro',
     price: '$2,499',
-    originalPrice: '$10,699',
+    originalPrice: '$9,999',
     period: '/mo',
     firstMonth: '$2,499',
     offer: '6-month signup = 2 months FREE',
     description: 'For Established Businesses & Agencies',
-    badge: '🟡',
-    badgeText: 'Save 77% — Best Value',
+    badge: '👑',
+    badgeText: 'Best Value — Save 75%',
     highlighted: false,
     features: [
       { name: '40+ SEO keywords + link building + technical audits', included: true },
@@ -86,9 +86,9 @@ const packages = [
       { name: '2 Full-Time Remote Staff (1 Marketer + 1 VA)', included: true },
       { name: 'Weekly strategy calls with account manager', included: true },
       { name: 'CRO, A/B testing, funnel optimization', included: true },
-      { name: 'Competitor intelligence spy reports', included: true },
+      { name: 'Competitor intelligence reports', included: true },
       { name: 'White-label reports (for agencies)', included: true },
-      { name: 'Priority Slack support + 4-hour response', included: true },
+      { name: 'Priority support + 4-hour response SLA', included: true },
     ],
     bonuses: [
       '🎁 Complete Website Redesign (Worth $2,999)',
@@ -144,8 +144,8 @@ export default function PricingPage() {
       <div className="container-wide">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-12">
-          <div className="inline-block bg-[#22C55E]/10 text-[#22C55E] px-4 py-2 rounded-full text-sm font-medium mb-6">
-            🎁 LAUNCH SPECIAL: First month 50% OFF on any package!
+          <div className="inline-block bg-[#22C55E]/10 text-[#4ADE80] border border-[#22C55E]/30 px-4 py-2 rounded-full text-sm font-semibold mb-6 shadow-[0_0_12px_rgba(34,197,94,0.15)]">
+            🎁 LAUNCH SPECIAL — First month 50% OFF on any package!
           </div>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-4">
             Simple, Transparent Pricing 💰
@@ -163,16 +163,16 @@ export default function PricingPage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <iframe
-            src="https://my.spline.design/uiinfocardswavebackground-aWcqI8t41uSllSwwGuDLPbuK/"
+            src="https://my.spline.design/3duipricing-eHOz23ohPwRwYNHu59vcCg2z/"
             frameBorder="0"
             width="100%"
             height="100%"
             className="absolute inset-0 w-full h-full"
             style={{ pointerEvents: 'none' }}
             loading="lazy"
-            title="Wave background"
+            title="3D Pricing background"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/40 via-[#0F172A]/30 to-[#0F172A]/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/30 via-transparent to-[#0F172A]/40" />
         </div>
 
         <div className="container-wide relative z-10 py-12">
@@ -180,11 +180,11 @@ export default function PricingPage() {
           <div className="grid md:grid-cols-3 gap-8 mb-20">
             {packages.map((pkg, index) => (
             <FadeUp key={pkg.name} delay={index * 0.1}>
-              <GlassCard 
-                className={`p-6 lg:p-8 h-full flex flex-col ${pkg.highlighted ? 'border-2 border-[#22C55E] relative' : ''}`}
+              <GlassCard
+                className={`p-6 lg:p-8 h-full flex flex-col ${pkg.highlighted ? 'border-2 border-[#22C55E] relative shadow-[0_0_30px_rgba(34,197,94,0.25)]' : 'border border-white/10'}`}
               >
                 {pkg.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#22C55E] text-white text-sm font-medium rounded-full">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#22C55E] text-white text-sm font-bold rounded-full shadow-[0_0_12px_rgba(34,197,94,0.5)]">
                     ⭐ Most Popular
                   </div>
                 )}
@@ -264,7 +264,7 @@ export default function PricingPage() {
 
         {/* Launch Offers */}
         <FadeUp className="mb-20">
-          <div className="bg-gradient-to-r from-[#22C55E]/20 to-[#059669]/20 border border-border-glass rounded-2xl p-8 text-center">
+          <div className="bg-gradient-to-r from-[#22C55E]/10 via-[#4ADE80]/5 to-[#059669]/10 border border-[#22C55E]/20 rounded-2xl p-8 text-center">
             <h2 className="font-display text-2xl font-bold text-text-primary mb-6">
               🚀 Launch Offers — Limited Time!
             </h2>

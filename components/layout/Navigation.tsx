@@ -46,23 +46,24 @@ export function Navigation() {
           onClick={() => navigateTo('home')}
           className="flex items-center gap-2.5 group flex-shrink-0"
         >
-          {/* Mascot */}
-          <div className="relative -mt-4 lg:-mt-5">
-            <Mascot size={52} />
-          </div>
-          {/* Virtual.png image + "Customer Solution" below */}
-          <div className="flex flex-col items-start leading-none">
-            <Image
-              src="/Virtual.png"
-              alt="Virtual"
-              width={120}
-              height={28}
-              className="h-6 lg:h-7 w-auto object-contain"
-              priority
-            />
-            <span className="text-[9px] lg:text-[10px] text-[#4ADE80]/60 tracking-[0.25em] font-semibold mt-0.5 uppercase">
-              Customer Solution
-            </span>
+          {/* Mascot + Virtual.png aligned vertically centered */}
+          <div className="flex items-center gap-3">
+            <div className="relative -mt-3 lg:-mt-4 flex-shrink-0">
+              <Mascot size={48} />
+            </div>
+            <div className="flex flex-col items-start justify-center">
+              <Image
+                src="/Virtual.png"
+                alt="Virtual"
+                width={140}
+                height={32}
+                className="h-7 lg:h-8 w-auto object-contain"
+                priority
+              />
+              <span className="text-[8px] lg:text-[9px] text-[#4ADE80]/50 tracking-[0.3em] font-semibold mt-1 uppercase pl-0.5">
+                Customer Solution
+              </span>
+            </div>
           </div>
         </button>
 

@@ -68,21 +68,21 @@ export function RemoteWorkforcePage() {
         
         <Container className="relative z-10 pt-32 pb-20">
           <FadeUp>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-glass border border-border-glass text-text-secondary text-sm mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--surface-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] text-sm mb-6">
               <SignalPoint size="sm" />
               Remote Workforce
             </span>
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.1] tracking-tight max-w-4xl">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight max-w-4xl">
               Remote teams you can actually{' '}
               <span className="text-gradient-lime">trust, manage, and scale</span>.
             </h1>
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <p className="text-text-secondary text-lg mt-6 max-w-2xl leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-lg mt-6 max-w-2xl leading-relaxed">
               Not cheap outsourcing. Structured, managed, and accountable remote execution with onboarding, oversight, QA, and clear ownership of outcomes.
             </p>
           </FadeUp>
@@ -91,7 +91,7 @@ export function RemoteWorkforcePage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <Button
                 onClick={() => navigateTo('free-growth-audit')}
-                className="bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold px-6 group"
+                className="bg-[#22C55E] hover:bg-[#059669] text-white font-semibold px-6 group"
               >
                 Get Audit
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -99,7 +99,7 @@ export function RemoteWorkforcePage() {
               <Button
                 onClick={() => navigateTo('results')}
                 variant="outline"
-                className="border-border-glass hover:border-[#3B82F6] hover:text-text-primary bg-transparent"
+                className="border-[var(--border-glass)] hover:border-[#22C55E] hover:text-[var(--text-primary)] bg-transparent"
               >
                 See Results
               </Button>
@@ -124,8 +124,8 @@ export function RemoteWorkforcePage() {
               onClick={() => setActiveCategory(null)}
               className={`px-4 py-2 rounded-lg text-sm transition-all ${
                 activeCategory === null
-                  ? 'bg-[#3B82F6] text-white'
-                  : 'bg-surface-glass text-text-secondary hover:text-text-primary'
+                  ? 'bg-[#22C55E] text-white'
+                  : 'bg-[var(--surface-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >
               All Roles
@@ -136,8 +136,8 @@ export function RemoteWorkforcePage() {
                 onClick={() => setActiveCategory(cat.category)}
                 className={`px-4 py-2 rounded-lg text-sm transition-all ${
                   activeCategory === cat.category
-                    ? 'bg-[#3B82F6] text-white'
-                    : 'bg-surface-glass text-text-secondary hover:text-text-primary'
+                    ? 'bg-[#22C55E] text-white'
+                    : 'bg-[var(--surface-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                 }`}
               >
                 {cat.category}
@@ -151,16 +151,16 @@ export function RemoteWorkforcePage() {
               <StaggerItem key={category.category}>
                 <GlassCard className="p-6 h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#3B82F6]/10 flex items-center justify-center">
-                      <Users className="w-5 h-5 text-[#3B82F6]" />
+                    <div className="w-10 h-10 rounded-lg bg-[#22C55E]/10 flex items-center justify-center">
+                      <Users className="w-5 h-5 text-[#22C55E]" />
                     </div>
-                    <h3 className="font-display font-semibold text-text-primary">
+                    <h3 className="font-display font-semibold text-[var(--text-primary)]">
                       {category.category}
                     </h3>
                   </div>
                   <ul className="space-y-2">
                     {category.roles.map((role) => (
-                      <li key={role} className="flex items-center gap-2 text-text-secondary text-sm">
+                      <li key={role} className="flex items-center gap-2 text-[var(--text-secondary)] text-sm">
                         <SignalPoint size="sm" pulse={false} />
                         {role}
                       </li>
@@ -188,10 +188,10 @@ export function RemoteWorkforcePage() {
               <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
                 {/* Center Hub */}
                 <div className="relative">
-                  <div className="w-24 h-24 rounded-full bg-[#3B82F6]/20 flex items-center justify-center">
-                    <UserCheck className="w-10 h-10 text-[#3B82F6]" />
+                  <div className="w-24 h-24 rounded-full bg-[#22C55E]/20 flex items-center justify-center">
+                    <UserCheck className="w-10 h-10 text-[#22C55E]" />
                   </div>
-                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-text-primary font-medium whitespace-nowrap">
+                  <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[var(--text-primary)] font-medium whitespace-nowrap">
                     Pod Lead
                   </span>
                 </div>
@@ -206,28 +206,28 @@ export function RemoteWorkforcePage() {
                       transition={{ delay: 0.1 * i }}
                       className="flex flex-col items-center"
                     >
-                      <div className="w-16 h-16 rounded-full bg-surface-glass-strong flex items-center justify-center mb-2">
-                        <Users className="w-6 h-6 text-text-secondary" />
+                      <div className="w-16 h-16 rounded-full bg-[var(--surface-glass-strong)] flex items-center justify-center mb-2">
+                        <Users className="w-6 h-6 text-[var(--text-secondary)]" />
                       </div>
-                      <span className="text-text-muted text-xs">{role}</span>
+                      <span className="text-[var(--text-muted)] text-xs">{role}</span>
                     </motion.div>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-12 pt-8 border-t border-border-glass">
+              <div className="mt-12 pt-8 border-t border-[var(--border-glass)]">
                 <div className="grid md:grid-cols-3 gap-6 text-center">
                   <div>
-                    <div className="text-2xl font-display font-bold text-text-primary">24-48h</div>
-                    <div className="text-text-muted text-sm">Response time</div>
+                    <div className="text-2xl font-display font-bold text-[var(--text-primary)]">24-48h</div>
+                    <div className="text-[var(--text-muted)] text-sm">Response time</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-display font-bold text-text-primary">Weekly</div>
-                    <div className="text-text-muted text-sm">Performance reviews</div>
+                    <div className="text-2xl font-display font-bold text-[var(--text-primary)]">Weekly</div>
+                    <div className="text-[var(--text-muted)] text-sm">Performance reviews</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-display font-bold text-text-primary">100%</div>
-                    <div className="text-text-muted text-sm">Visibility on output</div>
+                    <div className="text-2xl font-display font-bold text-[var(--text-primary)]">100%</div>
+                    <div className="text-[var(--text-muted)] text-sm">Visibility on output</div>
                   </div>
                 </div>
               </div>
@@ -250,13 +250,13 @@ export function RemoteWorkforcePage() {
             {guarantees.map((item) => (
               <StaggerItem key={item.title}>
                 <GlassCard className="p-6 h-full text-center">
-                  <div className="w-12 h-12 rounded-xl bg-[#3B82F6]/10 flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="w-6 h-6 text-[#3B82F6]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#22C55E]/10 flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-6 h-6 text-[#22C55E]" />
                   </div>
-                  <h3 className="font-display font-semibold text-text-primary mb-2">
+                  <h3 className="font-display font-semibold text-[var(--text-primary)] mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-text-secondary text-sm">
+                  <p className="text-[var(--text-secondary)] text-sm">
                     {item.description}
                   </p>
                 </GlassCard>
@@ -282,7 +282,7 @@ export function RemoteWorkforcePage() {
                 {painPoints.map((point) => (
                   <div key={point} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-signal flex-shrink-0 mt-0.5" />
-                    <span className="text-text-secondary">{point}</span>
+                    <span className="text-[var(--text-secondary)]">{point}</span>
                   </div>
                 ))}
               </div>
@@ -296,15 +296,15 @@ export function RemoteWorkforcePage() {
         <Container size="narrow">
           <FadeUp>
             <GlassCard className="p-8 md:p-12 text-center">
-              <h2 className="font-display text-3xl font-bold text-text-primary mb-4">
+              <h2 className="font-display text-3xl font-bold text-[var(--text-primary)] mb-4">
                 Need execution capacity?
               </h2>
-              <p className="text-text-secondary mb-6 max-w-lg mx-auto">
+              <p className="text-[var(--text-secondary)] mb-6 max-w-lg mx-auto">
                 Let's discuss your team structure needs and see if a pod model fits.
               </p>
               <Button
                 onClick={() => navigateTo('free-growth-audit')}
-                className="bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold px-8 py-6 group"
+                className="bg-[#22C55E] hover:bg-[#059669] text-white font-semibold px-8 py-6 group"
               >
                 Request Free Growth Audit
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

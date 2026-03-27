@@ -30,7 +30,7 @@ export function Navigation() {
   return (
     <header
       className={`
-        sticky top-0 z-50 transition-all duration-500
+        sticky top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500
         ${isScrolled
           ? 'bg-[rgba(5,5,12,0.92)] backdrop-blur-2xl border-b border-white/[0.05]'
           : 'bg-[rgba(5,5,12,0.6)] backdrop-blur-md'
@@ -52,9 +52,9 @@ export function Navigation() {
           <div className="flex flex-col leading-none">
             <span className="font-bold text-[17px] lg:text-xl tracking-tight whitespace-nowrap" style={{ fontFamily: 'var(--font-display)' }}>
               <span className="text-white">Virtual </span>
-              <span className="text-[#60A5FA] font-extrabold">Customer</span>
+              <span className="text-[#4ADE80] font-extrabold">Customer</span>
             </span>
-            <span className="text-[7px] lg:text-[8px] text-[#60A5FA]/50 tracking-[0.35em] font-semibold mt-0.5 uppercase">Solution</span>
+            <span className="text-[7px] lg:text-[8px] text-[#4ADE80]/50 tracking-[0.35em] font-semibold mt-0.5 uppercase">Solution</span>
           </div>
         </button>
 
@@ -65,12 +65,12 @@ export function Navigation() {
               <button
                 key={item.name}
                 onClick={() => navigateTo(item.href)}
-                className="relative px-4 py-1.5 text-[13px] font-medium rounded-full transition-all duration-300"
+                className="relative px-4 py-1.5 text-[13px] font-medium rounded-full transition-colors duration-300"
               >
                 {currentPage === item.href && (
                   <motion.div
                     layoutId="navPill"
-                    className="absolute inset-0 rounded-full bg-[#3B82F6]"
+                    className="absolute inset-0 rounded-full bg-[#22C55E]"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -94,13 +94,13 @@ export function Navigation() {
               relative group inline-flex items-center gap-2
               px-6 py-2.5
               rounded-full
-              border border-[#3B82F6]/40
-              bg-gradient-to-r from-[#3B82F6]/10 to-[#6366F1]/10
+              border border-[#22C55E]/40
+              bg-gradient-to-r from-[#22C55E]/10 to-[#6366F1]/10
               text-white text-sm font-semibold
-              transition-all duration-400
-              hover:border-[#3B82F6]/70
-              hover:bg-gradient-to-r hover:from-[#3B82F6]/20 hover:to-[#6366F1]/20
-              hover:shadow-[0_0_25px_rgba(59,130,246,0.3)]
+              transition-[border-color,background,box-shadow] duration-400
+              hover:border-[#22C55E]/70
+              hover:bg-gradient-to-r hover:from-[#22C55E]/20 hover:to-[#6366F1]/20
+              hover:shadow-[0_0_25px_rgba(34,197,94,0.3)]
             "
           >
             <span>Free Consultation</span>
@@ -110,7 +110,7 @@ export function Navigation() {
 
         {/* ─── Mobile menu toggle ─── */}
         <button
-          className="lg:hidden p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/[0.05] transition-all"
+          className="lg:hidden p-2 min-h-[44px] min-w-[44px] rounded-lg text-white/60 hover:text-white hover:bg-white/[0.05] transition-colors"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -136,9 +136,9 @@ export function Navigation() {
                   transition={{ delay: i * 0.04, duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                   onClick={() => { navigateTo(item.href); setIsOpen(false); }}
                   className={`
-                    w-full text-left px-4 py-3 rounded-xl text-[15px] transition-all duration-300
+                    w-full text-left px-4 py-3 rounded-xl text-[15px] transition-colors duration-300
                     ${currentPage === item.href
-                      ? 'text-white bg-[#3B82F6]/10 font-semibold border border-[#3B82F6]/15'
+                      ? 'text-white bg-[#22C55E]/10 font-semibold border border-[#22C55E]/15'
                       : 'text-[#7A8BA7] hover:text-white hover:bg-white/[0.03]'
                     }
                   `}
@@ -149,7 +149,7 @@ export function Navigation() {
               <div className="pt-3">
                 <button
                   onClick={() => { navigateTo('free-audit'); setIsOpen(false); }}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#3B82F6]/40 bg-[#3B82F6]/10 text-white font-semibold text-[15px]"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#22C55E]/40 bg-[#22C55E]/10 text-white font-semibold text-[15px]"
                 >
                   Free Consultation <ArrowRight className="w-4 h-4" />
                 </button>

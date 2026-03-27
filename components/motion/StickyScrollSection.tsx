@@ -79,7 +79,7 @@ export function StickyScrollSection({
 
       {/* Scroll Progress Line */}
       <motion.div
-        className="absolute left-0 top-0 w-1 bg-gradient-to-b from-[#3B82F6] to-[#1D4ED8] origin-top"
+        className="absolute left-0 top-0 w-1 bg-gradient-to-b from-[#22C55E] to-[#059669] origin-top"
         style={{ scaleY: scrollYProgress, height: '100%' }}
       />
     </section>
@@ -116,7 +116,7 @@ function StepText({
     >
       <div className="max-w-md">
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-14 h-14 rounded-2xl bg-[#3B82F6]/10 border border-[#3B82F6]/20 flex items-center justify-center text-[#3B82F6]">
+          <div className="w-14 h-14 rounded-2xl bg-[#22C55E]/10 border border-[#22C55E]/20 flex items-center justify-center text-[#22C55E]">
             {step.icon}
           </div>
           <span className="font-mono text-sm text-[var(--text-muted)]">
@@ -146,11 +146,11 @@ function StepVisual({
   return (
     <div className="relative w-full max-w-md aspect-square">
       {/* Animated ring */}
-      <motion.div className="absolute inset-0 rounded-3xl border-2 border-[#3B82F6]/20">
+      <motion.div className="absolute inset-0 rounded-3xl border-2 border-[#22C55E]/20">
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
           <motion.rect
             x="1" y="1" width="98" height="98" rx="12"
-            fill="none" stroke="#3B82F6" strokeWidth="0.5"
+            fill="none" stroke="#22C55E" strokeWidth="0.5"
             strokeDasharray="400"
             style={{ strokeDashoffset: smoothStrokeDashoffset }}
           />
@@ -174,7 +174,7 @@ function StepVisual({
       <motion.div
         className="absolute inset-0 rounded-3xl"
         style={{
-          background: 'radial-gradient(circle at center, rgba(59,130,246,0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(circle at center, rgba(34,197,94,0.15) 0%, transparent 70%)',
           opacity: smoothGlowOpacity,
         }}
       />
@@ -207,12 +207,12 @@ function StepDot({
       className="flex items-center gap-4 w-full"
     >
       <motion.div
-        className="w-12 h-12 rounded-xl flex items-center justify-center text-[#3B82F6] shrink-0"
+        className="w-12 h-12 rounded-xl flex items-center justify-center text-[#22C55E] shrink-0"
         style={{
-          backgroundColor: useTransform(bgOpacity, (v) => `rgba(59,130,246,${v})`),
+          backgroundColor: useTransform(bgOpacity, (v) => `rgba(34,197,94,${v})`),
           borderWidth: 1,
           borderStyle: 'solid',
-          borderColor: useTransform(borderOpacity, (v) => `rgba(59,130,246,${v})`),
+          borderColor: useTransform(borderOpacity, (v) => `rgba(34,197,94,${v})`),
         }}
       >
         {step.icon}

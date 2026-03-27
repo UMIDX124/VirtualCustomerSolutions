@@ -47,7 +47,7 @@ const productivityData = [
 ];
 
 const industryBreakdown = [
-  { name: "Technology", value: 67, color: "#3B82F6" },
+  { name: "Technology", value: 67, color: "#22C55E" },
   { name: "Marketing", value: 58, color: "#10B981" },
   { name: "Finance", value: 38, color: "#F59E0B" },
   { name: "Education", value: 29, color: "#8B5CF6" },
@@ -56,7 +56,7 @@ const industryBreakdown = [
 ];
 
 const costSavingsData = [
-  { name: "Office Space", value: 35, color: "#3B82F6" },
+  { name: "Office Space", value: 35, color: "#22C55E" },
   { name: "Commute", value: 25, color: "#10B981" },
   { name: "Utilities", value: 15, color: "#F59E0B" },
   { name: "Equipment", value: 10, color: "#8B5CF6" },
@@ -122,7 +122,7 @@ function DarkPieTooltip({ active, payload }: any) {
   return (
     <div className="bg-[#0F172A] border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
       <p className="font-semibold text-[#F8FAFC]">{d.name}</p>
-      <p className="font-mono text-[#3B82F6]">{d.value}%</p>
+      <p className="font-mono text-[#22C55E]">{d.value}%</p>
     </div>
   );
 }
@@ -147,7 +147,7 @@ export default function RemoteWorkStatisticsPage() {
         <div className="container-wide relative z-10">
           <Link
             href="/research"
-            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#3B82F6] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Research
           </Link>
@@ -189,7 +189,7 @@ export default function RemoteWorkStatisticsPage() {
                 variants={fade}
                 className="card-accent p-5 text-center"
               >
-                <Icon className="w-5 h-5 text-[#3B82F6] mx-auto mb-2" />
+                <Icon className="w-5 h-5 text-[#22C55E] mx-auto mb-2" />
                 <div className="font-mono text-2xl md:text-3xl font-bold text-[#F8FAFC] mb-1">
                   {stat.value}
                 </div>
@@ -221,8 +221,8 @@ export default function RemoteWorkStatisticsPage() {
               <AreaChart data={adoptionData}>
                 <defs>
                   <linearGradient id="adoptionGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.3} />
-                    <stop offset="95%" stopColor="#3B82F6" stopOpacity={0} />
+                    <stop offset="5%" stopColor="#22C55E" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="#22C55E" stopOpacity={0} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid
@@ -240,16 +240,16 @@ export default function RemoteWorkStatisticsPage() {
                   type="monotone"
                   dataKey="rate"
                   name="Adoption Rate"
-                  stroke="#3B82F6"
+                  stroke="#22C55E"
                   strokeWidth={3}
                   fill="url(#adoptionGrad)"
                   dot={{
-                    fill: "#3B82F6",
+                    fill: "#22C55E",
                     r: 5,
                     strokeWidth: 2,
                     stroke: "#0F172A",
                   }}
-                  activeDot={{ r: 7, stroke: "#3B82F6", strokeWidth: 2 }}
+                  activeDot={{ r: 7, stroke: "#22C55E", strokeWidth: 2 }}
                 />
               </AreaChart>
             </ResponsiveContainer>
@@ -290,7 +290,7 @@ export default function RemoteWorkStatisticsPage() {
                 <Bar
                   dataKey="productivity"
                   name="Productivity"
-                  fill="#3B82F6"
+                  fill="#22C55E"
                   radius={[4, 4, 0, 0]}
                 />
                 <Bar
@@ -431,14 +431,14 @@ export default function RemoteWorkStatisticsPage() {
                   <Bar
                     dataKey="remote"
                     name="Remote"
-                    fill="#3B82F6"
+                    fill="#22C55E"
                     radius={[0, 0, 0, 0]}
                     stackId="a"
                   />
                   <Bar
                     dataKey="hybrid"
                     name="Hybrid"
-                    fill="#60A5FA"
+                    fill="#4ADE80"
                     radius={[0, 0, 0, 0]}
                     stackId="a"
                   />

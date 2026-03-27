@@ -31,7 +31,7 @@ export function HomepageHeroText() {
           ].map((stat, i) => (
             <LineReveal key={i} delay={0.3 + i * 0.2}>
               <div className="text-center">
-                <div className="font-mono text-xl md:text-2xl font-bold text-[#3B82F6] mb-1">
+                <div className="font-mono text-xl md:text-2xl font-bold text-[#22C55E] mb-1">
                   {stat.value}
                 </div>
                 <div className="text-xs text-[var(--text-muted)] uppercase tracking-wider">

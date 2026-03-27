@@ -75,21 +75,21 @@ export function PerformanceMarketingPage() {
         
         <Container className="relative z-10 pt-32 pb-20">
           <FadeUp>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-glass border border-border-glass text-text-secondary text-sm mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--surface-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] text-sm mb-6">
               <SignalPoint size="sm" />
               Performance Marketing
             </span>
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.1] tracking-tight max-w-4xl">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight max-w-4xl">
               Paid acquisition built for{' '}
               <span className="text-gradient-lime">controllable growth</span>.
             </h1>
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <p className="text-text-secondary text-lg mt-6 max-w-2xl leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-lg mt-6 max-w-2xl leading-relaxed">
               Not just media buying. Not just creative. A systematic approach to paid acquisition with CAC clarity, ROAS visibility, and creative testing that actually scales.
             </p>
           </FadeUp>
@@ -98,7 +98,7 @@ export function PerformanceMarketingPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <Button
                 onClick={() => navigateTo('free-growth-audit')}
-                className="bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold px-6 group"
+                className="bg-[#22C55E] hover:bg-[#059669] text-white font-semibold px-6 group"
               >
                 Get Audit
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -106,7 +106,7 @@ export function PerformanceMarketingPage() {
               <Button
                 onClick={() => navigateTo('results')}
                 variant="outline"
-                className="border-border-glass hover:border-[#3B82F6] hover:text-text-primary bg-transparent"
+                className="border-[var(--border-glass)] hover:border-[#22C55E] hover:text-[var(--text-primary)] bg-transparent"
               >
                 See Results
               </Button>
@@ -134,16 +134,16 @@ export function PerformanceMarketingPage() {
                     onClick={() => setActiveChannel(index)}
                     className={`w-full text-left p-4 rounded-xl transition-all duration-300 ${
                       activeChannel === index
-                        ? 'bg-surface-glass border border-[#3B82F6]'
-                        : 'bg-surface-glass border border-transparent hover:border-border-glass'
+                        ? 'bg-[var(--surface-glass)] border border-[#22C55E]'
+                        : 'bg-[var(--surface-glass)] border border-transparent hover:border-[var(--border-glass)]'
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <div>
-                        <h3 className="font-display font-semibold text-text-primary">{channel.name}</h3>
-                        <p className="text-text-secondary text-sm mt-1">{channel.description}</p>
+                        <h3 className="font-display font-semibold text-[var(--text-primary)]">{channel.name}</h3>
+                        <p className="text-[var(--text-secondary)] text-sm mt-1">{channel.description}</p>
                       </div>
-                      <ChevronDown className={`w-5 h-5 text-text-muted transition-transform ${
+                      <ChevronDown className={`w-5 h-5 text-[var(--text-muted)] transition-transform ${
                         activeChannel === index ? 'rotate-180' : ''
                       }`} />
                     </div>
@@ -156,13 +156,13 @@ export function PerformanceMarketingPage() {
             <FadeUp delay={0.2}>
               <GlassCard className="p-8 h-full flex items-center justify-center min-h-[300px]">
                 <div className="text-center">
-                  <div className="w-20 h-20 rounded-2xl bg-[#3B82F6]/10 flex items-center justify-center mx-auto mb-4">
-                    <Target className="w-10 h-10 text-[#3B82F6]" />
+                  <div className="w-20 h-20 rounded-2xl bg-[#22C55E]/10 flex items-center justify-center mx-auto mb-4">
+                    <Target className="w-10 h-10 text-[#22C55E]" />
                   </div>
-                  <h3 className="font-display text-xl font-bold text-text-primary mb-2">
+                  <h3 className="font-display text-xl font-bold text-[var(--text-primary)] mb-2">
                     {channels[activeChannel].name}
                   </h3>
-                  <p className="text-text-secondary">
+                  <p className="text-[var(--text-secondary)]">
                     Platform-specific optimization with cross-platform attribution.
                   </p>
                 </div>
@@ -185,13 +185,13 @@ export function PerformanceMarketingPage() {
             {capabilities.map((cap) => (
               <StaggerItem key={cap.title}>
                 <GlassCard className="p-6 h-full">
-                  <div className="w-12 h-12 rounded-xl bg-[#3B82F6]/10 flex items-center justify-center mb-4">
-                    <cap.icon className="w-6 h-6 text-[#3B82F6]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#22C55E]/10 flex items-center justify-center mb-4">
+                    <cap.icon className="w-6 h-6 text-[#22C55E]" />
                   </div>
-                  <h3 className="font-display font-semibold text-text-primary mb-2">
+                  <h3 className="font-display font-semibold text-[var(--text-primary)] mb-2">
                     {cap.title}
                   </h3>
-                  <p className="text-text-secondary text-sm leading-relaxed">
+                  <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
                     {cap.description}
                   </p>
                 </GlassCard>
@@ -217,7 +217,7 @@ export function PerformanceMarketingPage() {
                 {problems.map((problem) => (
                   <div key={problem} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-signal flex-shrink-0 mt-0.5" />
-                    <span className="text-text-secondary">{problem}</span>
+                    <span className="text-[var(--text-secondary)]">{problem}</span>
                   </div>
                 ))}
               </div>
@@ -231,15 +231,15 @@ export function PerformanceMarketingPage() {
         <Container size="narrow">
           <FadeUp>
             <GlassCard className="p-8 md:p-12 text-center">
-              <h2 className="font-display text-3xl font-bold text-text-primary mb-4">
+              <h2 className="font-display text-3xl font-bold text-[var(--text-primary)] mb-4">
                 Ready for acquisition clarity?
               </h2>
-              <p className="text-text-secondary mb-6 max-w-lg mx-auto">
+              <p className="text-[var(--text-secondary)] mb-6 max-w-lg mx-auto">
                 Let's diagnose your current performance and identify the gaps holding you back.
               </p>
               <Button
                 onClick={() => navigateTo('free-growth-audit')}
-                className="bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold px-8 py-6 group"
+                className="bg-[#22C55E] hover:bg-[#059669] text-white font-semibold px-8 py-6 group"
               >
                 Request Free Growth Audit
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

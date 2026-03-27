@@ -127,7 +127,7 @@ export default function CareersPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {benefits.map((benefit, i) => (
-              <div key={i} className="glass p-6 text-center hover:border-[#3B82F6] transition-all">
+              <div key={i} className="glass p-6 text-center hover:border-[#22C55E] transition-all">
                 <div className="text-[var(--text-primary)]">{benefit}</div>
               </div>
             ))}

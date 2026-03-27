@@ -24,7 +24,7 @@ const posts: BlogPost[] = [
     date: 'Mar 18, 2025',
     readTime: '7 min read',
     author: 'VCS Team',
-    gradient: 'from-[#3B82F6] to-[#1E293B]',
+    gradient: 'from-[#22C55E] to-[#1E293B]',
   },
   {
     slug: 'performance-marketing-roi',
@@ -79,7 +79,7 @@ const posts: BlogPost[] = [
 ];
 
 const categoryColors: Record<string, string> = {
-  'Remote Work': 'bg-[#3B82F6]/10 text-[#60A5FA]',
+  'Remote Work': 'bg-[#22C55E]/10 text-[#4ADE80]',
   Marketing: 'bg-emerald-500/10 text-emerald-400',
   Operations: 'bg-amber-500/10 text-amber-400',
   Recruitment: 'bg-violet-500/10 text-violet-400',
@@ -94,7 +94,7 @@ export function LatestInsights() {
         <RevealOnScroll variant="fade-up" duration={0.8}>
           <div className="mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#3B82F6]">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#22C55E]">
                 Blog
               </p>
               <h2 className="font-display text-3xl font-bold tracking-tight text-[#F8FAFC] sm:text-4xl">
@@ -103,7 +103,7 @@ export function LatestInsights() {
             </div>
             <Link
               href="/blog"
-              className="group inline-flex items-center gap-2 text-sm font-medium text-[#3B82F6] transition hover:text-[#60A5FA]"
+              className="group inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition hover:text-[#4ADE80]"
             >
               View All Posts
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -117,7 +117,7 @@ export function LatestInsights() {
               <RevealOnScroll variant="blur-in" duration={0.8}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-[#1E293B]/50 transition-all hover:border-[#3B82F6]/30 hover:bg-[#1E293B]/70"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-[#1E293B]/50 transition-[border-color,background-color] hover:border-[#22C55E]/30 hover:bg-[#1E293B]/70"
                 >
                   <div className="relative h-48 overflow-hidden">
                     <div className={`absolute inset-0 bg-gradient-to-br ${post.gradient} group-hover:scale-110 transition-transform duration-700 ease-out`} />
@@ -128,7 +128,7 @@ export function LatestInsights() {
                     <div className="absolute top-4 left-4 z-10">
                       <span
                         className={`inline-flex rounded-full px-3 py-1 text-xs font-medium backdrop-blur-sm ${
-                          categoryColors[post.category] ?? 'bg-[#3B82F6]/10 text-[#60A5FA]'
+                          categoryColors[post.category] ?? 'bg-[#22C55E]/10 text-[#4ADE80]'
                         }`}
                       >
                         {post.category}
@@ -137,7 +137,7 @@ export function LatestInsights() {
                   </div>
 
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="mb-2 font-display text-lg font-semibold leading-snug text-[#F8FAFC] transition-colors group-hover:text-[#3B82F6]">
+                    <h3 className="mb-2 font-display text-lg font-semibold leading-snug text-[#F8FAFC] transition-colors group-hover:text-[#22C55E]">
                       {post.title}
                     </h3>
                     <p className="mb-6 flex-1 text-sm leading-relaxed text-[#94A3B8]">

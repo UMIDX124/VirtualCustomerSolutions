@@ -188,18 +188,16 @@ export function FloatingElement({
   style?: CSSProperties;
 }) {
   return (
-    <motion.div
-      animate={{ y: [0, -amplitude, 0] }}
-      transition={{
-        duration,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      }}
-      className={className}
-      style={style}
+    <div
+      className={`animate-float will-change-transform ${className}`}
+      style={{
+        ...style,
+        animationDuration: `${duration}s`,
+        '--float-amplitude': `-${amplitude}px`,
+      } as CSSProperties}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -335,7 +333,7 @@ export function MagneticHover({
 
 export function ScrollLine({
   className = '',
-  color = '#3B82F6',
+  color = '#22C55E',
 }: {
   className?: string;
   color?: string;

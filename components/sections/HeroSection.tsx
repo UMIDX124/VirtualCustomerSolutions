@@ -23,20 +23,20 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Spline 3D Particle Background */}
+      {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <iframe
-          src="https://my.spline.design/particlesflow-u25QqndZtedASENFl1pLex1v/"
-          frameBorder="0"
-          width="100%"
-          height="100%"
-          className="absolute inset-0 w-full h-full"
-          style={{ pointerEvents: 'none' }}
-          loading="lazy"
-          title="Particle flow background"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero-bg.mp4" type="video/mp4" />
+        </video>
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-[#0F172A]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#0F172A]" />
       </div>
 
       <div className="container-wide relative z-10 pt-32 pb-20">
@@ -50,7 +50,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: smoothEase }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[rgba(59,130,246,0.3)] text-[#3B82F6] text-sm mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[rgba(34,197,94,0.3)] text-[#22C55E] text-sm mb-6"
             >
               <Sparkles size="sm" className="animate-pulse" />
               <span className="tracking-wide">AI-Powered Operations</span>
@@ -81,7 +81,7 @@ export function HeroSection() {
               <MagneticHover strength={0.3}>
                 <Button
                   onClick={() => navigateTo('free-audit')}
-                  className="group bg-gradient-to-r from-[#3B82F6] to-[#0F172A] hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] text-black font-bold px-8 py-6 text-lg transition-all duration-[400ms]"
+                  className="group w-full sm:w-auto bg-gradient-to-r from-[#22C55E] to-[#0F172A] hover:shadow-[0_0_40px_rgba(34,197,94,0.5)] text-black font-bold px-8 py-6 text-lg transition-shadow duration-[400ms]"
                 >
                   Get Your Free Audit
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-[400ms]" />
@@ -91,7 +91,7 @@ export function HeroSection() {
                 <Button
                   onClick={() => navigateTo('services')}
                   variant="outline"
-                  className="border border-[rgba(59,130,246,0.3)] hover:border-[#3B82F6] hover:bg-[rgba(59,130,246,0.1)] text-white px-8 py-6 text-lg bg-transparent backdrop-blur-sm transition-all duration-[400ms]"
+                  className="w-full sm:w-auto border border-[rgba(34,197,94,0.3)] hover:border-[#22C55E] hover:bg-[rgba(34,197,94,0.1)] text-white px-8 py-6 text-lg bg-transparent backdrop-blur-sm transition-[border-color,background-color] duration-[400ms]"
                 >
                   Explore Services
                 </Button>
@@ -106,9 +106,9 @@ export function HeroSection() {
               className="flex flex-wrap gap-6 mt-10 justify-center lg:justify-start"
             >
               {[
-                { icon: Zap, label: '500+ Clients', color: '#3B82F6' },
-                { icon: Globe, label: '50+ Countries', color: '#1D4ED8' },
-                { icon: Cpu, label: 'AI-Powered', color: '#3B82F6' },
+                { icon: Zap, label: '500+ Clients', color: '#22C55E' },
+                { icon: Globe, label: '50+ Countries', color: '#059669' },
+                { icon: Cpu, label: 'AI-Powered', color: '#22C55E' },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-2 text-gray-500">
                   <item.icon size="16" style={{ color: item.color }} />
@@ -125,15 +125,11 @@ export function HeroSection() {
           >
             <div className="relative w-80 h-80">
               {/* Liquid Glass Container */}
-              <motion.div
-                animate={{
-                  rotate: [0, 3, 0, -3, 0],
-                }}
-                transition={{ duration: 16, repeat: Infinity, ease: "linear" }}
-                className="w-full h-full liquid-glass rounded-3xl flex items-center justify-center relative"
+              <div
+                className="w-full h-full liquid-glass rounded-3xl flex items-center justify-center relative animate-gentle-rotate will-change-transform"
                 style={{
                   boxShadow: `
-                    0 0 60px rgba(59,130,246,0.2),
+                    0 0 60px rgba(34,197,94,0.2),
                     0 0 100px rgba(65,210,197,0.1),
                     inset 0 0 60px rgba(255,255,255,0.05)
                   `
@@ -143,13 +139,13 @@ export function HeroSection() {
                 <svg viewBox="0 0 120 120" className="w-48 h-48">
                   <defs>
                     <linearGradient id="robotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#3B82F6" />
-                      <stop offset="50%" stopColor="#1D4ED8" />
-                      <stop offset="100%" stopColor="#3B82F6" />
+                      <stop offset="0%" stopColor="#22C55E" />
+                      <stop offset="50%" stopColor="#059669" />
+                      <stop offset="100%" stopColor="#22C55E" />
                     </linearGradient>
                     <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#1D4ED8" />
-                      <stop offset="100%" stopColor="#3B82F6" />
+                      <stop offset="0%" stopColor="#059669" />
+                      <stop offset="100%" stopColor="#22C55E" />
                     </linearGradient>
                     <filter id="robotGlow">
                       <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -160,7 +156,7 @@ export function HeroSection() {
                     </filter>
                     <filter id="neonGlow">
                       <feGaussianBlur stdDeviation="2" result="blur"/>
-                      <feFlood floodColor="#3B82F6" floodOpacity="0.8"/>
+                      <feFlood floodColor="#22C55E" floodOpacity="0.8"/>
                       <feComposite in2="blur" operator="in"/>
                       <feMerge>
                         <feMergeNode/>
@@ -214,22 +210,22 @@ export function HeroSection() {
                   />
 
                   {/* Antenna */}
-                  <line x1="60" y1="3" x2="60" y2="20" stroke="#1D4ED8" strokeWidth="2" />
-                  <circle cx="60" cy="5" r="3" fill="#3B82F6" className="animate-pulse" />
+                  <line x1="60" y1="3" x2="60" y2="20" stroke="#059669" strokeWidth="2" />
+                  <circle cx="60" cy="5" r="3" fill="#22C55E" className="animate-pulse" />
 
                   {/* Side Accents */}
-                  <circle cx="25" cy="50" r="4" fill="#1D4ED8" className="animate-pulse" />
-                  <circle cx="95" cy="50" r="4" fill="#1D4ED8" className="animate-pulse" />
+                  <circle cx="25" cy="50" r="4" fill="#059669" className="animate-pulse" />
+                  <circle cx="95" cy="50" r="4" fill="#059669" className="animate-pulse" />
                 </svg>
 
                 {/* Floating particles */}
                 <FloatingElement amplitude={8} duration={6} className="absolute top-4 right-4">
-                  <div className="w-2 h-2 rounded-full bg-[#3B82F6] blur-[2px] opacity-60" />
+                  <div className="w-2 h-2 rounded-full bg-[#22C55E] blur-[2px] opacity-60" />
                 </FloatingElement>
                 <FloatingElement amplitude={10} duration={8} className="absolute bottom-8 left-4">
-                  <div className="w-2 h-2 rounded-full bg-[#1D4ED8] blur-[2px] opacity-60" />
+                  <div className="w-2 h-2 rounded-full bg-[#059669] blur-[2px] opacity-60" />
                 </FloatingElement>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

@@ -96,7 +96,7 @@ const industryAdjust: Record<Industry, Record<string, number>> = {
 };
 
 const channelColors: Record<string, string> = {
-  SEO: "#3B82F6",
+  SEO: "#22C55E",
   PPC: "#F59E0B",
   Content: "#EC4899",
   Social: "#8B5CF6",
@@ -130,7 +130,7 @@ function DarkPieTooltip({ active, payload }: any) {
   return (
     <div className="bg-[#0F172A] border border-[rgba(255,255,255,0.1)] px-4 py-3 rounded-lg text-sm shadow-xl">
       <p className="font-semibold text-[#F8FAFC]">{d.name}</p>
-      <p className="font-mono text-[#3B82F6]">
+      <p className="font-mono text-[#22C55E]">
         ${d.amount.toLocaleString()} ({d.percent}%)
       </p>
       <p className="text-xs text-[#94A3B8] mt-1">
@@ -200,7 +200,7 @@ export default function MarketingBudgetPlannerPage() {
         <div className="container-wide relative z-10">
           <Link
             href="/tools"
-            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#3B82F6] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Tools
           </Link>
@@ -242,7 +242,7 @@ export default function MarketingBudgetPlannerPage() {
               </h2>
               <button
                 onClick={reset}
-                className="text-xs text-[#94A3B8] hover:text-[#3B82F6] flex items-center gap-1 transition-colors"
+                className="text-xs text-[#94A3B8] hover:text-[#22C55E] flex items-center gap-1 transition-colors"
               >
                 <RotateCcw className="w-3 h-3" /> Reset
               </button>
@@ -252,7 +252,7 @@ export default function MarketingBudgetPlannerPage() {
               {/* Budget */}
               <div>
                 <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
-                  <DollarSign className="w-4 h-4 text-[#3B82F6]" />
+                  <DollarSign className="w-4 h-4 text-[#22C55E]" />
                   Monthly Marketing Budget
                 </label>
                 <div className="relative">
@@ -272,7 +272,7 @@ export default function MarketingBudgetPlannerPage() {
                   min={500}
                   max={100000}
                   step={500}
-                  className="w-full mt-2 accent-[#3B82F6] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
+                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
                 />
                 <div className="flex justify-between text-xs text-[#64748B] mt-1">
                   <span>$500</span>
@@ -286,7 +286,7 @@ export default function MarketingBudgetPlannerPage() {
               {/* Goal */}
               <div>
                 <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
-                  <Target className="w-4 h-4 text-[#3B82F6]" />
+                  <Target className="w-4 h-4 text-[#22C55E]" />
                   Primary Business Goal
                 </label>
                 <div className="grid grid-cols-2 gap-2">
@@ -295,9 +295,9 @@ export default function MarketingBudgetPlannerPage() {
                       key={g.value}
                       type="button"
                       onClick={() => setGoal(g.value)}
-                      className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-all border flex items-center gap-2 ${
+                      className={`px-3 py-2.5 rounded-lg text-sm font-medium transition-colors border flex items-center gap-2 ${
                         goal === g.value
-                          ? "bg-[rgba(59,130,246,0.15)] border-[#3B82F6] text-[#3B82F6]"
+                          ? "bg-[rgba(34,197,94,0.15)] border-[#22C55E] text-[#22C55E]"
                           : "bg-[#0F172A] border-[rgba(255,255,255,0.08)] text-[#94A3B8] hover:border-[#64748B]"
                       }`}
                     >
@@ -311,13 +311,13 @@ export default function MarketingBudgetPlannerPage() {
               {/* Industry */}
               <div>
                 <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
-                  <Building2 className="w-4 h-4 text-[#3B82F6]" />
+                  <Building2 className="w-4 h-4 text-[#22C55E]" />
                   Industry
                 </label>
                 <select
                   value={industry}
                   onChange={(e) => setIndustry(e.target.value as Industry)}
-                  className="w-full rounded-lg bg-[#0F172A] border border-[rgba(255,255,255,0.1)] text-[#F8FAFC] px-4 py-2.5 text-sm focus:border-[#3B82F6] focus:outline-none transition-colors"
+                  className="w-full rounded-lg bg-[#0F172A] border border-[rgba(255,255,255,0.1)] text-[#F8FAFC] px-4 py-2.5 text-sm focus:border-[#22C55E] focus:outline-none transition-colors"
                 >
                   {industries.map((ind) => (
                     <option key={ind.value} value={ind.value}>
@@ -442,7 +442,7 @@ export default function MarketingBudgetPlannerPage() {
                   </div>
 
                   {/* Pro tip */}
-                  <div className="p-4 rounded-lg bg-[rgba(59,130,246,0.08)] border border-[rgba(59,130,246,0.2)]">
+                  <div className="p-4 rounded-lg bg-[rgba(34,197,94,0.08)] border border-[rgba(34,197,94,0.2)]">
                     <div className="flex items-start gap-3">
                       <Lightbulb className="w-5 h-5 text-[#F59E0B] mt-0.5 shrink-0" />
                       <div>
@@ -475,7 +475,7 @@ export default function MarketingBudgetPlannerPage() {
                   exit={{ opacity: 0 }}
                   className="flex flex-col items-center justify-center h-[500px] text-center"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-[rgba(59,130,246,0.08)] flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 rounded-2xl bg-[rgba(34,197,94,0.08)] flex items-center justify-center mb-4">
                     <PieChartIcon className="w-8 h-8 text-[#64748B]" />
                   </div>
                   <p className="text-[#94A3B8] text-sm max-w-xs">

@@ -150,14 +150,14 @@ export function ResultsPage() {
         
         <Container className="relative z-10 pt-32 pb-20">
           <FadeUp>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-glass border border-border-glass text-text-secondary text-sm mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--surface-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] text-sm mb-6">
               <SignalPoint size="sm" />
               Results
             </span>
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.1] tracking-tight max-w-4xl">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight max-w-4xl">
               What changes when{' '}
               <span className="text-gradient-lime">acquisition, reporting, and execution</span>{' '}
               finally line up.
@@ -165,7 +165,7 @@ export function ResultsPage() {
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <p className="text-text-secondary text-lg mt-6 max-w-2xl leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-lg mt-6 max-w-2xl leading-relaxed">
               Real outcomes. Anonymized case studies. Proof that the integrated model delivers.
             </p>
           </FadeUp>
@@ -182,8 +182,8 @@ export function ResultsPage() {
                 onClick={() => setActiveFilter(filter)}
                 className={`px-4 py-2 rounded-lg text-sm transition-all ${
                   activeFilter === filter
-                    ? 'bg-[#3B82F6] text-white'
-                    : 'bg-surface-glass text-text-secondary hover:text-text-primary'
+                    ? 'bg-[#22C55E] text-white'
+                    : 'bg-[var(--surface-glass)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                 }`}
               >
                 {filter}
@@ -200,12 +200,12 @@ export function ResultsPage() {
                   onClick={() => setSelectedCase(study)}
                 >
                   {/* Category Badge */}
-                  <div className="text-text-muted text-xs uppercase tracking-wider mb-3">
+                  <div className="text-[var(--text-muted)] text-xs uppercase tracking-wider mb-3">
                     {study.category}
                   </div>
 
                   {/* Headline */}
-                  <h3 className="font-display text-xl font-bold text-text-primary mb-3 group-hover:text-[#3B82F6] transition-colors">
+                  <h3 className="font-display text-xl font-bold text-[var(--text-primary)] mb-3 group-hover:text-[#22C55E] transition-colors">
                     {study.headline}
                   </h3>
 
@@ -213,10 +213,10 @@ export function ResultsPage() {
                   <div className="flex gap-4 mb-4">
                     {study.outcomes.slice(0, 2).map((outcome) => (
                       <div key={outcome.label}>
-                        <div className="text-[#3B82F6] font-display font-bold text-lg tabular-nums">
+                        <div className="text-[#22C55E] font-display font-bold text-lg tabular-nums">
                           {outcome.metric}
                         </div>
-                        <div className="text-text-muted text-xs">{outcome.label}</div>
+                        <div className="text-[var(--text-muted)] text-xs">{outcome.label}</div>
                       </div>
                     ))}
                   </div>
@@ -226,7 +226,7 @@ export function ResultsPage() {
                     {study.services.map((service) => (
                       <span
                         key={service}
-                        className="text-xs px-2 py-1 rounded bg-surface-glass-strong text-text-muted"
+                        className="text-xs px-2 py-1 rounded bg-[var(--surface-glass-strong)] text-[var(--text-muted)]"
                       >
                         {service}
                       </span>
@@ -260,25 +260,25 @@ export function ResultsPage() {
                 {/* Header */}
                 <div className="flex items-start justify-between mb-6">
                   <div>
-                    <div className="text-text-muted text-xs uppercase tracking-wider mb-2">
+                    <div className="text-[var(--text-muted)] text-xs uppercase tracking-wider mb-2">
                       {selectedCase.category}
                     </div>
-                    <h2 className="font-display text-2xl font-bold text-text-primary">
+                    <h2 className="font-display text-2xl font-bold text-[var(--text-primary)]">
                       {selectedCase.headline}
                     </h2>
                   </div>
                   <button
                     onClick={() => setSelectedCase(null)}
-                    className="p-2 rounded-lg hover:bg-surface-glass-strong transition-colors"
+                    className="p-2 rounded-lg hover:bg-[var(--surface-glass-strong)] transition-colors"
                   >
-                    <X className="w-5 h-5 text-text-muted" />
+                    <X className="w-5 h-5 text-[var(--text-muted)]" />
                   </button>
                 </div>
 
                 {/* Challenge */}
                 <div className="mb-6">
-                  <h4 className="text-text-primary font-medium mb-2">Challenge</h4>
-                  <p className="text-text-secondary text-sm">{selectedCase.challenge}</p>
+                  <h4 className="text-[var(--text-primary)] font-medium mb-2">Challenge</h4>
+                  <p className="text-[var(--text-secondary)] text-sm">{selectedCase.challenge}</p>
                 </div>
 
                 {/* Outcomes */}
@@ -286,24 +286,24 @@ export function ResultsPage() {
                   {selectedCase.outcomes.map((outcome) => (
                     <div
                       key={outcome.label}
-                      className="bg-surface-glass-strong rounded-xl p-4 text-center"
+                      className="bg-[var(--surface-glass-strong)] rounded-xl p-4 text-center"
                     >
-                      <div className="text-[#3B82F6] font-display font-bold text-2xl tabular-nums">
+                      <div className="text-[#22C55E] font-display font-bold text-2xl tabular-nums">
                         {outcome.metric}
                       </div>
-                      <div className="text-text-muted text-xs mt-1">{outcome.label}</div>
+                      <div className="text-[var(--text-muted)] text-xs mt-1">{outcome.label}</div>
                     </div>
                   ))}
                 </div>
 
                 {/* Scope */}
                 <div className="mb-6">
-                  <h4 className="text-text-primary font-medium mb-2">Scope</h4>
+                  <h4 className="text-[var(--text-primary)] font-medium mb-2">Scope</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedCase.scope.map((item) => (
                       <span
                         key={item}
-                        className="text-xs px-3 py-1 rounded-full bg-surface-glass text-text-secondary"
+                        className="text-xs px-3 py-1 rounded-full bg-[var(--surface-glass)] text-[var(--text-secondary)]"
                       >
                         {item}
                       </span>
@@ -312,17 +312,17 @@ export function ResultsPage() {
                 </div>
 
                 {/* Timeline */}
-                <div className="flex items-center gap-2 text-text-muted text-sm mb-6">
+                <div className="flex items-center gap-2 text-[var(--text-muted)] text-sm mb-6">
                   <Clock className="w-4 h-4" />
                   Timeline: {selectedCase.timeline}
                 </div>
 
                 {/* Quote */}
-                <div className="bg-surface-glass rounded-xl p-4 mb-6">
-                  <p className="text-text-secondary italic text-sm mb-2">
+                <div className="bg-[var(--surface-glass)] rounded-xl p-4 mb-6">
+                  <p className="text-[var(--text-secondary)] italic text-sm mb-2">
                     "{selectedCase.quote.text}"
                   </p>
-                  <p className="text-text-muted text-xs">
+                  <p className="text-[var(--text-muted)] text-xs">
                     — {selectedCase.quote.author}, {selectedCase.quote.company}
                   </p>
                 </div>
@@ -332,7 +332,7 @@ export function ResultsPage() {
                   {selectedCase.services.map((service) => (
                     <span
                       key={service}
-                      className="text-xs px-3 py-1 rounded-full bg-[#3B82F6]/10 text-[#3B82F6]"
+                      className="text-xs px-3 py-1 rounded-full bg-[#22C55E]/10 text-[#22C55E]"
                     >
                       {service}
                     </span>
@@ -349,15 +349,15 @@ export function ResultsPage() {
         <Container size="narrow">
           <FadeUp>
             <GlassCard className="p-8 md:p-12 text-center">
-              <h2 className="font-display text-3xl font-bold text-text-primary mb-4">
+              <h2 className="font-display text-3xl font-bold text-[var(--text-primary)] mb-4">
                 Want results like these?
               </h2>
-              <p className="text-text-secondary mb-6 max-w-lg mx-auto">
+              <p className="text-[var(--text-secondary)] mb-6 max-w-lg mx-auto">
                 Every business is different. Let's discuss your specific situation.
               </p>
               <Button
                 onClick={() => navigateTo('free-growth-audit')}
-                className="bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold px-8 py-6 group"
+                className="bg-[#22C55E] hover:bg-[#059669] text-white font-semibold px-8 py-6 group"
               >
                 Request Free Growth Audit
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

@@ -64,13 +64,13 @@ export function NewsletterSignup() {
               placeholder="Enter your email"
               aria-label="Email address"
               disabled={status === 'loading'}
-              className="w-full rounded-full border border-white/[0.08] bg-[#0F172A] py-2.5 pl-10 pr-4 text-sm text-[#F8FAFC] placeholder-[#64748B] transition focus:border-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/20 disabled:opacity-60"
+              className="w-full rounded-full border border-white/[0.08] bg-[#0F172A] py-2.5 pl-10 pr-4 text-sm text-[#F8FAFC] placeholder-[#64748B] transition focus:border-[#22C55E] focus:outline-none focus:ring-2 focus:ring-[#22C55E]/20 disabled:opacity-60"
             />
           </div>
           <button
             type="submit"
             disabled={status === 'loading' || status === 'success'}
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-[#1D4ED8] to-[#3B82F6] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#3B82F6]/20 transition hover:shadow-[#3B82F6]/30 disabled:opacity-60"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-gradient-to-r from-[#059669] to-[#22C55E] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#22C55E]/20 transition hover:shadow-[#22C55E]/30 disabled:opacity-60"
           >
             {status === 'loading' && <Loader2 className="h-4 w-4 animate-spin" />}
             {status === 'success' && <CheckCircle2 className="h-4 w-4" />}

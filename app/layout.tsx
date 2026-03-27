@@ -206,7 +206,7 @@ export default function RootLayout({
         
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#0F172A" />
-        <meta name="msapplication-TileColor" content="#3B82F6" />
+        <meta name="msapplication-TileColor" content="#22C55E" />
 
         {/* Google AdSense — uncomment after approval and replace pub-XXXXXXXXXX */}
         {/* <Script

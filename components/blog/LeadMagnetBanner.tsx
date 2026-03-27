@@ -5,7 +5,7 @@ export function LeadMagnetBanner() {
   return (
     <section className="mt-16 relative rounded-2xl overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1D4ED8] via-[#3B82F6] to-[#1D4ED8]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#059669] via-[#22C55E] to-[#059669]" />
       <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjA1Ij48cGF0aCBkPSJNMzYgMzRoLTJ2LTRoMnYtMmg0djJoMnY0aC0ydjJoLTR2LTJ6Ii8+PC9nPjwvZz48L3N2Zz4=')]" />
 
       <div className="relative px-6 py-12 md:px-12 md:py-16 text-center">
@@ -23,7 +23,7 @@ export function LeadMagnetBanner() {
 
         <Link
           href="/free-audit"
-          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-white text-[#1D4ED8] font-semibold hover:bg-white/90 transition-colors text-base"
+          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-white text-[#059669] font-semibold hover:bg-white/90 transition-colors text-base"
         >
           Get Your Free Audit
           <ArrowRight className="w-4 h-4" />

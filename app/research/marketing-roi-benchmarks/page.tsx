@@ -60,7 +60,7 @@ const costPerLead = [
 ];
 
 const channelColors: Record<string, string> = {
-  SEO: "#3B82F6",
+  SEO: "#22C55E",
   PPC: "#F59E0B",
   Social: "#8B5CF6",
   Email: "#10B981",
@@ -102,7 +102,7 @@ export default function MarketingROIBenchmarksPage() {
         <div className="container-wide relative z-10">
           <Link
             href="/research"
-            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#3B82F6] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Research
           </Link>
@@ -187,7 +187,7 @@ export default function MarketingROIBenchmarksPage() {
                 <Bar
                   dataKey="roi"
                   name="Our Clients"
-                  fill="#3B82F6"
+                  fill="#22C55E"
                   radius={[4, 4, 0, 0]}
                 />
                 <Bar
@@ -297,8 +297,8 @@ export default function MarketingROIBenchmarksPage() {
                   <Radar
                     name="SEO"
                     dataKey="SEO"
-                    stroke="#3B82F6"
-                    fill="#3B82F6"
+                    stroke="#22C55E"
+                    fill="#22C55E"
                     fillOpacity={0.15}
                   />
                   <Radar
@@ -363,7 +363,7 @@ export default function MarketingROIBenchmarksPage() {
                           <p className="font-semibold text-[#F8FAFC]">
                             {label}
                           </p>
-                          <p className="font-mono text-[#3B82F6]">
+                          <p className="font-mono text-[#22C55E]">
                             ${payload[0].value} / lead
                           </p>
                         </div>
@@ -374,7 +374,7 @@ export default function MarketingROIBenchmarksPage() {
                     dataKey="cost"
                     name="Cost per Lead"
                     radius={[0, 4, 4, 0]}
-                    fill="#3B82F6"
+                    fill="#22C55E"
                   />
                 </BarChart>
               </ResponsiveContainer>

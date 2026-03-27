@@ -46,7 +46,7 @@ export function StickyCTABar() {
               <div className="flex items-center gap-2">
                 <Link
                   href="/free-audit"
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1D4ED8] to-[#3B82F6] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-[#3B82F6]/20 transition hover:shadow-[#3B82F6]/30"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#059669] to-[#22C55E] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-[#22C55E]/20 transition hover:shadow-[#22C55E]/30"
                 >
                   Get Started
                   <ArrowRight className="h-4 w-4" />
@@ -55,7 +55,7 @@ export function StickyCTABar() {
                 <button
                   onClick={() => setDismissed(true)}
                   aria-label="Dismiss banner"
-                  className="rounded-full p-1.5 text-[#64748B] transition hover:bg-white/5 hover:text-[#F8FAFC]"
+                  className="rounded-full p-1.5 min-h-[44px] min-w-[44px] flex items-center justify-center text-[#64748B] transition-colors hover:bg-white/5 hover:text-[#F8FAFC]"
                 >
                   <X className="h-4 w-4" />
                 </button>

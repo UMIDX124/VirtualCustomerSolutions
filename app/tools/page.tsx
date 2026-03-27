@@ -22,7 +22,7 @@ const tools = [
     href: "/tools/roi-calculator",
     icon: Calculator,
     badge: "Most Popular",
-    color: "#3B82F6",
+    color: "#22C55E",
     preview: {
       label: "Avg. result",
       value: "312%",
@@ -77,7 +77,7 @@ export default function ToolsPage() {
       {/* Hero */}
       <section className="relative overflow-hidden section-padding">
         <div className="absolute inset-0 bg-dots opacity-30" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-[radial-gradient(ellipse,rgba(59,130,246,0.12),transparent_70%)]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-[radial-gradient(ellipse,rgba(34,197,94,0.12),transparent_70%)]" />
         <div className="container-wide relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -114,8 +114,8 @@ export default function ToolsPage() {
                 const Icon = stat.icon;
                 return (
                   <div key={stat.label} className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-[rgba(59,130,246,0.12)] flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-[#3B82F6]" />
+                    <div className="w-10 h-10 rounded-lg bg-[rgba(34,197,94,0.12)] flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-[#22C55E]" />
                     </div>
                     <div className="text-left">
                       <div className="font-mono text-lg font-bold text-[#F8FAFC]">
@@ -148,7 +148,7 @@ export default function ToolsPage() {
                 >
                   <Link
                     href={tool.href}
-                    className="group card-accent p-0 hover:border-[#3B82F6] transition-all duration-300 flex flex-col h-full overflow-hidden"
+                    className="group card-accent p-0 hover:border-[#22C55E] transition-[border-color] duration-300 flex flex-col h-full overflow-hidden"
                   >
                     {/* Top color bar */}
                     <div
@@ -165,14 +165,14 @@ export default function ToolsPage() {
                           <Icon className="w-6 h-6" style={{ color: tool.color }} />
                         </div>
                         {tool.badge && (
-                          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[rgba(59,130,246,0.12)] text-[#3B82F6] flex items-center gap-1">
+                          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[rgba(34,197,94,0.12)] text-[#22C55E] flex items-center gap-1">
                             <Sparkles className="w-3 h-3" />
                             {tool.badge}
                           </span>
                         )}
                       </div>
 
-                      <h2 className="text-xl font-bold text-[#F8FAFC] mb-3 group-hover:text-[#3B82F6] transition-colors">
+                      <h2 className="text-xl font-bold text-[#F8FAFC] mb-3 group-hover:text-[#22C55E] transition-colors">
                         {tool.title}
                       </h2>
                       <p className="text-sm text-[#94A3B8] mb-5 leading-relaxed flex-1">
@@ -200,7 +200,7 @@ export default function ToolsPage() {
                           </div>
                           <div className="text-xs text-[#64748B]">{tool.preview.sub}</div>
                         </div>
-                        <div className="flex items-center gap-2 text-sm font-semibold text-[#3B82F6]">
+                        <div className="flex items-center gap-2 text-sm font-semibold text-[#22C55E]">
                           Try Free
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </div>
@@ -258,7 +258,7 @@ export default function ToolsPage() {
                 variants={fade}
                 className="card-accent p-6 text-center"
               >
-                <div className="font-mono text-3xl font-bold text-[#3B82F6] mb-3">
+                <div className="font-mono text-3xl font-bold text-[#22C55E] mb-3">
                   {item.step}
                 </div>
                 <h3 className="text-lg font-bold text-[#F8FAFC] mb-2">

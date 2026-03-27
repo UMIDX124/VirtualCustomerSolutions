@@ -141,26 +141,10 @@ export default function PricingPage() {
 
   return (
     <SiteShell>
-      {/* Spline 3D wave background */}
-      <div className="relative">
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <iframe
-            src="https://my.spline.design/uiinfocardswavebackground-aWcqI8t41uSllSwwGuDLPbuK/"
-            frameBorder="0"
-            width="100%"
-            height="100%"
-            className="absolute inset-0 w-full h-full min-h-[200vh]"
-            style={{ pointerEvents: 'none' }}
-            loading="lazy"
-            title="Pricing wave background"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/60 via-[#0F172A]/40 to-[#0F172A]/90" />
-        </div>
-      </div>
-      <div className="container-wide relative z-10">
+      <div className="container-wide">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-12">
-          <div className="inline-block bg-[#3B82F6]/10 text-[#3B82F6] px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-block bg-[#22C55E]/10 text-[#22C55E] px-4 py-2 rounded-full text-sm font-medium mb-6">
             🎁 LAUNCH SPECIAL: First month 50% OFF on any package!
           </div>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-4">
@@ -173,23 +157,41 @@ export default function PricingPage() {
             All plans include marketing + dedicated remote staff.
           </p>
         </div>
+      </div>
 
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
-          {packages.map((pkg, index) => (
+      {/* Pricing Cards Section with Spline 3D wave background */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <iframe
+            src="https://my.spline.design/uiinfocardswavebackground-aWcqI8t41uSllSwwGuDLPbuK/"
+            frameBorder="0"
+            width="100%"
+            height="100%"
+            className="absolute inset-0 w-full h-full"
+            style={{ pointerEvents: 'none' }}
+            loading="lazy"
+            title="Wave background"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/80 via-[#0F172A]/60 to-[#0F172A]" />
+        </div>
+
+        <div className="container-wide relative z-10 py-12">
+          {/* Pricing Cards */}
+          <div className="grid md:grid-cols-3 gap-8 mb-20">
+            {packages.map((pkg, index) => (
             <FadeUp key={pkg.name} delay={index * 0.1}>
               <GlassCard 
-                className={`p-6 lg:p-8 h-full flex flex-col ${pkg.highlighted ? 'border-2 border-[#3B82F6] relative' : ''}`}
+                className={`p-6 lg:p-8 h-full flex flex-col ${pkg.highlighted ? 'border-2 border-[#22C55E] relative' : ''}`}
               >
                 {pkg.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#3B82F6] text-white text-sm font-medium rounded-full">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#22C55E] text-white text-sm font-medium rounded-full">
                     ⭐ Most Popular
                   </div>
                 )}
                 
                 <div className="text-center mb-6">
                   <div className="text-4xl mb-2">{pkg.badge}</div>
-                  <div className="inline-block bg-[#3B82F6]/10 text-[#3B82F6] px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  <div className="inline-block bg-[#22C55E]/10 text-[#22C55E] px-3 py-1 rounded-full text-sm font-medium mb-4">
                     {pkg.badgeText}
                   </div>
                   <h3 className="font-display text-2xl font-bold text-text-primary mb-2">
@@ -199,12 +201,12 @@ export default function PricingPage() {
                     <span className="text-text-muted line-through">{pkg.originalPrice}</span>
                   </div>
                   <div className="mb-2">
-                    <span className="text-4xl font-bold text-[#3B82F6]">{pkg.price}</span>
+                    <span className="text-4xl font-bold text-[#22C55E]">{pkg.price}</span>
                     <span className="text-text-muted text-sm">{pkg.period}</span>
                   </div>
                   {pkg.firstMonth && (
                     <p className="text-sm text-text-muted mb-2">
-                      First month: <span className="text-[#3B82F6] font-semibold">{pkg.firstMonth}</span>
+                      First month: <span className="text-[#22C55E] font-semibold">{pkg.firstMonth}</span>
                     </p>
                   )}
                   {pkg.offer && (
@@ -236,7 +238,7 @@ export default function PricingPage() {
                   <p className="text-xs text-text-muted mb-2">Bonuses included:</p>
                   <ul className="space-y-1">
                     {pkg.bonuses.map((bonus) => (
-                      <li key={bonus} className="text-xs text-[#3B82F6]">
+                      <li key={bonus} className="text-xs text-[#22C55E]">
                         {bonus}
                       </li>
                     ))}
@@ -250,7 +252,7 @@ export default function PricingPage() {
 
                 <Button
                   onClick={() => navigateTo('free-audit')}
-                  className={`w-full ${pkg.highlighted ? 'bg-[#3B82F6] hover:bg-[#1D4ED8]' : 'bg-surface-glass border border-border-glass hover:bg-[#3B82F6]/10'}`}
+                  className={`w-full ${pkg.highlighted ? 'bg-[#22C55E] hover:bg-[#059669]' : 'bg-surface-glass border border-border-glass hover:bg-[#22C55E]/10'}`}
                 >
                   {pkg.highlighted ? 'Start Growing — Claim Your Free Month' : 'Get Started'}
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -262,7 +264,7 @@ export default function PricingPage() {
 
         {/* Launch Offers */}
         <FadeUp className="mb-20">
-          <div className="bg-gradient-to-r from-[#3B82F6]/20 to-[#1D4ED8]/20 border border-border-glass rounded-2xl p-8 text-center">
+          <div className="bg-gradient-to-r from-[#22C55E]/20 to-[#059669]/20 border border-border-glass rounded-2xl p-8 text-center">
             <h2 className="font-display text-2xl font-bold text-text-primary mb-6">
               🚀 Launch Offers — Limited Time!
             </h2>
@@ -290,8 +292,11 @@ export default function PricingPage() {
             </div>
           </div>
         </FadeUp>
+        </div>
+      </section>
 
-        {/* FAQ */}
+      {/* FAQ */}
+      <div className="container-wide">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display text-3xl font-bold text-text-primary text-center mb-12">
             Frequently Asked Questions

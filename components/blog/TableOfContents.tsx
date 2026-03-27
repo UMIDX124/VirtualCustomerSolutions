@@ -59,7 +59,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
       className="sticky top-28 glass-panel p-5"
     >
       <div className="flex items-center gap-2 mb-4">
-        <List className="w-4 h-4 text-[#3B82F6]" />
+        <List className="w-4 h-4 text-[#22C55E]" />
         <h2 className="font-display text-sm font-semibold text-[#F8FAFC] uppercase tracking-wider">
           On This Page
         </h2>
@@ -75,7 +75,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
                 item.level === 3 ? 'pl-6' : 'pl-3'
               } ${
                 activeId === item.id
-                  ? 'border-[#3B82F6] text-[#3B82F6] font-medium'
+                  ? 'border-[#22C55E] text-[#22C55E] font-medium'
                   : 'border-transparent text-[#94A3B8] hover:text-[#CBD5E1] hover:border-[#334155]'
               }`}
             >

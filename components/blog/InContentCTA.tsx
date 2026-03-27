@@ -5,12 +5,12 @@ export function InContentCTA() {
   return (
     <div className="my-10 relative rounded-xl overflow-hidden">
       {/* Gradient border effect */}
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#3B82F6] via-[#1D4ED8] to-[#3B82F6] p-[1px]">
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#22C55E] via-[#059669] to-[#22C55E] p-[1px]">
         <div className="absolute inset-[1px] rounded-[11px] bg-[#1E293B]" />
       </div>
 
       <div className="relative p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <div className="shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#3B82F6] to-[#1D4ED8] flex items-center justify-center">
+        <div className="shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#22C55E] to-[#059669] flex items-center justify-center">
           <Zap className="w-5 h-5 text-white" />
         </div>
 
@@ -25,7 +25,7 @@ export function InContentCTA() {
 
         <Link
           href="/free-audit"
-          className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#3B82F6] hover:bg-[#1D4ED8] text-white text-sm font-semibold transition-colors"
+          className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#22C55E] hover:bg-[#059669] text-white text-sm font-semibold transition-colors"
         >
           Free Audit
         </Link>

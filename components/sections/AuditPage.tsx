@@ -200,16 +200,16 @@ export function AuditPage() {
                 <CheckCircle className="w-8 h-8 text-chart-4" />
               </div>
               
-              <h1 className="font-display text-3xl font-bold text-text-primary mb-4">
+              <h1 className="font-display text-3xl font-bold text-[var(--text-primary)] mb-4">
                 Audit Request Received
               </h1>
               
-              <p className="text-text-secondary mb-8 max-w-md mx-auto">
+              <p className="text-[var(--text-secondary)] mb-8 max-w-md mx-auto">
                 Thank you for your interest. A founder will review your submission and reach out within 24-48 hours with initial thoughts.
               </p>
 
-              <div className="bg-surface-glass-strong rounded-xl p-6 mb-8">
-                <h3 className="font-medium text-text-primary mb-4">What happens next:</h3>
+              <div className="bg-[var(--surface-glass-strong)] rounded-xl p-6 mb-8">
+                <h3 className="font-medium text-[var(--text-primary)] mb-4">What happens next:</h3>
                 <div className="space-y-3 text-left">
                   {[
                     'Founder reviews your submission',
@@ -218,18 +218,18 @@ export function AuditPage() {
                     'Scheduled call if there\'s a fit',
                   ].map((step, i) => (
                     <div key={step} className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-[#3B82F6]/20 flex items-center justify-center text-[#3B82F6] text-sm">
+                      <div className="w-6 h-6 rounded-full bg-[#22C55E]/20 flex items-center justify-center text-[#22C55E] text-sm">
                         {i + 1}
                       </div>
-                      <span className="text-text-secondary text-sm">{step}</span>
+                      <span className="text-[var(--text-secondary)] text-sm">{step}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <p className="text-text-muted text-sm">
+              <p className="text-[var(--text-muted)] text-sm">
                 Questions? Reach out directly at{' '}
-                <a href="mailto:hello@virtualcustomersolution.com" className="text-[#3B82F6] hover:text-[#F8FAFC] transition-colors">
+                <a href="mailto:hello@virtualcustomersolution.com" className="text-[#22C55E] hover:text-[#F8FAFC] transition-colors">
                   hello@virtualcustomersolution.com
                 </a>
               </p>
@@ -249,21 +249,21 @@ export function AuditPage() {
         
         <Container className="relative z-10 pt-32 pb-12">
           <FadeUp>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-glass border border-border-glass text-text-secondary text-sm mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--surface-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] text-sm mb-6">
               <SignalPoint size="sm" />
               Free Growth Audit
             </span>
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <h1 className="font-display text-4xl sm:text-5xl font-bold text-text-primary leading-[1.1] tracking-tight max-w-3xl">
+            <h1 className="font-display text-4xl sm:text-5xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight max-w-3xl">
               Request a{' '}
               <span className="text-gradient-lime">founder-led growth audit</span>.
             </h1>
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <p className="text-text-secondary text-lg mt-6 max-w-2xl leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-lg mt-6 max-w-2xl leading-relaxed">
               No pressure. No generic recommendations. Just clarity on where you are and what it would take to move forward.
             </p>
           </FadeUp>
@@ -281,7 +281,7 @@ export function AuditPage() {
                   {/* Name & Email */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="name" className="text-text-primary mb-2 block">
+                      <Label htmlFor="name" className="text-[var(--text-primary)] mb-2 block">
                         Name <span className="text-signal">*</span>
                       </Label>
                       <Input
@@ -289,14 +289,14 @@ export function AuditPage() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Your name"
-                        className="bg-surface-glass-strong border-border-glass focus:border-[#3B82F6]"
+                        className="bg-[var(--surface-glass-strong)] border-[var(--border-glass)] focus:border-[#22C55E]"
                       />
                       {errors.name && (
                         <p className="text-signal text-xs mt-1">{errors.name}</p>
                       )}
                     </div>
                     <div>
-                      <Label htmlFor="email" className="text-text-primary mb-2 block">
+                      <Label htmlFor="email" className="text-[var(--text-primary)] mb-2 block">
                         Work Email <span className="text-signal">*</span>
                       </Label>
                       <Input
@@ -305,7 +305,7 @@ export function AuditPage() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="you@company.com"
-                        className="bg-surface-glass-strong border-border-glass focus:border-[#3B82F6]"
+                        className="bg-[var(--surface-glass-strong)] border-[var(--border-glass)] focus:border-[#22C55E]"
                       />
                       {errors.email && (
                         <p className="text-signal text-xs mt-1">{errors.email}</p>
@@ -316,7 +316,7 @@ export function AuditPage() {
                   {/* Company & Website */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="company" className="text-text-primary mb-2 block">
+                      <Label htmlFor="company" className="text-[var(--text-primary)] mb-2 block">
                         Company
                       </Label>
                       <Input
@@ -324,11 +324,11 @@ export function AuditPage() {
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="Company name"
-                        className="bg-surface-glass-strong border-border-glass focus:border-[#3B82F6]"
+                        className="bg-[var(--surface-glass-strong)] border-[var(--border-glass)] focus:border-[#22C55E]"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="website" className="text-text-primary mb-2 block">
+                      <Label htmlFor="website" className="text-[var(--text-primary)] mb-2 block">
                         Website
                       </Label>
                       <Input
@@ -336,19 +336,19 @@ export function AuditPage() {
                         value={formData.website}
                         onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                         placeholder="https://"
-                        className="bg-surface-glass-strong border-border-glass focus:border-[#3B82F6]"
+                        className="bg-[var(--surface-glass-strong)] border-[var(--border-glass)] focus:border-[#22C55E]"
                       />
                     </div>
                   </div>
 
                   {/* Business Type */}
                   <div>
-                    <Label className="text-text-primary mb-2 block">Business Type</Label>
+                    <Label className="text-[var(--text-primary)] mb-2 block">Business Type</Label>
                     <Select
                       value={formData.businessType}
                       onValueChange={(value) => setFormData({ ...formData, businessType: value })}
                     >
-                      <SelectTrigger className="bg-surface-glass-strong border-border-glass">
+                      <SelectTrigger className="bg-[var(--surface-glass-strong)] border-[var(--border-glass)]">
                         <SelectValue placeholder="Select business type" />
                       </SelectTrigger>
                       <SelectContent>
@@ -364,12 +364,12 @@ export function AuditPage() {
                   {/* Ad Spend & Team Size */}
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <Label className="text-text-primary mb-2 block">Monthly Ad Spend</Label>
+                      <Label className="text-[var(--text-primary)] mb-2 block">Monthly Ad Spend</Label>
                       <Select
                         value={formData.adSpend}
                         onValueChange={(value) => setFormData({ ...formData, adSpend: value })}
                       >
-                        <SelectTrigger className="bg-surface-glass-strong border-border-glass">
+                        <SelectTrigger className="bg-[var(--surface-glass-strong)] border-[var(--border-glass)]">
                           <SelectValue placeholder="Select range" />
                         </SelectTrigger>
                         <SelectContent>
@@ -382,12 +382,12 @@ export function AuditPage() {
                       </Select>
                     </div>
                     <div>
-                      <Label className="text-text-primary mb-2 block">Team Size</Label>
+                      <Label className="text-[var(--text-primary)] mb-2 block">Team Size</Label>
                       <Select
                         value={formData.teamSize}
                         onValueChange={(value) => setFormData({ ...formData, teamSize: value })}
                       >
-                        <SelectTrigger className="bg-surface-glass-strong border-border-glass">
+                        <SelectTrigger className="bg-[var(--surface-glass-strong)] border-[var(--border-glass)]">
                           <SelectValue placeholder="Select size" />
                         </SelectTrigger>
                         <SelectContent>
@@ -403,14 +403,14 @@ export function AuditPage() {
 
                   {/* Primary Bottleneck */}
                   <div>
-                    <Label className="text-text-primary mb-2 block">
+                    <Label className="text-[var(--text-primary)] mb-2 block">
                       Primary Bottleneck <span className="text-signal">*</span>
                     </Label>
                     <Select
                       value={formData.bottleneck}
                       onValueChange={(value) => setFormData({ ...formData, bottleneck: value })}
                     >
-                      <SelectTrigger className="bg-surface-glass-strong border-border-glass">
+                      <SelectTrigger className="bg-[var(--surface-glass-strong)] border-[var(--border-glass)]">
                         <SelectValue placeholder="What's your biggest challenge?" />
                       </SelectTrigger>
                       <SelectContent>
@@ -428,22 +428,22 @@ export function AuditPage() {
 
                   {/* Service Focus */}
                   <div>
-                    <Label className="text-text-primary mb-3 block">Service Focus</Label>
+                    <Label className="text-[var(--text-primary)] mb-3 block">Service Focus</Label>
                     <div className="grid sm:grid-cols-2 gap-3">
                       {services.map((service) => (
                         <label
                           key={service.id}
                           className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition-all ${
                             formData.services.includes(service.id)
-                              ? 'border-[#3B82F6] bg-[#3B82F6]/5'
-                              : 'border-border-glass bg-surface-glass-strong hover:border-border-active'
+                              ? 'border-[#22C55E] bg-[#22C55E]/5'
+                              : 'border-[var(--border-glass)] bg-[var(--surface-glass-strong)] hover:border-border-active'
                           }`}
                         >
                           <Checkbox
                             checked={formData.services.includes(service.id)}
                             onCheckedChange={() => handleServiceToggle(service.id)}
                           />
-                          <span className="text-text-secondary text-sm">{service.label}</span>
+                          <span className="text-[var(--text-secondary)] text-sm">{service.label}</span>
                         </label>
                       ))}
                     </div>
@@ -451,7 +451,7 @@ export function AuditPage() {
 
                   {/* Notes */}
                   <div>
-                    <Label htmlFor="notes" className="text-text-primary mb-2 block">
+                    <Label htmlFor="notes" className="text-[var(--text-primary)] mb-2 block">
                       Tell us more <span className="text-signal">*</span>
                     </Label>
                     <Textarea
@@ -460,12 +460,12 @@ export function AuditPage() {
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       placeholder="Describe your current situation, what you've tried, and what you're hoping to achieve..."
                       rows={4}
-                      className="bg-surface-glass-strong border-border-glass focus:border-[#3B82F6] resize-none"
+                      className="bg-[var(--surface-glass-strong)] border-[var(--border-glass)] focus:border-[#22C55E] resize-none"
                     />
                     {errors.notes && (
                       <p className="text-signal text-xs mt-1">{errors.notes}</p>
                     )}
-                    <p className="text-text-muted text-xs mt-1">
+                    <p className="text-[var(--text-muted)] text-xs mt-1">
                       Minimum 20 characters
                     </p>
                   </div>
@@ -480,7 +480,7 @@ export function AuditPage() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold py-6 text-lg group"
+                    className="w-full bg-[#22C55E] hover:bg-[#059669] text-white font-semibold py-6 text-lg group"
                   >
                     {isSubmitting ? (
                       <>
@@ -502,7 +502,7 @@ export function AuditPage() {
             <FadeUp delay={0.2} className="lg:col-span-2 space-y-6">
               {/* What's Included */}
               <GlassCard className="p-6">
-                <h3 className="font-display font-semibold text-text-primary mb-4">
+                <h3 className="font-display font-semibold text-[var(--text-primary)] mb-4">
                   What's Included
                 </h3>
                 <ul className="space-y-3">
@@ -513,7 +513,7 @@ export function AuditPage() {
                     'Clear next steps document',
                     'No-pressure conversation',
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-text-secondary text-sm">
+                    <li key={item} className="flex items-center gap-3 text-[var(--text-secondary)] text-sm">
                       <CheckCircle className="w-4 h-4 text-chart-4" />
                       {item}
                     </li>
@@ -524,12 +524,12 @@ export function AuditPage() {
               {/* Timeline */}
               <GlassCard className="p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <Clock className="w-5 h-5 text-[#3B82F6]" />
-                  <h3 className="font-display font-semibold text-text-primary">
+                  <Clock className="w-5 h-5 text-[#22C55E]" />
+                  <h3 className="font-display font-semibold text-[var(--text-primary)]">
                     Response Time
                   </h3>
                 </div>
-                <p className="text-text-secondary text-sm">
+                <p className="text-[var(--text-secondary)] text-sm">
                   Founder-led review. Expect initial thoughts within 24-48 hours.
                 </p>
               </GlassCard>
@@ -537,36 +537,36 @@ export function AuditPage() {
               {/* Founder-led */}
               <GlassCard className="p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <User className="w-5 h-5 text-[#3B82F6]" />
-                  <h3 className="font-display font-semibold text-text-primary">
+                  <User className="w-5 h-5 text-[#22C55E]" />
+                  <h3 className="font-display font-semibold text-[var(--text-primary)]">
                     Founder-Led Review
                   </h3>
                 </div>
-                <p className="text-text-secondary text-sm">
+                <p className="text-[var(--text-secondary)] text-sm">
                   Every audit is reviewed by a founder — not handed off to a sales team.
                 </p>
               </GlassCard>
 
               {/* Contact */}
               <GlassCard className="p-6">
-                <h3 className="font-display font-semibold text-text-primary mb-4">
+                <h3 className="font-display font-semibold text-[var(--text-primary)] mb-4">
                   Prefer to Reach Out Directly?
                 </h3>
                 <div className="space-y-3">
                   <a
                     href="mailto:hello@virtualcustomersolution.com"
-                    className="flex items-center gap-3 text-text-secondary hover:text-text-primary text-sm transition-colors"
+                    className="flex items-center gap-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm transition-colors"
                   >
-                    <Mail className="w-4 h-4 text-[#3B82F6]" />
+                    <Mail className="w-4 h-4 text-[#22C55E]" />
                     hello@virtualcustomersolution.com
                   </a>
                   <a
                     href="https://linkedin.com/company/digitalpointllc"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-text-secondary hover:text-text-primary text-sm transition-colors"
+                    className="flex items-center gap-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm transition-colors"
                   >
-                    <Linkedin className="w-4 h-4 text-[#3B82F6]" />
+                    <Linkedin className="w-4 h-4 text-[#22C55E]" />
                     LinkedIn
                   </a>
                 </div>

@@ -83,10 +83,10 @@ export function WhyChooseUsSection() {
               <GlassCard className="p-6 flex gap-4">
                 <div className="text-3xl">{benefit.icon}</div>
                 <div>
-                  <h3 className="font-display text-lg font-bold text-text-primary mb-2">
+                  <h3 className="font-display text-lg font-bold text-[var(--text-primary)] mb-2">
                     {benefit.title}
                   </h3>
-                  <p className="text-text-secondary text-sm">
+                  <p className="text-[var(--text-secondary)] text-sm">
                     {benefit.description}
                   </p>
                 </div>
@@ -97,10 +97,10 @@ export function WhyChooseUsSection() {
 
         {/* Package Preview */}
         <div className="text-center mb-8">
-          <h3 className="font-display text-2xl font-bold text-text-primary mb-2">
+          <h3 className="font-display text-2xl font-bold text-[var(--text-primary)] mb-2">
             Our Pricing Packages
           </h3>
-          <p className="text-text-secondary">
+          <p className="text-[var(--text-secondary)]">
             Choose the plan that fits your business needs
           </p>
         </div>
@@ -109,22 +109,22 @@ export function WhyChooseUsSection() {
           {packages.map((pkg, index) => (
             <FadeUp key={pkg.name} delay={index * 0.1}>
               <GlassCard 
-                className={`p-6 text-center ${pkg.highlighted ? 'border-2 border-[#3B82F6] relative' : ''}`}
+                className={`p-6 text-center ${pkg.highlighted ? 'border-2 border-[#22C55E] relative' : ''}`}
               >
                 {pkg.highlighted && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#1D4ED8] text-black text-xs font-medium rounded-full">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#059669] text-black text-xs font-medium rounded-full">
                     Most Popular
                   </div>
                 )}
                 <div className="text-4xl mb-4">{pkg.badge}</div>
-                <h4 className="font-display text-xl font-bold text-text-primary mb-2">
+                <h4 className="font-display text-xl font-bold text-[var(--text-primary)] mb-2">
                   {pkg.name}
                 </h4>
                 <div className="mb-2">
-                  <span className="text-3xl font-bold text-[#3B82F6]">{pkg.price}</span>
-                  <span className="text-text-muted text-sm">{pkg.period}</span>
+                  <span className="text-3xl font-bold text-[#22C55E]">{pkg.price}</span>
+                  <span className="text-[var(--text-muted)] text-sm">{pkg.period}</span>
                 </div>
-                <p className="text-text-muted text-sm mb-4">{pkg.description}</p>
+                <p className="text-[var(--text-muted)] text-sm mb-4">{pkg.description}</p>
                 <Button
                   onClick={() => navigateTo(pkg.link as any)}
                   variant={pkg.highlighted ? 'default' : 'outline'}

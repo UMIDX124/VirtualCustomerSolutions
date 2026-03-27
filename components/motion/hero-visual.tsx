@@ -10,13 +10,6 @@ const cardMotion = {
   transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
 };
 
-const floatTransition = {
-  duration: 8,
-  repeat: Number.POSITIVE_INFINITY,
-  repeatType: "mirror" as const,
-  ease: "easeInOut" as const,
-};
-
 function MetricRow({
   label,
   value,
@@ -70,12 +63,12 @@ export function HeroVisual() {
       />
 
       <div className="relative grid gap-4 md:grid-cols-2 md:grid-rows-[auto_auto]">
+        {/* Revenue Dashboard - one-shot entrance via framer-motion, infinite float via CSS */}
         <m.div
           {...cardMotion}
-          animate={{ y: [0, -3, 0], opacity: 1 }}
-          transition={floatTransition}
           className="md:col-span-2"
         >
+          <div className="animate-float-up-sm will-change-transform">
           <VisualCard
             title="Revenue Dashboard"
             subtitle="Pipeline value, forecast, campaigns, and conversion metrics"
@@ -98,13 +91,14 @@ export function HeroVisual() {
               <MetricRow label="Lead conversion" value="18.4%" />
             </div>
           </VisualCard>
+          </div>
         </m.div>
 
+        {/* Marketing Automation */}
         <m.div
           {...cardMotion}
-          animate={{ y: [0, 3, 0], opacity: 1 }}
-          transition={{ ...floatTransition, duration: 7 }}
         >
+          <div className="animate-float-down-sm will-change-transform">
           <VisualCard
             title="Marketing Automation"
             subtitle="Workflow automation features such as CRM sync, campaign automation, and attribution"
@@ -114,13 +108,14 @@ export function HeroVisual() {
             <MetricRow label="Lead routing" value="Automated" />
             <MetricRow label="Attribution" value="Tracked" />
           </VisualCard>
+          </div>
         </m.div>
 
+        {/* Execution Layer */}
         <m.div
           {...cardMotion}
-          animate={{ y: [0, -4, 0], opacity: 1 }}
-          transition={{ ...floatTransition, duration: 9 }}
         >
+          <div className="animate-float-up-md will-change-transform">
           <VisualCard
             title="Execution Layer"
             subtitle="Operational support tasks like reporting updates, campaign operations, and system maintenance"
@@ -130,6 +125,7 @@ export function HeroVisual() {
             <MetricRow label="Campaign ops" value="Active" />
             <MetricRow label="System maintenance" value="Ongoing" />
           </VisualCard>
+          </div>
         </m.div>
       </div>
     </div>

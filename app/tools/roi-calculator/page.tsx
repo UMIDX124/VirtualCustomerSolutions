@@ -103,7 +103,7 @@ function CountUpOnView({
 function ROIProgressBar({ value, max }: { value: number; max: number }) {
   const pct = Math.min(Math.max((value / max) * 100, 0), 100);
   const color =
-    pct < 30 ? "#EF4444" : pct < 60 ? "#F59E0B" : pct < 80 ? "#3B82F6" : "#10B981";
+    pct < 30 ? "#EF4444" : pct < 60 ? "#F59E0B" : pct < 80 ? "#22C55E" : "#10B981";
 
   return (
     <div className="w-full">
@@ -169,7 +169,7 @@ export default function ROICalculatorPage() {
         <div className="container-wide relative z-10">
           <Link
             href="/tools"
-            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#3B82F6] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Tools
           </Link>
@@ -208,7 +208,7 @@ export default function ROICalculatorPage() {
               <h2 className="text-xl font-bold text-[#F8FAFC]">Your Metrics</h2>
               <button
                 onClick={reset}
-                className="text-xs text-[#94A3B8] hover:text-[#3B82F6] flex items-center gap-1 transition-colors"
+                className="text-xs text-[#94A3B8] hover:text-[#22C55E] flex items-center gap-1 transition-colors"
               >
                 <RotateCcw className="w-3 h-3" /> Reset
               </button>
@@ -218,7 +218,7 @@ export default function ROICalculatorPage() {
               {/* Monthly Spend */}
               <div>
                 <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
-                  <DollarSign className="w-4 h-4 text-[#3B82F6]" />
+                  <DollarSign className="w-4 h-4 text-[#22C55E]" />
                   Monthly Spend (Investment)
                 </label>
                 <div className="relative">
@@ -238,7 +238,7 @@ export default function ROICalculatorPage() {
                   min={500}
                   max={50000}
                   step={500}
-                  className="w-full mt-2 accent-[#3B82F6] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
+                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
                 />
                 <div className="flex justify-between text-xs text-[#64748B] mt-1">
                   <span>$500</span>
@@ -252,7 +252,7 @@ export default function ROICalculatorPage() {
               {/* Efficiency Gain */}
               <div>
                 <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
-                  <Percent className="w-4 h-4 text-[#3B82F6]" />
+                  <Percent className="w-4 h-4 text-[#22C55E]" />
                   Efficiency Gain (%)
                 </label>
                 <input
@@ -269,7 +269,7 @@ export default function ROICalculatorPage() {
                   onChange={(e) => setEfficiencyGain(Number(e.target.value))}
                   min={1}
                   max={80}
-                  className="w-full mt-2 accent-[#3B82F6] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
+                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
                 />
                 <div className="flex justify-between text-xs text-[#64748B] mt-1">
                   <span>1%</span>
@@ -283,7 +283,7 @@ export default function ROICalculatorPage() {
               {/* Team Size */}
               <div>
                 <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
-                  <Users className="w-4 h-4 text-[#3B82F6]" />
+                  <Users className="w-4 h-4 text-[#22C55E]" />
                   Team Size
                 </label>
                 <input
@@ -299,7 +299,7 @@ export default function ROICalculatorPage() {
                   onChange={(e) => setTeamSize(Number(e.target.value))}
                   min={1}
                   max={100}
-                  className="w-full mt-2 accent-[#3B82F6] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
+                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
                 />
                 <div className="flex justify-between text-xs text-[#64748B] mt-1">
                   <span>1</span>
@@ -313,7 +313,7 @@ export default function ROICalculatorPage() {
               {/* Hourly Rate */}
               <div>
                 <label className="flex items-center gap-2 text-sm font-medium text-[#CBD5E1] mb-2">
-                  <Clock className="w-4 h-4 text-[#3B82F6]" />
+                  <Clock className="w-4 h-4 text-[#22C55E]" />
                   Average Hourly Rate ($)
                 </label>
                 <div className="relative">
@@ -333,7 +333,7 @@ export default function ROICalculatorPage() {
                   onChange={(e) => setHourlyRate(Number(e.target.value))}
                   min={10}
                   max={200}
-                  className="w-full mt-2 accent-[#3B82F6] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
+                  className="w-full mt-2 accent-[#22C55E] h-1.5 bg-[#1E293B] rounded-full appearance-none cursor-pointer"
                 />
                 <div className="flex justify-between text-xs text-[#64748B] mt-1">
                   <span>$10</span>
@@ -379,7 +379,7 @@ export default function ROICalculatorPage() {
                     <div className="text-sm text-[#94A3B8] mb-1">
                       3-Year ROI
                     </div>
-                    <div className="text-4xl md:text-5xl font-bold text-[#3B82F6]">
+                    <div className="text-4xl md:text-5xl font-bold text-[#22C55E]">
                       <CountUpOnView value={threeYearROI} suffix="%" />
                     </div>
                     <div className="mt-4">
@@ -406,7 +406,7 @@ export default function ROICalculatorPage() {
 
                     <div className="card-accent p-4">
                       <div className="flex items-center gap-2 mb-2">
-                        <TrendingUp className="w-4 h-4 text-[#3B82F6]" />
+                        <TrendingUp className="w-4 h-4 text-[#22C55E]" />
                         <span className="text-xs text-[#94A3B8]">
                           Net Annual Gain
                         </span>
@@ -474,7 +474,7 @@ export default function ROICalculatorPage() {
                         {
                           label: "Net Profit (3yr)",
                           value: threeYearSavings - threeYearCost,
-                          color: "#3B82F6",
+                          color: "#22C55E",
                         },
                       ].map((row) => (
                         <div
@@ -494,9 +494,9 @@ export default function ROICalculatorPage() {
                   </div>
 
                   {/* Insight */}
-                  <div className="p-4 rounded-lg bg-[rgba(59,130,246,0.08)] border border-[rgba(59,130,246,0.2)]">
+                  <div className="p-4 rounded-lg bg-[rgba(34,197,94,0.08)] border border-[rgba(34,197,94,0.2)]">
                     <div className="flex items-start gap-3">
-                      <TrendingUp className="w-5 h-5 text-[#3B82F6] mt-0.5 shrink-0" />
+                      <TrendingUp className="w-5 h-5 text-[#22C55E] mt-0.5 shrink-0" />
                       <div>
                         <p className="text-sm font-medium text-[#F8FAFC] mb-1">
                           Insight
@@ -534,7 +534,7 @@ export default function ROICalculatorPage() {
                   exit={{ opacity: 0 }}
                   className="flex flex-col items-center justify-center h-[500px] text-center"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-[rgba(59,130,246,0.08)] flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 rounded-2xl bg-[rgba(34,197,94,0.08)] flex items-center justify-center mb-4">
                     <Calculator className="w-8 h-8 text-[#64748B]" />
                   </div>
                   <p className="text-[#94A3B8] text-sm max-w-xs">

@@ -48,31 +48,31 @@ export function ProofSection() {
             <StaggerItem key={study.category}>
               <GlassCard className="p-6 h-full">
                 {/* Result Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#3B82F6]/10 text-[#3B82F6] text-sm font-semibold mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#22C55E]/10 text-[#22C55E] text-sm font-semibold mb-4">
                   {study.result}
                 </div>
 
                 {/* Category */}
-                <div className="text-text-muted text-xs uppercase tracking-wider mb-2">
+                <div className="text-[var(--text-muted)] text-xs uppercase tracking-wider mb-2">
                   {study.category}
                 </div>
 
                 {/* Description */}
-                <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-4">
                   {study.description}
                 </p>
 
                 {/* Services */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {study.services.map((service) => (
-                    <span key={service} className="text-xs px-2 py-1 rounded bg-surface-glass-strong text-text-muted">
+                    <span key={service} className="text-xs px-2 py-1 rounded bg-[var(--surface-glass-strong)] text-[var(--text-muted)]">
                       {service}
                     </span>
                   ))}
                 </div>
 
                 {/* Timeline */}
-                <div className="text-text-muted text-xs">
+                <div className="text-[var(--text-muted)] text-xs">
                   Timeline: {study.timeline}
                 </div>
               </GlassCard>
@@ -84,7 +84,7 @@ export function ProofSection() {
           <Button
             onClick={() => navigateTo('results')}
             variant="outline"
-            className="border-border-glass hover:border-[#3B82F6] hover:text-text-primary group"
+            className="border-[var(--border-glass)] hover:border-[#22C55E] hover:text-[var(--text-primary)] group"
           >
             View All Results
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

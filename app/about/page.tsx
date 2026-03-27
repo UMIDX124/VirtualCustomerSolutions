@@ -97,20 +97,20 @@ export default function AboutPage() {
           {/* Hero Image Section */}
           <div className="relative h-[400px] rounded-2xl overflow-hidden mb-20 group">
             {/* Premium gradient placeholder with geometric shapes */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6] via-[#1D4ED8] to-[#0F172A]" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#22C55E] via-[#059669] to-[#0F172A]" />
             {/* Decorative geometric elements */}
             <div className="absolute top-12 left-12 w-40 h-40 rounded-full border border-white/10 group-hover:scale-105 transition-transform duration-700" />
             <div className="absolute top-16 left-16 w-32 h-32 rounded-full border border-white/[0.07]" />
             <div className="absolute bottom-16 right-16 w-64 h-64 rotate-45 border border-white/[0.05] group-hover:rotate-[50deg] transition-transform duration-700" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-white/[0.04] blur-2xl" />
-            <div className="absolute -bottom-4 -right-4 w-80 h-80 rounded-full bg-[#3B82F6]/20 blur-[100px]" />
+            <div className="absolute -bottom-4 -right-4 w-80 h-80 rounded-full bg-[#22C55E]/20 blur-[100px]" />
             {/* Grid pattern overlay */}
             <div className="absolute inset-0 grid-bg opacity-10" />
             {/* Gradient overlay from dark to transparent */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/40 to-transparent" />
             {/* Content overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-10">
-              <p className="text-[#3B82F6] text-sm font-semibold uppercase tracking-widest mb-2">Est. 2020</p>
+              <p className="text-[#22C55E] text-sm font-semibold uppercase tracking-widest mb-2">Est. 2020</p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-2">
                 Building the Future of Work
               </h2>
@@ -191,15 +191,15 @@ export default function AboutPage() {
               {team.map((member, index) => (
                 <FadeUp key={member.name} delay={index * 0.1}>
                   <GlassCard className="p-6 text-center">
-                    <div className="w-20 h-20 rounded-full bg-[#3B82F6]/20 flex items-center justify-center mx-auto mb-4">
-                      <span className="text-3xl font-bold text-[#3B82F6]">
+                    <div className="w-20 h-20 rounded-full bg-[#22C55E]/20 flex items-center justify-center mx-auto mb-4">
+                      <span className="text-3xl font-bold text-[#22C55E]">
                         {member.name.charAt(0)}
                       </span>
                     </div>
                     <h3 className="font-display text-lg font-bold text-text-primary mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-[#3B82F6] text-sm font-medium mb-2">
+                    <p className="text-[#22C55E] text-sm font-medium mb-2">
                       {member.role}
                     </p>
                     <p className="text-text-muted text-sm">
@@ -221,7 +221,7 @@ export default function AboutPage() {
             </p>
             <a
               href="/free-audit"
-              className="inline-flex items-center gap-2 bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#22C55E] hover:bg-[#059669] text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-300"
             >
               🎯 Get Your FREE Digital Audit
             </a>

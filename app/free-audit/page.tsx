@@ -64,10 +64,10 @@ export default function FreeAuditPage() {
               Check your email for updates. In the meantime, feel free to explore our services or pricing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/services" className="bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold px-6 py-3 rounded-lg transition-all">
+              <a href="/services" className="bg-[#22C55E] hover:bg-[#059669] text-white font-semibold px-6 py-3 rounded-lg transition-all">
                 View Our Services
               </a>
-              <a href="/pricing" className="bg-surface-glass border border-border-glass hover:bg-[#3B82F6]/10 text-text-primary font-semibold px-6 py-3 rounded-lg transition-all">
+              <a href="/pricing" className="bg-surface-glass border border-border-glass hover:bg-[#22C55E]/10 text-text-primary font-semibold px-6 py-3 rounded-lg transition-all">
                 View Pricing
               </a>
             </div>
@@ -84,7 +84,7 @@ export default function FreeAuditPage() {
           {/* Left Column - Content */}
           <div>
             <FadeUp>
-              <div className="inline-block bg-[#3B82F6]/10 text-[#3B82F6] px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <div className="inline-block bg-[#22C55E]/10 text-[#22C55E] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 🎁 FREE — No Credit Card Required
               </div>
               <h1 className="font-display text-4xl md:text-5xl font-bold text-text-primary mb-4">
@@ -190,7 +190,7 @@ export default function FreeAuditPage() {
                   <select
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full h-10 px-3 rounded-lg bg-surface-glass border border-border-glass text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
+                    className="w-full h-10 px-3 rounded-lg bg-surface-glass border border-border-glass text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-[#22C55E]"
                   >
                     <option value="">Select your budget</option>
                     {budgetOptions.map((option) => (
@@ -208,7 +208,7 @@ export default function FreeAuditPage() {
                   <select
                     value={formData.challenge}
                     onChange={(e) => setFormData({ ...formData, challenge: e.target.value })}
-                    className="w-full h-10 px-3 rounded-lg bg-surface-glass border border-border-glass text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
+                    className="w-full h-10 px-3 rounded-lg bg-surface-glass border border-border-glass text-text-primary text-sm focus:outline-none focus:ring-2 focus:ring-[#22C55E]"
                   >
                     <option value="">Select your challenge</option>
                     {challengeOptions.map((option) => (
@@ -222,7 +222,7 @@ export default function FreeAuditPage() {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold py-4 text-lg mt-4"
+                  className="w-full bg-[#22C55E] hover:bg-[#059669] text-white font-semibold py-4 text-lg mt-4"
                 >
                   {isLoading ? 'Processing...' : '🚀 Get My FREE Audit'}
                   {!isLoading && <ArrowRight className="w-5 h-5 ml-2" />}

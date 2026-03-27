@@ -64,22 +64,22 @@ export function ExitIntentPopup() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ duration: 0.5, ease: smoothEase }}
-            className="relative z-10 bg-surface border border-border-glass rounded-2xl p-8 max-w-md mx-4 shadow-2xl"
+            className="relative z-10 bg-[var(--surface)] border border-[var(--border-glass)] rounded-2xl p-8 max-w-md mx-4 shadow-2xl"
           >
             <button
               onClick={handleDismiss}
-              className="absolute top-4 right-4 p-1 text-text-muted hover:text-text-primary transition-colors duration-[400ms]"
+              className="absolute top-4 right-4 p-1 min-h-[44px] min-w-[44px] flex items-center justify-center text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors duration-[400ms]"
             >
               <X className="w-5 h-5" />
             </button>
 
             <div className="text-center">
               <div className="text-4xl mb-4">🛑</div>
-              <h2 className="font-display text-2xl font-bold text-text-primary mb-2">
+              <h2 className="font-display text-2xl font-bold text-[var(--text-primary)] mb-2">
                 Wait! Before You Go...
               </h2>
-              <p className="text-text-secondary mb-6">
-                Get a <span className="text-[#3B82F6] font-semibold">FREE $499 Digital Audit</span> — On Us.
+              <p className="text-[var(--text-secondary)] mb-6">
+                Get a <span className="text-[#22C55E] font-semibold">FREE $499 Digital Audit</span> — On Us.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -89,11 +89,11 @@ export function ExitIntentPopup() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="bg-surface-glass border-border-glass"
+                  className="bg-[var(--surface-glass)] border-[var(--border-glass)]"
                 />
                 <Button
                   type="submit"
-                  className="w-full bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold py-3"
+                  className="w-full bg-[#22C55E] hover:bg-[#059669] text-white font-semibold py-3"
                 >
                   YES, I Want My Free Audit
                 </Button>
@@ -101,7 +101,7 @@ export function ExitIntentPopup() {
 
               <button
                 onClick={handleDismiss}
-                className="mt-4 text-xs text-text-muted hover:text-text-secondary"
+                className="mt-4 text-xs text-[var(--text-muted)] hover:text-[var(--text-secondary)]"
               >
                 No thanks, I don't want free stuff
               </button>

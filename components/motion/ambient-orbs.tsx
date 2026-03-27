@@ -1,7 +1,5 @@
 "use client";
 
-import { m } from "framer-motion";
-
 import { cn } from "@/lib/utils";
 
 import { useMotionProfile } from "./use-motion-profile";
@@ -83,36 +81,36 @@ export function AmbientOrbs({ className, variant = "section" }: AmbientOrbsProps
   return (
     <div aria-hidden="true" className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}>
       {activeOrbs.map((orb, index) => (
-        <m.div
+        <div
           key={`${variant}-${index}`}
-          className={cn("absolute rounded-full", isCompact ? "blur-2xl" : "blur-3xl", orb.className)}
-          animate={
+          className={cn(
+            "absolute rounded-full will-change-transform",
+            isCompact ? "blur-2xl" : "blur-3xl",
+            prefersReducedMotion ? "" : "animate-ambient-drift",
+            orb.className,
+          )}
+          style={
             prefersReducedMotion
               ? undefined
               : {
-                  x: [0, orb.x * ambientDriftScale, 0],
-                  y: [0, orb.y * ambientDriftScale, 0],
-                  scale: [1, 1 + (orb.scale - 1) * Math.max(ambientDriftScale, 0.55), 1],
-                }
+                  '--drift-x': `${orb.x * ambientDriftScale}px`,
+                  '--drift-y': `${orb.y * ambientDriftScale}px`,
+                  '--drift-scale': `${1 + (orb.scale - 1) * Math.max(ambientDriftScale, 0.55)}`,
+                  '--drift-duration': `${isCompact ? orb.duration * 0.88 : orb.duration}s`,
+                } as React.CSSProperties
           }
-          transition={{
-            duration: isCompact ? orb.duration * 0.88 : orb.duration,
-            repeat: Number.POSITIVE_INFINITY,
-            repeatType: "mirror",
-            ease: "linear",
-          }}
-          style={prefersReducedMotion ? undefined : { willChange: "transform" }}
         />
       ))}
-      <m.div
-        className="absolute inset-0 opacity-45 mix-blend-soft-light"
+      <div
+        className={cn(
+          "absolute inset-0 opacity-45 mix-blend-soft-light",
+          !prefersReducedMotion && !isCompact && "animate-bg-shift",
+        )}
         style={{
           backgroundImage:
             "linear-gradient(130deg, rgba(255,255,255,0.18), transparent 40%), linear-gradient(320deg, rgba(228,90,146,0.12), transparent 45%)",
           backgroundSize: "140% 140%",
         }}
-        animate={prefersReducedMotion || isCompact ? undefined : { backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
-        transition={{ duration: 24, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
       />
     </div>
   );

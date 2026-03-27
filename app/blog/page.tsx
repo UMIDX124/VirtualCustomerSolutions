@@ -55,16 +55,16 @@ export default function BlogPage() {
           {featuredPost && (
             <Link
               href={`/blog/${featuredPost.slug}`}
-              className="block glass-panel p-6 md:p-8 mb-12 group hover:border-[rgba(59,130,246,0.2)] transition-all"
+              className="block glass-panel p-6 md:p-8 mb-12 group hover:border-[rgba(34,197,94,0.2)] transition-all"
             >
               <div className="flex flex-col md:flex-row gap-6 md:gap-10">
                 {/* Thumbnail placeholder */}
-                <div className="shrink-0 w-full md:w-80 h-48 md:h-auto rounded-xl bg-gradient-to-br from-[rgba(59,130,246,0.1)] to-[rgba(29,78,216,0.05)] border border-[rgba(255,255,255,0.04)] flex items-center justify-center">
-                  <Tag className="w-10 h-10 text-[#3B82F6] opacity-40" />
+                <div className="shrink-0 w-full md:w-80 h-48 md:h-auto rounded-xl bg-gradient-to-br from-[rgba(34,197,94,0.1)] to-[rgba(29,78,216,0.05)] border border-[rgba(255,255,255,0.04)] flex items-center justify-center">
+                  <Tag className="w-10 h-10 text-[#22C55E] opacity-40" />
                 </div>
                 <div className="flex-1 min-w-0 flex flex-col justify-center">
                   <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[rgba(59,130,246,0.1)] text-[#3B82F6] border border-[rgba(59,130,246,0.2)]">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[rgba(34,197,94,0.1)] text-[#22C55E] border border-[rgba(34,197,94,0.2)]">
                       {featuredPost.featured ? 'Featured' : featuredPost.category}
                     </span>
                     <span className="text-sm text-[#64748B]">
@@ -75,7 +75,7 @@ export default function BlogPage() {
                       })}
                     </span>
                   </div>
-                  <h2 className="font-display text-2xl md:text-3xl font-bold text-[#F8FAFC] mb-3 group-hover:text-[#3B82F6] transition-colors">
+                  <h2 className="font-display text-2xl md:text-3xl font-bold text-[#F8FAFC] mb-3 group-hover:text-[#22C55E] transition-colors">
                     {featuredPost.title}
                   </h2>
                   <p className="text-[#94A3B8] leading-relaxed mb-4 line-clamp-3">
@@ -86,7 +86,7 @@ export default function BlogPage() {
                       <Clock className="w-3.5 h-3.5" />
                       {featuredPost.readingTime} min read
                     </span>
-                    <span className="inline-flex items-center gap-1 text-sm text-[#3B82F6] font-medium group-hover:gap-2 transition-all">
+                    <span className="inline-flex items-center gap-1 text-sm text-[#22C55E] font-medium group-hover:gap-2 transition-all">
                       Read article <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
@@ -111,11 +111,11 @@ export default function BlogPage() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 h-12 px-4 rounded-lg bg-[rgba(59,130,246,0.04)] border border-[rgba(255,255,255,0.08)] text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
+                className="flex-1 h-12 px-4 rounded-lg bg-[rgba(34,197,94,0.04)] border border-[rgba(255,255,255,0.08)] text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:ring-2 focus:ring-[#22C55E]"
               />
               <button
                 type="submit"
-                className="bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold px-6 py-3 rounded-lg transition-all"
+                className="bg-[#22C55E] hover:bg-[#059669] text-white font-semibold px-6 py-3 rounded-lg transition-all"
               >
                 Subscribe
               </button>

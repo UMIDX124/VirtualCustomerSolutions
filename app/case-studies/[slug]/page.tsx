@@ -158,7 +158,7 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
               {cs.results.map((result) => (
                 <div
                   key={result.metric}
-                  className="group relative overflow-hidden rounded-2xl border border-[var(--border-strong)] bg-[var(--bg-primary)] p-6 transition-all hover:border-[var(--red-primary)] hover:shadow-[0_0_30px_var(--red-glow)]"
+                  className="group relative overflow-hidden rounded-2xl border border-[var(--border-strong)] bg-[var(--bg-primary)] p-6 transition-[border-color,box-shadow] hover:border-[var(--red-primary)] hover:shadow-[0_0_30px_var(--red-glow)]"
                 >
                   <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[var(--red-dark)] to-[var(--red-primary)] opacity-0 transition-opacity group-hover:opacity-100" />
                   <div className="font-mono text-3xl font-bold text-[var(--red-primary)]">

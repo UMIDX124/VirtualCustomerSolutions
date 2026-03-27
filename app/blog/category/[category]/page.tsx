@@ -83,14 +83,14 @@ export default async function CategoryPage({ params }: PageProps) {
           <div className="max-w-3xl mb-12">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1.5 text-sm text-[#94A3B8] hover:text-[#3B82F6] transition-colors mb-4"
+              className="inline-flex items-center gap-1.5 text-sm text-[#94A3B8] hover:text-[#22C55E] transition-colors mb-4"
             >
               <ArrowLeft className="w-4 h-4" />
               All Articles
             </Link>
 
             <div className="flex items-center gap-3 mb-4">
-              <Tag className="w-5 h-5 text-[#3B82F6]" />
+              <Tag className="w-5 h-5 text-[#22C55E]" />
               <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[#F8FAFC]">
                 {categoryName}
               </h1>
@@ -117,14 +117,14 @@ export default async function CategoryPage({ params }: PageProps) {
                   <Link
                     key={post.slug}
                     href={`/blog/${post.slug}`}
-                    className="glass-panel p-6 group hover:border-[rgba(59,130,246,0.2)] transition-all flex flex-col"
+                    className="glass-panel p-6 group hover:border-[rgba(34,197,94,0.2)] transition-all flex flex-col"
                   >
                     {/* Category badge */}
-                    <span className="inline-flex self-start items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[rgba(59,130,246,0.08)] text-[#3B82F6] border border-[rgba(59,130,246,0.15)] mb-4">
+                    <span className="inline-flex self-start items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[rgba(34,197,94,0.08)] text-[#22C55E] border border-[rgba(34,197,94,0.15)] mb-4">
                       {post.category}
                     </span>
 
-                    <h2 className="font-display text-lg font-bold text-[#F8FAFC] mb-2 group-hover:text-[#3B82F6] transition-colors line-clamp-2">
+                    <h2 className="font-display text-lg font-bold text-[#F8FAFC] mb-2 group-hover:text-[#22C55E] transition-colors line-clamp-2">
                       {post.title}
                     </h2>
 
@@ -153,7 +153,7 @@ export default async function CategoryPage({ params }: PageProps) {
               </p>
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 mt-4 text-[#3B82F6] hover:text-[#60A5FA] transition-colors font-medium"
+                className="inline-flex items-center gap-2 mt-4 text-[#22C55E] hover:text-[#4ADE80] transition-colors font-medium"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Browse all articles

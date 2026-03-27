@@ -25,7 +25,7 @@ const reports = [
     category: "Workforce",
     readTime: "8 min read",
     date: "March 2025",
-    color: "#3B82F6",
+    color: "#22C55E",
     stats: [
       { label: "Data Points", value: "2,400+" },
       { label: "Industries", value: "12" },
@@ -96,7 +96,7 @@ export default function ResearchPage() {
       {/* Hero */}
       <section className="relative overflow-hidden section-padding">
         <div className="absolute inset-0 bg-dots opacity-30" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-[radial-gradient(ellipse,rgba(59,130,246,0.12),transparent_70%)]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-[radial-gradient(ellipse,rgba(34,197,94,0.12),transparent_70%)]" />
         <div className="container-wide relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -134,8 +134,8 @@ export default function ResearchPage() {
                 const Icon = stat.icon;
                 return (
                   <div key={stat.label} className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-[rgba(59,130,246,0.12)] flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-[#3B82F6]" />
+                    <div className="w-10 h-10 rounded-lg bg-[rgba(34,197,94,0.12)] flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-[#22C55E]" />
                     </div>
                     <div className="text-left">
                       <div className="font-mono text-lg font-bold text-[#F8FAFC]">
@@ -168,7 +168,7 @@ export default function ResearchPage() {
                 >
                   <Link
                     href={report.href}
-                    className="group card-accent p-0 hover:border-[#3B82F6] transition-all duration-300 flex flex-col h-full overflow-hidden"
+                    className="group card-accent p-0 hover:border-[#22C55E] transition-[border-color] duration-300 flex flex-col h-full overflow-hidden"
                   >
                     {/* Color bar */}
                     <div
@@ -195,7 +195,7 @@ export default function ResearchPage() {
                         </span>
                       </div>
 
-                      <h2 className="text-xl font-bold text-[#F8FAFC] mb-3 group-hover:text-[#3B82F6] transition-colors">
+                      <h2 className="text-xl font-bold text-[#F8FAFC] mb-3 group-hover:text-[#22C55E] transition-colors">
                         {report.title}
                       </h2>
                       <p className="text-sm text-[#94A3B8] mb-4 leading-relaxed">
@@ -245,7 +245,7 @@ export default function ResearchPage() {
                           {report.readTime}
                         </span>
                       </div>
-                      <div className="flex items-center gap-1 text-xs font-semibold text-[#3B82F6]">
+                      <div className="flex items-center gap-1 text-xs font-semibold text-[#22C55E]">
                         Read Report
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                       </div>

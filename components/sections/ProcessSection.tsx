@@ -51,19 +51,19 @@ export function ProcessSection() {
               <FadeUp key={step.number} delay={index * 0.1}>
                 <div className="relative text-center lg:text-left">
                   {/* Number Badge */}
-                  <div className="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-surface-glass border border-border-glass mb-6 mx-auto lg:mx-0">
-                    <step.icon className="w-7 h-7 text-[#3B82F6]" />
-                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#3B82F6] flex items-center justify-center">
+                  <div className="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--surface-glass)] border border-[var(--border-glass)] mb-6 mx-auto lg:mx-0">
+                    <step.icon className="w-7 h-7 text-[#22C55E]" />
+                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#22C55E] flex items-center justify-center">
                       <SignalPoint size="sm" pulse={false} />
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="text-text-muted text-xs font-mono mb-2">{step.number}</div>
-                  <h3 className="font-display text-lg font-semibold text-text-primary mb-2">
+                  <div className="text-[var(--text-muted)] text-xs font-mono mb-2">{step.number}</div>
+                  <h3 className="font-display text-lg font-semibold text-[var(--text-primary)] mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-text-secondary text-sm leading-relaxed">
+                  <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
                     {step.description}
                   </p>
                 </div>

@@ -141,7 +141,7 @@ export function GlassCard({ children, className, hover = true, onClick }: GlassC
       onClick={onClick}
       className={cn(
         'relative bg-surface-glass backdrop-blur-xl border border-border-glass rounded-2xl overflow-hidden',
-        hover && 'transition-all duration-[400ms] hover:border-border-active hover:shadow-xl hover:shadow-black/20',
+        hover && 'transition-[border-color,box-shadow] duration-[400ms] hover:border-border-active hover:shadow-xl hover:shadow-black/20',
         className
       )}
     >
@@ -164,7 +164,7 @@ export function MetricDisplay({ value, label, prefix, suffix, className }: Metri
   return (
     <div className={cn('text-center', className)}>
       <div className="font-display text-3xl md:text-4xl font-bold text-text-primary tabular-nums">
-        {prefix && <span className="text-[#3B82F6]">{prefix}</span>}
+        {prefix && <span className="text-[#22C55E]">{prefix}</span>}
         {value}
         {suffix && <span className="text-text-secondary text-xl">{suffix}</span>}
       </div>
@@ -249,7 +249,7 @@ export function SectionHeader({ eyebrow, title, description, align = 'center', c
   return (
     <div className={cn('mb-12 md:mb-16', align === 'center' && 'text-center max-w-3xl mx-auto', className)}>
       {eyebrow && (
-        <span className="text-[#3B82F6] text-sm font-medium uppercase tracking-wider mb-4 block">
+        <span className="text-[#22C55E] text-sm font-medium uppercase tracking-wider mb-4 block">
           {eyebrow}
         </span>
       )}

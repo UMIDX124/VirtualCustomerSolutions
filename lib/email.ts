@@ -42,7 +42,7 @@ async function sendMail(to: string, subject: string, html: string): Promise<void
 const COLORS = {
   bg: '#0F172A',
   surface: '#1E293B',
-  accent: '#3B82F6',
+  accent: '#22C55E',
   text: '#F8FAFC',
   muted: '#94A3B8',
   border: '#334155',

@@ -52,10 +52,10 @@ export function FAQSection() {
       <div className="container-narrow">
         {/* Section Header */}
         <FadeUp className="text-center mb-12">
-          <span className="text-[#3B82F6] text-sm font-medium uppercase tracking-wider mb-4 block">
+          <span className="text-[#22C55E] text-sm font-medium uppercase tracking-wider mb-4 block">
             FAQ
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary leading-tight">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight">
             Common questions about working with us.
           </h2>
         </FadeUp>
@@ -71,11 +71,11 @@ export function FAQSection() {
                   onClick={() => toggleItem(itemKey)}
                   className="w-full text-left p-5 flex items-start justify-between gap-4"
                 >
-                  <span className="font-medium text-text-primary pr-4">
+                  <span className="font-medium text-[var(--text-primary)] pr-4">
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-text-muted flex-shrink-0 mt-0.5 transition-transform duration-500 ${
+                    className={`w-5 h-5 text-[var(--text-muted)] flex-shrink-0 mt-0.5 transition-transform duration-500 ${
                       isOpen ? 'rotate-180' : ''
                     }`}
                   />
@@ -90,7 +90,7 @@ export function FAQSection() {
                       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-5 pb-5 text-text-secondary text-sm leading-relaxed border-t border-white/[0.04] pt-4">
+                      <div className="px-5 pb-5 text-[var(--text-secondary)] text-sm leading-relaxed border-t border-white/[0.04] pt-4">
                         {faq.answer}
                       </div>
                     </motion.div>

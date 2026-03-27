@@ -35,7 +35,7 @@ export function CaseStudyGrid({ caseStudies, services, industries }: CaseStudyGr
               setActiveService(null);
               setActiveIndustry(null);
             }}
-            className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
               !activeService && !activeIndustry
                 ? "bg-[var(--red-primary)] text-[#0F172A]"
                 : "border border-[var(--border-strong)] text-[var(--text-secondary)] hover:border-[var(--red-primary)] hover:text-[var(--text-primary)]"
@@ -50,7 +50,7 @@ export function CaseStudyGrid({ caseStudies, services, industries }: CaseStudyGr
                 setActiveService(activeService === service ? null : service);
                 setActiveIndustry(null);
               }}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                 activeService === service
                   ? "bg-[var(--red-primary)] text-[#0F172A]"
                   : "border border-[var(--border-strong)] text-[var(--text-secondary)] hover:border-[var(--red-primary)] hover:text-[var(--text-primary)]"
@@ -67,7 +67,7 @@ export function CaseStudyGrid({ caseStudies, services, industries }: CaseStudyGr
                 setActiveIndustry(activeIndustry === industry ? null : industry);
                 setActiveService(null);
               }}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+              className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                 activeIndustry === industry
                   ? "bg-[var(--red-primary)] text-[#0F172A]"
                   : "border border-[var(--border-strong)] text-[var(--text-secondary)] hover:border-[var(--red-primary)] hover:text-[var(--text-primary)]"
@@ -85,7 +85,7 @@ export function CaseStudyGrid({ caseStudies, services, industries }: CaseStudyGr
           <Link
             key={cs.slug}
             href={`/case-studies/${cs.slug}`}
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-[var(--border-strong)] bg-[var(--surface-elevated)] transition-all duration-300 hover:border-[var(--red-primary)] hover:shadow-[0_0_40px_var(--red-glow)]"
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-[var(--border-strong)] bg-[var(--surface-elevated)] transition-[border-color,box-shadow] duration-300 hover:border-[var(--red-primary)] hover:shadow-[0_0_40px_var(--red-glow)]"
           >
             {/* Top accent bar */}
             <div className="h-1 w-full bg-gradient-to-r from-[var(--red-dark)] to-[var(--red-primary)]" />

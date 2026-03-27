@@ -27,7 +27,7 @@ export function ProofBar() {
             const Icon = m.icon;
             return (
               <StaggerItem key={m.label} className="flex flex-col items-center gap-2 text-center">
-                <Icon className="h-5 w-5 text-[#3B82F6]" />
+                <Icon className="h-5 w-5 text-[#22C55E]" />
                 <p className="font-display text-2xl font-bold tracking-tight text-[#F8FAFC] sm:text-3xl">
                   <CountUpOnView target={m.value} suffix={m.suffix} duration={2} className="tabular-nums" />
                 </p>

@@ -43,7 +43,7 @@ export function CookieConsent() {
             <button
               onClick={handleDecline}
               aria-label="Dismiss cookie consent"
-              className="absolute right-3 top-3 rounded-full p-1 text-[#94A3B8] transition hover:bg-white/5 hover:text-[#F8FAFC]"
+              className="absolute right-3 top-3 rounded-full p-1 min-h-[44px] min-w-[44px] flex items-center justify-center text-[#94A3B8] transition-colors hover:bg-white/5 hover:text-[#F8FAFC]"
             >
               <X className="h-4 w-4" />
             </button>
@@ -51,7 +51,7 @@ export function CookieConsent() {
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               {/* icon + text */}
               <div className="flex items-start gap-3 sm:flex-1">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#3B82F6]/10 text-[#3B82F6]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#22C55E]/10 text-[#22C55E]">
                   <Cookie className="h-5 w-5" />
                 </div>
                 <div>
@@ -63,7 +63,7 @@ export function CookieConsent() {
                     traffic, and improve our services.{' '}
                     <Link
                       href="/privacy-policy"
-                      className="inline-flex items-center gap-1 text-[#3B82F6] underline underline-offset-2 transition hover:text-[#60A5FA]"
+                      className="inline-flex items-center gap-1 text-[#22C55E] underline underline-offset-2 transition hover:text-[#4ADE80]"
                     >
                       <Shield className="h-3 w-3" />
                       Privacy Policy
@@ -82,7 +82,7 @@ export function CookieConsent() {
                 </button>
                 <button
                   onClick={handleAccept}
-                  className="rounded-full bg-gradient-to-r from-[#1D4ED8] to-[#3B82F6] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-[#3B82F6]/20 transition hover:shadow-[#3B82F6]/30"
+                  className="rounded-full bg-gradient-to-r from-[#059669] to-[#22C55E] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-[#22C55E]/20 transition hover:shadow-[#22C55E]/30"
                 >
                   Accept
                 </button>

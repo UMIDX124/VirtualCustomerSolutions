@@ -57,7 +57,7 @@ export function BlogListClient({ posts, categories }: BlogListClientProps) {
             placeholder="Search articles..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full h-11 pl-10 pr-10 rounded-lg bg-[rgba(59,130,246,0.04)] border border-[rgba(255,255,255,0.08)] text-[#F8FAFC] placeholder:text-[#64748B] text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6] transition-all"
+            className="w-full h-11 pl-10 pr-10 rounded-lg bg-[rgba(34,197,94,0.04)] border border-[rgba(255,255,255,0.08)] text-[#F8FAFC] placeholder:text-[#64748B] text-sm focus:outline-none focus:ring-2 focus:ring-[#22C55E] transition-all"
           />
           {searchQuery && (
             <button
@@ -76,8 +76,8 @@ export function BlogListClient({ posts, categories }: BlogListClientProps) {
             onClick={() => setActiveCategory('All')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
               activeCategory === 'All'
-                ? 'bg-[#3B82F6] text-white'
-                : 'bg-[rgba(59,130,246,0.04)] text-[#94A3B8] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(59,130,246,0.2)] hover:text-[#CBD5E1]'
+                ? 'bg-[#22C55E] text-white'
+                : 'bg-[rgba(34,197,94,0.04)] text-[#94A3B8] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(34,197,94,0.2)] hover:text-[#CBD5E1]'
             }`}
           >
             All
@@ -88,8 +88,8 @@ export function BlogListClient({ posts, categories }: BlogListClientProps) {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 activeCategory === cat
-                  ? 'bg-[#3B82F6] text-white'
-                  : 'bg-[rgba(59,130,246,0.04)] text-[#94A3B8] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(59,130,246,0.2)] hover:text-[#CBD5E1]'
+                  ? 'bg-[#22C55E] text-white'
+                  : 'bg-[rgba(34,197,94,0.04)] text-[#94A3B8] border border-[rgba(255,255,255,0.06)] hover:border-[rgba(34,197,94,0.2)] hover:text-[#CBD5E1]'
               }`}
             >
               {cat}
@@ -120,13 +120,13 @@ export function BlogListClient({ posts, categories }: BlogListClientProps) {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="glass-panel p-6 group hover:border-[rgba(59,130,246,0.2)] transition-all flex flex-col"
+                className="glass-panel p-6 group hover:border-[rgba(34,197,94,0.2)] transition-all flex flex-col"
               >
-                <span className="inline-flex self-start items-center text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[rgba(59,130,246,0.08)] text-[#3B82F6] border border-[rgba(59,130,246,0.15)] mb-4">
+                <span className="inline-flex self-start items-center text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[rgba(34,197,94,0.08)] text-[#22C55E] border border-[rgba(34,197,94,0.15)] mb-4">
                   {post.category}
                 </span>
 
-                <h2 className="font-display text-lg font-bold text-[#F8FAFC] mb-2 group-hover:text-[#3B82F6] transition-colors line-clamp-2">
+                <h2 className="font-display text-lg font-bold text-[#F8FAFC] mb-2 group-hover:text-[#22C55E] transition-colors line-clamp-2">
                   {post.title}
                 </h2>
 

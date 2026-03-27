@@ -107,7 +107,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <div className="flex flex-wrap items-center gap-3 mb-5">
               <Link
                 href={`/blog/category/${post.category.toLowerCase().replace(/\s+/g, '-')}`}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full bg-[rgba(59,130,246,0.1)] text-[#3B82F6] border border-[rgba(59,130,246,0.2)] hover:bg-[rgba(59,130,246,0.15)] transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full bg-[rgba(34,197,94,0.1)] text-[#22C55E] border border-[rgba(34,197,94,0.2)] hover:bg-[rgba(34,197,94,0.15)] transition-colors"
               >
                 <Tag className="w-3 h-3" />
                 {post.category}
@@ -132,7 +132,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
             {/* Author line */}
             <div className="mt-6 flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#1D4ED8] flex items-center justify-center">
+              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#22C55E] to-[#059669] flex items-center justify-center">
                 <span className="text-xs font-bold text-white">
                   {post.author
                     .split(' ')
@@ -209,7 +209,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                     a: ({ children, href, ...props }) => (
                       <a
                         href={href}
-                        className="text-[#3B82F6] hover:text-[#60A5FA] underline underline-offset-2 transition-colors"
+                        className="text-[#22C55E] hover:text-[#4ADE80] underline underline-offset-2 transition-colors"
                         target={href?.startsWith('http') ? '_blank' : undefined}
                         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                         {...props}
@@ -219,7 +219,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                     ),
                     blockquote: ({ children, ...props }) => (
                       <blockquote
-                        className="border-l-4 border-[#3B82F6] pl-5 my-6 text-[#94A3B8] italic"
+                        className="border-l-4 border-[#22C55E] pl-5 my-6 text-[#94A3B8] italic"
                         {...props}
                       >
                         {children}
@@ -229,7 +229,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                       const isInline = !className;
                       if (isInline) {
                         return (
-                          <code className="font-mono text-sm bg-[rgba(59,130,246,0.08)] text-[#60A5FA] px-1.5 py-0.5 rounded" {...props}>
+                          <code className="font-mono text-sm bg-[rgba(34,197,94,0.08)] text-[#4ADE80] px-1.5 py-0.5 rounded" {...props}>
                             {children}
                           </code>
                         );
@@ -315,7 +315,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                     a: ({ children, href, ...props }) => (
                       <a
                         href={href}
-                        className="text-[#3B82F6] hover:text-[#60A5FA] underline underline-offset-2 transition-colors"
+                        className="text-[#22C55E] hover:text-[#4ADE80] underline underline-offset-2 transition-colors"
                         target={href?.startsWith('http') ? '_blank' : undefined}
                         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                         {...props}
@@ -325,7 +325,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                     ),
                     blockquote: ({ children, ...props }) => (
                       <blockquote
-                        className="border-l-4 border-[#3B82F6] pl-5 my-6 text-[#94A3B8] italic"
+                        className="border-l-4 border-[#22C55E] pl-5 my-6 text-[#94A3B8] italic"
                         {...props}
                       >
                         {children}
@@ -335,7 +335,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                       const isInline = !className;
                       if (isInline) {
                         return (
-                          <code className="font-mono text-sm bg-[rgba(59,130,246,0.08)] text-[#60A5FA] px-1.5 py-0.5 rounded" {...props}>
+                          <code className="font-mono text-sm bg-[rgba(34,197,94,0.08)] text-[#4ADE80] px-1.5 py-0.5 rounded" {...props}>
                             {children}
                           </code>
                         );
@@ -372,7 +372,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                         key={index}
                         className="group glass-panel overflow-hidden"
                       >
-                        <summary className="flex items-center justify-between cursor-pointer p-5 text-[#F8FAFC] font-medium hover:text-[#3B82F6] transition-colors list-none">
+                        <summary className="flex items-center justify-between cursor-pointer p-5 text-[#F8FAFC] font-medium hover:text-[#22C55E] transition-colors list-none">
                           <span className="pr-4">{faq.question}</span>
                           <span className="shrink-0 text-[#94A3B8] group-open:rotate-45 transition-transform text-xl">
                             +
@@ -406,18 +406,18 @@ export default async function BlogPostPage({ params }: PageProps) {
                       <Link
                         key={related.slug}
                         href={`/blog/${related.slug}`}
-                        className="glass-panel p-5 group hover:border-[rgba(59,130,246,0.2)] transition-all"
+                        className="glass-panel p-5 group hover:border-[rgba(34,197,94,0.2)] transition-all"
                       >
-                        <span className="text-xs font-semibold uppercase tracking-wider text-[#3B82F6] mb-2 block">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-[#22C55E] mb-2 block">
                           {related.category}
                         </span>
-                        <h3 className="font-display text-base font-semibold text-[#F8FAFC] mb-2 group-hover:text-[#3B82F6] transition-colors line-clamp-2">
+                        <h3 className="font-display text-base font-semibold text-[#F8FAFC] mb-2 group-hover:text-[#22C55E] transition-colors line-clamp-2">
                           {related.title}
                         </h3>
                         <p className="text-sm text-[#94A3B8] line-clamp-2">
                           {related.excerpt}
                         </p>
-                        <span className="inline-flex items-center gap-1 text-sm text-[#3B82F6] mt-3 font-medium">
+                        <span className="inline-flex items-center gap-1 text-sm text-[#22C55E] mt-3 font-medium">
                           Read more
                           <ArrowLeft className="w-3.5 h-3.5 rotate-180" />
                         </span>

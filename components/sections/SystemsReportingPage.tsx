@@ -98,21 +98,21 @@ export function SystemsReportingPage() {
         
         <Container className="relative z-10 pt-32 pb-20">
           <FadeUp>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-glass border border-border-glass text-text-secondary text-sm mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--surface-glass)] border border-[var(--border-glass)] text-[var(--text-secondary)] text-sm mb-6">
               <SignalPoint size="sm" />
               Systems & Reporting
             </span>
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-[1.1] tracking-tight max-w-4xl">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-[1.1] tracking-tight max-w-4xl">
               Fix the{' '}
               <span className="text-gradient-lime">systems behind the numbers</span>.
             </h1>
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <p className="text-text-secondary text-lg mt-6 max-w-2xl leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-lg mt-6 max-w-2xl leading-relaxed">
               Attribution, CRM structure, automation, and dashboards. The invisible infrastructure that determines whether you can scale or just spend.
             </p>
           </FadeUp>
@@ -121,7 +121,7 @@ export function SystemsReportingPage() {
             <div className="flex flex-wrap gap-4 mt-8">
               <Button
                 onClick={() => navigateTo('free-growth-audit')}
-                className="bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold px-6 group"
+                className="bg-[#22C55E] hover:bg-[#059669] text-white font-semibold px-6 group"
               >
                 Get Audit
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -129,7 +129,7 @@ export function SystemsReportingPage() {
               <Button
                 onClick={() => navigateTo('results')}
                 variant="outline"
-                className="border-border-glass hover:border-[#3B82F6] hover:text-text-primary bg-transparent"
+                className="border-[var(--border-glass)] hover:border-[#22C55E] hover:text-[var(--text-primary)] bg-transparent"
               >
                 See Results
               </Button>
@@ -152,13 +152,13 @@ export function SystemsReportingPage() {
             {systemTypes.map((system) => (
               <StaggerItem key={system.title}>
                 <GlassCard className="p-6 h-full">
-                  <div className="w-12 h-12 rounded-xl bg-[#1D4ED8]/10 flex items-center justify-center mb-4">
-                    <system.icon className="w-6 h-6 text-[#3B82F6]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#059669]/10 flex items-center justify-center mb-4">
+                    <system.icon className="w-6 h-6 text-[#22C55E]" />
                   </div>
-                  <h3 className="font-display font-semibold text-text-primary mb-2">
+                  <h3 className="font-display font-semibold text-[var(--text-primary)] mb-2">
                     {system.title}
                   </h3>
-                  <p className="text-text-secondary text-sm leading-relaxed">
+                  <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
                     {system.description}
                   </p>
                 </GlassCard>
@@ -188,11 +188,11 @@ export function SystemsReportingPage() {
                     onClick={() => setActiveTab(tab)}
                     className={`w-full text-left p-4 rounded-xl transition-all ${
                       activeTab.id === tab.id
-                        ? 'bg-surface-glass border border-[#3B82F6]'
-                        : 'bg-surface-glass border border-transparent hover:border-border-glass'
+                        ? 'bg-[var(--surface-glass)] border border-[#22C55E]'
+                        : 'bg-[var(--surface-glass)] border border-transparent hover:border-[var(--border-glass)]'
                     }`}
                   >
-                    <span className="font-medium text-text-primary">{tab.label}</span>
+                    <span className="font-medium text-[var(--text-primary)]">{tab.label}</span>
                   </button>
                 ))}
               </div>
@@ -201,10 +201,10 @@ export function SystemsReportingPage() {
             {/* Content */}
             <FadeUp delay={0.2} className="lg:col-span-2">
               <GlassCard className="p-8 h-full">
-                <h3 className="font-display text-xl font-bold text-text-primary mb-4">
+                <h3 className="font-display text-xl font-bold text-[var(--text-primary)] mb-4">
                   {activeTab.content.title}
                 </h3>
-                <p className="text-text-secondary mb-6">
+                <p className="text-[var(--text-secondary)] mb-6">
                   {activeTab.content.description}
                 </p>
                 
@@ -217,10 +217,10 @@ export function SystemsReportingPage() {
                       transition={{ delay: i * 0.1 }}
                       className="flex items-center gap-3"
                     >
-                      <div className="w-8 h-8 rounded-full bg-[#1D4ED8]/10 flex items-center justify-center text-[#3B82F6] text-sm font-mono">
+                      <div className="w-8 h-8 rounded-full bg-[#059669]/10 flex items-center justify-center text-[#22C55E] text-sm font-mono">
                         {i + 1}
                       </div>
-                      <span className="text-text-primary">{step}</span>
+                      <span className="text-[var(--text-primary)]">{step}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -246,7 +246,7 @@ export function SystemsReportingPage() {
                 {breakPoints.map((point) => (
                   <div key={point} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-signal flex-shrink-0 mt-0.5" />
-                    <span className="text-text-secondary">{point}</span>
+                    <span className="text-[var(--text-secondary)]">{point}</span>
                   </div>
                 ))}
               </div>
@@ -260,15 +260,15 @@ export function SystemsReportingPage() {
         <Container size="narrow">
           <FadeUp>
             <GlassCard className="p-8 md:p-12 text-center">
-              <h2 className="font-display text-3xl font-bold text-text-primary mb-4">
+              <h2 className="font-display text-3xl font-bold text-[var(--text-primary)] mb-4">
                 Need systems clarity?
               </h2>
-              <p className="text-text-secondary mb-6 max-w-lg mx-auto">
+              <p className="text-[var(--text-secondary)] mb-6 max-w-lg mx-auto">
                 Let's audit your current setup and identify the gaps costing you visibility and decisions.
               </p>
               <Button
                 onClick={() => navigateTo('free-growth-audit')}
-                className="bg-[#3B82F6] hover:bg-[#1D4ED8] text-white font-semibold px-8 py-6 group"
+                className="bg-[#22C55E] hover:bg-[#059669] text-white font-semibold px-8 py-6 group"
               >
                 Request Free Growth Audit
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

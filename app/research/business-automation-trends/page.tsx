@@ -51,10 +51,10 @@ const costReductionData = [
 ];
 
 const automationTypes = [
-  { name: "Workflow Automation", value: 32, color: "#3B82F6" },
-  { name: "AI / ML", value: 24, color: "#1D4ED8" },
-  { name: "RPA", value: 20, color: "#60A5FA" },
-  { name: "Chatbots", value: 14, color: "#93C5FD" },
+  { name: "Workflow Automation", value: 32, color: "#22C55E" },
+  { name: "AI / ML", value: 24, color: "#059669" },
+  { name: "RPA", value: 20, color: "#4ADE80" },
+  { name: "Chatbots", value: 14, color: "#86EFAC" },
   { name: "Other", value: 10, color: "#BFDBFE" },
 ];
 
@@ -181,8 +181,8 @@ export default function BusinessAutomationTrendsPage() {
               <AreaChart data={adoptionByYear}>
                 <defs>
                   <linearGradient id="adoptionGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.3} />
-                    <stop offset="95%" stopColor="#3B82F6" stopOpacity={0} />
+                    <stop offset="5%" stopColor="#22C55E" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="#22C55E" stopOpacity={0} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
@@ -193,10 +193,10 @@ export default function BusinessAutomationTrendsPage() {
                   type="monotone"
                   dataKey="adoption"
                   name="Adoption"
-                  stroke="#3B82F6"
+                  stroke="#22C55E"
                   strokeWidth={3}
                   fill="url(#adoptionGrad)"
-                  dot={{ fill: "#3B82F6", r: 5, strokeWidth: 2, stroke: "#0F172A" }}
+                  dot={{ fill: "#22C55E", r: 5, strokeWidth: 2, stroke: "#0F172A" }}
                 />
               </AreaChart>
             </ResponsiveContainer>
@@ -244,7 +244,7 @@ export default function BusinessAutomationTrendsPage() {
                 />
                 <Legend wrapperStyle={{ fontSize: 12, color: "#94A3B8" }} />
                 <Bar dataKey="before" name="Before" fill="#334155" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="after" name="After" fill="#3B82F6" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="after" name="After" fill="#22C55E" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -274,9 +274,9 @@ export default function BusinessAutomationTrendsPage() {
                   <YAxis stroke="#64748B" fontSize={12} tickFormatter={(v) => `${v}%`} />
                   <Tooltip content={<ChartTooltip />} />
                   <Legend wrapperStyle={{ fontSize: 12, color: "#94A3B8" }} />
-                  <Line type="monotone" dataKey="labor" name="Labor Costs" stroke="#3B82F6" strokeWidth={2} dot={false} />
-                  <Line type="monotone" dataKey="operations" name="Operations" stroke="#60A5FA" strokeWidth={2} dot={false} />
-                  <Line type="monotone" dataKey="errors" name="Error Costs" stroke="#93C5FD" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="labor" name="Labor Costs" stroke="#22C55E" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="operations" name="Operations" stroke="#4ADE80" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="errors" name="Error Costs" stroke="#86EFAC" strokeWidth={2} dot={false} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -351,8 +351,8 @@ export default function BusinessAutomationTrendsPage() {
               <AreaChart data={roiTimelineData}>
                 <defs>
                   <linearGradient id="roiGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.3} />
-                    <stop offset="95%" stopColor="#3B82F6" stopOpacity={0} />
+                    <stop offset="5%" stopColor="#22C55E" stopOpacity={0.3} />
+                    <stop offset="95%" stopColor="#22C55E" stopOpacity={0} />
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
@@ -363,10 +363,10 @@ export default function BusinessAutomationTrendsPage() {
                   type="monotone"
                   dataKey="roi"
                   name="ROI"
-                  stroke="#3B82F6"
+                  stroke="#22C55E"
                   strokeWidth={3}
                   fill="url(#roiGrad)"
-                  dot={{ fill: "#3B82F6", r: 5, strokeWidth: 2, stroke: "#0F172A" }}
+                  dot={{ fill: "#22C55E", r: 5, strokeWidth: 2, stroke: "#0F172A" }}
                 />
               </AreaChart>
             </ResponsiveContainer>

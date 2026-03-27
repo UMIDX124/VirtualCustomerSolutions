@@ -41,7 +41,7 @@ export function AuthorBox({ authorName }: AuthorBoxProps) {
     <div className="glass-panel p-6 md:p-8">
       <div className="flex flex-col sm:flex-row gap-5">
         {/* Initials Avatar */}
-        <div className="shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#1D4ED8] flex items-center justify-center">
+        <div className="shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#22C55E] to-[#059669] flex items-center justify-center">
           <span className="font-display text-xl font-bold text-white">
             {author.initials}
           </span>
@@ -54,14 +54,14 @@ export function AuthorBox({ authorName }: AuthorBoxProps) {
               <h3 className="font-display text-lg font-bold text-[#F8FAFC]">
                 {author.name}
               </h3>
-              <p className="text-sm text-[#3B82F6] font-medium">{author.title}</p>
+              <p className="text-sm text-[#22C55E] font-medium">{author.title}</p>
             </div>
             <Link
               href={author.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${author.name} on LinkedIn`}
-              className="shrink-0 p-2 rounded-lg border border-[rgba(255,255,255,0.06)] bg-[rgba(59,130,246,0.04)] hover:bg-[rgba(59,130,246,0.1)] transition-colors"
+              className="shrink-0 p-2 rounded-lg border border-[rgba(255,255,255,0.06)] bg-[rgba(34,197,94,0.04)] hover:bg-[rgba(34,197,94,0.1)] transition-colors"
             >
               <Linkedin className="w-4 h-4 text-[#94A3B8]" />
             </Link>
@@ -77,7 +77,7 @@ export function AuthorBox({ authorName }: AuthorBoxProps) {
             {author.expertise.map((tag) => (
               <span
                 key={tag}
-                className="text-xs font-medium px-2.5 py-1 rounded-full bg-[rgba(59,130,246,0.08)] text-[#60A5FA] border border-[rgba(59,130,246,0.15)]"
+                className="text-xs font-medium px-2.5 py-1 rounded-full bg-[rgba(34,197,94,0.08)] text-[#4ADE80] border border-[rgba(34,197,94,0.15)]"
               >
                 {tag}
               </span>

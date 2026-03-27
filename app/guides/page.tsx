@@ -92,7 +92,7 @@ export default function GuidesPage() {
               <Link
                 key={guide.slug}
                 href={`/guides/${guide.slug}`}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--surface-elevated)] transition-all duration-300 hover:border-[var(--red-border)] hover:shadow-[0_0_30px_rgba(59,130,246,0.08)]"
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-[var(--surface-elevated)] transition-[border-color,box-shadow] duration-300 hover:border-[var(--red-border)] hover:shadow-[0_0_30px_rgba(59,130,246,0.08)]"
               >
                 {/* Card Header */}
                 <div className="flex items-start justify-between border-b border-[var(--border-subtle)] p-6">
@@ -148,7 +148,7 @@ export default function GuidesPage() {
           </p>
           <Link
             href="/free-growth-audit"
-            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[var(--red-primary)] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-[var(--red-dark)] hover:shadow-blue-500/30 font-[family-name:var(--font-body)]"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[var(--red-primary)] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition-[background-color,box-shadow] hover:bg-[var(--red-dark)] hover:shadow-blue-500/30 font-[family-name:var(--font-body)]"
           >
             Get a Free Growth Audit
             <ArrowRight className="h-4 w-4" />

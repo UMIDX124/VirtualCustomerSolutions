@@ -46,21 +46,21 @@ export function Navigation() {
           onClick={() => navigateTo('home')}
           className="flex items-center gap-2.5 group flex-shrink-0"
         >
-          {/* Mascot + Virtual.png aligned vertically centered */}
-          <div className="flex items-center gap-3">
-            <div className="relative -mt-3 lg:-mt-4 flex-shrink-0">
-              <Mascot size={48} />
+          {/* Mascot (big) + Virtual.png (small) aligned */}
+          <div className="flex items-center gap-2.5">
+            <div className="relative -mt-5 lg:-mt-6 flex-shrink-0">
+              <Mascot size={64} />
             </div>
             <div className="flex flex-col items-start justify-center">
               <Image
                 src="/Virtual.png"
                 alt="Virtual"
-                width={140}
-                height={32}
-                className="h-7 lg:h-8 w-auto object-contain"
+                width={100}
+                height={22}
+                className="h-5 lg:h-5.5 w-auto object-contain"
                 priority
               />
-              <span className="text-[8px] lg:text-[9px] text-[#4ADE80]/50 tracking-[0.3em] font-semibold mt-1 uppercase pl-0.5">
+              <span className="text-[7px] lg:text-[7.5px] text-[#4ADE80]/45 tracking-[0.25em] font-semibold mt-0.5 uppercase">
                 Customer Solution
               </span>
             </div>

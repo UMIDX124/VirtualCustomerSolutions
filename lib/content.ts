@@ -1,15 +1,15 @@
 export const siteConfig = {
   name: "Virtual Customer Solution",
   description:
-    "Virtual Customer Solution delivers comprehensive digital solutions including IT consulting, cloud solutions, cybersecurity, digital marketing, and remote workforce services for businesses worldwide.",
+    "Remote teams, digital marketing, web development, and operations support — all under one roof. Virtual Customer Solution helps businesses grow without the overhead.",
   siteUrl: "https://virtualcustomersolution.com",
   ogImage: "/opengraph-image",
   primaryCtaHref: "#strategy-call-form",
-  bookingEmailHref: "mailto:info@virtualcustomersolution.com?subject=Strategy%20Call%20Request",
-  email: "info@virtualcustomersolution.com",
+  bookingEmailHref: "mailto:adminatvcs@gmail.com?subject=Strategy%20Call%20Request",
+  email: "adminatvcs@gmail.com",
   formApiPath: "/api/free-audit",
-  formSubmitBrowserAction: "https://formsubmit.co/info@virtualcustomersolution.com",
-  formSubmitAction: "https://formsubmit.co/ajax/info@virtualcustomersolution.com",
+  formSubmitBrowserAction: "https://formsubmit.co/adminatvcs@gmail.com",
+  formSubmitAction: "https://formsubmit.co/ajax/adminatvcs@gmail.com",
 };
 
 export const navigation = [

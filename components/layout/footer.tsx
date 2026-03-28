@@ -131,11 +131,11 @@ export function Footer() {
                 0370-4059424
               </a>
               <a
-                href="mailto:info@virtualcustomersolution.com"
+                href="mailto:adminatvcs@gmail.com"
                 className="group flex items-center gap-3 text-sm text-[#A1A1AA] hover:text-[#22C55E] transition-colors"
               >
                 <Mail className="h-4 w-4 text-[#059669] neon-text" />
-                info@virtualcustomersolution.com
+                adminatvcs@gmail.com
               </a>
               <a
                 href="https://linkedin.com/company/virtualcustomersolution"

@@ -91,8 +91,8 @@ export default function ContactPage() {
                   </div>
               <div>
                 <h3 className="font-semibold text-text-primary">Email</h3>
-                <a href="mailto:info@virtualcustomersolution.com" className="text-text-secondary hover:text-[#22C55E]">
-                  info@virtualcustomersolution.com
+                <a href="mailto:adminatvcs@gmail.com" className="text-text-secondary hover:text-[#22C55E]">
+                  adminatvcs@gmail.com
                 </a>
               </div>
                 </div>

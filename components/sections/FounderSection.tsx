@@ -82,7 +82,7 @@ export function FounderSection() {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="mailto:info@virtualcustomersolution.com"
+                  href="mailto:adminatvcs@gmail.com"
                   className="w-10 h-10 rounded-lg bg-[var(--surface-glass-strong)] flex items-center justify-center text-[var(--text-muted)] hover:text-[#22C55E] transition-colors"
                 >
                   <Mail className="w-5 h-5" />

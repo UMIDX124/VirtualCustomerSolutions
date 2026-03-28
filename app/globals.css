@@ -420,6 +420,25 @@ h1, h2, h3, h4, h5, h6 {
   50% { background-position: 100% 100%; }
 }
 
+/* Hero animated background */
+@keyframes hero-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+}
+@keyframes hero-ring {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.08); opacity: 0.8; }
+}
+@keyframes hero-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
 .animate-glow-pulse-opacity { animation: glow-pulse-opacity 4s ease-in-out infinite; }
 .animate-eye-blink { animation: eye-blink 3s ease-in-out infinite; }
 .animate-eye-blink-delayed { animation: eye-blink 3s ease-in-out 0.5s infinite; }

@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Sparkles, Zap, Globe, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -12,7 +11,6 @@ const smoothEase = [0.16, 1, 0.3, 1] as const;
 export function HeroSection() {
   const { navigateTo } = useNavigation();
   const { scrollY } = useScroll();
-  const [videoLoaded, setVideoLoaded] = useState(false);
 
   const rawY = useTransform(scrollY, [0, 800], [0, 40]);
   const rawOpacity = useTransform(scrollY, [200, 800], [1, 0]);
@@ -22,32 +20,26 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
-      {/* Instant gradient background — shows immediately while video loads */}
-      <div className="absolute inset-0 z-0 bg-[#0A0A0A]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(34,197,94,0.12)_0%,transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_80%,rgba(5,150,105,0.08)_0%,transparent_50%)]" />
+      {/* Animated background — loads instantly, no video needed */}
+      <div className="absolute inset-0 z-0 bg-[#050505]">
+        {/* Animated gradient orbs */}
+        <div className="absolute top-[-20%] right-[-10%] w-[700px] h-[700px] rounded-full bg-[#22C55E]/[0.07] blur-[120px] animate-[hero-drift_20s_ease-in-out_infinite]" />
+        <div className="absolute bottom-[-30%] left-[-15%] w-[600px] h-[600px] rounded-full bg-[#059669]/[0.06] blur-[100px] animate-[hero-drift_25s_ease-in-out_infinite_reverse]" />
+        <div className="absolute top-[30%] right-[20%] w-[400px] h-[400px] rounded-full bg-[#4ADE80]/[0.04] blur-[80px] animate-[hero-drift_18s_ease-in-out_infinite_2s]" />
 
-        {/* Video loads lazily on top — fades in when ready */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          onCanPlayThrough={() => setVideoLoaded(true)}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
-          style={{ objectPosition: '70% center' }}
-        >
-          <source src="/hero.mp4" type="video/mp4" />
-        </video>
+        {/* Grid pattern */}
+        <div className="absolute inset-0 grid-bg opacity-[0.06]" />
 
-        {/* Left-side dark fade so text is readable, right side shows video */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+        {/* Noise texture */}
+        <div className="noise-overlay absolute inset-0 opacity-[0.03]" />
+
+        {/* Gradient overlays for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/90 via-[#050505]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/30 via-transparent to-[#050505]/70" />
       </div>
 
       <div className="relative z-10 px-6 md:px-10 lg:px-16 xl:px-20 max-w-[1440px] mx-auto w-full pt-20 sm:pt-24 lg:pt-10 pb-16 lg:pb-20">
-        {/* Two-column: text left, video graphics right */}
+        {/* Two-column: text left, graphics right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left — Text Content */}
           <motion.div
@@ -132,8 +124,23 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right — Empty space where video graphics show through */}
-          <div className="hidden lg:block" aria-hidden="true" />
+          {/* Right — Decorative floating elements */}
+          <div className="hidden lg:flex items-center justify-center" aria-hidden="true">
+            <div className="relative w-80 h-80">
+              {/* Animated rings */}
+              <div className="absolute inset-0 rounded-full border border-[#22C55E]/10 animate-[hero-ring_8s_ease-in-out_infinite]" />
+              <div className="absolute inset-6 rounded-full border border-[#22C55E]/[0.07] animate-[hero-ring_8s_ease-in-out_infinite_1s]" />
+              <div className="absolute inset-12 rounded-full border border-[#22C55E]/[0.05] animate-[hero-ring_8s_ease-in-out_infinite_2s]" />
+
+              {/* Center glow */}
+              <div className="absolute inset-16 rounded-full bg-[#22C55E]/[0.06] blur-xl animate-[hero-pulse_4s_ease-in-out_infinite]" />
+
+              {/* Floating dots */}
+              <div className="absolute top-8 right-12 w-2 h-2 rounded-full bg-[#22C55E]/40 animate-[hero-float_6s_ease-in-out_infinite]" />
+              <div className="absolute bottom-16 left-8 w-1.5 h-1.5 rounded-full bg-[#4ADE80]/30 animate-[hero-float_5s_ease-in-out_infinite_1s]" />
+              <div className="absolute top-1/2 right-4 w-1 h-1 rounded-full bg-[#059669]/50 animate-[hero-float_7s_ease-in-out_infinite_2s]" />
+            </div>
+          </div>
         </div>
       </div>
     </section>

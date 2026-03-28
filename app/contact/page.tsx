@@ -72,7 +72,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-text-secondary text-xl">
-            Have questions? We'd love to hear from you. Let's discuss how we can help your business grow.
+            Got a question or want to talk about a project? Drop us a message and we&apos;ll get back to you within a few hours.
           </p>
         </div>
 
@@ -103,8 +103,11 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-text-primary">Phone / WhatsApp</h3>
-                    <a href="tel:+1234567890" className="text-text-secondary hover:text-[#22C55E]">
-                      +1 (234) 567-890
+                    <a href="tel:+923151407896" className="text-text-secondary hover:text-[#22C55E] block">
+                      0315-1407896
+                    </a>
+                    <a href="tel:+923704059424" className="text-text-secondary hover:text-[#22C55E] block">
+                      0370-4059424
                     </a>
                   </div>
                 </div>
@@ -125,16 +128,16 @@ export default function ContactPage() {
                 Follow Us
               </h3>
               <div className="flex gap-3">
-                <a href="https://facebook.com/digitalpointllc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-surface-glass flex items-center justify-center text-text-secondary hover:text-[#22C55E] transition-colors">
+                <a href="https://facebook.com/virtualcustomersolution" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-surface-glass flex items-center justify-center text-text-secondary hover:text-[#22C55E] transition-colors">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5h-4.33C10.24.5,9.5,3.44,9.5,5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4Z"/></svg>
                 </a>
-                <a href="https://instagram.com/digitalpointllc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-surface-glass flex items-center justify-center text-text-secondary hover:text-[#22C55E] transition-colors">
+                <a href="https://instagram.com/virtualcustomersolution" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-surface-glass flex items-center justify-center text-text-secondary hover:text-[#22C55E] transition-colors">
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="https://linkedin.com/company/digitalpointllc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-surface-glass flex items-center justify-center text-text-secondary hover:text-[#22C55E] transition-colors">
+                <a href="https://linkedin.com/company/virtualcustomersolution" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-surface-glass flex items-center justify-center text-text-secondary hover:text-[#22C55E] transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://twitter.com/digitalpointllc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-surface-glass flex items-center justify-center text-text-secondary hover:text-[#22C55E] transition-colors">
+                <a href="https://twitter.com/virtualcustsol" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-surface-glass flex items-center justify-center text-text-secondary hover:text-[#22C55E] transition-colors">
                   <Twitter className="w-5 h-5" />
                 </a>
               </div>
@@ -231,7 +234,7 @@ export default function ContactPage() {
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-[#22C55E] hover:bg-[#059669] text-white font-semibold py-4 text-lg"
+                  className="w-full bg-[#22C55E] hover:bg-[#4ADE80] text-black font-semibold py-4 text-lg"
                 >
                   {isLoading ? 'Sending...' : 'Send Message'}
                   {!isLoading && <Send className="w-5 h-5 ml-2" />}

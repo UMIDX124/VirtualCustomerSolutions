@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | Virtual Customer Solution",
   },
   description:
-    "Virtual Customer Solution delivers comprehensive digital solutions including IT consulting, cloud solutions, cybersecurity, digital marketing, and remote workforce services for businesses worldwide.",
+    "Remote teams, digital marketing, web development, and operations support — all under one roof. Virtual Customer Solution helps businesses grow without the overhead.",
   keywords: [
     "IT consulting",
     "cloud solutions",
@@ -105,10 +105,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="" style={{ backgroundColor: '#FFFFFF' }} suppressHydrationWarning>
+    <html lang="en" className="dark" style={{ backgroundColor: '#0A0A0A' }} suppressHydrationWarning>
       <head>
         {/* Prevent flash on load */}
-        <style dangerouslySetInnerHTML={{ __html: `html,body{background-color:#FFFFFF!important;color:#09090B}` }} />
+        <style dangerouslySetInnerHTML={{ __html: `html,body{background-color:#0A0A0A!important;color:#F5F5F5}` }} />
         {/* Organization Schema */}
         <script
           type="application/ld+json"
@@ -207,7 +207,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Theme color for mobile browsers */}
-        <meta name="theme-color" content="#FFFFFF" />
+        <meta name="theme-color" content="#0A0A0A" />
         <meta name="msapplication-TileColor" content="#22C55E" />
 
         {/* Google AdSense — uncomment after approval and replace pub-XXXXXXXXXX */}

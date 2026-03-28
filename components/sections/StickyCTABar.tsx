@@ -31,16 +31,16 @@ export function StickyCTABar() {
           transition={{ type: 'tween', duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="fixed bottom-0 left-0 right-0 z-40"
         >
-          <div className="border-t border-black/[0.08] bg-white/95 backdrop-blur-xl">
+          <div className="border-t border-white/[0.08] bg-[#0A0A0A]/95 backdrop-blur-xl">
             <div className="container-wide flex items-center justify-between gap-4 py-3">
-              <p className="hidden text-sm text-black/70 sm:block">
-                Ready to scale your business?{' '}
-                <span className="font-medium text-[#09090B]">
-                  Get a free growth audit today.
+              <p className="hidden text-sm text-white/70 sm:block">
+                Not sure where to start?{' '}
+                <span className="font-medium text-[#F5F5F5]">
+                  We&apos;ll review your setup for free.
                 </span>
               </p>
-              <p className="text-sm text-black/70 sm:hidden">
-                <span className="font-medium text-[#09090B]">Free growth audit</span>
+              <p className="text-sm text-white/70 sm:hidden">
+                <span className="font-medium text-[#F5F5F5]">Free review</span>
               </p>
 
               <div className="flex items-center gap-2">
@@ -55,7 +55,7 @@ export function StickyCTABar() {
                 <button
                   onClick={() => setDismissed(true)}
                   aria-label="Dismiss banner"
-                  className="rounded-full p-1.5 min-h-[44px] min-w-[44px] flex items-center justify-center text-black/40 transition-colors hover:bg-black/5 hover:text-black"
+                  className="rounded-full p-1.5 min-h-[44px] min-w-[44px] flex items-center justify-center text-white/40 transition-colors hover:bg-white/5 hover:text-white"
                 >
                   <X className="h-4 w-4" />
                 </button>

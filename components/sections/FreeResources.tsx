@@ -12,23 +12,23 @@ interface Resource {
 const resources: Resource[] = [
   {
     icon: Users,
-    title: 'The Complete Guide to Remote Team Management',
+    title: 'How to Hire and Manage a Remote Team (Without Losing Your Mind)',
     description:
-      'Everything you need to hire, onboard, and manage high-performing remote teams across time zones. Includes SOPs, tools, and communication frameworks.',
+      'A practical guide with the exact SOPs, tools, and check-in schedules we use to run remote teams across 5+ time zones.',
     slug: 'remote-team-management',
   },
   {
     icon: BarChart3,
-    title: 'Performance Marketing Playbook 2025',
+    title: 'The 2025 Marketing Playbook for Small Businesses',
     description:
-      'Data-driven strategies for paid acquisition, conversion optimisation, and multi-channel attribution that deliver measurable ROI.',
+      'No fluff — just the ad strategies, budgeting tips, and tracking setups that are working right now for our clients.',
     slug: 'performance-marketing-playbook-2025',
   },
   {
     icon: Settings,
-    title: 'Business Systems & Reporting Framework',
+    title: 'How to Set Up Business Reporting That People Actually Use',
     description:
-      'A step-by-step blueprint for building integrated reporting dashboards and automating operational workflows.',
+      'The dashboard templates and automation workflows we set up for clients to replace messy spreadsheets and manual updates.',
     slug: 'business-systems-reporting-framework',
   },
 ];
@@ -42,12 +42,11 @@ export function FreeResources() {
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#22C55E] neon-text">
             Resources
           </p>
-          <h2 className="font-display text-3xl font-bold tracking-tight text-[#09090B] sm:text-4xl">
-            Free Resources
+          <h2 className="font-display text-3xl font-bold tracking-tight text-[#F5F5F5] sm:text-4xl">
+            Free Guides
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-black/60">
-            Actionable guides built from real client engagements. No fluff, just frameworks you
-            can implement today.
+          <p className="mx-auto mt-4 max-w-xl text-white/60">
+            Stuff we actually use with our clients. Download, steal the ideas, and run with them.
           </p>
         </div>
 
@@ -58,7 +57,7 @@ export function FreeResources() {
             return (
               <div key={r.slug} className="scroll-scale">
                 <div
-                  className="group flex flex-col rounded-2xl border border-black/[0.06] bg-black/[0.03] p-7 transition-[border-color,background-color] hover:border-[#22C55E]/25 hover:bg-black/[0.05]"
+                  className="group flex flex-col rounded-2xl border border-white/[0.06] bg-white/[0.03] p-7 transition-[border-color,background-color] hover:border-[#22C55E]/25 hover:bg-white/[0.05]"
                 >
                   {/* icon */}
                   <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#22C55E]/10 text-[#22C55E] transition-colors group-hover:bg-[#22C55E]/20 neon-text neon-box">
@@ -66,12 +65,12 @@ export function FreeResources() {
                   </div>
 
                   {/* title */}
-                  <h3 className="mb-3 font-display text-lg font-semibold leading-snug text-[#09090B]">
+                  <h3 className="mb-3 font-display text-lg font-semibold leading-snug text-[#F5F5F5]">
                     {r.title}
                   </h3>
 
                   {/* description */}
-                  <p className="mb-6 flex-1 text-sm leading-relaxed text-black/60">
+                  <p className="mb-6 flex-1 text-sm leading-relaxed text-white/60">
                     {r.description}
                   </p>
 

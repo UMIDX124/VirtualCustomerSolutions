@@ -9,7 +9,7 @@ const services = [
   {
     icon: Brain,
     title: 'AI-Powered CX',
-    description: 'Intelligent customer experience solutions powered by advanced AI algorithms.',
+    description: 'We set up chatbots and smart support tools that handle your customers while your team sleeps.',
     gradient: 'from-[#22C55E] to-black',
     features: ['AI Chatbots', 'Sentiment Analysis', 'Predictive Support', 'Smart Routing'],
     size: 'large',
@@ -17,15 +17,15 @@ const services = [
   {
     icon: Cloud,
     title: 'Cloud Infrastructure',
-    description: 'Scalable cloud solutions designed for performance and reliability.',
+    description: 'Migration, setup, monitoring — we keep your servers running smooth on AWS, Azure, or GCP.',
     gradient: 'from-[#059669] to-black',
-    features: ['Cloud Migration', 'AWS/Azure/GCP', 'Serverless Architecture', '24/7 Monitoring'],
+    features: ['Cloud Migration', 'AWS/Azure/GCP', 'Server Setup', '24/7 Monitoring'],
     size: 'medium',
   },
   {
     icon: Shield,
     title: 'Cybersecurity',
-    description: 'Enterprise-grade security to protect your digital assets.',
+    description: 'Audits, threat detection, and compliance — so you don\'t get caught off guard.',
     gradient: 'from-[#059669] to-[#22C55E]',
     features: ['Threat Detection', 'Compliance', 'Penetration Testing', 'Security Audit'],
     size: 'small',
@@ -33,15 +33,15 @@ const services = [
   {
     icon: Workflow,
     title: 'Digital Engineering',
-    description: 'Custom software solutions built for scale and efficiency.',
+    description: 'Websites, apps, APIs — we build the stuff that runs your business.',
     gradient: 'from-[#22C55E] to-[#059669]',
-    features: ['Custom Development', 'API Integration', 'Microservices', 'DevOps'],
+    features: ['Custom Development', 'API Integration', 'Web Apps', 'DevOps'],
     size: 'small',
   },
   {
     icon: MessageSquare,
     title: 'Remote Workforce',
-    description: 'Dedicated remote teams that integrate seamlessly with your operations.',
+    description: 'Need a VA, support agent, or marketer? We\'ve got trained staff ready to start this week.',
     gradient: 'from-[#059669] to-[#22C55E]',
     features: ['Virtual Assistants', 'Tech Support', 'Sales & Marketing', '24/7 Coverage'],
     size: 'medium',
@@ -49,7 +49,7 @@ const services = [
   {
     icon: Zap,
     title: 'Digital Marketing',
-    description: 'Data-driven marketing strategies that deliver measurable results.',
+    description: 'SEO, Google Ads, social media — we run your campaigns and report real numbers, not vanity metrics.',
     gradient: 'from-[#22C55E] to-black',
     features: ['SEO & PPC', 'Social Media', 'Content Strategy', 'Analytics'],
     size: 'small',
@@ -62,7 +62,7 @@ export function PillarsSection() {
   return (
     <section className="section-padding relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-white" />
+      <div className="absolute inset-0 bg-[#0A0A0A]" />
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#22C55E]/5 rounded-full blur-[150px]" />
 
@@ -72,14 +72,13 @@ export function PillarsSection() {
           <span className="inline-block px-4 py-1.5 rounded-full glass border border-[rgba(34,197,94,0.3)] text-[#22C55E] text-sm font-medium mb-4 neon-text neon-border">
             Our Services
           </span>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#09090B] tracking-tight mb-4">
-            Comprehensive Solutions for
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#F5F5F5] tracking-tight mb-4">
+            What We
             <br />
-            <span className="text-gradient-lime">Modern Business</span>
+            <span className="text-gradient-lime">Actually Do</span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            From AI-powered customer experience to enterprise cloud infrastructure —
-            we deliver end-to-end solutions that transform your operations.
+          <p className="text-[#A1A1AA] text-lg max-w-2xl mx-auto">
+            Six core areas where we help businesses cut costs, move faster, and stop leaving money on the table.
           </p>
         </RevealOnScroll>
 
@@ -101,8 +100,8 @@ export function PillarsSection() {
                   className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-20 group-hover:opacity-30 group-hover:scale-110 transition-[opacity,transform] duration-700 ease-out`}
                 />
                 {/* Decorative geometric shapes */}
-                <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-black/[0.03] group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-black/[0.02] group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-white/[0.03] group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-white/[0.02] group-hover:scale-110 transition-transform duration-700" />
                 <div className={`absolute top-1/2 right-4 w-16 h-16 rotate-45 bg-gradient-to-br ${service.gradient} opacity-[0.07] group-hover:opacity-[0.12] group-hover:scale-110 transition-[opacity,transform] duration-700`} />
               </div>
 
@@ -110,26 +109,26 @@ export function PillarsSection() {
               <div className="absolute inset-0 glass" />
 
               {/* Gradient overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/60 to-transparent rounded-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/60 to-transparent rounded-2xl" />
 
               {/* Gradient Border Effect */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-              <div className="absolute inset-0 rounded-2xl border border-[rgba(0,0,0,0.1)]" />
+              <div className="absolute inset-0 rounded-2xl border border-[rgba(255,255,255,0.06)]" />
 
               {/* Content */}
               <div className="relative z-10 p-6 h-full flex flex-col">
                 {/* Icon */}
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:brightness-110 transition-[transform,filter] duration-700`}>
-                  <service.icon className="w-6 h-6 text-black" />
+                  <service.icon className="w-6 h-6 text-white" />
                 </div>
 
                 {/* Title */}
-                <h3 className="font-display text-xl font-bold text-[#09090B] mb-2 group-hover:text-[#22C55E] group-hover:neon-text-strong transition-colors duration-[400ms]">
+                <h3 className="font-display text-xl font-bold text-[#F5F5F5] mb-2 group-hover:text-[#22C55E] group-hover:neon-text-strong transition-colors duration-[400ms]">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
+                <p className="text-[#A1A1AA] text-sm leading-relaxed mb-4 flex-grow">
                   {service.description}
                 </p>
 
@@ -148,7 +147,7 @@ export function PillarsSection() {
                 {/* CTA */}
                 <button
                   onClick={() => navigateTo('services')}
-                  className="mt-4 flex items-center gap-1 text-sm text-gray-500 hover:text-[#09090B] transition-colors group/cta"
+                  className="mt-4 flex items-center gap-1 text-sm text-[#71717A] hover:text-[#F5F5F5] transition-colors group/cta"
                 >
                   Learn more
                   <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />

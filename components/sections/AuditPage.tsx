@@ -561,7 +561,7 @@ export function AuditPage() {
                     hello@virtualcustomersolution.com
                   </a>
                   <a
-                    href="https://linkedin.com/company/digitalpointllc"
+                    href="https://linkedin.com/company/virtualcustomersolution"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm transition-colors"

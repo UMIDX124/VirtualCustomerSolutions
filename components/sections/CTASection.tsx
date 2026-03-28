@@ -5,11 +5,11 @@ import { useNavigation } from '@/lib/navigation';
 import { FloatingElement, TextReveal, MagneticHover } from '@/components/animations/ScrollAnimations';
 
 const auditIncludes = [
-  'Free Digital Audit (Worth $499)',
-  'No Obligation',
-  'Custom Growth Plan in 24hrs',
-  'No Sales Pitch',
-  '100% Confidential',
+  'Full Website & Marketing Review',
+  'No Strings Attached',
+  'Custom Report in 24 Hours',
+  'Honest Feedback, Not a Sales Pitch',
+  'Your Data Stays Private',
 ];
 
 export function CTASection() {
@@ -18,7 +18,7 @@ export function CTASection() {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden">
       {/* Light background */}
-      <div className="absolute inset-0 bg-white" />
+      <div className="absolute inset-0 bg-[#0A0A0A]" />
 
       {/* Large glowing orb behind the card */}
       <FloatingElement amplitude={12} duration={8} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -34,7 +34,7 @@ export function CTASection() {
           <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-b from-[#22C55E]/40 via-[#22C55E]/10 to-[#22C55E]/40 blur-sm neon-line" />
 
           {/* Card */}
-          <div className="relative rounded-2xl border border-[#22C55E]/20 bg-[rgba(0,0,0,0.03)] backdrop-blur-xl p-10 md:p-16 text-center overflow-hidden neon-border">
+          <div className="relative rounded-2xl border border-[#22C55E]/20 bg-[rgba(255,255,255,0.03)] backdrop-blur-xl p-10 md:p-16 text-center overflow-hidden neon-border">
             {/* Inner gradient shine */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#22C55E]/[0.04] via-transparent to-transparent" />
 
@@ -47,13 +47,13 @@ export function CTASection() {
               </div>
 
               <TextReveal
-                text="Ready to Grow? Let's Talk."
+                text="Let's Figure This Out Together"
                 as="h2"
                 className="text-4xl md:text-5xl font-bold mb-5 tracking-tight"
               />
 
               <p className="text-[var(--text-secondary)] text-lg max-w-lg mx-auto mb-10">
-                Get your custom growth plan in 24 hours. No obligation, no sales pressure.
+                Tell us what&apos;s not working, and we&apos;ll send you a straight-up honest breakdown with next steps. Takes 2 minutes to fill out.
               </p>
 
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-10">
@@ -71,13 +71,13 @@ export function CTASection() {
                   onClick={() => navigateTo('free-audit')}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 text-lg font-bold rounded-full bg-[#22C55E] text-black shadow-xl shadow-[#22C55E]/30 hover:bg-[#4ADE80] hover:shadow-2xl hover:shadow-[#22C55E]/40 hover:scale-[1.02] active:scale-[0.98] transition-[background-color,box-shadow,transform] duration-300 neon-box-strong"
                 >
-                  CLAIM YOUR FREE AUDIT NOW
+                  Get Your Free Audit
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </MagneticHover>
 
               <p className="text-[var(--text-muted)] text-sm mt-6">
-                Limited spots available — First 50 clients get lifetime rate lock!
+                Usually responds within a few hours during business days.
               </p>
             </div>
           </div>

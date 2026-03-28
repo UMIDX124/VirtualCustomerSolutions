@@ -74,7 +74,7 @@ export function FounderSection() {
 
               <div className="flex gap-3">
                 <a
-                  href="https://linkedin.com/company/digitalpointllc"
+                  href="https://linkedin.com/company/virtualcustomersolution"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-lg bg-[var(--surface-glass-strong)] flex items-center justify-center text-[var(--text-muted)] hover:text-[#22C55E] transition-colors"

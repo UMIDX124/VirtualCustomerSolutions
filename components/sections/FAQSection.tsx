@@ -8,28 +8,28 @@ import { RevealOnScroll } from '@/components/animations/ScrollAnimations';
 
 const faqs = [
   {
-    question: 'What happens after I request a free digital audit?',
-    answer: 'Within 24 hours, our team will analyze your digital presence and send you a comprehensive report with actionable recommendations. No obligation, no sales pressure.',
+    question: 'What happens after I request a free audit?',
+    answer: 'We take a look at your website, ads, and online presence. Within 24 hours, you get a report showing what\'s working, what\'s not, and what to fix first. If you want our help after that, great. If not, the report is yours to keep.',
   },
   {
-    question: 'What\'s included in your digital marketing services?',
-    answer: 'SEO, PPC (Google Ads), social media marketing, content marketing, email marketing, and full analytics — all managed by your dedicated team.',
+    question: 'What does your marketing team actually handle?',
+    answer: 'The usual stuff — SEO, Google Ads, social media, content, email campaigns. The difference is you get a dedicated person (or team) who actually knows your business, not a revolving door of freelancers.',
   },
   {
-    question: 'How does the remote workforce service work?',
-    answer: 'We provide dedicated remote staff — VAs, marketing specialists, customer support, content writers — who work exclusively for your business. Not shared, not outsourced.',
+    question: 'How does the remote staff thing work?',
+    answer: 'You tell us what role you need — VA, customer support, marketer, whatever. We match you with someone from our trained team. They work your hours, use your tools, and report directly to you. Think of it like hiring, minus the headache.',
   },
   {
-    question: 'Are there long-term contracts?',
-    answer: 'No! All plans are month-to-month. Cancel anytime with 30-day notice. No hidden fees, no surprises.',
+    question: 'Do I have to sign a long contract?',
+    answer: 'Nope. Everything is month-to-month. Give us 30 days notice if you want to stop. We\'d rather earn your business every month than lock you into something.',
   },
   {
-    question: 'Do you work with international clients?',
-    answer: 'Yes! We serve clients in 50+ countries. Our remote team model means we work effectively across time zones with 24/7 coverage.',
+    question: 'Do you work with clients outside Pakistan?',
+    answer: 'Most of our clients are actually overseas — US, UK, UAE, Australia, Canada. Our team works across time zones, and we set up communication so it doesn\'t feel like you\'re working with someone in a different country.',
   },
   {
-    question: 'How fast will I see results?',
-    answer: 'Most clients see improvements in 30-60 days. We guarantee visible results — or your money back.',
+    question: 'How long before I see something happening?',
+    answer: 'Depends on what you need. Remote staff can start within a week. Marketing results usually start showing up in 30-60 days. We\'ll set clear expectations upfront so there are no surprises.',
   },
 ];
 
@@ -56,7 +56,7 @@ export function FAQSection() {
             FAQ
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-            Common questions about working with us.
+            Questions we get asked a lot
           </h2>
         </FadeUp>
 
@@ -90,7 +90,7 @@ export function FAQSection() {
                       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-5 pb-5 text-[var(--text-secondary)] text-sm leading-relaxed border-t border-black/[0.04] pt-4">
+                      <div className="px-5 pb-5 text-[var(--text-secondary)] text-sm leading-relaxed border-t border-white/[0.04] pt-4">
                         {faq.answer}
                       </div>
                     </motion.div>

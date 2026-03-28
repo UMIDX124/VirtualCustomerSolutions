@@ -19,8 +19,8 @@ const posts: BlogPost[] = [
   {
     slug: 'scaling-remote-teams-2025',
     category: 'Remote Work',
-    title: 'Scaling Remote Teams: Lessons from 200+ Engagements',
-    excerpt: 'Discover the frameworks and processes that help distributed teams operate at peak efficiency across multiple time zones.',
+    title: 'What We Learned Managing 200+ Remote Teams',
+    excerpt: 'After years of building remote teams for clients, here are the patterns that keep showing up in the ones that actually work.',
     date: 'Mar 18, 2025',
     readTime: '7 min read',
     author: 'VCS Team',
@@ -29,8 +29,8 @@ const posts: BlogPost[] = [
   {
     slug: 'performance-marketing-roi',
     category: 'Marketing',
-    title: 'Maximising ROI with Performance Marketing in Emerging Markets',
-    excerpt: 'How data-driven campaign management delivers measurable growth for businesses expanding into new regions.',
+    title: 'Why Most Google Ads Campaigns Waste Money (And How to Fix Yours)',
+    excerpt: 'We audited 50 ad accounts last quarter. Here\'s what the profitable ones had in common.',
     date: 'Mar 10, 2025',
     readTime: '5 min read',
     author: 'VCS Team',
@@ -39,8 +39,8 @@ const posts: BlogPost[] = [
   {
     slug: 'business-systems-automation',
     category: 'Operations',
-    title: 'Automating Business Systems for Operational Excellence',
-    excerpt: 'A practical guide to identifying bottlenecks and implementing automation that saves hundreds of hours per quarter.',
+    title: 'The 5 Tasks You Should Have Automated Yesterday',
+    excerpt: 'Simple automations that save our clients 10-20 hours a week. Most take under an hour to set up.',
     date: 'Feb 28, 2025',
     readTime: '6 min read',
     author: 'VCS Team',
@@ -49,8 +49,8 @@ const posts: BlogPost[] = [
   {
     slug: 'hiring-remote-talent',
     category: 'Recruitment',
-    title: 'The Art of Hiring Top Remote Talent in Competitive Markets',
-    excerpt: 'Proven sourcing strategies and interview frameworks that help you build world-class distributed teams.',
+    title: 'Stop Hiring on Fiverr: How to Find Remote Staff That Stick Around',
+    excerpt: 'Freelance marketplaces are a gamble. Here\'s how we source, vet, and retain dedicated remote workers.',
     date: 'Feb 20, 2025',
     readTime: '8 min read',
     author: 'VCS Team',
@@ -59,8 +59,8 @@ const posts: BlogPost[] = [
   {
     slug: 'client-reporting-frameworks',
     category: 'Reporting',
-    title: 'Building Client-Facing Reporting Frameworks That Drive Retention',
-    excerpt: 'Transform raw data into compelling dashboards that keep stakeholders informed and clients loyal.',
+    title: 'Your Clients Don\'t Read Your Reports. Here\'s How to Change That.',
+    excerpt: 'We rebuilt our reporting from scratch after a client told us they never open them. What we changed made all the difference.',
     date: 'Feb 12, 2025',
     readTime: '5 min read',
     author: 'VCS Team',
@@ -69,8 +69,8 @@ const posts: BlogPost[] = [
   {
     slug: 'cost-efficiency-outsourcing',
     category: 'Strategy',
-    title: 'Cost Efficiency Without Compromise: The Smart Outsourcing Playbook',
-    excerpt: 'How to reduce operating costs by up to 70% while maintaining quality, culture, and accountability.',
+    title: 'How One Agency Cut Their Overhead by 60% Without Firing Anyone',
+    excerpt: 'A real case study of how we helped a 12-person agency restructure with remote staff and come out stronger.',
     date: 'Feb 5, 2025',
     readTime: '6 min read',
     author: 'VCS Team',
@@ -80,11 +80,11 @@ const posts: BlogPost[] = [
 
 const categoryColors: Record<string, string> = {
   'Remote Work': 'bg-[#22C55E]/10 text-[#4ADE80] neon-text',
-  Marketing: 'bg-black/[0.08] text-[#09090B]',
-  Operations: 'bg-black/[0.08] text-[#09090B]',
-  Recruitment: 'bg-black/[0.08] text-[#09090B]',
+  Marketing: 'bg-white/[0.08] text-[#F5F5F5]',
+  Operations: 'bg-white/[0.08] text-[#F5F5F5]',
+  Recruitment: 'bg-white/[0.08] text-[#F5F5F5]',
   Reporting: 'bg-[#22C55E]/10 text-[#4ADE80] neon-text',
-  Strategy: 'bg-black/[0.08] text-[#09090B]',
+  Strategy: 'bg-white/[0.08] text-[#F5F5F5]',
 };
 
 export function LatestInsights() {
@@ -97,7 +97,7 @@ export function LatestInsights() {
               <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#22C55E] neon-text">
                 Blog
               </p>
-              <h2 className="font-display text-3xl font-bold tracking-tight text-[#09090B] sm:text-4xl">
+              <h2 className="font-display text-3xl font-bold tracking-tight text-[#F5F5F5] sm:text-4xl">
                 Latest Insights
               </h2>
             </div>
@@ -117,14 +117,14 @@ export function LatestInsights() {
               <RevealOnScroll variant="blur-in" duration={0.8}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-black/[0.06] bg-black/[0.03] transition-[border-color,background-color] hover:border-[#22C55E]/30 hover:bg-black/[0.05]"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] transition-[border-color,background-color] hover:border-[#22C55E]/30 hover:bg-white/[0.05]"
                 >
                   <div className="relative h-48 overflow-hidden">
                     <div className={`absolute inset-0 bg-gradient-to-br ${post.gradient} group-hover:scale-110 transition-transform duration-700 ease-out`} />
-                    <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-black/[0.06] group-hover:scale-110 transition-transform duration-700" />
-                    <div className="absolute bottom-4 left-4 w-16 h-16 rotate-12 rounded-lg bg-black/[0.04] group-hover:rotate-[20deg] transition-transform duration-700" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-black/[0.03] blur-xl" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+                    <div className="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-white/[0.06] group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute bottom-4 left-4 w-16 h-16 rotate-12 rounded-lg bg-white/[0.04] group-hover:rotate-[20deg] transition-transform duration-700" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-white/[0.03] blur-xl" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent" />
                     <div className="absolute top-4 left-4 z-10">
                       <span
                         className={`inline-flex rounded-full px-3 py-1 text-xs font-medium backdrop-blur-sm ${
@@ -137,13 +137,13 @@ export function LatestInsights() {
                   </div>
 
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="mb-2 font-display text-lg font-semibold leading-snug text-[#09090B] transition-colors group-hover:text-[#22C55E]">
+                    <h3 className="mb-2 font-display text-lg font-semibold leading-snug text-[#F5F5F5] transition-colors group-hover:text-[#22C55E]">
                       {post.title}
                     </h3>
-                    <p className="mb-6 flex-1 text-sm leading-relaxed text-black/60">
+                    <p className="mb-6 flex-1 text-sm leading-relaxed text-white/60">
                       {post.excerpt}
                     </p>
-                    <div className="flex items-center gap-4 border-t border-black/[0.06] pt-4 text-xs text-black/40">
+                    <div className="flex items-center gap-4 border-t border-white/[0.06] pt-4 text-xs text-white/40">
                       <span className="flex items-center gap-1">
                         <User className="h-3 w-3" />
                         {post.author}

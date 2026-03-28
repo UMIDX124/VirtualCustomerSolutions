@@ -33,8 +33,8 @@ export function Navigation() {
       className={`
         sticky top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500
         ${isScrolled
-          ? 'bg-[rgba(255,255,255,0.95)] backdrop-blur-2xl border-b border-black/[0.08]'
-          : 'bg-[rgba(255,255,255,0.8)] backdrop-blur-md'
+          ? 'bg-[rgba(10,10,10,0.95)] backdrop-blur-2xl border-b border-white/[0.06]'
+          : 'bg-[rgba(10,10,10,0.8)] backdrop-blur-md'
         }
       `}
     >
@@ -69,7 +69,7 @@ export function Navigation() {
 
         {/* ─── CENTER: Pill nav (exactly like Backup Solutions) ─── */}
         <div className="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2">
-          <div className="flex items-center gap-0 px-1.5 py-1 rounded-full bg-black/[0.03] border border-black/[0.07]">
+          <div className="flex items-center gap-0 px-1.5 py-1 rounded-full bg-white/[0.03] border border-white/[0.07]">
             {navigation.map((item) => (
               <button
                 key={item.name}
@@ -86,7 +86,7 @@ export function Navigation() {
                 <span className={`relative z-10 ${
                   currentPage === item.href
                     ? 'text-[#09090B] font-semibold'
-                    : 'text-[#52525B] hover:text-[#09090B]'
+                    : 'text-[#A1A1AA] hover:text-[#F5F5F5]'
                 }`}>
                   {item.name}
                 </span>
@@ -105,7 +105,7 @@ export function Navigation() {
               rounded-full
               border border-[#22C55E]/40
               bg-[#22C55E]/10
-              text-[#09090B] text-sm font-semibold
+              text-[#F5F5F5] text-sm font-semibold
               transition-[border-color,background,box-shadow] duration-300
               hover:border-[#22C55E]/70
               hover:bg-[#22C55E]/20
@@ -120,7 +120,7 @@ export function Navigation() {
 
         {/* ─── Mobile menu toggle ─── */}
         <button
-          className="lg:hidden p-2 min-h-[44px] min-w-[44px] rounded-lg text-black/60 hover:text-black hover:bg-black/[0.05] transition-colors"
+          className="lg:hidden p-2 min-h-[44px] min-w-[44px] rounded-lg text-white/60 hover:text-white hover:bg-white/[0.05] transition-colors"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -135,7 +135,7 @@ export function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden bg-[rgba(255,255,255,0.97)] backdrop-blur-2xl border-t border-black/[0.08]"
+            className="lg:hidden bg-[rgba(10,10,10,0.97)] backdrop-blur-2xl border-t border-white/[0.06]"
           >
             <div className="px-5 py-5 space-y-1">
               {navigation.map((item, i) => (
@@ -148,8 +148,8 @@ export function Navigation() {
                   className={`
                     w-full text-left px-4 py-3 rounded-xl text-[15px] transition-colors duration-300
                     ${currentPage === item.href
-                      ? 'text-[#09090B] bg-[#22C55E]/10 font-semibold border border-[#22C55E]/15'
-                      : 'text-[#52525B] hover:text-[#09090B] hover:bg-black/[0.03]'
+                      ? 'text-[#F5F5F5] bg-[#22C55E]/10 font-semibold border border-[#22C55E]/15'
+                      : 'text-[#A1A1AA] hover:text-[#F5F5F5] hover:bg-white/[0.03]'
                     }
                   `}
                 >
@@ -159,7 +159,7 @@ export function Navigation() {
               <div className="pt-3">
                 <button
                   onClick={() => { navigateTo('free-audit'); setIsOpen(false); }}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#22C55E]/40 bg-[#22C55E]/10 text-[#09090B] font-semibold text-[15px] neon-box neon-border"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#22C55E]/40 bg-[#22C55E]/10 text-[#F5F5F5] font-semibold text-[15px] neon-box neon-border"
                 >
                   Free Consultation <ArrowRight className="w-4 h-4" />
                 </button>

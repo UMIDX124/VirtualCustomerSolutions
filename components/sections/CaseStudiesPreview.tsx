@@ -12,31 +12,31 @@ const caseStudies: CaseStudy[] = [
   {
     slug: 'ecommerce-growth',
     clientType: 'E-Commerce Brand',
-    headline: '340% Revenue Growth in 12 Months',
+    headline: 'Took an Online Store from $8K to $35K/month',
     metrics: [
-      { label: 'Revenue Growth', value: '340%' },
-      { label: 'ROAS', value: '5.2x' },
-      { label: 'Cost Reduction', value: '62%' },
+      { label: 'Monthly Revenue', value: '4.3x' },
+      { label: 'Ad Spend ROAS', value: '3.8x' },
+      { label: 'Ops Cost Cut', value: '45%' },
     ],
   },
   {
     slug: 'saas-scaling',
-    clientType: 'SaaS Company',
-    headline: 'Scaled Operations Across 4 Countries',
+    clientType: 'SaaS Startup',
+    headline: 'Built a 12-Person Remote Team in 6 Weeks',
     metrics: [
-      { label: 'Team Size', value: '3x' },
-      { label: 'Delivery Speed', value: '+85%' },
-      { label: 'Overhead Saved', value: '$420K' },
+      { label: 'Hires Made', value: '12' },
+      { label: 'Avg. Ramp Time', value: '8 days' },
+      { label: 'Monthly Saved', value: '$18K' },
     ],
   },
   {
     slug: 'agency-transformation',
-    clientType: 'Digital Agency',
-    headline: 'From 5 to 45 Clients in Under a Year',
+    clientType: 'Marketing Agency',
+    headline: 'Helped an Agency Triple Their Client Base',
     metrics: [
-      { label: 'Client Growth', value: '9x' },
-      { label: 'Profit Margin', value: '+38%' },
-      { label: 'Churn Rate', value: '-72%' },
+      { label: 'Clients', value: '5 → 16' },
+      { label: 'Profit Margin', value: '+28%' },
+      { label: 'Staff Turnover', value: '-60%' },
     ],
   },
 ];
@@ -51,7 +51,7 @@ export function CaseStudiesPreview() {
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#22C55E] neon-text">
               Results
             </p>
-            <h2 className="font-display text-3xl font-bold tracking-tight text-[#09090B] sm:text-4xl">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-[#F5F5F5] sm:text-4xl">
               Case Studies
             </h2>
           </div>
@@ -70,19 +70,19 @@ export function CaseStudiesPreview() {
             <div key={cs.slug} className="scroll-scale">
               <Link
                 href={`/case-studies/${cs.slug}`}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-black/[0.06] bg-black/[0.03] transition-[border-color,background-color] hover:border-[#22C55E]/30 hover:bg-black/[0.05]"
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] transition-[border-color,background-color] hover:border-[#22C55E]/30 hover:bg-white/[0.05]"
               >
                 {/* gradient accent top border */}
                 <div className="h-1 w-full bg-gradient-to-r from-[#059669] via-[#22C55E] to-[#4ADE80] neon-line" />
 
                 <div className="flex flex-1 flex-col p-7">
                   {/* client type */}
-                  <span className="mb-3 text-xs font-semibold uppercase tracking-wider text-black/40">
+                  <span className="mb-3 text-xs font-semibold uppercase tracking-wider text-white/40">
                     {cs.clientType}
                   </span>
 
                   {/* headline */}
-                  <h3 className="mb-5 font-display text-xl font-bold leading-snug text-[#09090B] transition-colors group-hover:text-[#22C55E]">
+                  <h3 className="mb-5 font-display text-xl font-bold leading-snug text-[#F5F5F5] transition-colors group-hover:text-[#22C55E]">
                     {cs.headline}
                   </h3>
 
@@ -94,7 +94,7 @@ export function CaseStudiesPreview() {
                         className="inline-flex items-center gap-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/[0.06] px-3 py-1 text-xs font-medium neon-border"
                       >
                         <span className="text-[#22C55E] neon-text-strong">{m.value}</span>
-                        <span className="text-black/60">{m.label}</span>
+                        <span className="text-white/60">{m.label}</span>
                       </span>
                     ))}
                   </div>

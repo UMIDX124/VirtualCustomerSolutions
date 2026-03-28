@@ -6,7 +6,7 @@ import { AnimatedCounter } from '@/components/motion/animated-counter';
 
 const testimonials = [
   {
-    quote: "We were paying $8,000/month to two companies. Digital Point gave us BETTER results for $999/month. Unreal.",
+    quote: "We were paying $8,000/month to two separate companies. VCS gave us better results for a fraction of that. Honestly didn't expect it.",
     author: 'Sarah M.',
     company: 'E-Commerce Owner',
     location: 'USA',

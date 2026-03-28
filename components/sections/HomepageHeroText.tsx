@@ -15,19 +15,19 @@ export function HomepageHeroText() {
 
       <div className="container-wide relative z-10 max-w-3xl mx-auto">
         <LineReveal className="mb-4">
-          <span className="badge text-xs">Our Mission</span>
+          <span className="badge text-xs">Why Us</span>
         </LineReveal>
 
         <TextReveal
-          text="We don't just provide services. We become your unfair advantage — embedding world-class talent and cutting-edge systems directly into your business so you can scale faster, spend smarter, and compete with companies ten times your size."
+          text="Most businesses waste time and money trying to do everything in-house. We plug in the people, systems, and marketing muscle you need — so you stop juggling and start growing."
           className="text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed tracking-tight"
         />
 
         <div className="mt-12 grid grid-cols-3 gap-6">
           {[
-            { value: '50-75%', label: 'Cost Savings' },
-            { value: '3.2×', label: 'Average ROI' },
-            { value: '<48h', label: 'Deployment Time' },
+            { value: '40-60%', label: 'Lower Costs' },
+            { value: '8+', label: 'Years Running' },
+            { value: '<1 week', label: 'Staff Ready' },
           ].map((stat, i) => (
             <LineReveal key={i} delay={0.3 + i * 0.2}>
               <div className="text-center">

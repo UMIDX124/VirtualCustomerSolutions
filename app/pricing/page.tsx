@@ -78,9 +78,9 @@ const plans = [
     offer: '6 months → 2 months FREE',
     badge: 'Best Value',
     Icon: Crown,
-    color: '#A78BFA',
-    glow: 'rgba(167,139,250,0.18)',
-    border: 'rgba(167,139,250,0.25)',
+    color: '#059669',
+    glow: 'rgba(5,150,105,0.18)',
+    border: 'rgba(5,150,105,0.25)',
     popular: false,
     cta: 'Go Enterprise',
     guarantee: '3× ROI in 6 months or work FREE',
@@ -107,7 +107,7 @@ const faqs = [
   { q: 'Who works on my account?', a: 'Your own dedicated team — not shared, not outsourced. People who work only for you.' },
   { q: "What if I'm not satisfied?", a: 'Every plan has a guarantee: Launch gets 30-day money-back, Growth gets performance guarantee, Enterprise gets ROI guarantee.' },
   { q: 'Can I upgrade later?', a: 'Absolutely. Upgrade anytime — we prorate the difference so you never overpay.' },
-  { q: 'Do you work internationally?', a: 'Yes — we serve clients in 50+ countries across every major time zone.' },
+  { q: 'Do you work internationally?', a: 'Yes — most of our clients are outside Pakistan. We work with businesses in the US, UK, UAE, Canada, Australia, and more.' },
 ];
 
 /* ─── Hooks ─────────────────────────────────────────────────────────────── */
@@ -178,8 +178,8 @@ function PlanCard({ plan, index, onCta }: { plan: typeof plans[0]; index: number
         className="flex flex-col flex-1 p-7"
         style={{
           background: plan.popular
-            ? `linear-gradient(160deg, rgba(34,197,94,0.07) 0%, rgba(255,255,255,0.97) 60%)`
-            : 'rgba(255,255,255,0.92)',
+            ? `linear-gradient(160deg, rgba(34,197,94,0.07) 0%, rgba(20,20,20,0.97) 60%)`
+            : 'rgba(20,20,20,0.92)',
           backdropFilter: 'blur(24px)',
         }}
       >
@@ -199,23 +199,23 @@ function PlanCard({ plan, index, onCta }: { plan: typeof plans[0]; index: number
               {plan.badge}
             </span>
           </div>
-          <h3 className="font-display text-2xl font-black text-[#09090B] mb-1">{plan.name}</h3>
-          <p className="text-black/40 text-xs">{plan.subtitle}</p>
+          <h3 className="font-display text-2xl font-black text-[#F5F5F5] mb-1">{plan.name}</h3>
+          <p className="text-white/40 text-xs">{plan.subtitle}</p>
         </div>
 
         {/* Price */}
         <div className="mb-6">
-          <div className="text-black/30 text-sm line-through mb-0.5">
+          <div className="text-white/30 text-sm line-through mb-0.5">
             ${plan.original.toLocaleString()}/mo
           </div>
           <div className="flex items-baseline gap-1.5 mb-1">
             <span className="font-black text-5xl leading-none" style={{ color: plan.color }}>
               ${plan.price.toLocaleString()}
             </span>
-            <span className="text-black/40 text-sm">/mo</span>
+            <span className="text-white/40 text-sm">/mo</span>
           </div>
           {plan.firstMonth !== plan.price && (
-            <p className="text-xs text-black/40">
+            <p className="text-xs text-white/40">
               First month:{' '}
               <span className="font-semibold" style={{ color: plan.color }}>
                 ${plan.firstMonth}
@@ -259,7 +259,7 @@ function PlanCard({ plan, index, onCta }: { plan: typeof plans[0]; index: number
               ) : (
                 <Minus className="w-4 h-4 flex-shrink-0 mt-0.5 text-white/15" />
               )}
-              <span className={`text-xs leading-relaxed ${f.ok ? 'text-black/70' : 'text-black/25 line-through'}`}>
+              <span className={`text-xs leading-relaxed ${f.ok ? 'text-white/70' : 'text-white/25 line-through'}`}>
                 {f.label}
               </span>
             </li>
@@ -276,7 +276,7 @@ function PlanCard({ plan, index, onCta }: { plan: typeof plans[0]; index: number
           </p>
           <ul className="space-y-1.5">
             {plan.bonuses.map((b, i) => (
-              <li key={i} className="flex items-start gap-1.5 text-xs text-black/40">
+              <li key={i} className="flex items-start gap-1.5 text-xs text-white/40">
                 <span style={{ color: plan.color }} className="flex-shrink-0">›</span>
                 {b}
               </li>
@@ -285,7 +285,7 @@ function PlanCard({ plan, index, onCta }: { plan: typeof plans[0]; index: number
         </div>
 
         {/* Guarantee */}
-        <p className="text-[11px] text-black/30 flex items-center gap-1.5">
+        <p className="text-[11px] text-white/30 flex items-center gap-1.5">
           <span>🛡️</span> {plan.guarantee}
         </p>
       </div>
@@ -303,17 +303,17 @@ function FaqItem({ q, a, i }: { q: string; a: string; i: number }) {
     <div
       ref={reveal.ref}
       style={reveal.style}
-      className="border-b border-black/6 last:border-0"
+      className="border-b border-white/[0.06] last:border-0"
     >
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex justify-between items-center py-5 text-left gap-4 group"
       >
-        <span className="text-black/75 text-sm font-medium group-hover:text-[#09090B] transition-colors">
+        <span className="text-white/75 text-sm font-medium group-hover:text-[#F5F5F5] transition-colors">
           {q}
         </span>
         <ChevronDown
-          className="w-4 h-4 text-black/30 flex-shrink-0 transition-transform duration-300"
+          className="w-4 h-4 text-white/30 flex-shrink-0 transition-transform duration-300"
           style={{ transform: open ? 'rotate(180deg)' : 'none' }}
         />
       </button>
@@ -321,7 +321,7 @@ function FaqItem({ q, a, i }: { q: string; a: string; i: number }) {
         className="overflow-hidden transition-all duration-300"
         style={{ maxHeight: open ? '150px' : '0' }}
       >
-        <p className="text-black/45 text-sm pb-5 leading-relaxed">{a}</p>
+        <p className="text-white/45 text-sm pb-5 leading-relaxed">{a}</p>
       </div>
     </div>
   );
@@ -362,17 +362,17 @@ export default function PricingPage() {
           >
             🎁 LAUNCH SPECIAL — First month 50% OFF
           </div>
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black text-[#09090B] mb-5 leading-[1.05]">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black text-[#F5F5F5] mb-5 leading-[1.05]">
             Pricing that pays
             <br />
             <span style={{ color: '#22C55E', textShadow: '0 0 40px rgba(34,197,94,0.35)' }}>
               for itself.
             </span>
           </h1>
-          <p className="text-black/50 text-lg mb-3">
+          <p className="text-white/50 text-lg mb-3">
             Marketing + dedicated remote staff — all in one plan.
           </p>
-          <p className="text-black/30 text-sm">
+          <p className="text-white/30 text-sm">
             No hidden fees · No long-term contracts · Results guaranteed
           </p>
         </div>
@@ -380,19 +380,9 @@ export default function PricingPage() {
 
       {/* ── Cards ────────────────────────────────────────────────────── */}
       <section className="relative pb-28 px-4">
-        {/* Spline BG */}
+        {/* Subtle green glow background */}
         <div className="absolute inset-0 z-0 overflow-hidden mx-2 rounded-3xl">
-          <iframe
-            src="https://my.spline.design/3duipricing-eHOz23ohPwRwYNHu59vcCg2z/"
-            frameBorder="0"
-            width="100%"
-            height="100%"
-            className="absolute inset-0 w-full h-full"
-            style={{ pointerEvents: 'none', opacity: 0.3 }}
-            loading="lazy"
-            title="3D pricing background"
-          />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0.5) 0%, transparent 30%, transparent 70%, rgba(255,255,255,0.7) 100%)' }} />
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at center top, rgba(34,197,94,0.08) 0%, transparent 60%)' }} />
         </div>
 
         <div className="container-wide relative z-10">
@@ -410,7 +400,7 @@ export default function PricingPage() {
       </section>
 
       {/* ── Stats ────────────────────────────────────────────────────── */}
-      <section className="border-y border-black/5 py-10">
+      <section className="border-y border-white/[0.05] py-10">
         <div className="container-wide grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { n: '300+', l: 'Clients served' },
@@ -420,7 +410,7 @@ export default function PricingPage() {
           ].map(({ n, l }) => (
             <div key={l}>
               <div className="text-3xl font-black mb-1" style={{ color: '#22C55E' }}>{n}</div>
-              <div className="text-black/35 text-xs uppercase tracking-wider">{l}</div>
+              <div className="text-white/35 text-xs uppercase tracking-wider">{l}</div>
             </div>
           ))}
         </div>
@@ -429,10 +419,10 @@ export default function PricingPage() {
       {/* ── Launch Offers ────────────────────────────────────────────── */}
       <section className="container-wide py-20">
         <div className="text-center mb-10">
-          <h2 className="font-display text-3xl font-black text-[#09090B] mb-2">
+          <h2 className="font-display text-3xl font-black text-[#F5F5F5] mb-2">
             Limited-time launch offers
           </h2>
-          <p className="text-black/35 text-sm">First 50 clients only</p>
+          <p className="text-white/35 text-sm">First 50 clients only</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
@@ -443,12 +433,12 @@ export default function PricingPage() {
           ].map(({ icon, title, desc }) => (
             <div
               key={title}
-              className="p-5 rounded-2xl text-center border border-black/6 transition-all duration-200 hover:border-[#22C55E]/20 hover:bg-[#22C55E]/3"
-              style={{ background: 'rgba(0,0,0,0.02)' }}
+              className="p-5 rounded-2xl text-center border border-white/[0.06] transition-all duration-200 hover:border-[#22C55E]/20 hover:bg-[#22C55E]/[0.03]"
+              style={{ background: 'rgba(255,255,255,0.02)' }}
             >
               <div className="text-2xl mb-2">{icon}</div>
-              <div className="text-[#09090B] text-sm font-semibold mb-1">{title}</div>
-              <div className="text-black/35 text-xs leading-relaxed">{desc}</div>
+              <div className="text-[#F5F5F5] text-sm font-semibold mb-1">{title}</div>
+              <div className="text-white/35 text-xs leading-relaxed">{desc}</div>
             </div>
           ))}
         </div>
@@ -457,14 +447,14 @@ export default function PricingPage() {
       {/* ── FAQ ──────────────────────────────────────────────────────── */}
       <section className="container-wide pb-24 max-w-2xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="font-display text-3xl font-black text-[#09090B] mb-2">
+          <h2 className="font-display text-3xl font-black text-[#F5F5F5] mb-2">
             Frequently asked
           </h2>
-          <p className="text-black/35 text-sm">Everything you need to know</p>
+          <p className="text-white/35 text-sm">Everything you need to know</p>
         </div>
         <div
-          className="rounded-2xl px-6 border border-black/6"
-          style={{ background: 'rgba(0,0,0,0.02)' }}
+          className="rounded-2xl px-6 border border-white/[0.06]"
+          style={{ background: 'rgba(255,255,255,0.02)' }}
         >
           {faqs.map((faq, i) => (
             <FaqItem key={i} q={faq.q} a={faq.a} i={i} />
@@ -475,10 +465,10 @@ export default function PricingPage() {
       {/* ── Bottom CTA ───────────────────────────────────────────────── */}
       <section className="container-wide pb-28 text-center">
         <div className="max-w-xl mx-auto">
-          <h2 className="font-display text-4xl md:text-5xl font-black text-[#09090B] mb-4 leading-tight">
+          <h2 className="font-display text-4xl md:text-5xl font-black text-[#F5F5F5] mb-4 leading-tight">
             Ready to start growing?
           </h2>
-          <p className="text-black/35 text-sm mb-8">
+          <p className="text-white/35 text-sm mb-8">
             Book a free audit — no commitment, just a clear growth plan for your business.
           </p>
           <button
@@ -493,7 +483,7 @@ export default function PricingPage() {
             Get My Free Audit
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" />
           </button>
-          <p className="text-black/25 text-xs mt-4">No credit card · Cancel anytime · Results guaranteed</p>
+          <p className="text-white/25 text-xs mt-4">No credit card · Cancel anytime · Results guaranteed</p>
         </div>
       </section>
 

@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Sparkles, Zap, Globe, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigation } from '@/lib/navigation';
-import { TextReveal, MagneticHover, FloatingElement } from '@/components/animations/ScrollAnimations';
+import { MagneticHover } from '@/components/animations/ScrollAnimations';
 
 const smoothEase = [0.16, 1, 0.3, 1] as const;
 
@@ -12,18 +12,15 @@ export function HeroSection() {
   const { navigateTo } = useNavigation();
   const { scrollY } = useScroll();
 
-  const rawY = useTransform(scrollY, [0, 800], [0, 60]);
+  const rawY = useTransform(scrollY, [0, 800], [0, 40]);
   const rawOpacity = useTransform(scrollY, [200, 800], [1, 0]);
-  const rawScale = useTransform(scrollY, [200, 800], [1, 0.97]);
 
-  // Smooth scroll-linked values with useSpring
   const y = useSpring(rawY, { stiffness: 100, damping: 30 });
   const opacity = useSpring(rawOpacity, { stiffness: 100, damping: 30 });
-  const scale = useSpring(rawScale, { stiffness: 100, damping: 30 });
 
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
-      {/* Video Background */}
+      {/* Video Background — right-biased so it doesn't clash with left text */}
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
@@ -32,66 +29,75 @@ export function HeroSection() {
           playsInline
           preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: '70% center' }}
         >
-          <source src="/hero-bg.mp4" type="video/mp4" />
+          <source src="/hero.mp4" type="video/mp4" />
         </video>
-        {/* Light overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/30 to-white" />
+        {/* Left-side dark fade so text is readable, right side shows video */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
       </div>
 
-      <div className="relative z-10 px-6 md:px-10 lg:px-16 xl:px-20 max-w-[1440px] mx-auto w-full pt-6 sm:pt-8 lg:pt-10 pb-16 lg:pb-20">
-        <div className="relative">
-          {/* Content — centered on all screens */}
+      <div className="relative z-10 px-6 md:px-10 lg:px-16 xl:px-20 max-w-[1440px] mx-auto w-full pt-20 sm:pt-24 lg:pt-10 pb-16 lg:pb-20">
+        {/* Two-column: text left, video graphics right */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Left — Text Content */}
           <motion.div
             style={{ y, opacity }}
-            className="text-center max-w-3xl mx-auto"
+            className="text-left max-w-xl"
           >
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: smoothEase }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[rgba(34,197,94,0.3)] text-[#22C55E] text-sm mb-6 neon-text neon-border"
+              transition={{ duration: 0.6, ease: smoothEase }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[rgba(34,197,94,0.3)] text-[#22C55E] text-sm mb-6 backdrop-blur-sm bg-black/20"
             >
-              <Sparkles size="sm" className="animate-pulse" />
-              <span className="tracking-wide">AI-Powered Operations</span>
+              <Sparkles size={14} className="animate-pulse" />
+              <span className="tracking-wide font-medium">Your Growth Partner</span>
             </motion.div>
 
-            <TextReveal
-              text="Revolutionizing Operations through Human-Centric AI"
-              as="h1"
-              className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#09090B] leading-[1.05] tracking-tight"
-            />
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: smoothEase }}
+              className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-extrabold text-white leading-[1.08] tracking-tight"
+            >
+              We Build Teams
+              <br />
+              That Actually
+              <br />
+              <span className="text-[#22C55E]">Get Things Done</span>
+            </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: smoothEase }}
-              className="text-gray-600 text-lg mt-6 max-w-xl mx-auto leading-relaxed"
+              transition={{ duration: 0.7, delay: 0.25, ease: smoothEase }}
+              className="text-white/65 text-lg mt-6 max-w-md leading-relaxed"
             >
-              Scalable solutions for the world's most ambitious companies.
-              We combine cutting-edge AI with human expertise to transform your business operations.
+              Remote staff, marketing, web development, and operations support &mdash; all under one roof. We handle the work so you can focus on growing your business.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45, ease: smoothEase }}
-              className="flex flex-col sm:flex-row gap-4 mt-8 justify-center"
+              transition={{ duration: 0.7, delay: 0.4, ease: smoothEase }}
+              className="flex flex-col sm:flex-row gap-4 mt-8"
             >
               <MagneticHover strength={0.3}>
                 <Button
                   onClick={() => navigateTo('free-audit')}
-                  className="group w-full sm:w-auto bg-[#22C55E] hover:bg-[#4ADE80] hover:shadow-[0_0_40px_rgba(34,197,94,0.5)] text-black font-bold px-8 py-6 text-lg transition-[background-color,box-shadow] duration-[400ms] neon-box-strong"
+                  className="group w-full sm:w-auto bg-[#22C55E] hover:bg-[#4ADE80] hover:shadow-[0_0_40px_rgba(34,197,94,0.4)] text-black font-bold px-8 py-6 text-lg transition-all duration-300 neon-box-strong"
                 >
                   Get Your Free Audit
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-[400ms]" />
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Button>
               </MagneticHover>
               <MagneticHover strength={0.3}>
                 <Button
                   onClick={() => navigateTo('services')}
                   variant="outline"
-                  className="w-full sm:w-auto border border-[rgba(34,197,94,0.3)] hover:border-[#22C55E] hover:bg-[rgba(34,197,94,0.1)] text-[#09090B] px-8 py-6 text-lg bg-transparent backdrop-blur-sm transition-[border-color,background-color] duration-[400ms] neon-border"
+                  className="w-full sm:w-auto border border-white/20 hover:border-[#22C55E] hover:bg-[rgba(34,197,94,0.1)] text-white px-8 py-6 text-lg bg-white/5 backdrop-blur-sm transition-all duration-300"
                 >
                   Explore Services
                 </Button>
@@ -100,25 +106,26 @@ export function HeroSection() {
 
             {/* Trust Indicators */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6, ease: smoothEase }}
-              className="flex flex-wrap gap-6 mt-10 justify-center"
+              className="flex flex-wrap gap-6 mt-10"
             >
               {[
-                { icon: Zap, label: '500+ Clients', color: '#22C55E' },
-                { icon: Globe, label: '50+ Countries', color: '#059669' },
-                { icon: Cpu, label: 'AI-Powered', color: '#22C55E' },
+                { icon: Zap, label: '200+ Clients Served', color: '#22C55E' },
+                { icon: Globe, label: '15+ Countries', color: '#059669' },
+                { icon: Cpu, label: '8+ Years Experience', color: '#22C55E' },
               ].map((item) => (
-                <div key={item.label} className="flex items-center gap-2 text-gray-600">
-                  <item.icon size="16" style={{ color: item.color }} />
+                <div key={item.label} className="flex items-center gap-2 text-white/50">
+                  <item.icon size={14} style={{ color: item.color }} />
                   <span className="text-sm font-medium">{item.label}</span>
                 </div>
               ))}
             </motion.div>
           </motion.div>
 
-          {/* Visual removed — video background serves as the hero visual */}
+          {/* Right — Empty space where video graphics show through */}
+          <div className="hidden lg:block" aria-hidden="true" />
         </div>
       </div>
     </section>

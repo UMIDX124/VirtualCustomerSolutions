@@ -373,7 +373,7 @@ export default function PricingPage() {
             Marketing + dedicated remote staff — all in one plan.
           </p>
           <p className="text-white/30 text-sm">
-            No hidden fees · No long-term contracts · Results guaranteed
+            No hidden fees · No long-term contracts · Cancel anytime
           </p>
         </div>
       </section>
@@ -403,10 +403,10 @@ export default function PricingPage() {
       <section className="border-y border-white/[0.05] py-10">
         <div className="container-wide grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { n: '300+', l: 'Clients served' },
-            { n: '50+', l: 'Countries' },
-            { n: '3×', l: 'Average ROI' },
-            { n: '95%', l: 'Retention rate' },
+            { n: '200+', l: 'Clients served' },
+            { n: '15+', l: 'Countries' },
+            { n: '8+', l: 'Years running' },
+            { n: '97%', l: 'Client retention' },
           ].map(({ n, l }) => (
             <div key={l}>
               <div className="text-3xl font-black mb-1" style={{ color: '#22C55E' }}>{n}</div>
@@ -420,16 +420,16 @@ export default function PricingPage() {
       <section className="container-wide py-20">
         <div className="text-center mb-10">
           <h2 className="font-display text-3xl font-black text-[#F5F5F5] mb-2">
-            Limited-time launch offers
+            Current deals
           </h2>
-          <p className="text-white/35 text-sm">First 50 clients only</p>
+          <p className="text-white/35 text-sm">Available for new clients</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { icon: '⏰', title: 'Rate Lock', desc: 'Lifetime pricing for first 50 clients' },
-            { icon: '💚', title: 'First Month', desc: '50% OFF any package' },
-            { icon: '💳', title: 'Annual Plan', desc: '3 months FREE' },
-            { icon: '👥', title: 'Buddy Deal', desc: '20% OFF for 3 months when you refer' },
+            { icon: '⏰', title: 'Rate Lock', desc: 'Your price stays the same as long as you stay' },
+            { icon: '💚', title: 'First Month', desc: '50% OFF your first month' },
+            { icon: '💳', title: 'Annual Plan', desc: 'Pay yearly, get 3 months free' },
+            { icon: '👥', title: 'Refer a Friend', desc: 'Both get 20% off for 3 months' },
           ].map(({ icon, title, desc }) => (
             <div
               key={title}
@@ -483,7 +483,7 @@ export default function PricingPage() {
             Get My Free Audit
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5" />
           </button>
-          <p className="text-white/25 text-xs mt-4">No credit card · Cancel anytime · Results guaranteed</p>
+          <p className="text-white/25 text-xs mt-4">No credit card needed · No commitments · 30-day money back</p>
         </div>
       </section>
 

@@ -15,7 +15,7 @@ const AUTHORS: Record<string, AuthorData> = {
     name: 'M Faizan Rafiq',
     initials: 'MF',
     title: 'Founder & CEO',
-    bio: 'Faizan leads Virtual Customer Solution with a vision for making world-class digital services accessible to businesses of all sizes. With deep expertise in digital strategy and remote team building, he has helped hundreds of companies scale efficiently.',
+    bio: 'Faizan started VCS in 2016 after seeing businesses waste money juggling multiple vendors. Now he runs a team that handles marketing, remote staffing, and operations for 200+ clients across 15 countries.',
     expertise: ['Digital Strategy', 'Business Growth', 'Remote Teams'],
     linkedin: 'https://linkedin.com/in/mfaizanrafiq',
   },

@@ -18,7 +18,7 @@ const testimonials = [
     author: 'James R.',
     company: 'SaaS Founder',
     location: 'UK',
-    results: ['Dedicated Team', 'Seamless Integration'],
+    results: ['Dedicated Team', 'Easy Onboarding'],
     rating: 5,
   },
   {
@@ -73,7 +73,7 @@ export function TestimonialsSection() {
             What our clients say about working with us.
           </h2>
           <p className="text-[var(--text-secondary)] text-lg mt-4 leading-relaxed">
-            Real feedback from businesses that transformed their growth with our marketing + remote team solutions.
+            What our clients say about working with us.
           </p>
         </FadeUp>
 

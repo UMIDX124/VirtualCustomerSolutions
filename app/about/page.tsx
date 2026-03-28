@@ -22,7 +22,7 @@ const values = [
   {
     icon: '💡',
     title: 'Innovation',
-    description: 'We stay ahead of trends so you don\'t have to. You get cutting-edge strategies.',
+    description: 'We keep up with what works so you don\'t have to. You get strategies that are actually current.',
   },
   {
     icon: '🛡️',
@@ -146,13 +146,13 @@ export default function AboutPage() {
                 Our Mission
               </h3>
               <p className="text-text-secondary mb-6">
-                To help businesses grow faster and smarter by combining cutting-edge marketing with dedicated remote talent — at a price that makes sense.
+                Help businesses stop overpaying for marketing and remote staff by putting both under one roof — with people who actually care about results.
               </p>
               <h3 className="font-display text-xl font-bold text-text-primary mb-4">
-                Our Vision
+                Where We're Headed
               </h3>
               <p className="text-text-secondary">
-                To become the world's most trusted partner for businesses seeking affordable, results-driven growth solutions.
+                We want to be the first call when a business needs to grow but doesn't want to deal with five different agencies to make it happen.
               </p>
             </div>
           </div>

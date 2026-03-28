@@ -74,18 +74,18 @@ export function ExitIntentPopup() {
             </button>
 
             <div className="text-center">
-              <div className="text-4xl mb-4">🛑</div>
+              <div className="text-4xl mb-4">👋</div>
               <h2 className="font-display text-2xl font-bold text-[var(--text-primary)] mb-2">
-                Wait! Before You Go...
+                Quick question before you go
               </h2>
               <p className="text-[var(--text-secondary)] mb-6">
-                Get a <span className="text-[#22C55E] font-semibold">FREE $499 Digital Audit</span> — On Us.
+                Want us to take a look at your website and marketing? It&apos;s free, takes 24 hours, and there&apos;s no catch.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <Input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="Your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -95,7 +95,7 @@ export function ExitIntentPopup() {
                   type="submit"
                   className="w-full bg-[#22C55E] hover:bg-[#059669] text-white font-semibold py-3"
                 >
-                  YES, I Want My Free Audit
+                  Send Me the Free Audit
                 </Button>
               </form>
 
@@ -103,7 +103,7 @@ export function ExitIntentPopup() {
                 onClick={handleDismiss}
                 className="mt-4 text-xs text-[var(--text-muted)] hover:text-[var(--text-secondary)]"
               >
-                No thanks, I don't want free stuff
+                Not right now
               </button>
             </div>
           </motion.div>

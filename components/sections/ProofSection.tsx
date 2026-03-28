@@ -17,7 +17,7 @@ const caseStudies = [
   {
     category: 'Multi-location Service',
     result: '+156% Pipeline',
-    description: 'Built attribution system that revealed hidden high-performers, reallocated budget, and transformed reporting clarity.',
+    description: 'Set up proper tracking so they could see which campaigns were actually working. Moved budget from the losers to the winners.',
     services: ['Systems & Reporting', 'Attribution'],
     timeline: '3 months',
   },

@@ -91,7 +91,7 @@ export function CaseStudiesPreview() {
                     {cs.metrics.map((m) => (
                       <span
                         key={m.label}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/[0.06] px-3 py-1 text-xs font-medium neon-border"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-[#22C55E]/30 bg-[#22C55E]/[0.08] px-3 py-1.5 text-xs font-medium"
                       >
                         <span className="text-[#22C55E] neon-text-strong">{m.value}</span>
                         <span className="text-white/60">{m.label}</span>

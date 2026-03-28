@@ -46,9 +46,11 @@ export function ProofSection() {
         <StaggerContainer className="grid md:grid-cols-3 gap-6 mb-12">
           {caseStudies.map((study, index) => (
             <StaggerItem key={study.category}>
-              <GlassCard className="p-6 h-full">
+              <GlassCard className="p-6 h-full overflow-hidden relative group">
+                {/* Top accent bar */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#059669] via-[#22C55E] to-[#4ADE80] opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
                 {/* Result Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#22C55E]/10 text-[#22C55E] text-sm font-semibold mb-4 neon-text-strong">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#22C55E]/10 border border-[#22C55E]/25 text-[#22C55E] text-sm font-semibold mb-4 neon-text-strong">
                   {study.result}
                 </div>
 

@@ -23,18 +23,18 @@ export function HomepageHeroText() {
           className="text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed tracking-tight"
         />
 
-        <div className="mt-12 grid grid-cols-3 gap-6">
+        <div className="mt-12 grid grid-cols-3 gap-4 md:gap-6">
           {[
             { value: '40-60%', label: 'Lower Costs' },
             { value: '8+', label: 'Years Running' },
             { value: '<1 week', label: 'Staff Ready' },
           ].map((stat, i) => (
             <LineReveal key={i} delay={0.3 + i * 0.2}>
-              <div className="text-center">
-                <div className="font-mono text-xl md:text-2xl font-bold text-[#22C55E] mb-1">
+              <div className="text-center p-4 md:p-5 rounded-xl border border-white/[0.06] bg-white/[0.02]">
+                <div className="font-mono text-xl md:text-3xl font-bold text-[#22C55E] neon-text mb-1">
                   {stat.value}
                 </div>
-                <div className="text-xs text-[var(--text-muted)] uppercase tracking-wider">
+                <div className="text-[10px] md:text-xs text-[#A1A1AA] uppercase tracking-wider">
                   {stat.label}
                 </div>
               </div>

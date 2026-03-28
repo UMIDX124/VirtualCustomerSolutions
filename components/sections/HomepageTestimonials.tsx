@@ -78,7 +78,7 @@ export function HomepageTestimonials() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               >
-                <Quote className="w-10 h-10 text-[#22C55E]/30 mb-6" />
+                <Quote className="w-10 h-10 text-[#22C55E]/60 mb-6" />
                 <p className="text-lg md:text-xl text-[var(--text-primary)] leading-relaxed mb-8">
                   {"\u201C"}{t.quote}{"\u201D"}
                 </p>
@@ -95,7 +95,7 @@ export function HomepageTestimonials() {
                       </div>
                     </div>
                   </div>
-                  <div className="font-mono text-2xl font-bold text-[#22C55E]">{t.metric}</div>
+                  <div className="font-mono text-2xl font-bold text-[#22C55E] neon-text px-4 py-1.5 rounded-full border border-[#22C55E]/20 bg-[#22C55E]/[0.06]">{t.metric}</div>
                 </div>
               </motion.div>
             </AnimatePresence>

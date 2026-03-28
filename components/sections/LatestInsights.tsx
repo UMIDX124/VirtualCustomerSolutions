@@ -79,12 +79,12 @@ const posts: BlogPost[] = [
 ];
 
 const categoryColors: Record<string, string> = {
-  'Remote Work': 'bg-[#22C55E]/10 text-[#4ADE80] neon-text',
-  Marketing: 'bg-white/[0.08] text-[#F5F5F5]',
-  Operations: 'bg-white/[0.08] text-[#F5F5F5]',
-  Recruitment: 'bg-white/[0.08] text-[#F5F5F5]',
-  Reporting: 'bg-[#22C55E]/10 text-[#4ADE80] neon-text',
-  Strategy: 'bg-white/[0.08] text-[#F5F5F5]',
+  'Remote Work': 'bg-[#22C55E]/15 text-[#4ADE80] border border-[#22C55E]/20',
+  Marketing: 'bg-[#059669]/15 text-[#34D399] border border-[#059669]/20',
+  Operations: 'bg-[#22C55E]/10 text-[#4ADE80] border border-[#22C55E]/15',
+  Recruitment: 'bg-[#059669]/10 text-[#34D399] border border-[#059669]/15',
+  Reporting: 'bg-[#22C55E]/15 text-[#4ADE80] border border-[#22C55E]/20',
+  Strategy: 'bg-[#059669]/15 text-[#34D399] border border-[#059669]/20',
 };
 
 export function LatestInsights() {

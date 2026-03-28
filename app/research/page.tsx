@@ -17,14 +17,14 @@ import { motion } from "framer-motion";
 
 const reports = [
   {
-    title: "Remote Work Statistics 2025",
+    title: "Remote Work Statistics 2026",
     description:
-      "Comprehensive data on remote work adoption rates, productivity metrics, and cost savings across 12 industries. Featuring interactive line charts, bar charts, and pie charts with 2,400+ data points.",
+      "Real numbers on remote work adoption, productivity, and cost savings across 12 industries. Charts, breakdowns, and 2,400+ data points you can actually use.",
     href: "/research/remote-work-statistics",
     icon: BarChart3,
     category: "Workforce",
     readTime: "8 min read",
-    date: "March 2025",
+    date: "March 2026",
     color: "#22C55E",
     stats: [
       { label: "Data Points", value: "2,400+" },
@@ -40,12 +40,12 @@ const reports = [
   {
     title: "Marketing ROI Benchmarks by Channel",
     description:
-      "Detailed ROI comparison across SEO, PPC, Social Media, Email Marketing, and Content Marketing. Includes grouped bar charts, area trend charts, and radar comparisons from 850+ companies.",
+      "Which channels actually make money? SEO, PPC, social, email, content — we compared ROI numbers from 850+ companies so you don't have to guess.",
     href: "/research/marketing-roi-benchmarks",
     icon: Target,
     category: "Marketing",
     readTime: "6 min read",
-    date: "February 2025",
+    date: "February 2026",
     color: "#10B981",
     stats: [
       { label: "Channels Analyzed", value: "5" },
@@ -59,14 +59,14 @@ const reports = [
     ],
   },
   {
-    title: "Business Automation Trends 2025",
+    title: "Business Automation Trends 2026",
     description:
-      "Explore how businesses are adopting automation: area charts showing adoption growth, bar charts comparing time savings, and line charts tracking cost reduction across labor, operations, and errors.",
+      "What businesses are automating right now, how much time they're saving, and where the biggest cost cuts are happening. Data from 1,200+ processes.",
     href: "/research/business-automation-trends",
     icon: TrendingUp,
     category: "Technology",
     readTime: "7 min read",
-    date: "January 2025",
+    date: "January 2026",
     color: "#8B5CF6",
     stats: [
       { label: "Processes Tracked", value: "1,200+" },

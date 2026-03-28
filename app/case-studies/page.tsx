@@ -7,7 +7,7 @@ import { BarChart3, TrendingUp } from "lucide-react";
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "See how Virtual Customer Solution helps businesses grow with proven results. Real case studies showcasing Growth Systems, Performance Marketing, and Remote Workforce Solutions.",
+    "Real projects, real numbers. See how we helped businesses grow with marketing, remote teams, and better systems.",
   alternates: {
     canonical: "https://virtualcustomersolution.com/case-studies",
   },

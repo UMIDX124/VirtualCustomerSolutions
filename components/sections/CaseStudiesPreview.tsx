@@ -57,7 +57,7 @@ export function CaseStudiesPreview() {
           </div>
           <Link
             href="/case-studies"
-            className="group inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition hover:text-[#4ADE80] neon-text"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition hover:text-[#4ADE80] neon-text min-h-[44px]"
           >
             View All Case Studies
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -100,7 +100,7 @@ export function CaseStudiesPreview() {
                   </div>
 
                   {/* link */}
-                  <span className="mt-auto inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition group-hover:text-[#4ADE80] neon-text">
+                  <span className="mt-auto inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition group-hover:text-[#4ADE80] neon-text min-h-[44px]">
                     Read Case Study
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>

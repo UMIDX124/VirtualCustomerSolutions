@@ -147,7 +147,7 @@ export function PillarsSection() {
                 {/* CTA */}
                 <button
                   onClick={() => navigateTo('services')}
-                  className="mt-4 flex items-center gap-1 text-sm text-[#71717A] hover:text-[#F5F5F5] transition-colors group/cta"
+                  className="mt-4 flex items-center gap-1 text-sm text-[#71717A] hover:text-[#F5F5F5] transition-colors group/cta min-h-[44px]"
                 >
                   Learn more
                   <ArrowRight className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform" />

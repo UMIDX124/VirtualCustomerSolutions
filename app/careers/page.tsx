@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Careers | Virtual Customer Solution',
-  description: 'Join Virtual Customer Solution and help shape the future of digital services. Explore career opportunities in Pakistan.',
+  description: 'We are hiring in Lahore and remote. Marketing, engineering, support, design — check out open roles at Virtual Customer Solution.',
 };
 
 const jobs = [
@@ -20,7 +20,7 @@ const jobs = [
     type: 'Full-time',
     location: 'Remote / Karachi',
     department: 'Engineering',
-    description: 'Build scalable web applications using modern technologies.',
+    description: 'Build web apps with React, Next.js, and Node.js for our clients.',
     requirements: ['3+ years experience', 'React/Next.js', 'Node.js', 'TypeScript'],
   },
   {
@@ -28,7 +28,7 @@ const jobs = [
     type: 'Full-time',
     location: 'Remote',
     department: 'Operations',
-    description: 'Ensure client satisfaction and drive retention.',
+    description: 'Keep clients happy, handle check-ins, and make sure things run smooth.',
     requirements: ['3+ years experience', 'Excellent communication', 'CRM knowledge'],
   },
   {
@@ -36,7 +36,7 @@ const jobs = [
     type: 'Full-time',
     location: 'Remote / Islamabad',
     department: 'Design',
-    description: 'Create beautiful, user-centered design experiences.',
+    description: 'Design websites, dashboards, and marketing pages in Figma.',
     requirements: ['3+ years experience', 'Figma proficiency', 'Design systems'],
   },
   {
@@ -52,7 +52,7 @@ const jobs = [
     type: 'Part-time',
     location: 'Remote',
     department: 'Marketing',
-    description: 'Create compelling content for blogs, social media, and campaigns.',
+    description: 'Write blog posts, social media copy, and email campaigns for our clients.',
     requirements: ['2+ years experience', 'Portfolio required', 'SEO knowledge'],
   },
 ];

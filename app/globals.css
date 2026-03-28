@@ -4,6 +4,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Mobile-friendly form inputs */
+@media (max-width: 640px) {
+  input, select, textarea { min-height: 44px; font-size: 16px !important; }
+}
+
 :root {
   /* Core Colors — Matte Dark */
   --bg-primary: #0A0A0A;

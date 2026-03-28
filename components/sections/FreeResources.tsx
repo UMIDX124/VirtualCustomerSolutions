@@ -19,7 +19,7 @@ const resources: Resource[] = [
   },
   {
     icon: BarChart3,
-    title: 'The 2025 Marketing Playbook for Small Businesses',
+    title: 'The 2026 Marketing Playbook for Small Businesses',
     description:
       'No fluff — just the ad strategies, budgeting tips, and tracking setups that are working right now for our clients.',
     slug: 'performance-marketing-playbook-2025',
@@ -77,7 +77,7 @@ export function FreeResources() {
                   {/* link */}
                   <Link
                     href={`/guides/${r.slug}`}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition hover:text-[#4ADE80] neon-text"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-[#22C55E] transition hover:text-[#4ADE80] neon-text min-h-[44px]"
                   >
                     Read Guide
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

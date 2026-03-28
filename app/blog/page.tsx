@@ -9,7 +9,7 @@ import { BlogListClient } from './BlogListClient';
 export const metadata: Metadata = {
   title: 'Blog | Virtual Customer Solution',
   description:
-    'Insights and tips on IT solutions, digital marketing, remote workforce, and business growth. Stay ahead with the latest strategies.',
+    'Practical tips on marketing, remote teams, and growing your business. Written by our team based on what we actually do for clients.',
   alternates: {
     canonical: 'https://virtualcustomersolution.com/blog',
   },

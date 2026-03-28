@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Sparkles, Zap, Globe, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -11,6 +12,7 @@ const smoothEase = [0.16, 1, 0.3, 1] as const;
 export function HeroSection() {
   const { navigateTo } = useNavigation();
   const { scrollY } = useScroll();
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   const rawY = useTransform(scrollY, [0, 800], [0, 40]);
   const rawOpacity = useTransform(scrollY, [200, 800], [1, 0]);
@@ -20,19 +22,25 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
-      {/* Video Background — right-biased so it doesn't clash with left text */}
-      <div className="absolute inset-0 z-0">
+      {/* Instant gradient background — shows immediately while video loads */}
+      <div className="absolute inset-0 z-0 bg-[#0A0A0A]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(34,197,94,0.12)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_80%,rgba(5,150,105,0.08)_0%,transparent_50%)]" />
+
+        {/* Video loads lazily on top — fades in when ready */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
+          preload="metadata"
+          onCanPlayThrough={() => setVideoLoaded(true)}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
           style={{ objectPosition: '70% center' }}
         >
           <source src="/hero.mp4" type="video/mp4" />
         </video>
+
         {/* Left-side dark fade so text is readable, right side shows video */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />

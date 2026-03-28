@@ -5,27 +5,27 @@ import { RevealOnScroll, StaggerChildren, StaggerItem } from '@/components/anima
 
 const steps = [
   {
-    title: 'Discovery & Audit',
+    title: 'We Look at What You Have',
     description:
-      "We dissect your current operations, marketing spend, and team structure. No guesswork — we use data to pinpoint exactly where you're bleeding money and missing opportunities.",
+      "First thing we do is dig into your current setup — where your money goes, what your team looks like, what's working and what's not. You get an honest breakdown, not a sales pitch.",
     icon: <Search className="w-6 h-6" />,
   },
   {
-    title: 'Strategy & Architecture',
+    title: 'We Build You a Plan',
     description:
-      "Based on your audit, we architect a custom growth system — your ideal team composition, marketing channel mix, automation stack, and reporting framework with projected ROI.",
+      "Once we know the gaps, we put together a clear plan — who you need, what channels to focus on, what to automate. You'll see projected costs and expected outcomes before we start.",
     icon: <Lightbulb className="w-6 h-6" />,
   },
   {
-    title: 'Launch & Execute',
+    title: 'We Get to Work',
     description:
-      "We deploy your dedicated team and systems within 48 hours. From day one, you have real humans executing real campaigns with real-time reporting dashboards.",
+      "Your team and campaigns go live within the first week. Real people doing real work — with dashboards so you can see exactly what's happening at any time.",
     icon: <Rocket className="w-6 h-6" />,
   },
   {
-    title: 'Optimize & Scale',
+    title: 'We Keep Improving',
     description:
-      "Monthly performance reviews, A/B testing, and continuous optimization. As results compound, we scale what works and cut what doesn't — always backed by data.",
+      "Every month we review what's working, cut what's not, and double down on the wins. You get a report and a call — no surprises.",
     icon: <BarChart3 className="w-6 h-6" />,
   },
 ];

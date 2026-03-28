@@ -37,8 +37,28 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitted(true);
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/adminatvcs@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Not provided',
+          service: formData.service || 'Not specified',
+          budget: formData.budget || 'Not specified',
+          message: formData.message,
+          _subject: `New Contact Form: ${formData.name} — ${formData.service || 'General Inquiry'}`,
+        }),
+      });
+      if (res.ok) {
+        setIsSubmitted(true);
+      } else {
+        alert('Something went wrong. Please try again or email us directly at adminatvcs@gmail.com');
+      }
+    } catch {
+      alert('Something went wrong. Please try again or email us directly at adminatvcs@gmail.com');
+    }
     setIsLoading(false);
   };
 

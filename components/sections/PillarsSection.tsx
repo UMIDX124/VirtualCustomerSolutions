@@ -83,14 +83,14 @@ export function PillarsSection() {
         </RevealOnScroll>
 
         {/* Bento Grid */}
-        <StaggerChildren staggerDelay={0.1} className="grid grid-cols-4 gap-4 auto-rows-[200px]">
+        <StaggerChildren staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-auto lg:auto-rows-[200px]">
           {services.map((service, index) => (
             <StaggerItem
               key={service.title}
               className={`
-                ${service.size === 'large' ? 'col-span-2 row-span-2' : ''}
-                ${service.size === 'medium' ? 'col-span-2 row-span-1' : ''}
-                ${service.size === 'small' ? 'col-span-1 row-span-1' : ''}
+                ${service.size === 'large' ? 'sm:col-span-2 lg:row-span-2' : ''}
+                ${service.size === 'medium' ? 'sm:col-span-2 lg:col-span-2 lg:row-span-1' : ''}
+                ${service.size === 'small' ? 'sm:col-span-1 lg:col-span-1 lg:row-span-1' : ''}
               `}
             >
             <MagneticHover strength={0.15} className="group relative overflow-hidden rounded-2xl h-full">

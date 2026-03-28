@@ -112,7 +112,7 @@ export function LatestInsights() {
         </RevealOnScroll>
 
         <StaggerChildren staggerDelay={0.1} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
+          {posts.slice(0, 3).map((post) => (
             <StaggerItem key={post.slug}>
               <RevealOnScroll variant="blur-in" duration={0.8}>
                 <Link

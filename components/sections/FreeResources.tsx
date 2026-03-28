@@ -35,7 +35,7 @@ const resources: Resource[] = [
 
 export function FreeResources() {
   return (
-    <section className="section-padding relative">
+    <section className="section-padding relative bg-white/[0.01] border-y border-white/[0.04]">
       <div className="container-wide">
         {/* header */}
         <div className="scroll-reveal mb-12 text-center">

@@ -49,7 +49,7 @@ export function FAQSection() {
 
   return (
     <RevealOnScroll variant="fade-up" duration={0.8}>
-    <section className="section-padding relative">
+    <section className="section-padding relative bg-white/[0.01] border-y border-white/[0.04]">
       <div className="container-narrow">
         {/* Section Header */}
         <FadeUp className="text-center mb-12 relative">

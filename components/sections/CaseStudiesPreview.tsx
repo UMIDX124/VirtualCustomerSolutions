@@ -43,7 +43,7 @@ const caseStudies: CaseStudy[] = [
 
 export function CaseStudiesPreview() {
   return (
-    <section className="section-padding relative">
+    <section className="section-padding relative bg-white/[0.01] border-y border-white/[0.04]">
       <div className="container-wide">
         {/* header */}
         <div className="scroll-reveal mb-12 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">

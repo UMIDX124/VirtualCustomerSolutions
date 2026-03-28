@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
       const faqResponse = matchFAQ(trimmedMessage)
       return NextResponse.json({
         role: 'assistant',
-        content: faqResponse ?? "Thanks for reaching out! Email us at umidx932@gmail.com for help.",
+        content: faqResponse ?? "Thanks for reaching out! Email us at adminatvcs@gmail.com for help.",
       })
     }
 
@@ -50,13 +50,13 @@ export async function POST(request: NextRequest) {
       const faqResponse = matchFAQ(trimmedMessage)
       return NextResponse.json({
         role: 'assistant',
-        content: faqResponse ?? "I'm having a moment — reach us at umidx932@gmail.com!",
+        content: faqResponse ?? "I'm having a moment — reach us at adminatvcs@gmail.com!",
       })
     }
   } catch (error) {
     console.error('[chat] Error:', error)
     return NextResponse.json(
-      { role: 'assistant', content: "Something went wrong. Reach us at umidx932@gmail.com." },
+      { role: 'assistant', content: "Something went wrong. Reach us at adminatvcs@gmail.com." },
       { status: 500 }
     )
   }

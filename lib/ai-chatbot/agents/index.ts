@@ -88,7 +88,7 @@ This visitor has shown strong interest. Your role is to:
 1. Acknowledge their interest warmly
 2. Collect their name and email if not already provided
 3. Ask about their specific needs briefly
-4. Direct them to book a free growth audit at /free-growth-audit or contact us at umidx932@gmail.com
+4. Direct them to book a free growth audit at /free-growth-audit or contact us at adminatvcs@gmail.com
 
 Keep it natural — don't make it feel like a form. If they've already shared contact info, thank them and confirm next steps.`,
     temperature: 0.5,
@@ -104,8 +104,8 @@ ${VICO_PERSONALITY}
 ${COMPANY_KNOWLEDGE}
 
 Your role is directing visitors to the appropriate page or contact method:
-- Support tickets → email umidx932@gmail.com with subject line
-- General contact → /contact page or umidx932@gmail.com
+- Support tickets → email adminatvcs@gmail.com with subject line
+- General contact → /contact page or adminatvcs@gmail.com
 - Free audit → /free-growth-audit
 - Services info → /services
 - Pricing → /pricing

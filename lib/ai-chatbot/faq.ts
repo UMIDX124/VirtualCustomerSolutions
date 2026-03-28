@@ -71,7 +71,7 @@ const FAQS: FAQ[] = [
       'phone',
     ],
     answer:
-      "You can reach us at **umidx932@gmail.com** or visit our [contact page](/contact). For a more structured conversation about your growth goals, [book a free audit](/free-growth-audit) — it's the best way to start!",
+      "You can reach us at **adminatvcs@gmail.com** or visit our [contact page](/contact). For a more structured conversation about your growth goals, [book a free audit](/free-growth-audit) — it's the best way to start!",
   },
   {
     keywords: [
@@ -123,7 +123,7 @@ const FAQS: FAQ[] = [
       'error',
     ],
     answer:
-      "For support issues, please email us at **umidx932@gmail.com** with a clear subject line describing your issue. Our team will get back to you as soon as possible. If it's urgent, mention that in the subject!",
+      "For support issues, please email us at **adminatvcs@gmail.com** with a clear subject line describing your issue. Our team will get back to you as soon as possible. If it's urgent, mention that in the subject!",
   },
 ]
 

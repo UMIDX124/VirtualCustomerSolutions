@@ -289,15 +289,15 @@ export default function TermsOfServicePage() {
                 <div className="flex items-center gap-3 text-[var(--text-secondary)]">
                   <Mail className="h-5 w-5 text-[var(--red-primary)]" />
                   <a
-                    href="mailto:umidx932@gmail.com"
+                    href="mailto:adminatvcs@gmail.com"
                     className="underline decoration-[var(--red-primary)] underline-offset-4 transition-colors hover:text-[var(--text-primary)]"
                   >
-                    umidx932@gmail.com
+                    adminatvcs@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-3 text-[var(--text-secondary)]">
                   <MapPin className="h-5 w-5 text-[var(--red-primary)]" />
-                  <span>Virtual Customer Solution, Pakistan</span>
+                  <span>Virtual Customer Solution, 114 McLeod Rd, Lahore</span>
                 </div>
               </div>
             </div>

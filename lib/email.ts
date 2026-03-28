@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer'
 
-const ADMIN_EMAIL = 'umidx932@gmail.com'
+const ADMIN_EMAIL = 'adminatvcs@gmail.com'
 const COMPANY_NAME = 'Virtual Customer Solution'
 
 // ─── Graceful SMTP fallback ─────────────────────────────────────────────────

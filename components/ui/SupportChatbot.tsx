@@ -156,7 +156,7 @@ export default function SupportChatbot() {
       setMessages((prev) => [...prev, {
         id: `a-${Date.now()}`,
         role: 'assistant',
-        content: "Oops! Something went wrong. You can reach us directly at umidx932@gmail.com.",
+        content: "Oops! Something went wrong. You can reach us directly at adminatvcs@gmail.com.",
       }]);
     } finally {
       setChatStatus('idle');

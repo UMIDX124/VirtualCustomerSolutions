@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Virtual Customer Solution | IT, Marketing & Remote Workforce Solutions",
     description:
-      "Comprehensive digital solutions for businesses. IT consulting, cloud, cybersecurity, digital marketing, and remote workforce services.",
+      "Marketing, remote teams, web development, and operations support for businesses that want to grow without the overhead.",
     url: "https://virtualcustomersolution.com",
     siteName: "Virtual Customer Solution",
     type: "website",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Virtual Customer Solution | IT & Digital Services",
     description:
-      "Comprehensive digital solutions including IT consulting, cloud, cybersecurity, marketing and remote workforce.",
+      "Remote teams, marketing, web dev, and operations support — all under one roof.",
     images: ["/og-image.png"],
     creator: "@virtualcustomersolution",
   },
@@ -120,8 +120,8 @@ export default function RootLayout({
               url: "https://virtualcustomersolution.com",
               logo: "https://virtualcustomersolution.com/logo.svg",
               description:
-                "A comprehensive digital solutions company offering IT consulting, cloud solutions, cybersecurity, digital marketing, and remote workforce services.",
-              email: "umidx932@gmail.com",
+                "Marketing, remote teams, web development, and business operations support. Helping businesses grow since 2016.",
+              email: "adminatvcs@gmail.com",
               sameAs: [
                 "https://facebook.com/virtualcustomersolution",
                 "https://linkedin.com/company/virtualcustomersolution",
@@ -132,14 +132,15 @@ export default function RootLayout({
               ],
               contactPoint: {
                 "@type": "ContactPoint",
-                email: "umidx932@gmail.com",
+                email: "adminatvcs@gmail.com",
                 contactType: "customer service",
                 availableLanguage: ["English", "Urdu"],
               },
               address: {
                 "@type": "PostalAddress",
+                streetAddress: "114 McLeod Rd",
+                addressLocality: "Lahore",
                 addressCountry: "PK",
-                addressLocality: "Pakistan",
               },
               founder: {
                 "@type": "Person",

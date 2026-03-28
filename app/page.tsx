@@ -13,6 +13,7 @@ import { HomepageProcess } from '@/components/sections/HomepageProcess';
 import { HomepageTestimonials } from '@/components/sections/HomepageTestimonials';
 import { HomepageHeroText } from '@/components/sections/HomepageHeroText';
 import { MascotDivider } from '@/components/layout/MascotDivider';
+import { TrustBar } from '@/components/sections/TrustBar';
 
 export default function HomePage() {
   return (
@@ -21,16 +22,17 @@ export default function HomePage() {
       <HeroSection />
       <HomepageHeroText />
       <ProofBar />
+      <TrustBar />
+      <MascotDivider />
+      <PillarsSection />
+      <HomepageProcess />
+      <MascotDivider />
+      <CaseStudiesPreview />
+      <ProofSection />
+      <HomepageTestimonials />
       <MascotDivider />
       <LatestInsights />
       <FreeResources />
-      <HomepageProcess />
-      <MascotDivider />
-      <PillarsSection />
-      <CaseStudiesPreview />
-      <ProofSection />
-      <MascotDivider />
-      <HomepageTestimonials />
       <FAQSection />
       <CTASection />
     </SiteShell>

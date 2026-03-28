@@ -37,9 +37,9 @@ export function ProofSection() {
     <Section background="gradient">
       <Container>
         <SectionHeader
-          eyebrow="Proven Results"
-          title="What changes when acquisition, reporting, and execution finally line up."
-          description="Real outcomes from the integrated model. Not hypothetical growth."
+          eyebrow="Real Numbers"
+          title="What happened when these businesses let us handle things."
+          description="Not projections. Not estimates. This is what actually changed."
           align="center"
         />
 

@@ -28,7 +28,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://virtualcustomersolution.com"),
   title: {
-    default: "Virtual Customer Solution | IT, Marketing & Remote Workforce Solutions",
+    default: "Virtual Customer Solution | Marketing, Remote Teams & Web Development",
     template: "%s | Virtual Customer Solution",
   },
   description:

@@ -167,7 +167,7 @@ export default function RemoteWorkStatisticsPage() {
               <span className="text-gradient">2025</span>
             </h1>
             <p className="text-lg text-white/70 max-w-2xl">
-              A comprehensive look at remote work adoption, productivity
+              A deep dive into remote work adoption, productivity
               metrics, and cost savings data from over 2,400 data points
               across 12 industries.
             </p>

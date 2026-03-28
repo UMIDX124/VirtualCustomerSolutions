@@ -61,7 +61,7 @@ export const caseStudies: CaseStudy[] = [
     execution: [
       "Mapped all customer-facing and internal operations workflows to identify delegation opportunities",
       "Recruited, vetted, and onboarded a 6-person remote team across support, onboarding, and admin roles",
-      "Created a comprehensive SOP library covering 40+ recurring tasks and escalation paths",
+      "Built a 40+ task SOP library with clear escalation paths and execution rules",
       "Implemented a QA scoring system with weekly calibration sessions",
       "Set up shared dashboards for ticket response time, resolution rate, and customer satisfaction",
       "Introduced a tiered escalation model so the founding team only handled critical issues",

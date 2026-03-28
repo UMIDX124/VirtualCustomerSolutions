@@ -494,7 +494,7 @@ Schedule monthly data quality reviews. Check for duplicates, incomplete records,
 
 ### Training Your Team
 
-The best systems in the world fail if people don't use them correctly. Invest in training not just when you launch a new tool, but on an ongoing basis. Short, practical sessions that show team members how better data entry directly benefits their own work are far more effective than comprehensive training manuals nobody reads.
+The best systems in the world fail if people don't use them correctly. Invest in training not just when you launch a new tool, but on an ongoing basis. Short, practical sessions that show team members how better data entry directly benefits their own work are far more effective than thick training manuals nobody reads.
 
 ## Scaling Your Systems {#scaling-your-systems}
 
@@ -877,7 +877,7 @@ The transformation journey is different for every business, but the principles a
       {
         question: "How long does digital transformation take?",
         answer:
-          "Meaningful results from the first phase typically appear within 90 days. A comprehensive transformation for a mid-size business usually takes 9-12 months to fully implement and stabilize. The key is taking a phased approach so you see value early, not waiting until everything is 'done' to start benefiting.",
+          "Meaningful results from the first phase typically appear within 90 days. A full transformation for a mid-size business usually takes 9-12 months to implement and stabilize. The key is taking a phased approach so you see value early, not waiting until everything is 'done' to start benefiting.",
       },
       {
         question: "What's the biggest risk in digital transformation?",

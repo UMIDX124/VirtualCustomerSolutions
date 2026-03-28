@@ -143,7 +143,7 @@ export function generateServiceIndustryContent(
     ],
     "remote-workforce": (ind) => [
       { title: `${ind} Operations Team`, description: `We recruit, train, and manage remote professionals who understand ${ind.toLowerCase()} workflows and can hit the ground running.` },
-      { title: "Process Documentation and SOPs", description: "We build comprehensive standard operating procedures so your remote team operates consistently and new members onboard quickly." },
+      { title: "Process Documentation and SOPs", description: "We document your workflows step by step so your remote team stays consistent and new hires get up to speed fast." },
       { title: "Performance Management System", description: "Weekly KPI scorecards, regular check-ins, and clear accountability structures keep your remote team aligned and productive." },
       { title: "Scalable Team Architecture", description: "We design team structures that scale — from your first remote hire to a full distributed operations team." },
     ],

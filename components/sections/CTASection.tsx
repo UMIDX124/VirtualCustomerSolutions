@@ -1,8 +1,9 @@
 'use client';
 
-import { ArrowRight, CheckCircle, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import { useNavigation } from '@/lib/navigation';
 import { FloatingElement, TextReveal, MagneticHover } from '@/components/animations/ScrollAnimations';
+import { Mascot } from '@/components/layout/Mascot';
 
 const auditIncludes = [
   'Full Website & Marketing Review',
@@ -39,11 +40,9 @@ export function CTASection() {
             <div className="absolute inset-0 bg-gradient-to-br from-[#22C55E]/[0.04] via-transparent to-transparent" />
 
             <div className="relative z-10">
-              {/* Icon */}
-              <div
-                className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-[#22C55E] to-[#059669] mb-8 shadow-lg shadow-[#22C55E]/25 animate-subtle-scale-pulse will-change-transform neon-box-strong"
-              >
-                <Sparkles className="w-10 h-10 text-white" />
+              {/* Mascot pointing at CTA */}
+              <div className="mb-8">
+                <Mascot size={100} variant="pointing" disableInteraction />
               </div>
 
               <TextReveal

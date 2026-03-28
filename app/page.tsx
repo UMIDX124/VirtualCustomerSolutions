@@ -12,46 +12,26 @@ import { ScrollProgress } from '@/components/motion/ScrollProgress';
 import { HomepageProcess } from '@/components/sections/HomepageProcess';
 import { HomepageTestimonials } from '@/components/sections/HomepageTestimonials';
 import { HomepageHeroText } from '@/components/sections/HomepageHeroText';
+import { MascotDivider } from '@/components/layout/MascotDivider';
 
 export default function HomePage() {
   return (
     <SiteShell>
       <ScrollProgress />
-
-      {/* 1. Hero — TextReveal heading, MagneticHover CTAs, FloatingElement particles */}
       <HeroSection />
-
-      {/* 2. Text reveal */}
       <HomepageHeroText />
-
-      {/* 3. Proof Bar — CountUpOnView numbers, StaggerChildren */}
       <ProofBar />
-
-      {/* 4. Latest Insights — RevealOnScroll blur-in, StaggerChildren */}
+      <MascotDivider />
       <LatestInsights />
-
-      {/* 5. Free Resources — RevealOnScroll fade-left, StaggerChildren */}
       <FreeResources />
-
-      {/* 6. Process — sticky scrollytelling + ScrollLine */}
       <HomepageProcess />
-
-      {/* 7. Pillars — RevealOnScroll fade-up, StaggerChildren, MagneticHover */}
+      <MascotDivider />
       <PillarsSection />
-
-      {/* 8. Case Studies — RevealOnScroll zoom-in, StaggerChildren */}
       <CaseStudiesPreview />
-
-      {/* 9. Proof Section */}
       <ProofSection />
-
-      {/* 10. Testimonials — RevealOnScroll fade-up header */}
+      <MascotDivider />
       <HomepageTestimonials />
-
-      {/* 11. FAQ — RevealOnScroll fade-up wrapper */}
       <FAQSection />
-
-      {/* 12. CTA — FloatingElement orbs, TextReveal heading, MagneticHover button */}
       <CTASection />
     </SiteShell>
   );

@@ -5,6 +5,7 @@ import { ArrowRight, Sparkles, Zap, Globe, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigation } from '@/lib/navigation';
 import { MagneticHover } from '@/components/animations/ScrollAnimations';
+import { Mascot } from '@/components/layout/Mascot';
 
 const smoothEase = [0.16, 1, 0.3, 1] as const;
 
@@ -124,16 +125,27 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right — Decorative floating elements */}
+          {/* Right — Mascot with animated rings */}
           <div className="hidden lg:flex items-center justify-center" aria-hidden="true">
-            <div className="relative w-80 h-80">
-              {/* Animated rings */}
+            <div className="relative w-80 h-80 animate-mascot-float-hero">
+              {/* Animated rings framing the mascot */}
               <div className="absolute inset-0 rounded-full border border-[#22C55E]/10 animate-[hero-ring_8s_ease-in-out_infinite]" />
               <div className="absolute inset-6 rounded-full border border-[#22C55E]/[0.07] animate-[hero-ring_8s_ease-in-out_infinite_1s]" />
               <div className="absolute inset-12 rounded-full border border-[#22C55E]/[0.05] animate-[hero-ring_8s_ease-in-out_infinite_2s]" />
 
-              {/* Center glow */}
-              <div className="absolute inset-16 rounded-full bg-[#22C55E]/[0.06] blur-xl animate-[hero-pulse_4s_ease-in-out_infinite]" />
+              {/* Extra glow behind mascot */}
+              <div className="absolute inset-12 rounded-full bg-[#22C55E]/[0.08] blur-[60px]" />
+
+              {/* Mascot centered */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Mascot
+                  size={220}
+                  speechBubble="Let's grow your business"
+                  speechBubblePosition="left"
+                  disableInteraction
+                  priority
+                />
+              </div>
 
               {/* Floating dots */}
               <div className="absolute top-8 right-12 w-2 h-2 rounded-full bg-[#22C55E]/40 animate-[hero-float_6s_ease-in-out_infinite]" />

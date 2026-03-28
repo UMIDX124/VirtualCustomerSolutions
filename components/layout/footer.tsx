@@ -1,7 +1,7 @@
 'use client';
 
 import { Linkedin, Mail, Phone, MapPin, ArrowUpRight, Instagram, Twitter, Facebook } from 'lucide-react';
-import Image from 'next/image';
+import { Mascot } from './Mascot';
 import { useNavigation } from '@/lib/navigation';
 
 const footerLinks = {
@@ -37,17 +37,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <button onClick={() => navigateTo('home')} className="mb-6 flex items-center gap-3">
-              <div className="relative h-14 w-14">
-                <Image
-                  src="/mascot.png"
-                  alt="VCS Mascot"
-                  width={56}
-                  height={56}
-                  className="w-full h-full object-contain"
-                  style={{ filter: 'drop-shadow(0 0 16px rgba(74,222,128,0.5))' }}
-                />
-                <div className="absolute -inset-3 bg-[#22C55E]/25 blur-xl rounded-full animate-mascot-glow" />
-              </div>
+              <Mascot size={72} variant="waving" />
               <div>
                 <span className="font-display text-xl font-bold tracking-tight">
                   <span className="text-[#F5F5F5]">Virtual </span>

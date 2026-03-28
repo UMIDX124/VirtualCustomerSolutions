@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { FadeUp, GlassCard, SignalPoint, StaggerContainer, StaggerItem } from '@/components/ui-dp/AnimatedElements';
 import { RevealOnScroll } from '@/components/animations/ScrollAnimations';
+import { Mascot } from '@/components/layout/Mascot';
 
 const faqs = [
   {
@@ -51,13 +52,17 @@ export function FAQSection() {
     <section className="section-padding relative">
       <div className="container-narrow">
         {/* Section Header */}
-        <FadeUp className="text-center mb-12">
+        <FadeUp className="text-center mb-12 relative">
           <span className="text-[#22C55E] text-sm font-medium uppercase tracking-wider mb-4 block neon-text">
             FAQ
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight">
             Questions we get asked a lot
           </h2>
+          {/* Mascot peeking from the right */}
+          <div className="hidden md:block absolute -right-4 lg:-right-16 top-0">
+            <Mascot size={72} variant="peeking" speechBubble="Got questions?" speechBubblePosition="left" disableInteraction />
+          </div>
         </FadeUp>
 
         <div className="space-y-3 max-w-3xl mx-auto">

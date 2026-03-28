@@ -1,6 +1,6 @@
 'use client';
 
-import { Linkedin, Mail, Phone, ArrowUpRight, Instagram, Twitter, Facebook } from 'lucide-react';
+import { Linkedin, Mail, Phone, MapPin, ArrowUpRight, Instagram, Twitter, Facebook } from 'lucide-react';
 import Image from 'next/image';
 import { useNavigation } from '@/lib/navigation';
 
@@ -137,6 +137,10 @@ export function Footer() {
                 <Mail className="h-4 w-4 text-[#059669] neon-text" />
                 adminatvcs@gmail.com
               </a>
+              <div className="flex items-center gap-3 text-sm text-[#A1A1AA]">
+                <MapPin className="h-4 w-4 text-[#059669] neon-text" />
+                114 McLeod Rd, Lahore
+              </div>
               <a
                 href="https://linkedin.com/company/virtualcustomersolution"
                 target="_blank"

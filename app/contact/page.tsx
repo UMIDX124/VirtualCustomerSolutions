@@ -114,12 +114,22 @@ export default function ContactPage() {
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-[#22C55E]/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-[#22C55E]" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-text-primary">Office</h3>
+                    <p className="text-text-secondary">114 McLeod Rd, Lahore</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#22C55E]/10 flex items-center justify-center flex-shrink-0">
                     <Clock className="w-5 h-5 text-[#22C55E]" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-text-primary">Office Hours</h3>
-                    <p className="text-text-secondary">Mon-Fri 9AM-6PM EST</p>
-                    <p className="text-text-muted text-sm">We respond within 4 hours during business hours</p>
+                    <p className="text-text-secondary">Mon-Sat 10AM-7PM PKT</p>
+                    <p className="text-text-muted text-sm">We respond within a few hours during business days</p>
                   </div>
                 </div>
               </div>

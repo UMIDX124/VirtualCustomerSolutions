@@ -1,7 +1,7 @@
 'use client';
 
 import { Linkedin, Mail, Phone, MapPin, ArrowUpRight, Instagram, Twitter, Facebook } from 'lucide-react';
-import { Mascot } from './Mascot';
+import Image from 'next/image';
 import { useNavigation } from '@/lib/navigation';
 
 const footerLinks = {
@@ -36,15 +36,17 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 py-16 md:grid-cols-2 md:py-20 lg:grid-cols-4">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <button onClick={() => navigateTo('home')} className="mb-6 flex items-center gap-3">
-              <Mascot size={72} variant="waving" />
-              <div>
-                <span className="font-display text-xl font-bold tracking-tight">
-                  <span className="text-[#F5F5F5]">Virtual </span>
-                  <span className="text-[#22C55E] font-extrabold neon-text-strong">Customer</span>
-                </span>
-                <span className="text-[#22C55E]/50 text-[8px] block -mt-0.5 tracking-[0.3em] font-semibold uppercase neon-text">Solution</span>
-              </div>
+            <button onClick={() => navigateTo('home')} className="mb-6 flex flex-col items-start">
+              <Image
+                src="/Virtual.png"
+                alt="Virtual"
+                width={160}
+                height={34}
+                className="h-8 w-auto object-contain"
+              />
+              <span className="text-[9px] text-[#4ADE80]/50 tracking-[0.22em] font-semibold mt-0.5 uppercase neon-text">
+                Customer Solution
+              </span>
             </button>
             <p className="max-w-xs text-sm leading-relaxed text-[#A1A1AA] mb-6">
               Remote teams, marketing, web development, and operations support.

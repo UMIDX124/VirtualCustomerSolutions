@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Services | Virtual Customer Solution',
-  description: 'Comprehensive IT, digital marketing and remote workforce solutions. SEO, PPC, Cloud, Cybersecurity, Virtual Assistants, Web Design, and Business Growth services.',
+  description: 'Marketing, remote teams, web development, cloud, and cybersecurity — everything your business needs under one roof. See what we offer.',
 };
 
 export default function ServicesPage() {
@@ -11,7 +11,7 @@ export default function ServicesPage() {
     {
       icon: '🎯',
       title: 'Digital Marketing',
-      description: 'Full-funnel digital marketing strategies that drive real results and measurable ROI.',
+      description: 'SEO, ads, social media, email — we run your campaigns and show you exactly what\'s working.',
       items: [
         { name: 'SEO', description: 'On-page, Off-page, Technical, Local SEO' },
         { name: 'PPC / Google Ads', description: 'Search, Display, Shopping, YouTube Ads' },
@@ -40,7 +40,7 @@ export default function ServicesPage() {
     {
       icon: '🌐',
       title: 'Web Solutions',
-      description: 'Stunning web presence that converts visitors into customers.',
+      description: 'Websites, landing pages, e-commerce stores, and apps — built to look good and actually work.',
       items: [
         { name: 'Website Design & Development', description: 'Custom websites from scratch' },
         { name: 'Landing Page Design', description: 'High-converting landing pages' },
@@ -55,7 +55,7 @@ export default function ServicesPage() {
     {
       icon: '📈',
       title: 'Business Growth',
-      description: 'Data-driven strategies to scale your business.',
+      description: 'Lead gen, CRO, analytics, competitor research — the stuff that moves the needle.',
       items: [
         { name: 'Lead Generation Campaigns', description: 'Multi-channel lead capture' },
         { name: 'Conversion Rate Optimization (CRO)', description: 'A/B testing and optimization' },
@@ -135,7 +135,7 @@ export default function ServicesPage() {
                     Get Started with {category.title}
                   </h3>
                   <p className="text-text-secondary mb-6">
-                    Ready to get started? Book your free consultation today and let's discuss how we can help your business grow.
+                    Want to see if this is a good fit? Book a free call and we'll walk you through what we can do for your specific situation.
                   </p>
                   <a
                     href="/free-audit"

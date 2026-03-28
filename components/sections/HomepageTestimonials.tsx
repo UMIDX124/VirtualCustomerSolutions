@@ -7,35 +7,35 @@ import { RevealOnScroll } from '@/components/animations/ScrollAnimations';
 
 const testimonials = [
   {
-    quote: "We were paying $8,000/month to two separate agencies. VCS gave us better results for a fraction of that. The ROI speaks for itself.",
+    quote: "We were spending $8K a month with two different agencies and the results were meh. Switched to VCS and honestly, I wish we'd done it sooner.",
     author: 'Sarah Mitchell',
     role: 'E-Commerce Founder',
     location: 'New York, USA',
     metric: '340% ROI',
   },
   {
-    quote: "Their remote marketing specialist feels like part of our in-house team. Best hiring decision we made this year — and we didn't even have to do the hiring.",
+    quote: "The person they assigned to us knows our product better than some of our own team. And we didn't have to deal with recruiting, onboarding, any of that.",
     author: 'James Richardson',
     role: 'SaaS Co-Founder',
     location: 'London, UK',
     metric: '52% Cost Reduction',
   },
   {
-    quote: "The Domination Mode package delivered 3x ROAS in four months. I've worked with agencies in Dubai, Singapore, and New York — VCS outperformed all of them.",
+    quote: "We tried three agencies before VCS. Two in the UAE, one in the US. None of them came close. These guys just get it done without all the fluff.",
     author: 'Ahmed Al-Khatib',
     role: 'Agency Owner',
     location: 'Dubai, UAE',
     metric: '3x ROAS',
   },
   {
-    quote: "From campaign strategy to reporting dashboards, everything is handled. I finally have time to focus on product instead of firefighting marketing.",
+    quote: "I used to spend half my week checking on campaigns and fixing things. Now I just open the dashboard on Monday and everything's already running. Huge relief.",
     author: 'Lisa Thompson',
     role: 'Real Estate Tech CEO',
     location: 'Toronto, Canada',
     metric: '12hrs/week Saved',
   },
   {
-    quote: "Their Pakistan-based team is sharper than any local hire I've made. The time zone overlap with the US East Coast is actually an advantage — work gets done while we sleep.",
+    quote: "I was skeptical about a remote team from Pakistan. But honestly? They're more responsive than our local contractors. And the timezone thing actually works in our favor — stuff gets done overnight.",
     author: 'David Chen',
     role: 'FinTech Director',
     location: 'San Francisco, USA',
@@ -59,10 +59,10 @@ export function HomepageTestimonials() {
       <div className="container-wide relative z-10">
         <RevealOnScroll variant="fade-up" duration={0.8}>
           <div className="text-center mb-16">
-            <span className="badge mb-4 inline-block">Client Results</span>
+            <span className="badge mb-4 inline-block">What They Say</span>
             <h2 className="text-3xl md:text-5xl font-bold font-display">
-              Trusted by Leaders{' '}
-              <span className="text-gradient-lime">Worldwide</span>
+              Hear It From{' '}
+              <span className="text-gradient-lime">Our Clients</span>
             </h2>
           </div>
         </RevealOnScroll>

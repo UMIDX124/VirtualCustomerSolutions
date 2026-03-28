@@ -20,9 +20,9 @@ const companyValues = [
 ];
 
 const trustMetrics = [
-  { value: '10+', label: 'Years in Performance Marketing' },
-  { value: '50+', label: 'Businesses Served' },
-  { value: '$10M+', label: 'Ad Spend Managed' },
+  { value: '8+', label: 'Years in the Game' },
+  { value: '200+', label: 'Businesses Helped' },
+  { value: '$2M+', label: 'Ad Spend Managed' },
 ];
 
 export function FounderSection() {

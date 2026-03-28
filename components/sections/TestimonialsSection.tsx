@@ -14,7 +14,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "Their remote marketing specialist feels like part of our team. Best decision we made this year.",
+    quote: "The marketing person they gave us actually understands our product. That's rare for an outsourced team.",
     author: 'James R.',
     company: 'SaaS Founder',
     location: 'UK',
@@ -22,7 +22,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "We got 3X ROI in just 4 months. The Domination Mode package is worth every penny.",
+    quote: "Took about 4 months to really see the numbers change, but once they did — wow. We're getting 3x back on what we spend with them.",
     author: 'Ahmed K.',
     company: 'Agency Owner',
     location: 'Dubai',
@@ -30,7 +30,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "The free website redesign alone was worth more than what we pay monthly. Incredible value.",
+    quote: "They rebuilt our website as part of the package and it looks way better than the one we paid $3K for before. Didn't expect that.",
     author: 'Lisa T.',
     company: 'Real Estate Agent',
     location: 'Canada',
@@ -40,10 +40,10 @@ const testimonials = [
 ];
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Clients Served' },
-  { value: 10, suffix: 'M+', label: 'Leads Generated' },
-  { value: 50, suffix: '+', label: 'Countries' },
-  { value: 98, suffix: '%', label: 'Retention' },
+  { value: 200, suffix: '+', label: 'Clients Served' },
+  { value: 8, suffix: '+', label: 'Years Running' },
+  { value: 15, suffix: '+', label: 'Countries' },
+  { value: 97, suffix: '%', label: 'Client Retention' },
 ];
 
 export function TestimonialsSection() {

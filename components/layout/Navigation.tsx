@@ -41,29 +41,23 @@ export function Navigation() {
       {/* Single row — logo far left, pill center, CTA far right */}
       <div className="flex items-center justify-between h-[64px] mt-3 px-5 sm:px-6 md:px-8 w-full">
 
-        {/* ─── LEFT: Mascot + Brand — flush left ─── */}
+        {/* ─── LEFT: Brand logo — no mascot ─── */}
         <button
           onClick={() => navigateTo('home')}
-          className="flex items-center gap-2.5 group flex-shrink-0"
+          className="flex items-center group flex-shrink-0"
         >
-          {/* Mascot (big) + Virtual.png (small) — text aligned to mascot center */}
-          <div className="flex items-center gap-3">
-            <div className="relative flex-shrink-0">
-              <Mascot size={64} />
-            </div>
-            <div className="flex flex-col items-start justify-center">
-              <Image
-                src="/Virtual.png"
-                alt="Virtual"
-                width={130}
-                height={28}
-                className="h-6 lg:h-7 w-auto object-contain"
-                priority
-              />
-              <span className="text-[7px] lg:text-[8px] text-[#4ADE80]/45 tracking-[0.18em] font-semibold mt-0.5 uppercase neon-text">
-                Customer Solution
-              </span>
-            </div>
+          <div className="flex flex-col items-center justify-center">
+            <Image
+              src="/Virtual.png"
+              alt="Virtual"
+              width={160}
+              height={34}
+              className="h-7 lg:h-8 w-auto object-contain"
+              priority
+            />
+            <span className="text-[8px] lg:text-[9px] text-[#4ADE80]/50 tracking-[0.22em] font-semibold mt-0.5 uppercase neon-text">
+              Customer Solution
+            </span>
           </div>
         </button>
 

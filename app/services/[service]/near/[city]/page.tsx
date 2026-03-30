@@ -47,7 +47,7 @@ export async function generateMetadata({
   const cName = cityNames[city as City];
 
   return {
-    title: `${sName} in ${cName} | Virtual Customer Solution`,
+    title: `${sName} in ${cName}`,
     description: `Professional ${sName.toLowerCase()} for businesses in ${cName}. Local market expertise combined with global best practices to drive measurable growth.`,
     alternates: {
       canonical: `https://virtualcustomersolution.com/services/${service}/near/${city}`,

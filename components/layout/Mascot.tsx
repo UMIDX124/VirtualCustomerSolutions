@@ -135,7 +135,7 @@ export function Mascot({
       >
         <Image
           src="/mascot.png"
-          alt="VCS Mascot"
+          alt="Vico — Virtual Customer Solution mascot"
           width={size}
           height={size}
           className="w-full object-contain object-top"

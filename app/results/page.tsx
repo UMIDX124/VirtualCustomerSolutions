@@ -3,7 +3,7 @@ import { SiteShell } from '@/components/layout/SiteShell';
 import { ResultsPage } from '@/components/sections/ResultsPage';
 
 export const metadata: Metadata = {
-  title: 'Results | Virtual Customer Solution',
+  title: 'Results — Real Numbers From Real Clients',
   description: 'See real results and case studies from our clients. Measurable growth in revenue, leads, and efficiency through our digital marketing, remote workforce, and systems reporting services.',
 };
 

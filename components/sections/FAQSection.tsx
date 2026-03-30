@@ -34,6 +34,17 @@ const faqs = [
   },
 ];
 
+// FAQ Schema for SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
+
 export function FAQSection() {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
@@ -50,6 +61,8 @@ export function FAQSection() {
   return (
     <RevealOnScroll variant="fade-up" duration={0.8}>
     <section className="section-padding relative bg-white/[0.01] border-y border-white/[0.04]">
+      {/* FAQ Schema for Google Rich Results */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="container-narrow">
         {/* Section Header */}
         <FadeUp className="text-center mb-12 relative">

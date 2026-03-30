@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import { FadeUp, GlassCard } from '@/components/ui-dp/AnimatedElements';
 
 export const metadata: Metadata = {
-  title: 'About Us | Virtual Customer Solution',
+  title: 'About Us — 8+ Years, 200+ Clients, 15+ Countries',
   description: 'Learn about Virtual Customer Solution - Our mission, vision, and values. We combine IT solutions, digital marketing with dedicated remote talent to help businesses grow.',
 };
 

@@ -28,7 +28,7 @@ export async function generateMetadata({
   if (!guide) return { title: "Guide Not Found" };
 
   return {
-    title: `${guide.title} | Virtual Customer Solution`,
+    title: guide.title,
     description: guide.excerpt,
     alternates: {
       canonical: `https://virtualcustomersolution.com/guides/${guide.slug}`,

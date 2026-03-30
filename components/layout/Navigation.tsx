@@ -49,7 +49,7 @@ export function Navigation() {
           <div className="flex flex-col items-center justify-center">
             <Image
               src="/Virtual.png"
-              alt="Virtual"
+              alt="Virtual Customer Solution logo"
               width={160}
               height={34}
               className="h-7 lg:h-8 w-auto object-contain"

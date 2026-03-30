@@ -48,7 +48,7 @@ export async function generateMetadata({
   const iName = industryNames[industry as Industry];
 
   return {
-    title: `${sName} for ${iName} | Virtual Customer Solution`,
+    title: `${sName} for ${iName}`,
     description: `Specialized ${sName.toLowerCase()} designed for ${iName.toLowerCase()} companies. Industry-specific strategies, systems, and execution that drive measurable results.`,
     alternates: {
       canonical: `https://virtualcustomersolution.com/services/${service}/${industry}`,

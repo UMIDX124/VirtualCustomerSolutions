@@ -39,7 +39,7 @@ export function Footer() {
             <button onClick={() => navigateTo('home')} className="mb-6 flex flex-col items-start">
               <Image
                 src="/Virtual.png"
-                alt="Virtual"
+                alt="Virtual Customer Solution logo"
                 width={160}
                 height={34}
                 className="h-8 w-auto object-contain"
@@ -53,16 +53,16 @@ export function Footer() {
               Helping businesses grow since 2016.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a href="https://facebook.com/virtualcustomersolution" target="_blank" rel="noopener noreferrer" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-[#A1A1AA] hover:text-[#22C55E] hover:neon-text transition-colors">
+              <a href="https://facebook.com/virtualcustomersolution" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-[#A1A1AA] hover:text-[#22C55E] hover:neon-text transition-colors">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://instagram.com/virtualcustomersolution" target="_blank" rel="noopener noreferrer" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-[#A1A1AA] hover:text-[#22C55E] hover:neon-text transition-colors">
+              <a href="https://instagram.com/virtualcustomersolution" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-[#A1A1AA] hover:text-[#22C55E] hover:neon-text transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://linkedin.com/company/virtualcustomersolution" target="_blank" rel="noopener noreferrer" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-[#A1A1AA] hover:text-[#22C55E] hover:neon-text transition-colors">
+              <a href="https://linkedin.com/company/virtualcustomersolution" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-[#A1A1AA] hover:text-[#22C55E] hover:neon-text transition-colors">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="https://twitter.com/virtualcustsol" target="_blank" rel="noopener noreferrer" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-[#A1A1AA] hover:text-[#22C55E] hover:neon-text transition-colors">
+              <a href="https://twitter.com/virtualcustsol" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-[#A1A1AA] hover:text-[#22C55E] hover:neon-text transition-colors">
                 <Twitter className="w-4 h-4" />
               </a>
             </div>

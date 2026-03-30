@@ -28,11 +28,11 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://virtualcustomersolution.com"),
   title: {
-    default: "Virtual Customer Solution | Marketing, Remote Teams & Web Development",
+    default: "Virtual Customer Solution | AI-Powered Digital Marketing & Remote Teams",
     template: "%s | Virtual Customer Solution",
   },
   description:
-    "Remote teams, digital marketing, web development, and operations support — all under one roof. Virtual Customer Solution helps businesses grow without the overhead.",
+    "Save 50-75% with AI-powered digital marketing, remote teams & web development. 200+ clients in 15+ countries. Get your free audit today.",
   keywords: [
     "IT consulting",
     "cloud solutions",
@@ -109,32 +109,37 @@ export default function RootLayout({
       <head>
         {/* Prevent flash on load */}
         <style dangerouslySetInnerHTML={{ __html: `html,body{background-color:#0A0A0A!important;color:#F5F5F5}` }} />
-        {/* Organization Schema */}
+        {/* ProfessionalService + Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": ["ProfessionalService", "Organization"],
               name: "Virtual Customer Solution",
-              url: "https://virtualcustomersolution.com",
-              logo: "https://virtualcustomersolution.com/logo.svg",
-              description:
-                "Marketing, remote teams, web development, and business operations support. Helping businesses grow since 2016.",
+              url: "https://www.virtualcustomersolution.com",
+              logo: "https://www.virtualcustomersolution.com/Virtual.png",
+              image: "https://www.virtualcustomersolution.com/og-image.png",
+              description: "AI-powered digital marketing, remote workforce, and web development solutions for businesses in 15+ countries.",
               email: "adminatvcs@gmail.com",
+              telephone: "+92-315-1407896",
+              priceRange: "$399-$2499/mo",
+              openingHours: "Mo-Sa 10:00-19:00",
+              currenciesAccepted: "USD, PKR",
+              paymentAccepted: "Bank Transfer, PayPal",
               sameAs: [
                 "https://facebook.com/virtualcustomersolution",
                 "https://linkedin.com/company/virtualcustomersolution",
-                "https://twitter.com/virtualcustomersolution",
+                "https://twitter.com/virtualcustsol",
                 "https://instagram.com/virtualcustomersolution",
-                "https://github.com/virtualcustomersolution",
-                "https://youtube.com/@virtualcustomersolution",
               ],
               contactPoint: {
                 "@type": "ContactPoint",
+                telephone: "+92-315-1407896",
                 email: "adminatvcs@gmail.com",
                 contactType: "customer service",
                 availableLanguage: ["English", "Urdu"],
+                areaServed: ["US", "UK", "AE", "CA", "AU", "PK"],
               },
               address: {
                 "@type": "PostalAddress",
@@ -142,16 +147,33 @@ export default function RootLayout({
                 addressLocality: "Lahore",
                 addressCountry: "PK",
               },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: "31.5497",
+                longitude: "74.3436",
+              },
               founder: {
                 "@type": "Person",
                 name: "M Faizan Rafiq",
                 jobTitle: "Founder & CEO",
               },
-              foundingDate: "2018",
+              foundingDate: "2016",
               numberOfEmployees: {
                 "@type": "QuantitativeValue",
-                minValue: 2,
-                maxValue: 10,
+                minValue: 50,
+                maxValue: 100,
+              },
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Services",
+                itemListElement: [
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digital Marketing", description: "SEO, PPC, social media, content marketing" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Remote Workforce", description: "Virtual assistants, marketing specialists, support agents" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Web Development", description: "Websites, e-commerce stores, custom web applications" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cloud Solutions", description: "AWS, Azure, GCP migration and management" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cybersecurity", description: "Security assessments, compliance, threat protection" } },
+                  { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business Growth", description: "Lead generation, CRO, analytics, strategy" } },
+                ],
               },
             }),
           }}

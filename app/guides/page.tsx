@@ -15,14 +15,14 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Guides & Resources | Virtual Customer Solution",
+  title: "Guides & Resources",
   description:
     "In-depth guides on remote team management, performance marketing, business systems, and scaling globally. Practical advice from real-world experience.",
   alternates: {
     canonical: "https://virtualcustomersolution.com/guides",
   },
   openGraph: {
-    title: "Guides & Resources | Virtual Customer Solution",
+    title: "Guides & Resources",
     description:
       "In-depth guides on remote team management, performance marketing, business systems, and scaling globally.",
     url: "https://virtualcustomersolution.com/guides",

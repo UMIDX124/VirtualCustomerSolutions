@@ -2,8 +2,8 @@ import { SiteShell } from '@/components/layout/SiteShell';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Services | Virtual Customer Solution',
-  description: 'Marketing, remote teams, web development, cloud, and cybersecurity — everything your business needs under one roof. See what we offer.',
+  title: 'Digital Marketing & Remote Workforce Services',
+  description: 'Full-stack digital marketing, remote workforce, cloud solutions & web development. Custom plans from $399/mo. Free consultation available.',
 };
 
 export default function ServicesPage() {

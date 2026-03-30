@@ -5,16 +5,16 @@ import { CaseStudyGrid } from "./CaseStudyGrid";
 import { BarChart3, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Case Studies",
+  title: "Case Studies — Real Results & ROI",
   description:
-    "Real projects, real numbers. See how we helped businesses grow with marketing, remote teams, and better systems.",
+    "See how we helped e-commerce, SaaS & agencies grow with remote teams and performance marketing. Real ROI case studies.",
   alternates: {
     canonical: "https://virtualcustomersolution.com/case-studies",
   },
   openGraph: {
-    title: "Case Studies | Virtual Customer Solution",
+    title: "Case Studies — Real Results & ROI",
     description:
-      "Real results from real clients. Explore how VCS delivers measurable growth through systems, marketing, and remote teams.",
+      "See how we helped e-commerce, SaaS & agencies grow with remote teams and performance marketing. Real ROI case studies.",
     url: "https://virtualcustomersolution.com/case-studies",
     type: "website",
   },

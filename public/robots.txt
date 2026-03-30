@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://virtualcustomersolution.com/sitemap.xml
+Sitemap: https://www.virtualcustomersolution.com/sitemap.xml

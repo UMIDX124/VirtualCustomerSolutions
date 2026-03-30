@@ -2,7 +2,7 @@ import { SiteShell } from '@/components/layout/SiteShell';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Careers | Virtual Customer Solution',
+  title: 'Careers — Join Our Remote Team',
   description: 'We are hiring in Lahore and remote. Marketing, engineering, support, design — check out open roles at Virtual Customer Solution.',
 };
 

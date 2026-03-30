@@ -31,7 +31,7 @@ export async function generateMetadata({
   if (!comparison) return { title: "Comparison Not Found" };
 
   return {
-    title: `${comparison.title} | Virtual Customer Solution`,
+    title: comparison.title,
     description: comparison.excerpt,
     alternates: {
       canonical: `https://virtualcustomersolution.com/compare/${comparison.slug}`,

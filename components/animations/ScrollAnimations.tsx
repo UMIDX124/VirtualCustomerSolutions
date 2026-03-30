@@ -36,7 +36,7 @@ export function ParallaxSection({
     offset: ['start end', 'end start'],
   });
   const raw = useTransform(scrollYProgress, [0, 1], [offset, -offset]);
-  const y = useSpring(raw, { stiffness: 100, damping: 30, mass: 0.5 });
+  const y = useSpring(raw, { stiffness: 80, damping: 30, mass: 0.8 });
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
@@ -57,28 +57,28 @@ type RevealVariant =
 
 const revealVariants: Record<RevealVariant, { hidden: Variant; visible: Variant }> = {
   'fade-up': {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   },
   'fade-down': {
-    hidden: { opacity: 0, y: -40 },
+    hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0 },
   },
   'fade-left': {
-    hidden: { opacity: 0, x: -40 },
+    hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0 },
   },
   'fade-right': {
-    hidden: { opacity: 0, x: 40 },
+    hidden: { opacity: 0, x: 20 },
     visible: { opacity: 1, x: 0 },
   },
   'zoom-in': {
-    hidden: { opacity: 0, scale: 0.9 },
+    hidden: { opacity: 0, scale: 0.95 },
     visible: { opacity: 1, scale: 1 },
   },
   'blur-in': {
-    hidden: { opacity: 0, filter: 'blur(10px)' },
-    visible: { opacity: 1, filter: 'blur(0px)' },
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
   },
 };
 
@@ -158,11 +158,11 @@ export function StaggerItem({
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 24 },
+        hidden: { opacity: 0, y: 14 },
         visible: {
           opacity: 1,
           y: 0,
-          transition: { duration: 0.8, ease: SMOOTH_EASE },
+          transition: { duration: 0.6, ease: SMOOTH_EASE },
         },
       }}
       className={className}
@@ -221,11 +221,11 @@ export function TextReveal({
       {words.map((word, i) => (
         <motion.span
           key={i}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{
-            duration: 0.6,
-            delay: i * 0.08,
+            duration: 0.4,
+            delay: i * 0.04,
             ease: SMOOTH_EASE,
           }}
           className="inline-block mr-[0.3em]"
@@ -298,8 +298,8 @@ export function MagneticHover({
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 200, damping: 20 });
-  const springY = useSpring(y, { stiffness: 200, damping: 20 });
+  const springX = useSpring(x, { stiffness: 150, damping: 25, mass: 0.5 });
+  const springY = useSpring(y, { stiffness: 150, damping: 25, mass: 0.5 });
 
   const handleMouse = (e: React.MouseEvent) => {
     const el = ref.current;

@@ -16,8 +16,8 @@ export function HeroSection() {
   const rawY = useTransform(scrollY, [0, 800], [0, 40]);
   const rawOpacity = useTransform(scrollY, [200, 800], [1, 0]);
 
-  const y = useSpring(rawY, { stiffness: 100, damping: 30 });
-  const opacity = useSpring(rawOpacity, { stiffness: 100, damping: 30 });
+  const y = useSpring(rawY, { stiffness: 60, damping: 30, mass: 0.8 });
+  const opacity = useSpring(rawOpacity, { stiffness: 60, damping: 30, mass: 0.8 });
 
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">

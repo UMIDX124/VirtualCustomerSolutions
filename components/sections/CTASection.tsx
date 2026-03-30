@@ -21,11 +21,12 @@ export function CTASection() {
       {/* Light background */}
       <div className="absolute inset-0 bg-[#0A0A0A]" />
 
-      {/* Large glowing orb behind the card */}
-      <FloatingElement amplitude={12} duration={8} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      {/* Glowing orb — static on mobile, animated on desktop */}
+      <div className="md:hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] bg-[#22C55E]/[0.06] rounded-full blur-[60px]" />
+      <FloatingElement amplitude={12} duration={8} className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="w-[600px] h-[600px] bg-[#22C55E]/[0.08] rounded-full blur-[120px]" />
       </FloatingElement>
-      <FloatingElement amplitude={8} duration={6} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <FloatingElement amplitude={8} duration={6} className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="w-[300px] h-[300px] bg-[#22C55E]/[0.12] rounded-full blur-[80px]" />
       </FloatingElement>
 

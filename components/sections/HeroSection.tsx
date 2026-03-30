@@ -21,20 +21,19 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden">
-      {/* Animated background — loads instantly, no video needed */}
+      {/* Background — static on mobile, animated on desktop */}
       <div className="absolute inset-0 z-0 bg-[#050505]">
-        {/* Animated gradient orbs */}
-        <div className="absolute top-[-20%] right-[-10%] w-[700px] h-[700px] rounded-full bg-[#22C55E]/[0.07] blur-[120px] animate-[hero-drift_20s_ease-in-out_infinite]" />
-        <div className="absolute bottom-[-30%] left-[-15%] w-[600px] h-[600px] rounded-full bg-[#059669]/[0.06] blur-[100px] animate-[hero-drift_25s_ease-in-out_infinite_reverse]" />
-        <div className="absolute top-[30%] right-[20%] w-[400px] h-[400px] rounded-full bg-[#4ADE80]/[0.04] blur-[80px] animate-[hero-drift_18s_ease-in-out_infinite_2s]" />
-
-        {/* Grid pattern */}
-        <div className="absolute inset-0 grid-bg opacity-[0.06]" />
-
-        {/* Noise texture */}
-        <div className="noise-overlay absolute inset-0 opacity-[0.03]" />
-
-        {/* Gradient overlays for text readability */}
+        {/* Mobile: lightweight static gradients */}
+        <div className="md:hidden absolute inset-0 bg-[radial-gradient(ellipse_at_70%_40%,rgba(34,197,94,0.08)_0%,transparent_50%)]" />
+        <div className="md:hidden absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgba(5,150,105,0.05)_0%,transparent_50%)]" />
+        {/* Desktop: animated blur orbs */}
+        <div className="hidden md:block absolute top-[-20%] right-[-10%] w-[700px] h-[700px] rounded-full bg-[#22C55E]/[0.07] blur-[120px] animate-[hero-drift_20s_ease-in-out_infinite]" />
+        <div className="hidden md:block absolute bottom-[-30%] left-[-15%] w-[600px] h-[600px] rounded-full bg-[#059669]/[0.06] blur-[100px] animate-[hero-drift_25s_ease-in-out_infinite_reverse]" />
+        <div className="hidden md:block absolute top-[30%] right-[20%] w-[400px] h-[400px] rounded-full bg-[#4ADE80]/[0.04] blur-[80px] animate-[hero-drift_18s_ease-in-out_infinite_2s]" />
+        {/* Grid + noise (desktop only) */}
+        <div className="hidden md:block absolute inset-0 grid-bg opacity-[0.06]" />
+        <div className="noise-overlay hidden md:block absolute inset-0 opacity-[0.03]" />
+        {/* Gradient overlays (both) */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/90 via-[#050505]/60 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/30 via-transparent to-[#050505]/70" />
       </div>

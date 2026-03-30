@@ -4,9 +4,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Mobile-friendly form inputs */
-@media (max-width: 640px) {
+/* Mobile performance + form inputs */
+@media (max-width: 768px) {
   input, select, textarea { min-height: 44px; font-size: 16px !important; }
+  /* Kill heavy animations on mobile to prevent glitching */
+  .animate-mascot-breathe,
+  .animate-mascot-glow,
+  .animate-mascot-eye-glow,
+  .animate-mascot-float-hero { animation: none !important; }
 }
 
 :root {

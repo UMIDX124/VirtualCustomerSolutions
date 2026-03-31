@@ -1,6 +1,6 @@
 ---
-title: "Data-Driven Decision Making: A Practical Framework (Not Another Theory Lecture)"
-excerpt: "Stop drowning in data and start making decisions that move the needle. Here's a hands-on framework covering KPIs that matter, dashboard design, and getting your team to actually use data."
+title: "Data-Driven Decision Making: A Practical Framework"
+excerpt: "Stop drowning in data and start making decisions that move the needle. A hands-on framework for KPIs, dashboard design, and getting your team to use data."
 category: "technology"
 tags: ["data analytics", "decision making", "KPIs", "business intelligence", "dashboards"]
 date: "2026-03-07"

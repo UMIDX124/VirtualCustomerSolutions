@@ -1,6 +1,6 @@
 ---
-title: "GEO: What Is Generative Engine Optimization and Why Your Business Needs It in 2026"
-excerpt: "Google AI Overviews, ChatGPT search, Perplexity — these are now answering questions your customers used to click a website to get. Traditional SEO gets you ranked. GEO gets you cited. Here is what that means in practice."
+title: "GEO: How to Rank in AI Search Engines in 2026"
+excerpt: "AI Overviews, ChatGPT search, and Perplexity now answer your customers' questions. Traditional SEO gets you ranked. GEO gets you cited. Here's what that means."
 category: "digital-marketing"
 tags: ["GEO", "AI search", "generative engine optimization", "ChatGPT SEO", "AI Overviews", "Perplexity SEO"]
 date: "2026-03-31"

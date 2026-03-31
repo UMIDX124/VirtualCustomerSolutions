@@ -1,6 +1,6 @@
 ---
-title: "Content Marketing Strategy That Actually Generates Leads (Not Just Traffic)"
-excerpt: "Traffic is vanity. Leads are sanity. Here's the content marketing framework we use to turn blog readers into actual paying customers — with real numbers from our campaigns."
+title: "Content Marketing That Generates Leads, Not Traffic"
+excerpt: "Traffic is vanity. Leads are sanity. The content marketing framework we use to turn blog readers into paying customers — with real campaign numbers."
 category: "digital-marketing"
 tags: ["content marketing", "lead generation", "SEO", "content strategy", "conversion optimization"]
 date: "2025-12-02"

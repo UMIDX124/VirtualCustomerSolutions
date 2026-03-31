@@ -1,6 +1,6 @@
 ---
-title: "Web Analytics Beyond Google Analytics: What Else Is Out There (And What You Should Actually Track)"
-excerpt: "Google Analytics isn't the only game in town — and it might not even be the best one for your needs. Here's a look at privacy-first alternatives and the metrics that truly matter."
+title: "Web Analytics Beyond Google Analytics in 2026"
+excerpt: "GA4 isn't the only option — and may not be the best for you. A look at privacy-first alternatives and the metrics that truly matter."
 category: "technology"
 tags: ["web analytics", "privacy", "data tracking", "marketing analytics", "technology"]
 date: "2026-03-22"

@@ -1,6 +1,6 @@
 ---
-title: "Why Most Businesses Fail at Digital Transformation (And What to Do Instead)"
-excerpt: "72% of digital transformation initiatives fail to meet their goals. After watching dozens of companies struggle through it, I've identified the patterns that predict failure — and the approach that actually works."
+title: "Why Most Businesses Fail at Digital Transformation"
+excerpt: "72% of digital transformation initiatives fail. After watching dozens of companies struggle, here are the patterns that predict failure — and what works."
 category: "technology"
 tags: ["digital transformation", "business strategy", "technology adoption", "change management", "IT strategy"]
 date: "2025-11-20"

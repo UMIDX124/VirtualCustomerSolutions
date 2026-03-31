@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!cs) return { title: "Case Study Not Found" };
 
   return {
-    title: `${cs.title} | Case Study`,
+    title: { absolute: cs.title },
     description: `${cs.client} — ${cs.results[0].value} ${cs.results[0].metric.toLowerCase()}. See how VCS delivered measurable results through ${cs.servicesUsed.join(" and ")}.`,
     alternates: {
       canonical: `https://virtualcustomersolution.com/case-studies/${slug}`,
@@ -43,6 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: `${cs.client}: ${cs.results.map((r) => `${r.value} ${r.metric.toLowerCase()}`).join(", ")}`,
       url: `https://virtualcustomersolution.com/case-studies/${slug}`,
       type: "article",
+      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
     },
   };
 }

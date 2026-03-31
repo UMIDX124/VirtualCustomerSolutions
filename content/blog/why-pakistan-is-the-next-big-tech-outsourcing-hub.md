@@ -1,6 +1,6 @@
 ---
-title: "Why Pakistan Is the Next Big Tech Outsourcing Hub (And It's Already Happening)"
-excerpt: "Pakistan's IT exports crossed $3.2 billion. The talent pool is deep, the costs are competitive, and the government is finally backing tech. Here's why global companies are paying attention — from someone building a tech company here."
+title: "Pakistan: The Next Big Tech Outsourcing Hub"
+excerpt: "Pakistan's IT exports crossed $3.2B. The talent pool is deep, costs are competitive, and the government backs tech. Why global companies are paying attention."
 category: "industry-insights"
 tags: ["pakistan tech", "outsourcing", "IT exports", "tech talent", "offshoring"]
 date: "2026-03-16"

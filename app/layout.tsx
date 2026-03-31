@@ -28,7 +28,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://virtualcustomersolution.com"),
   title: {
-    default: "AI-Powered Digital Marketing & Remote Teams | VCS",
+    default: "AI Marketing & Remote Teams | VCS",
     template: "%s | Virtual Customer Solution",
   },
   description:
@@ -222,8 +222,20 @@ export default function RootLayout({
         />
         
         {/* FAQPage Schema - Will be added dynamically on FAQ section */}
-        
-        {/* BreadcrumbList — handled per-page via components/seo/Breadcrumbs.tsx */}
+
+        {/* BreadcrumbList for Homepage */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://virtualcustomersolution.com" },
+              ],
+            }),
+          }}
+        />
         
         {/* Preconnect to external resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

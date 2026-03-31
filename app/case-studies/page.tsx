@@ -5,14 +5,14 @@ import { CaseStudyGrid } from "./CaseStudyGrid";
 import { BarChart3, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Case Studies — Real Results & ROI",
+  title: { absolute: "Case Studies — Real Results & ROI | VCS" },
   description:
     "See how we helped e-commerce, SaaS & agencies grow with remote teams and performance marketing. Real ROI case studies.",
   alternates: {
     canonical: "https://virtualcustomersolution.com/case-studies",
   },
   openGraph: {
-    title: "Case Studies — Real Results & ROI",
+    title: "Case Studies — Real Results & ROI | VCS",
     description:
       "See how we helped e-commerce, SaaS & agencies grow with remote teams and performance marketing. Real ROI case studies.",
     url: "https://virtualcustomersolution.com/case-studies",
@@ -21,12 +21,25 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://virtualcustomersolution.com" },
+    { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://virtualcustomersolution.com/case-studies" },
+  ],
+};
+
 export default function CaseStudiesPage() {
   const services = getAllServices();
   const industries = getAllIndustries();
 
   return (
     <SiteShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 bg-dots opacity-30" />

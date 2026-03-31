@@ -1,6 +1,6 @@
 ---
-title: "How to Reduce Customer Acquisition Cost by 40%: The Playbook We Used"
-excerpt: "We cut our own customer acquisition cost from $340 to $195 in seven months. Here's exactly how — referral programs, content flywheels, conversion optimization, and the retention math most companies ignore."
+title: "How We Reduced Customer Acquisition Cost by 40%"
+excerpt: "We cut our CAC from $340 to $195 in seven months. Here's how — referral programs, content flywheels, CRO, and the retention math most companies ignore."
 category: "business-growth"
 tags: ["customer acquisition", "CAC reduction", "growth strategy", "conversion optimization", "referral programs"]
 date: "2026-03-11"

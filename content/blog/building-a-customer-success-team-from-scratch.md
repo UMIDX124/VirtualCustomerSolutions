@@ -1,6 +1,6 @@
 ---
-title: "Building a Customer Success Team From Scratch: A Founder's Honest Playbook"
-excerpt: "When should you hire your first customer success rep? How do you structure the team? What metrics matter? I'll walk you through everything I learned building CS at VCS."
+title: "Build a Customer Success Team From Scratch"
+excerpt: "When should you hire your first CS rep? How to structure the team, which metrics matter, and everything I learned building customer success at VCS."
 category: "business-growth"
 tags: ["customer success", "team building", "startup growth", "customer retention", "business operations"]
 date: "2026-03-18"

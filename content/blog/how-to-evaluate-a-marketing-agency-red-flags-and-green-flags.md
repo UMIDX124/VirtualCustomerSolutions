@@ -1,6 +1,6 @@
 ---
-title: "How to Evaluate a Marketing Agency: Red Flags and Green Flags You Can't Afford to Miss"
-excerpt: "Hiring the wrong marketing agency is expensive and demoralizing. After running an agency for 8 years, here's my insider guide to spotting the great ones — and running from the terrible ones."
+title: "How to Evaluate a Marketing Agency: Key Red Flags"
+excerpt: "Hiring the wrong agency is expensive. After running one for 8 years, here's my insider guide to spotting the great ones and running from the terrible ones."
 category: "business-growth"
 tags: ["marketing agency", "agency evaluation", "outsourcing", "business growth", "digital marketing"]
 date: "2026-03-02"

@@ -1,6 +1,6 @@
 ---
-title: "The Complete Guide to PPC Campaign Management (From Someone Who's Burned Through Budgets So You Don't Have To)"
-excerpt: "Google Ads can drain your wallet or fill your pipeline. This deep dive covers bidding strategies, keyword research, ad copy, quality score, and everything between."
+title: "The Complete Guide to PPC Campaign Management"
+excerpt: "Google Ads can drain your wallet or fill your pipeline. Covers bidding strategies, keyword research, ad copy, quality score, and everything between."
 category: "digital-marketing"
 tags: ["PPC", "Google Ads", "paid advertising", "keyword research", "digital marketing"]
 date: "2026-03-19"

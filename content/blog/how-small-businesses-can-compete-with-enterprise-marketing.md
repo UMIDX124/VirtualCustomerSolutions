@@ -1,6 +1,6 @@
 ---
-title: "How Small Businesses Can Compete With Enterprise Marketing (And Actually Win)"
-excerpt: "You don't need a Fortune 500 budget to dominate your market. These guerrilla tactics, niche strategies, and agility plays can put you ahead of companies 100x your size."
+title: "How Small Businesses Can Beat Enterprise Marketing"
+excerpt: "You don't need a Fortune 500 budget. These guerrilla tactics, niche strategies, and agility plays can put you ahead of companies 100x your size."
 category: "business-growth"
 tags: ["small business marketing", "competitive strategy", "guerrilla marketing", "niche targeting", "business growth"]
 date: "2026-03-20"

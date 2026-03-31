@@ -1,5 +1,5 @@
 ---
-title: "Conversion Rate Optimization Quick Wins That'll Make You Wonder Why You Waited"
+title: "CRO Quick Wins That Boost Conversions Fast"
 excerpt: "Forget the massive redesigns. These low-effort, high-impact CRO tactics can boost your conversions this week — no developer required."
 category: "digital-marketing"
 tags: ["conversion rate optimization", "A/B testing", "landing pages", "CRO", "digital marketing"]

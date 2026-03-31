@@ -20,7 +20,7 @@ export const guides: Guide[] = [
     slug: "complete-guide-remote-team-management",
     title: "The Complete Guide to Remote Team Management in 2025",
     excerpt:
-      "Everything you need to know about building, managing, and scaling remote teams that actually deliver results. From hiring to performance tracking, we've been through it all.",
+      "Everything about building, managing, and scaling remote teams that deliver results. From hiring to performance tracking, we've been through it all.",
     category: "Remote Workforce",
     lastUpdated: "2025-03-15",
     author: "Virtual Customer Solution",
@@ -893,9 +893,9 @@ The transformation journey is different for every business, but the principles a
   },
   {
     slug: "customer-acquisition-strategy-guide",
-    title: "Customer Acquisition Strategy: The No-BS Guide for Growing Businesses",
+    title: "Customer Acquisition Strategy: A No-BS Guide",
     excerpt:
-      "A frank, tactical guide to acquiring customers profitably. We cover the full journey from identifying your ideal customer to building repeatable acquisition engines.",
+      "A frank, tactical guide to acquiring customers profitably. From identifying your ideal customer to building repeatable acquisition engines.",
     category: "Performance Marketing",
     lastUpdated: "2025-01-25",
     author: "Virtual Customer Solution",

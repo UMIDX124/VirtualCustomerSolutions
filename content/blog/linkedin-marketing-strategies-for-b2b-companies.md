@@ -1,6 +1,6 @@
 ---
-title: "LinkedIn Marketing Strategies for B2B Companies That Actually Generate Revenue"
-excerpt: "Forget vanity metrics. Here's how B2B companies are using LinkedIn's organic reach, paid campaigns, and lead gen forms to build real pipeline — with specific tactics we've tested."
+title: "LinkedIn Marketing Strategies for B2B Revenue"
+excerpt: "How B2B companies use LinkedIn's organic reach, paid campaigns, and lead gen forms to build real pipeline — with specific tactics we've tested."
 category: "digital-marketing"
 tags: ["linkedin marketing", "b2b marketing", "lead generation", "social selling", "content marketing"]
 date: "2026-02-28"

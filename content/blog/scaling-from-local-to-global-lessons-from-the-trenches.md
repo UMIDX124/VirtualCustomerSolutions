@@ -1,6 +1,6 @@
 ---
 title: "Scaling From Local to Global: Lessons From the Trenches"
-excerpt: "The real story of how VCS grew from a small Pakistani IT firm to serving clients across four continents. The wins, the failures, and the lessons nobody tells you about."
+excerpt: "How VCS grew from a small Pakistani IT firm to serving clients across four continents. The wins, the failures, and lessons nobody tells you."
 category: "business-growth"
 tags: ["business scaling", "global expansion", "entrepreneurship", "VCS story", "international business"]
 date: "2026-02-22"

@@ -1,5 +1,5 @@
 ---
-title: "10 Performance Marketing Mistakes That Are Burning Your Budget Right Now"
+title: "10 Performance Marketing Mistakes Burning Budget"
 excerpt: "I've audited over 120 ad accounts in the past three years. These are the mistakes I find in almost every single one — and they're costing you thousands."
 category: "digital-marketing"
 tags: ["performance marketing", "PPC mistakes", "ad optimization", "budget management", "paid ads"]

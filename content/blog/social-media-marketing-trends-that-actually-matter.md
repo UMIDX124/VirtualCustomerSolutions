@@ -1,6 +1,6 @@
 ---
-title: "Social Media Marketing Trends That Actually Matter in 2026 (And Which Ones Are Just Hype)"
-excerpt: "Every week there's a 'game-changing' social media trend. Most of them fizzle in 60 days. Here's our filter for separating the signal from the noise — with platform-specific advice you can act on today."
+title: "Social Media Trends That Actually Matter in 2026"
+excerpt: "Most 'game-changing' social media trends fizzle in 60 days. Here's how to separate signal from noise — with platform-specific advice you can act on today."
 category: "digital-marketing"
 tags: ["social media marketing", "marketing trends", "content strategy", "digital marketing", "platform strategy"]
 date: "2026-03-09"

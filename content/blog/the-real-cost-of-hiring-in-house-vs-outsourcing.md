@@ -1,6 +1,6 @@
 ---
-title: "The Real Cost of Hiring In-House vs Outsourcing (Spoiler: It's Not What You Think)"
-excerpt: "Everyone talks about salary differences. Almost nobody accounts for the hidden costs that make in-house hiring 2-3x more expensive than the number on the offer letter."
+title: "The Real Cost of In-House Hiring vs Outsourcing"
+excerpt: "Everyone talks about salary differences. Almost nobody accounts for hidden costs that make in-house hiring 2-3x more expensive than the offer letter."
 category: "business-growth"
 tags: ["outsourcing", "hiring costs", "business strategy", "remote workforce", "cost analysis"]
 date: "2025-10-18"

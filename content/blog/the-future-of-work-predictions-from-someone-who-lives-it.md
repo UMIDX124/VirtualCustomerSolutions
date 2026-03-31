@@ -1,6 +1,6 @@
 ---
-title: "The Future of Work: Predictions From Someone Who Actually Lives It"
-excerpt: "I've been running a remote-first company since 2018. Here are my honest, personal predictions about remote work, AI, the gig economy, and what's actually coming next."
+title: "The Future of Work: Real Predictions for 2026"
+excerpt: "Running a remote-first company since 2018, here are my honest predictions about remote work, AI, the gig economy, and what's actually coming next."
 category: "industry-insights"
 tags: ["future of work", "remote work", "artificial intelligence", "gig economy", "workforce trends"]
 date: "2026-03-21"

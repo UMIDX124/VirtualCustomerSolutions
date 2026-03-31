@@ -1,5 +1,5 @@
 ---
-title: "Managing Remote Teams Across Time Zones Without Losing Your Mind"
+title: "Managing Remote Teams Across Time Zones"
 excerpt: "Your designer is in Lahore, your developer's in Berlin, and your project manager just woke up in Toronto. Here's how to make that actually work."
 category: "remote-work"
 tags: ["remote work", "time zones", "team management", "distributed teams", "async communication"]

@@ -1,6 +1,6 @@
 ---
-title: "How to Create a Marketing Dashboard Your CEO Will Actually Love"
-excerpt: "Most marketing dashboards are built for marketers. That's the problem. Here's how to design dashboards that executives understand, trust, and use to make decisions."
+title: "Build a Marketing Dashboard Your CEO Will Love"
+excerpt: "Most marketing dashboards are built for marketers. Here's how to design dashboards that executives understand, trust, and use to make decisions."
 category: "technology"
 tags: ["marketing dashboard", "data visualization", "marketing analytics", "reporting", "business intelligence"]
 date: "2026-03-23"

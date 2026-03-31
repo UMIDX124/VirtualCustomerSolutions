@@ -7,12 +7,21 @@ import { getAllPosts, getAllCategories } from '@/lib/blog';
 import { BlogListClient } from './BlogListClient';
 
 export const metadata: Metadata = {
-  title: 'Blog — Marketing, Remote Work & Growth Tips',
+  title: { absolute: 'Marketing & Growth Blog | VCS' },
   description:
     'Practical tips on marketing, remote teams, and growing your business. Written by our team based on what we actually do for clients.',
   alternates: {
     canonical: 'https://virtualcustomersolution.com/blog',
   },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://virtualcustomersolution.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://virtualcustomersolution.com/blog" },
+  ],
 };
 
 export default function BlogPage() {
@@ -38,6 +47,10 @@ export default function BlogPage() {
 
   return (
     <SiteShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="pt-28 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}

@@ -1,6 +1,6 @@
 ---
 title: "The CMO Guide to Marketing Attribution"
-excerpt: "Multi-touch attribution demystified. Which model fits your business, how to avoid common pitfalls, and why perfect attribution is a myth you should stop chasing."
+excerpt: "Multi-touch attribution demystified. Which model fits your business, how to avoid common pitfalls, and why perfect attribution is a myth."
 category: "digital-marketing"
 tags: ["marketing attribution", "multi-touch attribution", "analytics", "CMO strategy", "marketing measurement"]
 date: "2026-01-15"

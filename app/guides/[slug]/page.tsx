@@ -28,7 +28,7 @@ export async function generateMetadata({
   if (!guide) return { title: "Guide Not Found" };
 
   return {
-    title: guide.title,
+    title: { absolute: guide.title },
     description: guide.excerpt,
     alternates: {
       canonical: `https://virtualcustomersolution.com/guides/${guide.slug}`,
@@ -39,6 +39,7 @@ export async function generateMetadata({
       url: `https://virtualcustomersolution.com/guides/${guide.slug}`,
       type: "article",
       publishedTime: guide.lastUpdated,
+      images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
     },
   };
 }

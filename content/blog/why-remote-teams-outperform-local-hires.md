@@ -1,6 +1,6 @@
 ---
-title: "Why Remote Teams Outperform Local Hires (And It's Not Even Close)"
-excerpt: "After building a company with remote talent since 2018, I've watched distributed teams consistently outperform co-located ones. Here's the data — and my honest take on why."
+title: "Why Remote Teams Outperform Local Hires"
+excerpt: "Building with remote talent since 2018, I've watched distributed teams consistently outperform co-located ones. Here's the data and my honest take."
 category: "remote-work"
 tags: ["remote teams", "hiring", "productivity", "outsourcing", "workforce management"]
 date: "2025-09-12"

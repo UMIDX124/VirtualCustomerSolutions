@@ -138,7 +138,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "fintech-remote-dev-operations",
-    title: "Building a Remote Development and Operations Team from Scratch",
+    title: "Building a Remote Dev & Ops Team from Scratch",
     client: "Fintech Startup",
     industry: "Financial Technology",
     problem:

@@ -1,6 +1,6 @@
 ---
 title: "Outsourcing Myths Debunked: What the Critics Get Wrong"
-excerpt: "Quality issues, communication nightmares, security risks — you've heard the horror stories. Let me tell you which ones are real, which are exaggerated, and which are flat-out wrong."
+excerpt: "Quality issues, communication nightmares, security risks — you've heard the horror stories. Which ones are real, exaggerated, or flat-out wrong?"
 category: "industry-insights"
 tags: ["outsourcing", "remote teams", "business strategy", "offshore teams", "workforce management"]
 date: "2026-03-24"

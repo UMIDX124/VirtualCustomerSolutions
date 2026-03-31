@@ -1,6 +1,6 @@
 ---
-title: "Remote Work Tools: Honest Reviews From a Team That's Been Distributed Since 2018"
-excerpt: "We've been a distributed team for over seven years. Here are our unfiltered, no-sponsorship reviews of Slack, Notion, Asana, Zoom, Loom, Time Doctor, and Deel — what we actually use, what we ditched, and why."
+title: "Remote Work Tools: Honest Reviews From Our Team"
+excerpt: "Seven years as a distributed team. Our unfiltered reviews of Slack, Notion, Asana, Zoom, Loom, Time Doctor, and Deel — what we use, what we ditched, and why."
 category: "remote-work"
 tags: ["remote work tools", "distributed team", "productivity tools", "team collaboration", "remote team management"]
 date: "2026-03-14"

@@ -27,6 +27,7 @@ export const metadata: Metadata = {
       "In-depth guides on remote team management, performance marketing, business systems, and scaling globally.",
     url: "https://virtualcustomersolution.com/guides",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
 };
 

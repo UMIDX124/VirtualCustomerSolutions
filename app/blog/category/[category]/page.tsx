@@ -15,12 +15,20 @@ const CATEGORY_DESCRIPTIONS: Record<string, string> = {
     'Strategies, tips, and insights to grow your online presence and maximize ROI from digital marketing campaigns.',
   'remote-workforce':
     'Best practices for building, managing, and scaling remote teams that deliver results.',
+  'remote-work':
+    'Tips and strategies for building, managing, and scaling remote teams from our 8+ years of experience.',
   'business-growth':
     'Proven strategies and frameworks to scale your business efficiently while reducing overhead.',
   'seo':
     'Search engine optimization techniques and strategies to improve your rankings and drive organic traffic.',
   'cost-saving':
     'Smart approaches to reduce business costs without sacrificing quality or output.',
+  'technology':
+    'Tech insights, tool reviews, and automation strategies to help growing businesses work smarter and scale faster.',
+  'industry-insights':
+    'Data and analysis from our work across e-commerce, SaaS, healthcare, and fintech industries.',
+  'case-studies':
+    'Real results from our client work — revenue growth, cost savings, and team scaling stories.',
 };
 
 function categorySlugToName(slug: string): string {

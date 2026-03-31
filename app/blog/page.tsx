@@ -7,7 +7,7 @@ import { getAllPosts, getAllCategories } from '@/lib/blog';
 import { BlogListClient } from './BlogListClient';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Marketing & Growth Blog | VCS' },
+  title: { absolute: 'Marketing, Remote Work & Growth Blog | VCS' },
   description:
     'Practical tips on marketing, remote teams, and growing your business. Written by our team based on what we actually do for clients.',
   alternates: {

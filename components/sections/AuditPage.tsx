@@ -200,9 +200,9 @@ export function AuditPage() {
                 <CheckCircle className="w-8 h-8 text-chart-4" />
               </div>
               
-              <h1 className="font-display text-3xl font-bold text-[var(--text-primary)] mb-4">
+              <h2 className="font-display text-3xl font-bold text-[var(--text-primary)] mb-4">
                 Audit Request Received
-              </h1>
+              </h2>
               
               <p className="text-[var(--text-secondary)] mb-8 max-w-md mx-auto">
                 Thank you for your interest. A founder will review your submission and reach out within 24-48 hours with initial thoughts.
@@ -277,6 +277,7 @@ export function AuditPage() {
             {/* Form */}
             <FadeUp className="lg:col-span-3">
               <GlassCard className="p-8">
+                <h2 className="font-display text-2xl font-bold text-[var(--text-primary)] mb-6">Tell Us About Your Business</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name & Email */}
                   <div className="grid sm:grid-cols-2 gap-4">

@@ -57,8 +57,22 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
   const prevStudy = currentIndex > 0 ? caseStudies[currentIndex - 1] : null;
   const nextStudy = currentIndex < caseStudies.length - 1 ? caseStudies[currentIndex + 1] : null;
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://virtualcustomersolution.com' },
+      { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://virtualcustomersolution.com/case-studies' },
+      { '@type': 'ListItem', position: 3, name: cs.title, item: `https://virtualcustomersolution.com/case-studies/${slug}` },
+    ],
+  };
+
   return (
     <SiteShell>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Breadcrumbs */}
       <div className="border-b border-[var(--border-subtle)] bg-[var(--surface-elevated)]">
         <div className="container-wide py-3">

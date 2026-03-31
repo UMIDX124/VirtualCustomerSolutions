@@ -4,6 +4,16 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Digital Marketing & Remote Workforce Services',
   description: 'Full-stack digital marketing, remote workforce, cloud solutions & web development. Custom plans from $399/mo. Free consultation available.',
+  alternates: {
+    canonical: 'https://virtualcustomersolution.com/services',
+  },
+  openGraph: {
+    title: 'Digital Marketing & Remote Workforce Services | VCS',
+    description: 'Full-stack digital marketing, remote workforce, cloud solutions & web development. Save 50-75% vs hiring in-house. Plans from $399/mo.',
+    url: 'https://virtualcustomersolution.com/services',
+    type: 'website',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'VCS Services — Digital Marketing & Remote Teams' }],
+  },
 };
 
 export default function ServicesPage() {

@@ -124,31 +124,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/marketing-budget-planner',
   ].map((r) => ({ url: `${SITE_URL}${r}`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.6 }));
 
-  // ── Programmatic SEO: /services/[service]/[industry] & /services/[service]/near/[city] ──
-  const seoServices = ['growth-systems', 'performance-marketing', 'remote-workforce'];
-  const seoIndustries = ['healthcare', 'ecommerce', 'fintech', 'saas', 'real-estate', 'education'];
-  const seoCities = ['new-york', 'london', 'dubai', 'singapore', 'karachi', 'lahore'];
-
-  const programmaticPages: MetadataRoute.Sitemap = [];
-  for (const svc of seoServices) {
-    for (const ind of seoIndustries) {
-      programmaticPages.push({
-        url: `${SITE_URL}/services/${svc}/${ind}`,
-        lastModified: now,
-        changeFrequency: 'monthly',
-        priority: 0.5,
-      });
-    }
-    for (const city of seoCities) {
-      programmaticPages.push({
-        url: `${SITE_URL}/services/${svc}/near/${city}`,
-        lastModified: now,
-        changeFrequency: 'monthly',
-        priority: 0.5,
-      });
-    }
-  }
-
   // ── Legal ──
   const legalPages = [
     '/privacy-policy', '/terms-of-service',
@@ -166,7 +141,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...corePages,
     ...researchPages,
     ...toolPages,
-    ...programmaticPages,
     ...legalPages,
   ];
 }

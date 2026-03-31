@@ -10,7 +10,7 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
   {
-    slug: 'ecommerce-growth',
+    slug: 'ecommerce-revenue-growth-system',
     clientType: 'E-Commerce Brand',
     headline: 'Took an Online Store from $8K to $35K/month',
     metrics: [
@@ -20,7 +20,7 @@ const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    slug: 'saas-scaling',
+    slug: 'saas-remote-team-scaling',
     clientType: 'SaaS Startup',
     headline: 'Built a 12-Person Remote Team in 6 Weeks',
     metrics: [
@@ -30,7 +30,7 @@ const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    slug: 'agency-transformation',
+    slug: 'agency-performance-marketing-turnaround',
     clientType: 'Marketing Agency',
     headline: 'Helped an Agency Triple Their Client Base',
     metrics: [

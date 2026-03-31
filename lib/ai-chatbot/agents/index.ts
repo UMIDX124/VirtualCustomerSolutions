@@ -149,7 +149,7 @@ export async function classifyIntent(message: string): Promise<Intent> {
       model: groq(model),
       prompt: INTENT_CLASSIFICATION_PROMPT.replace('{message}', message),
       temperature: 0.1,
-      maxTokens: 20,
+      maxOutputTokens: 20,
     })
 
     const cleaned = text.trim().toLowerCase().replace(/[^a-z_]/g, '') as Intent

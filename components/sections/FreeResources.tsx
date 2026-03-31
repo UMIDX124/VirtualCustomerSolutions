@@ -15,7 +15,7 @@ const resources: Resource[] = [
     title: 'How to Hire and Manage a Remote Team (Without Losing Your Mind)',
     description:
       'A practical guide with the exact SOPs, tools, and check-in schedules we use to run remote teams across 5+ time zones.',
-    slug: 'remote-team-management',
+    slug: 'complete-guide-remote-team-management',
   },
   {
     icon: BarChart3,

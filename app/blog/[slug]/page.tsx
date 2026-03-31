@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) return {};
 
   return {
-    title: post.title,
+    title: { absolute: post.title },
     description: post.excerpt,
     keywords: post.tags,
     authors: [{ name: post.author }],
@@ -42,11 +42,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       authors: [post.author],
       tags: post.tags,
       url: `https://virtualcustomersolution.com/blog/${slug}`,
+      images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
+      images: ['/opengraph-image'],
     },
     alternates: {
       canonical: `https://virtualcustomersolution.com/blog/${slug}`,
@@ -155,6 +157,15 @@ export default async function BlogPostPage({ params }: PageProps) {
               <div className="prose-blog">
                 <ReactMarkdown
                   components={{
+                    h1: ({ children, ...props }) => {
+                      const text = String(children);
+                      const id = text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+                      return (
+                        <h2 id={id} className="font-display text-2xl md:text-3xl font-bold text-white mt-12 mb-4 scroll-mt-28" {...props}>
+                          {children}
+                        </h2>
+                      );
+                    },
                     h2: ({ children, ...props }) => {
                       const text = String(children);
                       const id = text
@@ -261,6 +272,15 @@ export default async function BlogPostPage({ params }: PageProps) {
               <div className="prose-blog">
                 <ReactMarkdown
                   components={{
+                    h1: ({ children, ...props }) => {
+                      const text = String(children);
+                      const id = text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+                      return (
+                        <h2 id={id} className="font-display text-2xl md:text-3xl font-bold text-white mt-12 mb-4 scroll-mt-28" {...props}>
+                          {children}
+                        </h2>
+                      );
+                    },
                     h2: ({ children, ...props }) => {
                       const text = String(children);
                       const id = text

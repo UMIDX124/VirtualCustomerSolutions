@@ -17,6 +17,7 @@ export const metadata: Metadata = {
       "See how we helped e-commerce, SaaS & agencies grow with remote teams and performance marketing. Real ROI case studies.",
     url: "https://virtualcustomersolution.com/case-studies",
     type: "website",
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'VCS Case Studies — Real Results & ROI' }],
   },
 };
 

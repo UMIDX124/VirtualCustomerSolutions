@@ -68,6 +68,16 @@ export default async function GuidePage({
     })),
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://virtualcustomersolution.com" },
+      { "@type": "ListItem", position: 2, name: "Guides", item: "https://virtualcustomersolution.com/guides" },
+      { "@type": "ListItem", position: 3, name: guide.title, item: `https://virtualcustomersolution.com/guides/${guide.slug}` },
+    ],
+  };
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -94,6 +104,10 @@ export default async function GuidePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Breadcrumbs */}

@@ -4,6 +4,16 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Careers — Join Our Remote Team',
   description: 'We are hiring in Lahore and remote. Marketing, engineering, support, design — check out open roles at Virtual Customer Solution.',
+  alternates: {
+    canonical: 'https://virtualcustomersolution.com/careers',
+  },
+  openGraph: {
+    title: 'Careers — Join Our Remote Team at VCS',
+    description: 'Hiring in Lahore and remote. Marketing, engineering, support, design roles available.',
+    url: 'https://virtualcustomersolution.com/careers',
+    type: 'website',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Careers at Virtual Customer Solution' }],
+  },
 };
 
 const jobs = [

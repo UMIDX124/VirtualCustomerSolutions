@@ -137,7 +137,7 @@ export async function handleMessage(
       system: agent.systemPrompt,
       messages,
       temperature: agent.temperature,
-      maxTokens: agent.maxTokens,
+      maxOutputTokens: agent.maxTokens,
     })
 
     addMessage(sessionId, 'assistant', text)

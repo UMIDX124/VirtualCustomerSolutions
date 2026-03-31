@@ -4,8 +4,18 @@ import { Metadata } from 'next';
 import { FadeUp, GlassCard } from '@/components/ui-dp/AnimatedElements';
 
 export const metadata: Metadata = {
-  title: 'About Us — 8+ Years, 200+ Clients, 15+ Countries',
-  description: 'Learn about Virtual Customer Solution - Our mission, vision, and values. We combine IT solutions, digital marketing with dedicated remote talent to help businesses grow.',
+  title: 'About Us — 8+ Years, 200+ Clients',
+  description: 'Learn about Virtual Customer Solution — 8+ years combining AI-powered digital marketing, remote teams & web development. 200+ clients across 15+ countries.',
+  alternates: {
+    canonical: 'https://virtualcustomersolution.com/about',
+  },
+  openGraph: {
+    title: 'About Virtual Customer Solution',
+    description: '8+ years combining AI-powered digital marketing, remote teams & web development. 200+ clients across 15+ countries.',
+    url: 'https://virtualcustomersolution.com/about',
+    type: 'website',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'About Virtual Customer Solution' }],
+  },
 };
 
 const values = [

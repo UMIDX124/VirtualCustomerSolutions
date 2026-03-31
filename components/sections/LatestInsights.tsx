@@ -17,7 +17,7 @@ interface BlogPost {
 
 const posts: BlogPost[] = [
   {
-    slug: 'scaling-remote-teams-2025',
+    slug: 'why-remote-teams-outperform-local-hires',
     category: 'Remote Work',
     title: 'What We Learned Managing 200+ Remote Teams',
     excerpt: 'After years of building remote teams for clients, here are the patterns that keep showing up in the ones that actually work.',
@@ -27,7 +27,7 @@ const posts: BlogPost[] = [
     gradient: 'from-[#22C55E] to-black',
   },
   {
-    slug: 'performance-marketing-roi',
+    slug: 'google-ads-vs-meta-ads-which-drives-better-roi',
     category: 'Marketing',
     title: 'Why Most Google Ads Campaigns Waste Money (And How to Fix Yours)',
     excerpt: 'We audited 50 ad accounts last quarter. Here\'s what the profitable ones had in common.',
@@ -37,7 +37,7 @@ const posts: BlogPost[] = [
     gradient: 'from-[#059669] to-black',
   },
   {
-    slug: 'business-systems-automation',
+    slug: 'automation-tools-every-growing-business-needs',
     category: 'Operations',
     title: 'The 5 Tasks You Should Have Automated Yesterday',
     excerpt: 'Simple automations that save our clients 10-20 hours a week. Most take under an hour to set up.',

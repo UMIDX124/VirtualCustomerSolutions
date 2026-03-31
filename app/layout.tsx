@@ -28,7 +28,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://virtualcustomersolution.com"),
   title: {
-    default: "Virtual Customer Solution | AI-Powered Digital Marketing & Remote Teams",
+    default: "AI-Powered Digital Marketing & Remote Teams | VCS",
     template: "%s | Virtual Customer Solution",
   },
   description:
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Virtual Customer Solution - IT, Marketing & Remote Workforce",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     title: "Virtual Customer Solution | IT & Digital Services",
     description:
       "Remote teams, marketing, web dev, and operations support — all under one roof.",
-    images: ["/og-image.png"],
+    images: ["/opengraph-image"],
     creator: "@virtualcustomersolution",
   },
   robots: {
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  // verification: { google: "ADD_YOUR_GOOGLE_VERIFICATION_CODE" },
+  verification: { google: "ADD_YOUR_GOOGLE_VERIFICATION_CODE" },
   alternates: {
     canonical: "https://virtualcustomersolution.com",
   },
@@ -119,7 +119,7 @@ export default function RootLayout({
               name: "Virtual Customer Solution",
               url: "https://www.virtualcustomersolution.com",
               logo: "https://www.virtualcustomersolution.com/Virtual.png",
-              image: "https://www.virtualcustomersolution.com/og-image.png",
+              image: "https://www.virtualcustomersolution.com/opengraph-image",
               description: "AI-powered digital marketing, remote workforce, and web development solutions for businesses in 15+ countries.",
               email: "adminatvcs@gmail.com",
               telephone: "+92-315-1407896",

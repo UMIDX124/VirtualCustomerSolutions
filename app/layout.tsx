@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import StickyConsultationCTA from "@/components/StickyConsultationCTA";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
@@ -260,6 +261,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${inter.variable} ${ibmPlexMono.variable} antialiased`}
       >
         {children}
+        <StickyConsultationCTA />
         <Toaster />
       </body>
     </html>

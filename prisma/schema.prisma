@@ -83,3 +83,23 @@ model SupportTicket {
   @@index([status])
   @@index([createdAt])
 }
+
+model Lead {
+  id          String   @id @default(uuid())
+  name        String
+  email       String
+  phone       String?
+  country     String?
+  service     String
+  teamSize    String
+  budget      String
+  description String?
+  source      String?
+  status      String   @default("New")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+}

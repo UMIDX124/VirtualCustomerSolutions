@@ -259,3 +259,77 @@ export async function sendAdminNotification(type: 'audit' | 'contact' | 'newslet
   const html = getAdminNotificationHtml(type, data)
   await sendMail(ADMIN_EMAIL, `${COMPANY_NAME} Admin - ${titles[type] || 'New Submission'}`, html)
 }
+
+// ─── Lead (Consultation) Emails ─────────────────────────────────────────────
+
+interface LeadEmailData {
+  name: string
+  email: string
+  phone?: string | null
+  country?: string | null
+  service: string
+  teamSize: string
+  budget: string
+  description?: string | null
+  source?: string | null
+}
+
+export async function sendLeadAdminNotification(data: LeadEmailData): Promise<void> {
+  const adminTo = process.env.ADMIN_EMAIL || ADMIN_EMAIL
+  const budgetBadge = `<div style="background-color:${COLORS.accent};color:#ffffff;display:inline-block;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:0.3px;">💰 ${data.budget}</div>`
+
+  const body = [
+    `<div style="background-color:${COLORS.accent};color:#ffffff;display:inline-block;padding:4px 12px;border-radius:4px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px;">New Consultation Lead</div>`,
+    paragraph(`<strong style="color:${COLORS.text};font-size:17px;">${data.name}</strong> just requested a free consultation for <strong style="color:${COLORS.accent};">${data.service}</strong>.`),
+    `<div style="margin:20px 0;">${budgetBadge}</div>`,
+    detailsTable([
+      ['Name', data.name],
+      ['Email', data.email],
+      ['Phone', data.phone],
+      ['Country', data.country],
+      ['Service', data.service],
+      ['Team Size', data.teamSize],
+      ['Budget', data.budget],
+      ['Source', data.source],
+      ['Description', data.description],
+    ]),
+    divider(),
+    ctaButton('Open Admin Dashboard', 'https://virtualcustomersolution.com/admin/leads'),
+    mutedParagraph(`Submitted: ${new Date().toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' })}`),
+  ].join('')
+
+  const html = baseTemplate(`New Lead: ${data.name} — ${data.service}`, body)
+  await sendMail(adminTo, `${COMPANY_NAME} — New Consultation Lead: ${data.name} (${data.service})`, html)
+}
+
+export async function sendLeadAutoReply(data: LeadEmailData): Promise<void> {
+  const whatsappUrl = 'https://wa.me/923151407896'
+
+  const body = [
+    paragraph(`Hi ${data.name},`),
+    paragraph(`Thank you for booking a free consultation with ${COMPANY_NAME}. We've received your request and a strategist from our workforce team is already reviewing your requirements.`),
+    detailsTable([
+      ['Service', data.service],
+      ['Team Size', data.teamSize],
+      ['Budget Range', data.budget],
+    ]),
+    divider(),
+    paragraph(`<strong style="color:${COLORS.accent};">What happens next:</strong>`),
+    `<ol style="color:${COLORS.text};line-height:2;margin:0 0 16px;padding-left:20px;font-size:14px;">
+      <li>We review your requirements and match you with specialists (within 24 hours)</li>
+      <li>Our team reaches out to schedule a 30-minute strategy call</li>
+      <li>You receive a custom cost breakdown and team proposal</li>
+      <li>Start building your remote team in as little as 2 weeks</li>
+    </ol>`,
+    divider(),
+    paragraph(`<strong style="color:${COLORS.text};">Need to reach us sooner?</strong>`),
+    mutedParagraph(`For urgent queries, message us on WhatsApp: <a href="${whatsappUrl}" style="color:${COLORS.accent};text-decoration:none;font-weight:600;">+92 315 1407896</a>`),
+    mutedParagraph(`Or reply to this email with any questions you have.`),
+    divider(),
+    mutedParagraph(`${COMPANY_NAME} · 114 McLeod Rd, Lahore, Pakistan`),
+    mutedParagraph(`<a href="https://virtualcustomersolution.com" style="color:${COLORS.accent};text-decoration:none;">virtualcustomersolution.com</a>`),
+  ].join('')
+
+  const html = baseTemplate(`Thanks ${data.name} — your consultation is booked!`, body)
+  await sendMail(data.email, `${COMPANY_NAME} — Your consultation is booked, ${data.name}!`, html)
+}

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import {
@@ -241,11 +241,16 @@ function RadioCards({
 // ─── Main Component ─────────────────────────────────────────────────────────
 
 export default function LeadForm() {
+  const [mounted, setMounted] = useState(false)
   const [step, setStep] = useState(1)
   const [direction, setDirection] = useState<'forward' | 'backward'>('forward')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const form = useForm<LeadInput>({
     resolver: zodResolver(leadSchema),
@@ -376,6 +381,40 @@ export default function LeadForm() {
     }
   }
 
+  // ── SSR placeholder — avoid Framer Motion hydration mismatch ──────────────
+  if (!mounted) {
+    return (
+      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0C0C0C]/90 p-6 shadow-[0_0_60px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:p-8 md:p-10">
+        <div className="pointer-events-none absolute -top-40 -right-40 h-80 w-80 rounded-full bg-[#22C55E]/[0.08] blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-[#059669]/[0.06] blur-3xl" />
+        <div className="relative z-10 min-h-[500px] animate-pulse">
+          <div className="mb-10 flex items-center justify-between gap-2">
+            {[1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="flex flex-1 items-center"
+              >
+                <div className="h-11 w-11 rounded-full border-2 border-white/10 bg-white/[0.04]" />
+                {i < 3 && (
+                  <div className="mx-4 h-0.5 flex-1 rounded-full bg-white/10" />
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="mb-6">
+            <div className="h-8 w-56 rounded bg-white/[0.06]" />
+            <div className="mt-3 h-4 w-72 rounded bg-white/[0.04]" />
+          </div>
+          <div className="space-y-5">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="h-12 rounded-xl bg-white/[0.03]" />
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   // ── Success screen ────────────────────────────────────────────────────────
   if (isSuccess) {
     return (
@@ -449,16 +488,15 @@ export default function LeadForm() {
           onKeyDown={handleKeyDown}
           noValidate
         >
-          <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={`step-${step}`}
+            initial={{ opacity: 0, x: direction === 'forward' ? 30 : -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          >
             {/* ─── STEP 1 ─── */}
             {step === 1 && (
-              <motion.div
-                key="step-1"
-                initial={{ opacity: 0, x: direction === 'forward' ? 40 : -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: direction === 'forward' ? -40 : 40 }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              >
+              <div>
                 <div className="mb-6">
                   <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
                     Tell us about yourself
@@ -532,18 +570,12 @@ export default function LeadForm() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             )}
 
             {/* ─── STEP 2 ─── */}
             {step === 2 && (
-              <motion.div
-                key="step-2"
-                initial={{ opacity: 0, x: direction === 'forward' ? 40 : -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: direction === 'forward' ? -40 : 40 }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              >
+              <div>
                 <div className="mb-6">
                   <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
                     What do you need?
@@ -593,18 +625,12 @@ export default function LeadForm() {
                     <FieldError message={errors.budget?.message} />
                   </div>
                 </div>
-              </motion.div>
+              </div>
             )}
 
             {/* ─── STEP 3 ─── */}
             {step === 3 && (
-              <motion.div
-                key="step-3"
-                initial={{ opacity: 0, x: direction === 'forward' ? 40 : -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: direction === 'forward' ? -40 : 40 }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              >
+              <div>
                 <div className="mb-6">
                   <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
                     Tell us more
@@ -654,9 +680,9 @@ export default function LeadForm() {
                     </div>
                   )}
                 </div>
-              </motion.div>
+              </div>
             )}
-          </AnimatePresence>
+          </motion.div>
 
           {/* ─── Navigation buttons ─── */}
           <div className="mt-10 flex items-center justify-between gap-3">

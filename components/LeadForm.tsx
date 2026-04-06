@@ -488,12 +488,7 @@ export default function LeadForm() {
           onKeyDown={handleKeyDown}
           noValidate
         >
-          <motion.div
-            key={`step-${step}`}
-            initial={{ opacity: 0, x: direction === 'forward' ? 30 : -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          >
+          <div key={`step-${step}`} className="animate-step-in">
             {/* ─── STEP 1 ─── */}
             {step === 1 && (
               <div>
@@ -682,7 +677,7 @@ export default function LeadForm() {
                 </div>
               </div>
             )}
-          </motion.div>
+          </div>
 
           {/* ─── Navigation buttons ─── */}
           <div className="mt-10 flex items-center justify-between gap-3">

@@ -3,6 +3,7 @@ import { z } from 'zod/v4'
 import { db } from '@/lib/db'
 import { sendContactConfirmation, sendAdminNotification } from '@/lib/email'
 import { rateLimit } from '@/lib/rate-limit'
+import { forwardToCRM } from '@/lib/crm-webhook'
 
 const contactSchema = z.object({
   name: z.string().min(1, 'Name is required').max(200),
@@ -58,8 +59,14 @@ export async function POST(request: Request) {
         subject: data.subject,
         message: data.message,
       }),
+      forwardToCRM({
+        name: data.name,
+        email: data.email,
+        message: data.subject ? `${data.subject}\n\n${data.message}` : data.message,
+        formType: 'contact',
+      }),
     ]).catch((err) => {
-      console.error('Email sending failed:', err)
+      console.error('Email/CRM sending failed:', err)
     })
 
     return NextResponse.json(

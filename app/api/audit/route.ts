@@ -3,6 +3,7 @@ import { z } from 'zod/v4'
 import { db } from '@/lib/db'
 import { sendAuditConfirmation, sendAdminNotification } from '@/lib/email'
 import { rateLimit } from '@/lib/rate-limit'
+import { forwardToCRM } from '@/lib/crm-webhook'
 
 const auditSchema = z.object({
   name: z.string().min(1, 'Name is required').max(200),
@@ -56,7 +57,7 @@ export async function POST(request: Request) {
       },
     })
 
-    // Send emails (non-blocking, don't fail the request if emails fail)
+    // Send emails + CRM forward (non-blocking)
     Promise.allSettled([
       sendAuditConfirmation({
         name: data.name,
@@ -71,8 +72,20 @@ export async function POST(request: Request) {
         message: data.message,
         source: data.source,
       }),
+      forwardToCRM({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        company: data.company,
+        message: data.message || 'Free audit request',
+        service: 'Website Audit',
+        formType: 'audit',
+        utmSource: data.utmSource,
+        utmMedium: data.utmMedium,
+        utmCampaign: data.utmCampaign,
+      }),
     ]).catch((err) => {
-      console.error('Email sending failed:', err)
+      console.error('Email/CRM sending failed:', err)
     })
 
     return NextResponse.json(

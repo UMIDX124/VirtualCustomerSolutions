@@ -6,7 +6,9 @@ import { createHmac } from "node:crypto";
 const CRM_WEBHOOK_BASE =
   process.env.CRM_WEBHOOK_URL || "https://fu-corp-crm.vercel.app";
 
-const CRM_WEBHOOK_SECRET = process.env.CRM_WEBHOOK_SECRET || "";
+// The HMAC signature via LEAD_WEBHOOK_SECRET is the only authentication
+// layer the CRM actually verifies. The old X-Webhook-Secret header was
+// dead weight (CRM never checked it) — removed.
 const LEAD_WEBHOOK_SECRET = process.env.LEAD_WEBHOOK_SECRET || "";
 
 const SOURCE = "virtualcustomersolution.com";
@@ -58,7 +60,6 @@ async function postToCRM(path: string, body: unknown): Promise<void> {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        ...(CRM_WEBHOOK_SECRET && { "X-Webhook-Secret": CRM_WEBHOOK_SECRET }),
         ...(signature && { "X-Webhook-Signature": `sha256=${signature}` }),
       },
       body: rawBody,

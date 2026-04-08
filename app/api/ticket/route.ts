@@ -3,7 +3,7 @@ import { z } from 'zod/v4'
 import { rateLimit } from '@/lib/rate-limit'
 import { db } from '@/lib/db'
 import { sendAdminNotification } from '@/lib/email'
-import { forwardToCRM } from '@/lib/crm-webhook'
+import { forwardTicketToCRM } from '@/lib/crm-webhook'
 
 // Strip HTML tags from a string
 function sanitize(input: string): string {
@@ -94,12 +94,14 @@ export async function POST(request: NextRequest) {
       console.error('[ticket] Email notification error (non-fatal):', emailError)
     }
 
-    // Forward to Alpha CRM (non-blocking)
-    forwardToCRM({
-      name: sanitized.name,
-      email: sanitized.email,
-      message: `${sanitized.subject}\n\n${sanitized.message}`,
-      formType: 'ticket',
+    // Forward to Alpha CRM ticket webhook (non-blocking)
+    forwardTicketToCRM({
+      subject: sanitized.subject,
+      description: sanitized.message,
+      clientName: sanitized.name,
+      clientEmail: sanitized.email,
+      priority: sanitized.priority, // low | medium | high | urgent
+      channel: 'WEBSITE_FORM',
     })
 
     return NextResponse.json(

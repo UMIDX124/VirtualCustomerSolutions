@@ -9,6 +9,9 @@ const CRM_WEBHOOK_BASE =
 const CRM_WEBHOOK_SECRET = process.env.CRM_WEBHOOK_SECRET || "";
 const LEAD_WEBHOOK_SECRET = process.env.LEAD_WEBHOOK_SECRET || "";
 
+const SOURCE = "virtualcustomersolution.com";
+const BRAND = "VCS";
+
 export interface CrmLeadPayload {
   name: string;
   email: string;
@@ -24,41 +27,38 @@ export interface CrmLeadPayload {
     | "support"
     | "newsletter"
     | "founder"
-    | "consultation"
-    | "ticket";
+    | "consultation";
   qualityScore?: number;
   utmSource?: string;
   utmMedium?: string;
   utmCampaign?: string;
 }
 
-export async function forwardToCRM(payload: CrmLeadPayload): Promise<void> {
+export interface CrmTicketPayload {
+  subject: string;
+  description: string;
+  priority?: "Low" | "Medium" | "High" | "Critical" | string;
+  clientEmail: string;
+  clientName: string;
+  channel?: string;
+}
+
+// Shared POST helper — signs the body with LEAD_WEBHOOK_SECRET and sends.
+async function postToCRM(path: string, body: unknown): Promise<void> {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 5000);
 
-    // Tickets route to the tickets webhook; everything else routes to leads.
-    const endpoint =
-      payload.formType === "ticket"
-        ? `${CRM_WEBHOOK_BASE}/api/webhook/tickets`
-        : `${CRM_WEBHOOK_BASE}/api/webhook/leads`;
-
-    const webhookBody = {
-      ...payload,
-      source: "virtualcustomersolution.com",
-      brand: "VCS",
-    };
-
-    const rawBody = JSON.stringify(webhookBody);
+    const rawBody = JSON.stringify(body);
     const signature = LEAD_WEBHOOK_SECRET
       ? createHmac("sha256", LEAD_WEBHOOK_SECRET).update(rawBody).digest("hex")
       : "";
 
-    await fetch(endpoint, {
+    await fetch(`${CRM_WEBHOOK_BASE}${path}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-Webhook-Secret": CRM_WEBHOOK_SECRET,
+        ...(CRM_WEBHOOK_SECRET && { "X-Webhook-Secret": CRM_WEBHOOK_SECRET }),
         ...(signature && { "X-Webhook-Signature": `sha256=${signature}` }),
       },
       body: rawBody,
@@ -73,4 +73,23 @@ export async function forwardToCRM(payload: CrmLeadPayload): Promise<void> {
       err instanceof Error ? err.message : err,
     );
   }
+}
+
+export async function forwardToCRM(payload: CrmLeadPayload): Promise<void> {
+  await postToCRM("/api/webhook/lead", {
+    ...payload,
+    source: SOURCE,
+    brand: BRAND,
+  });
+}
+
+export async function forwardTicketToCRM(
+  payload: CrmTicketPayload
+): Promise<void> {
+  await postToCRM("/api/webhook/ticket", {
+    ...payload,
+    source: SOURCE,
+    brand: BRAND,
+    channel: payload.channel ?? "WEBSITE_FORM",
+  });
 }

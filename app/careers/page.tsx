@@ -193,7 +193,7 @@ export default function CareersPage() {
             <p className="text-[var(--text-secondary)] mb-8">
               We're always looking for talented people. Send us your resume and we'll reach out when there's a match.
             </p>
-            <a href="mailto:adminatvcs@gmail.com" className="btn-outline">
+            <a href="mailto:contact@virtualcustomersolution.com" className="btn-outline">
               Email Us Your Resume
             </a>
           </div>

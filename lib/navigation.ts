@@ -11,6 +11,7 @@ export type PageRoute =
   | 'blog'
   | 'contact'
   | 'careers'
+  | 'support'
   | 'free-audit'
   | 'performance-marketing'
   | 'remote-workforce'
@@ -26,6 +27,7 @@ export const pathToPage: Record<string, PageRoute> = {
   '/blog': 'blog',
   '/contact': 'contact',
   '/careers': 'careers',
+  '/support': 'support',
   '/free-audit': 'free-audit',
   '/performance-marketing': 'performance-marketing',
   '/remote-workforce': 'remote-workforce',
@@ -42,6 +44,7 @@ export const pageToPath: Record<PageRoute, string> = {
   blog: '/blog',
   contact: '/contact',
   careers: '/careers',
+  support: '/support',
   'free-audit': '/free-audit',
   'performance-marketing': '/performance-marketing',
   'remote-workforce': '/remote-workforce',
@@ -58,6 +61,7 @@ export const pageNames: Record<PageRoute, string> = {
   blog: 'Blog',
   contact: 'Contact',
   careers: 'Careers',
+  support: 'Support',
   'free-audit': 'Free Audit',
   'performance-marketing': 'Performance Marketing',
   'remote-workforce': 'Remote Workforce',

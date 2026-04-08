@@ -5,11 +5,11 @@ export const siteConfig = {
   siteUrl: "https://virtualcustomersolution.com",
   ogImage: "/opengraph-image",
   primaryCtaHref: "#strategy-call-form",
-  bookingEmailHref: "mailto:adminatvcs@gmail.com?subject=Strategy%20Call%20Request",
-  email: "adminatvcs@gmail.com",
+  bookingEmailHref: "mailto:contact@virtualcustomersolution.com?subject=Strategy%20Call%20Request",
+  email: "contact@virtualcustomersolution.com",
   formApiPath: "/api/free-audit",
-  formSubmitBrowserAction: "https://formsubmit.co/adminatvcs@gmail.com",
-  formSubmitAction: "https://formsubmit.co/ajax/adminatvcs@gmail.com",
+  formSubmitBrowserAction: "https://formsubmit.co/contact@virtualcustomersolution.com",
+  formSubmitAction: "https://formsubmit.co/ajax/contact@virtualcustomersolution.com",
 };
 
 export const navigation = [

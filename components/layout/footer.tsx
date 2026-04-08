@@ -1,7 +1,8 @@
 'use client';
 
-import { Linkedin, Mail, Phone, MapPin, ArrowUpRight, Instagram, Twitter, Facebook } from 'lucide-react';
+import { Linkedin, Mail, Phone, MapPin, ArrowUpRight, Instagram, Twitter, Facebook, LifeBuoy } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useNavigation } from '@/lib/navigation';
 
 const footerLinks = {
@@ -123,12 +124,19 @@ export function Footer() {
                 0370-4059424
               </a>
               <a
-                href="mailto:adminatvcs@gmail.com"
+                href="mailto:contact@virtualcustomersolution.com"
                 className="group flex items-center gap-3 text-sm text-[#A1A1AA] hover:text-[#22C55E] transition-colors"
               >
                 <Mail className="h-4 w-4 text-[#059669] neon-text" />
-                adminatvcs@gmail.com
+                contact@virtualcustomersolution.com
               </a>
+              <Link
+                href="/support"
+                className="group flex items-center gap-3 text-sm text-[#A1A1AA] hover:text-[#22C55E] transition-colors"
+              >
+                <LifeBuoy className="h-4 w-4 text-[#059669] neon-text" />
+                Submit a Support Ticket
+              </Link>
               <div className="flex items-center gap-3 text-sm text-[#A1A1AA]">
                 <MapPin className="h-4 w-4 text-[#059669] neon-text" />
                 114 McLeod Rd, Lahore
@@ -150,8 +158,9 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 border-t border-[rgba(34,197,94,0.15)] py-6 sm:flex-row">
           <p className="text-xs text-[#71717A]">© {currentYear} Virtual Customer Solution. All Rights Reserved.</p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <span className="text-xs text-[#71717A] hover:text-[#A1A1AA] cursor-pointer">Privacy Policy</span>
-            <span className="text-xs text-[#71717A] hover:text-[#A1A1AA] cursor-pointer">Terms of Service</span>
+            <Link href="/privacy-policy" className="text-xs text-[#71717A] hover:text-[#A1A1AA] transition-colors">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="text-xs text-[#71717A] hover:text-[#A1A1AA] transition-colors">Terms of Service</Link>
+            <Link href="/support" className="text-xs text-[#71717A] hover:text-[#A1A1AA] transition-colors">Support</Link>
           </div>
         </div>
       </div>

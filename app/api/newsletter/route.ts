@@ -3,6 +3,7 @@ import { z } from 'zod/v4'
 import { db } from '@/lib/db'
 import { sendWelcomeEmail, sendAdminNotification } from '@/lib/email'
 import { rateLimit } from '@/lib/rate-limit'
+import { forwardToCRM } from '@/lib/crm-webhook'
 
 const newsletterSchema = z.object({
   email: z.email('Please provide a valid email address.'),
@@ -52,8 +53,13 @@ export async function POST(request: Request) {
     Promise.allSettled([
       sendWelcomeEmail(email),
       sendAdminNotification('newsletter', { email }),
+      forwardToCRM({
+        name: 'Newsletter Subscriber',
+        email,
+        formType: 'newsletter',
+      }),
     ]).catch((err) => {
-      console.error('Email sending failed:', err)
+      console.error('Email/CRM sending failed:', err)
     })
 
     return NextResponse.json(

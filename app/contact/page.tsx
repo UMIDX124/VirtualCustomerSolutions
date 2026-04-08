@@ -38,26 +38,25 @@ export default function ContactPage() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const res = await fetch('https://formsubmit.co/ajax/adminatvcs@gmail.com', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phone: formData.phone || 'Not provided',
-          service: formData.service || 'Not specified',
-          budget: formData.budget || 'Not specified',
+          phone: formData.phone || undefined,
+          service: formData.service || undefined,
+          budget: formData.budget || undefined,
           message: formData.message,
-          _subject: `New Contact Form: ${formData.name} — ${formData.service || 'General Inquiry'}`,
         }),
       });
       if (res.ok) {
         setIsSubmitted(true);
       } else {
-        alert('Something went wrong. Please try again or email us directly at adminatvcs@gmail.com');
+        alert('Something went wrong. Please try again or email us directly at contact@virtualcustomersolution.com');
       }
     } catch {
-      alert('Something went wrong. Please try again or email us directly at adminatvcs@gmail.com');
+      alert('Something went wrong. Please try again or email us directly at contact@virtualcustomersolution.com');
     }
     setIsLoading(false);
   };
@@ -111,8 +110,8 @@ export default function ContactPage() {
                   </div>
               <div>
                 <h3 className="font-semibold text-text-primary">Email</h3>
-                <a href="mailto:adminatvcs@gmail.com" className="text-text-secondary hover:text-[#22C55E]">
-                  adminatvcs@gmail.com
+                <a href="mailto:contact@virtualcustomersolution.com" className="text-text-secondary hover:text-[#22C55E]">
+                  contact@virtualcustomersolution.com
                 </a>
               </div>
                 </div>

@@ -15,6 +15,7 @@ const navigation: { name: string; href: PageRoute }[] = [
   { name: 'Blog', href: 'blog' },
   { name: 'Careers', href: 'careers' },
   { name: 'Contact', href: 'contact' },
+  { name: 'Support', href: 'support' },
 ];
 
 export function Navigation() {

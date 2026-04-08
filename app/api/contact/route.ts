@@ -8,6 +8,9 @@ import { forwardToCRM } from '@/lib/crm-webhook'
 const contactSchema = z.object({
   name: z.string().min(1, 'Name is required').max(200),
   email: z.email('Invalid email address'),
+  phone: z.string().max(50).optional(),
+  service: z.string().max(100).optional(),
+  budget: z.string().max(100).optional(),
   subject: z.string().max(300).optional(),
   message: z.string().min(1, 'Message is required').max(5000),
 })
@@ -62,6 +65,9 @@ export async function POST(request: Request) {
       forwardToCRM({
         name: data.name,
         email: data.email,
+        phone: data.phone,
+        service: data.service,
+        budget: data.budget,
         message: data.subject ? `${data.subject}\n\n${data.message}` : data.message,
         formType: 'contact',
       }),

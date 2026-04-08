@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars -- Uncomment when enabling AdSense
-import Script from "next/script";
 import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
@@ -94,7 +92,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: { google: "ADD_YOUR_GOOGLE_VERIFICATION_CODE" },
   alternates: {
     canonical: "https://virtualcustomersolution.com",
   },
@@ -122,7 +119,7 @@ export default function RootLayout({
               logo: "https://www.virtualcustomersolution.com/Virtual.png",
               image: "https://www.virtualcustomersolution.com/opengraph-image",
               description: "AI-powered digital marketing, remote workforce, and web development solutions for businesses in 15+ countries.",
-              email: "adminatvcs@gmail.com",
+              email: "contact@virtualcustomersolution.com",
               telephone: "+92-315-1407896",
               priceRange: "$399-$2499/mo",
               openingHours: "Mo-Sa 10:00-19:00",
@@ -137,7 +134,7 @@ export default function RootLayout({
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+92-315-1407896",
-                email: "adminatvcs@gmail.com",
+                email: "contact@virtualcustomersolution.com",
                 contactType: "customer service",
                 availableLanguage: ["English", "Urdu"],
                 areaServed: ["US", "UK", "AE", "CA", "AU", "PK"],
@@ -246,16 +243,6 @@ export default function RootLayout({
         <meta name="theme-color" content="#0A0A0A" />
         <meta name="msapplication-TileColor" content="#22C55E" />
 
-        {/* Google AdSense — uncomment after approval and replace pub-XXXXXXXXXX */}
-        {/* <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        /> */}
-
-        {/* Preconnect to AdSense (enable when ads are active) */}
-        {/* <link rel="preconnect" href="https://pagead2.googlesyndication.com" /> */}
       </head>
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${ibmPlexMono.variable} antialiased`}

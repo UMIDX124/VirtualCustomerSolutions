@@ -102,7 +102,7 @@ export async function handleMessage(
     const faqAnswer = matchFAQ(userMessage)
     const fallbackResponse =
       faqAnswer ||
-      "Thanks for your message! I'm having a bit of trouble connecting right now. You can reach our team directly at **adminatvcs@gmail.com** or [book a free growth audit](/free-growth-audit). We'd love to help!"
+      "Thanks for your message! I'm having a bit of trouble connecting right now. You can reach our team directly at **contact@virtualcustomersolution.com** or [book a free growth audit](/free-growth-audit). We'd love to help!"
 
     addMessage(sessionId, 'assistant', fallbackResponse)
     return fallbackResponse
@@ -148,7 +148,7 @@ export async function handleMessage(
     const faqAnswer = matchFAQ(userMessage)
     const fallbackResponse =
       faqAnswer ||
-      "I'm having a moment — let me connect you with the team! Email us at **adminatvcs@gmail.com** or [book a free growth audit](/free-growth-audit)."
+      "I'm having a moment — let me connect you with the team! Email us at **contact@virtualcustomersolution.com** or [book a free growth audit](/free-growth-audit)."
 
     addMessage(sessionId, 'assistant', fallbackResponse)
     return fallbackResponse

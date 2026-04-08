@@ -3,47 +3,7 @@ import { db } from '@/lib/db'
 import { sendLeadAdminNotification, sendLeadAutoReply } from '@/lib/email'
 import { rateLimit } from '@/lib/rate-limit'
 import { leadSchema } from '@/lib/validations/lead'
-
-const CRM_WEBHOOK_URL =
-  process.env.CRM_WEBHOOK_URL || 'https://fu-corp-crm.vercel.app/api/webhook/lead'
-
-async function forwardToCrm(lead: {
-  name: string
-  email: string
-  phone: string
-  service: string
-  budget: string
-  description: string
-  source: string
-}): Promise<void> {
-  try {
-    const controller = new AbortController()
-    const timeout = setTimeout(() => controller.abort(), 5000)
-
-    await fetch(CRM_WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: lead.name,
-        email: lead.email,
-        phone: lead.phone,
-        company: '',
-        service: lead.service,
-        budget: lead.budget,
-        message: lead.description,
-        source: 'VCS',
-        formType: 'consultation',
-        originalSource: lead.source,
-      }),
-      signal: controller.signal,
-    })
-
-    clearTimeout(timeout)
-  } catch (err) {
-    // Non-blocking — CRM failures should never break lead capture
-    console.error('[CRM webhook] Forward failed:', err)
-  }
-}
+import { forwardToCRM } from '@/lib/crm-webhook'
 
 export async function POST(request: Request) {
   try {
@@ -117,14 +77,14 @@ export async function POST(request: Request) {
         description: data.description,
         source: data.source,
       }),
-      forwardToCrm({
+      forwardToCRM({
         name: data.name,
         email: data.email,
         phone: data.phone || '',
         service: data.service,
         budget: data.budget,
-        description: data.description || '',
-        source: data.source || '',
+        message: data.description || '',
+        formType: 'consultation',
       }),
     ]).catch((err) => {
       console.error('[leads] Async side-effects failed:', err)

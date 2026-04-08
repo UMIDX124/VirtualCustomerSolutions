@@ -229,8 +229,8 @@ export function AuditPage() {
 
               <p className="text-[var(--text-muted)] text-sm">
                 Questions? Reach out directly at{' '}
-                <a href="mailto:adminatvcs@gmail.com" className="text-[#22C55E] hover:text-[#059669] transition-colors">
-                  adminatvcs@gmail.com
+                <a href="mailto:contact@virtualcustomersolution.com" className="text-[#22C55E] hover:text-[#059669] transition-colors">
+                  contact@virtualcustomersolution.com
                 </a>
               </p>
             </GlassCard>
@@ -555,11 +555,11 @@ export function AuditPage() {
                 </h3>
                 <div className="space-y-3">
                   <a
-                    href="mailto:adminatvcs@gmail.com"
+                    href="mailto:contact@virtualcustomersolution.com"
                     className="flex items-center gap-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm transition-colors"
                   >
                     <Mail className="w-4 h-4 text-[#22C55E]" />
-                    adminatvcs@gmail.com
+                    contact@virtualcustomersolution.com
                   </a>
                   <a
                     href="https://linkedin.com/company/virtualcustomersolution"

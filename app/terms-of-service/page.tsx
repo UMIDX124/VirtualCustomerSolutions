@@ -289,10 +289,10 @@ export default function TermsOfServicePage() {
                 <div className="flex items-center gap-3 text-[var(--text-secondary)]">
                   <Mail className="h-5 w-5 text-[var(--red-primary)]" />
                   <a
-                    href="mailto:adminatvcs@gmail.com"
+                    href="mailto:contact@virtualcustomersolution.com"
                     className="underline decoration-[var(--red-primary)] underline-offset-4 transition-colors hover:text-[var(--text-primary)]"
                   >
-                    adminatvcs@gmail.com
+                    contact@virtualcustomersolution.com
                   </a>
                 </div>
                 <div className="flex items-center gap-3 text-[var(--text-secondary)]">

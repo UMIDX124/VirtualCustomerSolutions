@@ -168,7 +168,7 @@ const sections = [
       {
         subtitle: "To exercise any of these rights, contact us at:",
         items: [
-          "Email: adminatvcs@gmail.com",
+          "Email: contact@virtualcustomersolution.com",
           "We will respond to your request within 30 days.",
         ],
       },
@@ -185,7 +185,7 @@ const sections = [
           "Our services are not directed to individuals under the age of 13 (or the applicable age of consent in your jurisdiction).",
           "We do not knowingly collect personal information from children under 13.",
           "If we become aware that we have collected personal data from a child under 13 without verified parental consent, we will take steps to delete that information promptly.",
-          "If you believe we have inadvertently collected information from a child, please contact us immediately at adminatvcs@gmail.com.",
+          "If you believe we have inadvertently collected information from a child, please contact us immediately at contact@virtualcustomersolution.com.",
         ],
       },
     ],
@@ -320,10 +320,10 @@ export default function PrivacyPolicyPage() {
                 <div className="flex items-center gap-3 text-[var(--text-secondary)]">
                   <Mail className="h-5 w-5 text-[var(--red-primary)]" />
                   <a
-                    href="mailto:adminatvcs@gmail.com"
+                    href="mailto:contact@virtualcustomersolution.com"
                     className="underline decoration-[var(--red-primary)] underline-offset-4 transition-colors hover:text-[var(--text-primary)]"
                   >
-                    adminatvcs@gmail.com
+                    contact@virtualcustomersolution.com
                   </a>
                 </div>
                 <div className="flex items-center gap-3 text-[var(--text-secondary)]">

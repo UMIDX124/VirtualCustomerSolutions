@@ -155,7 +155,7 @@ export default function RootLayout({
                 name: "M Faizan Rafiq",
                 jobTitle: "Founder & CEO",
               },
-              foundingDate: "2016",
+              foundingDate: "2017",
               numberOfEmployees: {
                 "@type": "QuantitativeValue",
                 minValue: 50,

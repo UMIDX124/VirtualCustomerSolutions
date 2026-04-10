@@ -58,7 +58,7 @@ const FAQS: FAQ[] = [
       'about you',
     ],
     answer:
-      "Virtual Customer Solution was founded in **2018 by M Faizan Rafiq**, a digital marketing strategist with 6+ years of experience. We're based in Pakistan with a global client reach, helping businesses grow through data-driven marketing and automation. Learn more on our [about page](/about)!",
+      "Virtual Customer Solution was founded in **2017 by M Faizan Rafiq**, a digital marketing strategist with 8+ years of experience. We're based in Pakistan with a global client reach, helping businesses grow through data-driven marketing and automation. Learn more on our [about page](/about)!",
   },
   {
     keywords: [

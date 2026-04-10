@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
       request.headers.get('x-real-ip') ??
       'anonymous'
 
-    const { success, remaining } = rateLimit(ip, 'chat', 30, 60 * 1000)
+    const { success, remaining } = await rateLimit(ip, 'chat', 30, 60 * 1000)
     if (!success) {
       return NextResponse.json(
         { role: 'assistant', content: "You're sending messages too quickly. Please wait a moment." },

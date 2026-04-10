@@ -12,7 +12,7 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   reactStrictMode: true,
   async redirects() {

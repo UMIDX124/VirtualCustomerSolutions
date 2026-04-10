@@ -12,7 +12,7 @@ const newsletterSchema = z.object({
 export async function POST(request: Request) {
   try {
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
-    const { success, remaining } = rateLimit(ip, 'newsletter', 3)
+    const { success, remaining } = await rateLimit(ip, 'newsletter', 3)
 
     if (!success) {
       return NextResponse.json(

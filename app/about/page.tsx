@@ -120,7 +120,7 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent" />
             {/* Content overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-10">
-              <p className="text-[#22C55E] text-sm font-semibold uppercase tracking-widest mb-2">Est. 2016</p>
+              <p className="text-[#22C55E] text-sm font-semibold uppercase tracking-widest mb-2">Est. 2017</p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-[#F5F5F5] mb-2">
                 8+ Years of Getting It Done
               </h2>

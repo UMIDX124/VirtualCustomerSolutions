@@ -4,7 +4,7 @@ export const COMPANY_KNOWLEDGE = `
 ## About Virtual Customer Solution (VCS)
 
 **Company Overview:**
-Virtual Customer Solution (VCS) is a growth-focused digital marketing and business solutions agency founded in 2018 by M Faizan Rafiq. Based in Pakistan with a global client reach, VCS helps businesses scale through data-driven marketing, automation systems, and remote workforce solutions.
+Virtual Customer Solution (VCS) is a growth-focused digital marketing and business solutions agency founded in 2017 by M Faizan Rafiq. Based in Pakistan with a global client reach, VCS helps businesses scale through data-driven marketing, automation systems, and remote workforce solutions.
 
 **Core Services:**
 
@@ -40,10 +40,10 @@ Book at: /free-growth-audit
 - Contact Page: /contact
 
 **Founder — M Faizan Rafiq:**
-Entrepreneur and digital marketing strategist with 6+ years of experience helping businesses grow through systematic, data-driven approaches. Founded VCS in 2018 with the mission of making world-class marketing accessible to growing businesses.
+Entrepreneur and digital marketing strategist with 8+ years of experience helping businesses grow through systematic, data-driven approaches. Founded VCS in 2017 with the mission of making world-class marketing accessible to growing businesses.
 
 **Key Metrics & Proof:**
-- Founded in 2018
+- Founded in 2017
 - Clients across multiple countries
 - Specializing in SMBs and growing startups
 - Data-driven approach with transparent reporting

@@ -51,7 +51,7 @@ export function Footer() {
             </button>
             <p className="max-w-xs text-sm leading-relaxed text-[#A1A1AA] mb-6">
               Remote teams, marketing, web development, and operations support.
-              Helping businesses grow since 2016.
+              Helping businesses grow since 2017.
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="https://facebook.com/virtualcustomersolution" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="min-w-[44px] min-h-[44px] w-9 h-9 rounded-lg glass flex items-center justify-center text-[#A1A1AA] hover:text-[#22C55E] hover:neon-text transition-colors">

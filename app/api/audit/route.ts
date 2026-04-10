@@ -20,7 +20,7 @@ const auditSchema = z.object({
 export async function POST(request: Request) {
   try {
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
-    const { success, remaining } = rateLimit(ip, 'audit', 3)
+    const { success, remaining } = await rateLimit(ip, 'audit', 3)
 
     if (!success) {
       return NextResponse.json(

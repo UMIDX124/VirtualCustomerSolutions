@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
       request.headers.get('x-real-ip') ??
       'anonymous'
 
-    const { success, remaining } = rateLimit(ip, 'ticket', 5, 60 * 60 * 1000)
+    const { success, remaining } = await rateLimit(ip, 'ticket', 5, 60 * 60 * 1000)
     if (!success) {
       return NextResponse.json(
         { error: 'Too many tickets submitted. Please try again later.' },

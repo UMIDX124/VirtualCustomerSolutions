@@ -52,6 +52,12 @@ export default function ContactPage() {
       });
       if (res.ok) {
         setIsSubmitted(true);
+        if (typeof window !== "undefined" && (window as unknown as { ACCLead?: (d: Record<string, string>) => void }).ACCLead) {
+          (window as unknown as { ACCLead: (d: Record<string, string>) => void }).ACCLead({
+            name: formData.name, email: formData.email, message: formData.message,
+            page: window.location.pathname, source: "contact-form",
+          });
+        }
       } else {
         alert('Something went wrong. Please try again or email us directly at contact@virtualcustomersolution.com');
       }

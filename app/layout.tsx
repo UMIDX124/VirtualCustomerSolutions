@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import StickyConsultationCTA from "@/components/StickyConsultationCTA";
@@ -250,6 +251,11 @@ export default function RootLayout({
         {children}
         <StickyConsultationCTA />
         <Toaster />
+        <Script
+          src="https://fu-corp-crm.vercel.app/tracker.js"
+          data-key="cmnsabw1t0003rgw4qj6w6y0e"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

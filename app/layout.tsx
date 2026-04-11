@@ -252,8 +252,8 @@ export default function RootLayout({
         <StickyConsultationCTA />
         <Toaster />
         <Script
-          src="https://fu-corp-crm.vercel.app/tracker.js"
-          data-key="cmnsabw1t0003rgw4qj6w6y0e"
+          src="https://alpha-command-center.vercel.app/tracker.js"
+          data-key="cmmsabwlt0003rgw4qj6w0y0e"
           strategy="afterInteractive"
         />
       </body>
